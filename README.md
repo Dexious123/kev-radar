@@ -5,7 +5,7 @@
 
 KEV Radar is a remediation-ops console. It answers what is due under [CISA BOD 26-04](https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk), who owns it, whether the team will miss the SLA, and which Windows KB would fix a Microsoft CVE.
 
-Hiring managers who run vulnerability management are not looking for another KEV catalog. They ask for EPSS, CVSS, SSVC, and KEV in the same sentence as MTTR, SLO compliance, and an exceptions register. This demo is that sentence, on a fictional estate a visitor can open with no login and no scanner tenant.
+That first question got harder in June 2026, when BOD 26-04 replaced BOD 22-01. A KEV due date is no longer the deadline. Each finding gets its own clock, set by the asset as well as the CVE, so the same CVE can be due in 3 days on an internet-facing host and in 60 on an internal one. KEV Radar works out that deadline for every host and CVE, then tracks it against the team's actual close rate. It runs on a fictional estate, so anyone can open it with no login and no scanner account.
 
 ![Executive overview: overdue burn-down, risk trend, and the ten findings to fix this week](docs/screenshots/overview.png)
 

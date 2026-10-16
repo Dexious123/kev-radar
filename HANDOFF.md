@@ -1,6 +1,6 @@
 # HANDOFF — KEV Radar v2
 
-Public portfolio app for Juan (JP). Synthetic data only. No employer exports, hostnames, keys, or secrets.
+Public demo app. Synthetic data only. No employer exports, hostnames, keys, or secrets.
 
 ## Setup
 
