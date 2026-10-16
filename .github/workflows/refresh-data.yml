@@ -1,0 +1,34 @@
+name: Refresh public vulnerability data
+
+on:
+  schedule:
+    # 07:20 UTC daily. The app also caches a live KEV pull for 24 hours.
+    - cron: "20 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Refresh snapshots and rebuild the demo estate
+        run: python scripts/refresh_snapshots.py --rotate
+      - name: Commit updated snapshots
+        run: |
+          git config user.name "kev-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/snapshots data/demo
+          if git diff --cached --quiet; then
+            echo "No data changes"
+          else
+            git commit -m "Refresh KEV, EPSS, and Vulnrichment snapshots"
+            git push
+          fi
