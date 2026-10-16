@@ -183,7 +183,7 @@ The app renders from `data/snapshots/msrc_kb.json`. The Windows page offers a li
 
 `check_text` extracts CVE IDs, dotted hostnames, IPv4 addresses, and numbers from the output. Each must appear somewhere in the facts JSON. This is a presence test, not a claim binder. The offline template is tested to pass its own checker. A live draft that fails is shown as rejected and is not offered as the briefing.
 
-Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The key is not in the body. Settings resolve from the password field, then `KEV_RADAR_LLM_API_KEY` or `OPENAI_API_KEY`, then a Streamlit secret of the same name. Optional `KEV_RADAR_LLM_BASE_URL` (default `https://api.openai.com/v1`) and `KEV_RADAR_LLM_MODEL` (default `gpt-4o-mini`). No key is written to disk. Missing `secrets.toml` is ignored.
+Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The key is not in the body. The key is only the one typed into the password field. There is no fallback to `KEV_RADAR_LLM_API_KEY`, `OPENAI_API_KEY`, or a Streamlit secret: on a public deployment that fallback let any anonymous visitor spend the owner's key, and because the base URL was also an editable field on the page, a visitor could send that key in the Authorization header to a server of their choosing. The endpoint now comes from configuration only (`KEV_RADAR_LLM_BASE_URL`, then a Streamlit secret, then the default `https://api.openai.com/v1`), is shown read-only on the page, and `complete_live` refuses anything that is not https before sending. `KEV_RADAR_LLM_MODEL` (default `gpt-4o-mini`) still sets the default model, which the visitor may change. No key is written to disk. Missing `secrets.toml` is ignored. `tests/test_briefing.py` pins each of these, and those tests fail against the previous code.
 
 ### Theme
 
@@ -206,7 +206,7 @@ Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The k
 - KEV-this-week table, ransomware and forensic-triage flags, and a Markdown download.
 - MSRC KB table and a read-only PowerShell audit.
 - Offline executive briefing and ticket drafts. The fact checker rejects unknown CVEs, hostnames, and numbers.
-- `python -m pytest -q` — 92 tests on 2026-10-16.
+- `python -m pytest -q` — 97 tests on 2026-10-16 (92 before the live-key fix below).
 
 ## Known issues
 
@@ -230,3 +230,7 @@ Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The k
 - Publish the Monday note as a GitHub Issue or an RSS item. The Markdown download is the stand-in.
 - If CISA publishes the generally-public-facing product list, replace `match_public_facing` with that list and drop the assumed flag for those rows.
 - Bind the fact checker to the field a number came from, not merely to presence in the facts JSON.
+
+## History
+
+- **2026-10-16 — Live briefing key fallback removed (security fix).** Found in a read-through before the first deployment: the Briefing page fell back to a server-side key when the visitor left the field blank, while the API base URL was editable on the page. Deployed as the README instructed (key in Streamlit secrets), any visitor could have spent that key or sent it to their own server. Fixed as described under Briefings: visitor key only, endpoint from configuration only, https enforced before sending. Not exploitable before the fix in practice, because no key had been configured and the app had not been deployed. Verified: `ruff check .` clean; `python -m pytest -q` 97 passed on Python 3.12.12; the 5 new tests fail against the previous code. Commits in this repo now use the GitHub no-reply address, set in this clone's local git config.

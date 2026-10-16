@@ -1,13 +1,17 @@
 """Fact check for executive briefings and ticket drafts."""
 
 from datetime import date
+from pathlib import Path
 
 import pandas as pd
+import pytest
 
+import kev_radar.briefing as briefing
 from kev_radar.briefing import (
     build_facts,
     chat_body,
     check_text,
+    complete_live,
     render_offline,
     resolve_llm_settings,
 )
@@ -101,3 +105,42 @@ def test_live_request_does_not_carry_the_api_key():
     settings = resolve_llm_settings(api_key=secret, model="gpt-4o-mini")
     assert settings["api_key"] == secret
     assert settings["api_key"] not in str(chat_body(facts, settings["model"]))
+
+
+def test_a_server_side_key_is_never_used(monkeypatch):
+    # A public deployment must have nothing of the owner's for a visitor to spend.
+    monkeypatch.setenv("KEV_RADAR_LLM_API_KEY", "env-key-not-real")
+    monkeypatch.setenv("OPENAI_API_KEY", "env-key-not-real")
+    monkeypatch.setattr(briefing, "_streamlit_secret", lambda name: "secret-value-not-real")
+    assert resolve_llm_settings()["api_key"] == ""
+    assert resolve_llm_settings(api_key="   ")["api_key"] == ""
+    assert resolve_llm_settings(api_key="visitor-key-not-real")["api_key"] == "visitor-key-not-real"
+
+
+def test_the_endpoint_comes_from_configuration_not_the_caller(monkeypatch):
+    monkeypatch.setenv("KEV_RADAR_LLM_BASE_URL", "https://llm.example.org/v1/")
+    assert resolve_llm_settings(api_key="visitor-key-not-real")["base_url"] == "https://llm.example.org/v1"
+    with pytest.raises(TypeError):
+        resolve_llm_settings(api_key="visitor-key-not-real", base_url="https://elsewhere.example/v1")
+
+
+def test_a_blank_model_falls_back_to_configuration(monkeypatch):
+    monkeypatch.delenv("KEV_RADAR_LLM_MODEL", raising=False)
+    monkeypatch.setattr(briefing, "_streamlit_secret", lambda name: "")
+    assert resolve_llm_settings(model="   ")["model"] == briefing.DEFAULT_MODEL
+
+
+def test_live_call_refuses_a_non_https_endpoint_before_sending(monkeypatch):
+    def no_request(*args, **kwargs):
+        raise AssertionError("no request may be sent")
+
+    monkeypatch.setattr(briefing.requests, "post", no_request)
+    for url in ("http://169.254.169.254/latest", "file:///etc/passwd", "ftp://example.org"):
+        with pytest.raises(RuntimeError, match="https"):
+            complete_live(_facts(), api_key="visitor-key-not-real", base_url=url, model="m")
+
+
+def test_the_briefing_page_has_no_endpoint_field_and_no_server_key():
+    source = (Path(__file__).resolve().parents[1] / "streamlit_app.py").read_text(encoding="utf-8")
+    assert '"API base URL"' not in source
+    assert 'settings["api_key"]' not in source

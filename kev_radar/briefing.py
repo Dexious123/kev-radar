@@ -269,23 +269,26 @@ def chat_body(facts: dict, model: str) -> dict:
     }
 
 
-def resolve_llm_settings(
-    *,
-    api_key: str | None = None,
-    base_url: str | None = None,
-    model: str | None = None,
-) -> dict[str, str]:
-    """Key from the argument, then the environment, then a Streamlit secret.
+def resolve_llm_settings(*, api_key: str | None = None, model: str | None = None) -> dict[str, str]:
+    """Settings for one live briefing call.
 
+    The key is only ever the one passed in, which is the key the visitor typed.
+    There is deliberately no fallback to an environment variable or a Streamlit
+    secret: on a public deployment any anonymous visitor could spend it.
+
+    The endpoint comes from configuration only (environment, then a Streamlit
+    secret, then the default) and is never taken from the page, so a visitor
+    cannot point the request, or its Authorization header, at another server.
     Nothing is written to disk. A missing secrets file is ignored.
     """
     key = (api_key or "").strip()
-    if not key:
-        key = os.environ.get("KEV_RADAR_LLM_API_KEY", "").strip() or os.environ.get("OPENAI_API_KEY", "").strip()
-    if not key:
-        key = _streamlit_secret("KEV_RADAR_LLM_API_KEY")
-    url = (base_url or os.environ.get("KEV_RADAR_LLM_BASE_URL") or _streamlit_secret("KEV_RADAR_LLM_BASE_URL") or DEFAULT_BASE_URL).strip()
-    chosen = (model or os.environ.get("KEV_RADAR_LLM_MODEL") or _streamlit_secret("KEV_RADAR_LLM_MODEL") or DEFAULT_MODEL).strip()
+    url = (os.environ.get("KEV_RADAR_LLM_BASE_URL") or _streamlit_secret("KEV_RADAR_LLM_BASE_URL") or DEFAULT_BASE_URL).strip()
+    chosen = (
+        (model or "").strip()
+        or os.environ.get("KEV_RADAR_LLM_MODEL")
+        or _streamlit_secret("KEV_RADAR_LLM_MODEL")
+        or DEFAULT_MODEL
+    ).strip()
     return {"api_key": key, "base_url": url.rstrip("/"), "model": chosen}
 
 
@@ -305,6 +308,8 @@ def complete_live(facts: dict, *, api_key: str, base_url: str, model: str, timeo
     """Call an OpenAI-compatible chat endpoint. The key stays in the header."""
     if not api_key.strip():
         raise RuntimeError("No API key. Offline template mode is the default.")
+    if not base_url.strip().lower().startswith("https://"):
+        raise RuntimeError("The live endpoint must use https. No request was sent.")
     response = requests.post(
         f"{base_url.rstrip('/')}/chat/completions",
         json=chat_body(facts, model),

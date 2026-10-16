@@ -1000,17 +1000,17 @@ def _briefing_page(frame: pd.DataFrame, stats: dict, records: list) -> None:
         typed = st.text_input(
             "API key",
             type="password",
-            help="Used as a Bearer token on this run only. Leave blank to use KEV_RADAR_LLM_API_KEY or a Streamlit secret.",
+            help="Your own key, sent as a Bearer token on this request only. It is never stored, and the app has no key of its own.",
         )
         model = st.text_input("Model", value=settings["model"])
-        base_url = st.text_input("API base URL", value=settings["base_url"])
+        st.caption(f"Endpoint: {settings['base_url']} (set by the app's configuration, not on this page).")
         if st.button("Write with the live model"):
-            key = typed.strip() or settings["api_key"]
-            if not key:
-                st.error("No API key. The offline template below is still the briefing.")
+            call = resolve_llm_settings(api_key=typed, model=model)
+            if not call["api_key"]:
+                st.error("Paste your own API key to use the live model. The offline template below is still the briefing.")
             else:
                 try:
-                    draft = complete_live(facts, api_key=key, base_url=base_url.strip(), model=model.strip())
+                    draft = complete_live(facts, api_key=call["api_key"], base_url=call["base_url"], model=call["model"])
                 except Exception as exc:
                     st.error(f"The live call failed ({type(exc).__name__}). The offline template is unchanged.")
                 else:

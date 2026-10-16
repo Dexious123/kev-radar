@@ -153,7 +153,7 @@ On a warm process the bundled snapshot loads in a few hundredths of a second, sc
 
 [`.github/workflows/tests.yml`](.github/workflows/tests.yml) runs ruff and pytest on every push and pull request. [`.github/workflows/refresh-data.yml`](.github/workflows/refresh-data.yml) rebuilds the snapshots every day at 07:20 UTC and commits them when they change.
 
-A live briefing needs a key you provide at runtime: the `KEV_RADAR_LLM_API_KEY` environment variable, a Streamlit secret of the same name, or the password field on the Briefing page. The repo does not contain a key. Offline template mode is the default.
+A live briefing uses only the key a visitor pastes on the Briefing page, for that one request. The app never reads a key from the environment or from Streamlit secrets, so a public deployment holds nothing for a visitor to spend. The endpoint is set by configuration (`KEV_RADAR_LLM_BASE_URL`, https only) and cannot be changed from the page. The repo does not contain a key. Offline template mode is the default.
 
 ## Data
 
