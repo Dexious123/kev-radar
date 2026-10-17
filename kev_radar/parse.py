@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import ipaddress
 import json
+import math
 import re
 from dataclasses import dataclass, field
 from typing import NamedTuple
@@ -196,8 +197,14 @@ def _parse_float(value: object) -> float | None:
     text = _text(value)
     if text is None:
         return None
+    try:
+        whole = float(text)
+    except ValueError:
+        whole = None
+    if whole is not None:
+        return whole if math.isfinite(whole) else None
     # Tenable sometimes exports several CVEs' scores in one cell.
-    match = re.search(r"\d+(?:\.\d+)?", text)
+    match = re.search(r"\d+(?:\.\d+)?(?:[eE][-+]?\d+)?", text)
     if not match:
         return None
     try:
@@ -385,6 +392,13 @@ def _cves_in(value: object) -> list[str]:
 
 
 def _read_frame(source: object) -> pd.DataFrame:
+    try:
+        return _read_frame_unchecked(source)
+    except pd.errors.ParserError as exc:
+        raise ParseError("The CSV could not be read. Check for an unclosed quote or a row with extra columns.") from exc
+
+
+def _read_frame_unchecked(source: object) -> pd.DataFrame:
     try:
         frame = pd.read_csv(source, dtype=str, keep_default_na=False)
     except pd.errors.EmptyDataError as exc:

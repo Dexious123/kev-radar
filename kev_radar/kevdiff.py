@@ -164,8 +164,9 @@ def render_monday_report(
     as_of: date,
     items: list[WeekItem],
     estate_name: str = "Harborline Mutual lab",
+    synthetic: bool = True,
 ) -> str:
-    """Weekly markdown briefing. Safe to archive; it only describes the synthetic estate."""
+    """Weekly markdown briefing for the estate passed in."""
     hits = [item for item in items if item.in_estate]
     misses = [item for item in items if not item.in_estate]
     ransomware_hits = [item for item in hits if item.ransomware]
@@ -173,7 +174,7 @@ def render_monday_report(
     lines = [
         f"# KEV Monday — {as_of.isoformat()}",
         "",
-        f"Estate: {estate_name} (synthetic). Catalog version {catalog_version or 'unknown'}.",
+        f"Estate: {estate_name}{' (synthetic)' if synthetic else ''}. Catalog version {catalog_version or 'unknown'}.",
         "",
         (
             f"{len(items)} KEV entries were added in this window. "

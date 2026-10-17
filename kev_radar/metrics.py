@@ -14,7 +14,7 @@ import pandas as pd
 from kev_radar.bod import OUTCOME_FSU
 
 OPEN_STATES = {"open", "reopened"}
-AGING_LABELS = ("0–7 days", "8–14 days", "15–30 days", "30+ days")
+AGING_LABELS = ("0–7 days", "8–14 days", "15–30 days", "31+ days")
 
 
 def is_open(state: object) -> bool:
@@ -254,9 +254,11 @@ def slo_compliance(findings: pd.DataFrame, as_of: date) -> dict[str, float | int
                 continue
             if bool(getattr(row, "sla_paused", False)):
                 continue
-            eligible += 1
             state = getattr(row, "state", "open")
             last_fixed = _as_date(getattr(row, "last_fixed", None))
+            if not is_open(state) and last_fixed is None:
+                continue
+            eligible += 1
             if is_open(state):
                 if as_of <= deadline:
                     compliant += 1

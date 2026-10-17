@@ -271,6 +271,33 @@ def remediation_violations(script: str) -> list[str]:
     return found
 
 
+def _executable_text(script: str) -> str:
+    """The lines PowerShell would execute: comments and here-string data removed.
+
+    Host names may only appear in comments and are restricted to
+    ``[A-Za-z0-9.-]``; table fields cannot contain a quote, ``@`` or a newline.
+    Neither can leave its line, so a host called ``wusa`` is text, not a
+    command, and must not make the script refuse itself.
+    """
+    kept: list[str] = []
+    in_data = False
+    for line in script.splitlines():
+        stripped = line.strip()
+        if in_data:
+            if stripped.startswith("'@"):
+                in_data = False
+                kept.append(line)
+            continue
+        if stripped.endswith("@'"):
+            in_data = True
+            kept.append(line)
+            continue
+        if stripped.startswith("#"):
+            continue
+        kept.append(line)
+    return "\n".join(kept)
+
+
 def _sanitize_field(value: object, *, pattern: str) -> str:
     text = re.sub(pattern, " ", str(value or ""))
     for name in REMEDIATION_CMDLETS:
@@ -350,7 +377,7 @@ def render_audit_script(rows: list[dict], *, hosts: list[str] | None = None) -> 
         ]
     )
     script = "\n".join(lines)
-    violations = remediation_violations(script)
+    violations = remediation_violations(_executable_text(script))
     if violations:
         raise RuntimeError(f"Refusing to emit a script that contains {', '.join(violations)}")
     return script

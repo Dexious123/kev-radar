@@ -130,9 +130,10 @@ def fix_reason(row, as_of: date) -> str:
     except (TypeError, ValueError):
         days_int = None
     if status == "Overdue" and days_int is not None:
-        parts.append(f"{abs(days_int)} days overdue")
+        late = abs(days_int)
+        parts.append(f"{late} day{'' if late == 1 else 's'} overdue")
     elif status == "Due soon" and days_int is not None:
-        parts.append("due today" if days_int == 0 else f"due in {days_int} days")
+        parts.append("due today" if days_int == 0 else f"due in {days_int} day{'' if days_int == 1 else 's'}")
     elif status == "Exception":
         parts.append(f"exception pauses a {raw.lower() or 'open'} finding")
     elif status:

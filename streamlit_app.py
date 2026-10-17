@@ -34,6 +34,7 @@ from kev_radar.enrich import fetch_enrichment, ssvc_from_enrichment, supplement_
 from kev_radar.exceptions import (
     RiskException,
     apply_exceptions,
+    enforce_import_limit,
     exceptions_from_csv,
     exceptions_from_json,
     exceptions_table,
@@ -41,6 +42,7 @@ from kev_radar.exceptions import (
     exceptions_to_json,
     finding_key,
     load_operator_register,
+    operator_file_enabled,
     record_from_dict,
     save_operator_register,
     seed_exceptions,
@@ -189,7 +191,7 @@ def cached_enrichment(cve: str) -> dict:
     return fetch_enrichment(cve)
 
 
-@st.cache_data(ttl=86400, show_spinner=False)
+@st.cache_data(ttl=86400, show_spinner=False, max_entries=8)
 def cached_parse(csv_text: str) -> dict:
     """Parse a findings CSV once. Scoring still runs, and it is much smaller."""
     from io import StringIO
@@ -286,7 +288,8 @@ def _live_ssvc(snapshot: dict, cves: list[str]) -> tuple[dict, dict]:
         cleaned["found"] = True
         return cleaned
 
-    return supplement_ssvc(snapshot, cves, fetch=fetch, limit=40)
+    resolved = st.session_state.setdefault("ssvc_resolved", {})
+    return supplement_ssvc(snapshot, cves, fetch=fetch, limit=40, resolved=resolved)
 
 
 def _apply_scope(frame: pd.DataFrame, *, units, owners, exposure, kev_only, ransomware_only, query) -> pd.DataFrame:
@@ -475,8 +478,8 @@ def _detail(row: pd.Series, classic: bool) -> None:
                 f"({row.get('exception_id')}, approved by {row.get('exception_approver')}). "
                 f"Without the exception this row would be **{row.get('sla_status_raw')}**."
             )
-            st.markdown(str(row.get("exception_justification") or ""))
-            st.markdown(f"Compensating controls: {row.get('exception_controls') or ''}")
+            st.text(str(row.get("exception_justification") or ""))
+            st.text(f"Compensating controls: {row.get('exception_controls') or ''}")
         elif status == "Expired":
             st.markdown(
                 f"Exception **{row.get('exception_id')}** expired on {row.get('exception_expiry')}. "
@@ -526,8 +529,10 @@ def _remediation_page(frame: pd.DataFrame, records: list) -> None:
     st.caption(
         f"Close rate uses fixes in the {forecast.history_days} days before {AS_OF.isoformat()} "
         f"({forecast.closed_in_history} fixed, {forecast.weekly_close_rate:.1f} per week). "
-        "Fix-on-upgrade findings are outside the clock, so they are not in this projection."
+        "Fix-on-upgrade findings are outside the clock, so they are not in this projection. "
+        "The overview's burn-down spends the same close rate on the overdue stock, so the two are alternatives."
     )
+    _undated_open_caption(frame)
     aging = aging_buckets(frame, AS_OF)
     burn = burndown(frame, AS_OF)
     mix = outcome_mix(frame[frame["state"].map(is_open)] if not frame.empty else frame)
@@ -619,7 +624,8 @@ def _exceptions_register(frame: pd.DataFrame, records: list) -> None:
                 loaded, errors = exceptions_from_json(raw)
             else:
                 loaded, errors = exceptions_from_csv(raw)
-            for message in errors:
+            loaded, cap_errors = enforce_import_limit(loaded)
+            for message in [*errors, *cap_errors]:
                 st.error(message)
             if loaded:
                 existing = {item.get("exception_id") for item in st.session_state.get("exception_extra") or []}
@@ -754,7 +760,10 @@ def _week_page(frame: pd.DataFrame, catalog: dict, previous: dict | None, versio
     if report["snapshot_only"]:
         with st.expander(f"{len(report['snapshot_only'])} more CVEs are new since the previous snapshot, outside this 7-day window"):
             st.write(", ".join(item.cve for item in report["snapshot_only"][:40]))
-    markdown = render_monday_report(catalog_version=version, as_of=AS_OF, items=week)
+    estate_name, synthetic = _estate_label()
+    markdown = render_monday_report(
+        catalog_version=version, as_of=AS_OF, items=week, estate_name=estate_name, synthetic=synthetic
+    )
     st.download_button(
         "Download KEV Monday briefing",
         data=markdown,
@@ -818,12 +827,32 @@ The sort score is a weighted sum, capped at 100:
 
 Missing EPSS or CVSS adds zero and the row says so. Bands are labels only: Critical ≥ 70, High ≥ 40, Medium ≥ 15, Low below that.
 
-The **deadline is not the score**. It comes from the BOD 26-04 table: In KEV, publicly exposed, Automatable, Technical Impact. Automatable and Technical Impact are CISA Vulnrichment SSVC fields. Exposure comes from the asset tag, or from CISA's fallback (public address, then asset type `network`, otherwise internal).
+The **deadline is not the score**. It comes from the BOD 26-04 table: In KEV, publicly exposed, Automatable, Technical Impact. Automatable and Technical Impact are CISA Vulnrichment SSVC fields. Exposure comes from the asset tag, or from CISA's fallback (public address, then asset type `network`, then, for a KEV, generally public-facing software, otherwise internal).
             """
         )
 
 
+def _undated_open_caption(frame: pd.DataFrame) -> None:
+    """Time charts place a finding by its first-seen date; say how many have none."""
+    if frame.empty or "first_observed" not in frame.columns:
+        return
+    undated = int((frame["state"].map(is_open) & frame["first_observed"].isna()).sum())
+    if undated:
+        noun = "finding has" if undated == 1 else "findings have"
+        st.caption(
+            f"{undated} open {noun} no first-seen date in this export, so the charts on this page leave "
+            "them out. The cards above still count them."
+        )
+
+
+def _estate_label() -> tuple[str, bool]:
+    """The name every export uses for the current source, and whether it is synthetic."""
+    return st.session_state.get("estate_label", ("Harborline Mutual lab", True))
+
+
 def _persist_exceptions() -> None:
+    if not operator_file_enabled():
+        return
     save_operator_register(
         {
             "extra": list(st.session_state.get("exception_extra") or []),
@@ -834,7 +863,7 @@ def _persist_exceptions() -> None:
 
 
 def _estate_exceptions(mode: str, seed: int, upload, frame: pd.DataFrame) -> list:
-    """Demo seed plus the operator register, which survives a reload."""
+    """Demo seed plus this visitor's register. It is shared through a file only when the operator flag is set."""
     if frame.empty:
         fingerprint = "empty"
     else:
@@ -844,7 +873,7 @@ def _estate_exceptions(mode: str, seed: int, upload, frame: pd.DataFrame) -> lis
     if st.session_state.get("exception_token") != token:
         st.session_state["exception_token"] = token
         seeded = [] if mode == "Upload CSV" else [record.to_dict() for record in seed_exceptions(frame, AS_OF)]
-        stored = load_operator_register()
+        stored = load_operator_register() if operator_file_enabled() else {"extra": [], "removed": [], "seq": 0}
         st.session_state["exception_seed"] = seeded
         st.session_state["exception_extra"] = list(stored["extra"])
         st.session_state["exception_removed"] = list(stored["removed"])
@@ -987,7 +1016,7 @@ def _briefing_page(frame: pd.DataFrame, stats: dict, records: list) -> None:
         "A live model runs only when you supply your own API key for this session. "
         "The key is not written to the repo. The checker rejects any CVE, hostname, or number that is not in the queue data."
     )
-    facts = build_facts(frame, stats, records, AS_OF.isoformat())
+    facts = build_facts(frame, stats, records, AS_OF.isoformat(), estate=_estate_label()[0])
     offline = render_offline(facts)
     offline_check = check_text(offline["markdown"], facts)
     writer = st.radio(
@@ -1039,6 +1068,7 @@ def _overview_page(frame: pd.DataFrame, stats: dict) -> None:
         return
     numbers = headline(frame, AS_OF)
     trend = risk_trend(frame, AS_OF)
+    _undated_open_caption(frame)
     left, right = st.columns(2)
     with left:
         st.markdown("**Open risk score**")
@@ -1055,7 +1085,9 @@ def _overview_page(frame: pd.DataFrame, stats: dict) -> None:
     st.markdown("**Overdue burn-down against the recent close rate**")
     st.caption(
         "Bars are the overdue stock. The dashed line holds that stock flat except for the last four weeks' "
-        "close rate, projected four weeks ahead. Findings that will become newly overdue are not in the line."
+        "close rate, projected four weeks ahead. Findings that will become newly overdue are not in the line. "
+        "The 7-day miss projection on the Remediation page uses the same close rate, so read the two as "
+        "alternative uses of one team's capacity, not as projections that add up."
     )
     burn = projected_burndown(numbers["overdue"], numbers["weekly_close_rate"], AS_OF)
     past = trend[["week_ending", "overdue"]].rename(columns={"overdue": "count"})
@@ -1105,7 +1137,10 @@ def _overview_page(frame: pd.DataFrame, stats: dict) -> None:
 
 def _export_bar(frame: pd.DataFrame, stats: dict, top: pd.DataFrame) -> None:
     st.markdown("**Take this with you**")
-    html_report = render_html_report(frame, stats, top if not top.empty else pd.DataFrame(), AS_OF)
+    estate_name, synthetic = _estate_label()
+    html_report = render_html_report(
+        frame, stats, top if not top.empty else pd.DataFrame(), AS_OF, estate=estate_name, synthetic=synthetic
+    )
     tickets = render_tickets(frame, AS_OF)
     csv_text = csv_download(frame)
     one, two, three = st.columns(3)
@@ -1379,6 +1414,10 @@ def main() -> None:
             "The clock starts on the earlier of KEV addition and first seen. "
             "Active exceptions pause breach counting."
         )
+
+    st.session_state["estate_label"] = (
+        ("Uploaded export", False) if mode == "Upload CSV" else ("Harborline Mutual lab", True)
+    )
 
     if mode == "Upload CSV" and upload is None:
         st.info(

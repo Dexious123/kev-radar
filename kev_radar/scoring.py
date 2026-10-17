@@ -85,7 +85,7 @@ def priority_score(
 
     if epss is None:
         components.append(
-            ScoreComponent("EPSS", 0.0, "FIRST EPSS score unavailable; counted as 0")
+            ScoreComponent("EPSS", 0.0, "EPSS score unavailable; counted as 0")
         )
         epss_points = 0.0
     else:
@@ -95,7 +95,7 @@ def priority_score(
             ScoreComponent(
                 "EPSS",
                 epss_points,
-                f"FIRST EPSS {probability:.1%} × {EPSS_WEIGHT:.0f}",
+                f"EPSS {probability:.1%} × {EPSS_WEIGHT:.0f}",
             )
         )
 

@@ -162,7 +162,7 @@ def render_offline(facts: dict) -> dict[str, str]:
         "",
         (
             f"{facts['open_findings']} findings are still open. "
-            f"{facts['overdue']} are past the {facts['directive']} deadline. "
+            f"{facts['overdue']} {'is' if facts['overdue'] == 1 else 'are'} past the {facts['directive']} deadline. "
             f"{facts['due_in_window']} are due within {facts['window_days']} days. "
             f"At {facts['weekly_close_rate']} closes a week over the last {facts['history_weeks']} weeks, "
             f"about {facts['projected_misses']} of those {facts['due_in_window']} are projected to miss."

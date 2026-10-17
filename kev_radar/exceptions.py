@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 from dataclasses import dataclass
 from datetime import date, timedelta
 from io import StringIO
@@ -20,6 +21,27 @@ import pandas as pd
 from kev_radar.metrics import is_open
 
 OPERATOR_REGISTER = Path(__file__).resolve().parents[1] / "data" / "operator" / "exceptions.json"
+OPERATOR_FILE_ENV = "KEV_RADAR_OPERATOR_FILE"
+MAX_IMPORT_ROWS = 500
+
+
+def operator_file_enabled(environ: dict | None = None) -> bool:
+    """Whether the register is read from and written to ``OPERATOR_REGISTER``.
+
+    Off by default. One server process serves every visitor, so a shared file
+    would let one anonymous visitor change the exceptions, and the dashboard
+    numbers, that every other visitor sees. Without the flag the register lives
+    in each visitor's own session. Set the flag only on a single-user install.
+    """
+    value = (environ if environ is not None else os.environ).get(OPERATOR_FILE_ENV, "")
+    return str(value).strip().lower() in {"1", "true", "yes"}
+
+
+def enforce_import_limit(records: list) -> tuple[list, list[str]]:
+    """Refuse an import larger than ``MAX_IMPORT_ROWS`` instead of loading part of it."""
+    if len(records) > MAX_IMPORT_ROWS:
+        return [], [f"That file has {len(records)} exceptions. The import limit is {MAX_IMPORT_ROWS}, so nothing was imported."]
+    return records, []
 
 _EXPORT_FIELDS = (
     "exception_id",

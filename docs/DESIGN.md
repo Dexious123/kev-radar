@@ -20,7 +20,7 @@ The app reads `data/snapshots/` first. `cached_bundle` and `cached_parse` are wr
 
 A CVE that is not in `vulnrichment.json` is fetched from `https://raw.githubusercontent.com/cisagov/vulnrichment/develop/{year}/{thousands}xxx/{cve}.json`, cached for a day. HTTP 404 is cached as "not published" and the row keeps the No / Total fallback, marked assumed. Any other error is not cached. The live pass stops at 40 CVEs per run. The bundled pool is fully enriched, so the default demo makes no Vulnrichment call.
 
-On this machine, October 16, 2026: snapshot load 0.02 s, CSV parse 0.85 s, prioritize 0.07 s for 1,230 findings. The parse result is cached, so changing pages does not parse the CSV again.
+Measured on a laptop on October 16, 2026: snapshot load 0.02 s, CSV parse 0.85 s, prioritize 0.07 s for 1,230 findings. The parse result is cached, so changing pages does not parse the CSV again.
 
 `.github/workflows/refresh-data.yml` runs `python scripts/refresh_snapshots.py --rotate` daily at 07:20 UTC and commits `data/snapshots` and `data/demo` when they change. `.github/workflows/tests.yml` runs ruff (`ruff==0.17.1`, rules E4/E7/E9/F/I, line length ignored) and pytest on push and pull request. The first scheduled refresh ran successfully on 2026-10-17.
 
@@ -50,7 +50,7 @@ kev_radar/present.py      Frames for the queue, scatter, and vendor chart
 scripts/refresh_snapshots.py
 data/snapshots/           kev.json, kev_previous.json, epss.json, vulnrichment.json, cve_pool.json, msrc_kb.json, metadata.json
 data/demo/tenable_findings.csv
-data/operator/            gitignored exceptions.json written by the app
+data/operator/            gitignored exceptions.json, written only when KEV_RADAR_OPERATOR_FILE=1
 tests/                    deadline, exposure, enrichment, scoring, CSV, metrics, exceptions, MSRC, briefings, diff, generator, overview, surface, what-if, report
 ```
 
@@ -89,7 +89,7 @@ Directive text: "& forensic triage" means remediate or mitigate within three day
 
 ### Missing SSVC
 
-Implementation-guidance FAQ: if Automatable is unpublished, treat it as No; if Technical Impact is unpublished, treat it as Total. The guidance states this for non-KEV CVEs. The app uses the same stand-in when a KEV CVE has no Vulnrichment row, and the decision path is marked `(assumed)`. The bundled pool is fully enriched, so the default demo shows zero assumed rows. An upload outside the snapshot is fetched live first. Only a 404, a failed call, or a record that still lacks the field falls through to the assumption.
+Implementation-guidance FAQ: if Automatable is unpublished, treat it as No; if Technical Impact is unpublished, treat it as Total. The guidance states this for non-KEV CVEs. The app uses the same stand-in when a KEV CVE has no Vulnrichment row, and the decision path is marked `(assumed)`. Nearly every CVE in the bundled pool has published SSVC values. The few that do not (for example a fresh KEV that Vulnrichment has not scored yet) show as assumed rows, and the header counts them. An upload outside the snapshot is fetched live first. Only a 404, a failed call, or a record that still lacks the field falls through to the assumption.
 
 ### Exposure
 
@@ -139,7 +139,7 @@ The 36-row CISA coordinator table (Exploitation, Automatable, Technical Impact, 
 
 The window is `as_of` and the six days before it (inclusive). `as_of` is `date.today()` in the app. A second list, `snapshot_only`, holds CVE IDs present in `kev.json` and absent from `kev_previous.json` that fall outside that window.
 
-The initial `kev_previous.json` is the catalog with entries added on or after 2026-10-10 removed, so the first diff matches the 7-day window. Later runs of the workflow pass `--rotate`, which copies the current `kev.json` onto `kev_previous.json` before the download. Do not rotate by hand if you still want the first-week story.
+The daily workflow passes `--rotate`, which copies the current `kev.json` onto `kev_previous.json` before the download, so `snapshot_only` is whatever CISA added since the previous run. When the catalog did not change between runs, the two files are identical and the list is empty. The 7-day window does not depend on the rotation; it reads `dateAdded`.
 
 `forensicTriage` missing or blank → status `not_in_feed`, label "Not in this feed". Any other unrecognized value → `unrecognized`. Ransomware is `knownRansomwareCampaignUse` equal to `Known`, case-insensitive. Estate hits are open or reopened findings only. The Monday note is Markdown from `render_monday_report`. There is no GitHub Issue and no RSS feed.
 
@@ -165,9 +165,9 @@ An exception records `exception_id`, host, CVE, owner, justification, compensati
 
 If two records cover the same host and CVE, the active one wins. Two active records keep the later expiry.
 
-The bundled demo seeds eight exceptions from the highest-scoring overdue findings (five active, three expired) with fictional approvers Morgan Ellis, Rita Okonkwo, and Helen Cho. Uploads start with an empty seed. Rows added, imported, or removed are stored in `st.session_state` and written to `data/operator/exceptions.json`. That directory is gitignored. The seed is rebuilt when the estate token changes. The operator file is reloaded, so an imported register survives a reload of the process only if the file is still on disk. Download offers the canonical CSV and JSON (`exception_id`, `host_name`, `cve`, `owner`, `justification`, `compensating_controls`, `expiry`, `approver`). Import also accepts the on-screen headers (`ID`, `Host`, `CVE`, …). Invalid rows are reported and skipped.
+The bundled demo seeds eight exceptions from the highest-scoring overdue findings (five active, three expired) with fictional approvers Morgan Ellis, Rita Okonkwo, and Helen Cho. Uploads start with an empty seed. Rows added, imported, or removed are stored in that visitor's `st.session_state` only. A shared file would let one anonymous visitor change the exceptions, and the dashboard numbers, that every other visitor of a public deployment sees, so writing `data/operator/exceptions.json` (gitignored) is opt-in: set `KEV_RADAR_OPERATOR_FILE=1` on a single-user install and the register is saved there and reloaded across restarts. An import over 500 rows is refused rather than partly loaded. Justification and compensating-control text is rendered as plain text, never as Markdown. The seed is rebuilt when the estate token changes. Download offers the canonical CSV and JSON (`exception_id`, `host_name`, `cve`, `owner`, `justification`, `compensating_controls`, `expiry`, `approver`). Import also accepts the on-screen headers (`ID`, `Host`, `CVE`, …). Invalid rows are reported and skipped.
 
-On the October 16, 2026 estate that seed pauses 5 findings, so overdue is 337, due-in-7-days stays 43, and the projection stays about 20 misses at 23.5 closes a week.
+On the October 16, 2026 estate (the screenshots) that seed paused 5 findings, so overdue is 337, due-in-7-days stays 43, and the projection stays about 20 misses at 23.5 closes a week.
 
 ### Windows KB mapper
 
@@ -201,7 +201,7 @@ Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The k
 - What-if for findings, CVEs, and a KB, without inflating the close rate.
 - HTML board packet, Markdown tickets, and CSV.
 - SLA labels, aging, average time to fix, SLO, burndown, and the 7-day breach forecast.
-- Exceptions register with import and export, and a gitignored operator file that survives a reload.
+- Exceptions register with import and export, private to each visitor's session, with an opt-in operator file for single-user installs.
 - Live Vulnrichment for CVEs outside the snapshot, with the cached fallback.
 - KEV-this-week table, ransomware and forensic-triage flags, and a Markdown download.
 - MSRC KB table and a read-only PowerShell audit.
@@ -222,8 +222,13 @@ Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The k
 - The KB snapshot covers Microsoft and Windows CVEs in the demo pool, not every CVE an upload might contain. CVEs MSRC does not publish stay as an empty patch list.
 - The PowerShell script checks the machine it runs on. It does not connect to the fictional hosts named in the comments.
 - Live briefings have not yet been tested against a real model. No key is stored in the repo.
-- The operator exceptions file is local to the machine running Streamlit. Community Cloud will not keep it across a new container. The CSV and JSON download are the portable copy.
+- On a public deployment the exceptions register lasts as long as the visitor's session. The CSV and JSON download are the portable copy.
 - The overdue projection does not model findings that will become newly overdue. The chart says so.
+- The overdue burn-down and the 7-day miss projection each spend the full recent close rate. They are alternative uses of the same capacity, not additive forecasts, and both captions say so.
+- The 7-day window is `[as_of, as_of + 7]` inclusive, which is eight deadline dates. It matches the "Due soon" status (7 days or fewer left) used everywhere else.
+- Open findings with no first-seen date (a Nessus-style export without that column) count in the cards but cannot be placed on the time charts. The charts say how many were left out.
+- Interpretation to re-check against the directive text: a finding first seen before CISA lists its CVE in KEV starts its clock at first seen, so on the day it is listed it can already be past a short KEV deadline. That follows "whichever event occurs first," but CISA may read a change of decision path as restarting the clock.
+- Uploads are parsed row by row. The upload limit is 10 MB (`.streamlit/config.toml`), which bounds parse time on a shared server.
 
 ## Next
 
@@ -234,3 +239,4 @@ Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The k
 ## History
 
 - **2026-10-16 — Live briefing key fallback removed (security fix).** Found in a read-through before the first deployment: the Briefing page fell back to a server-side key when the visitor left the field blank, while the API base URL was editable on the page. Deployed as the README instructed (key in Streamlit secrets), any visitor could have spent that key or sent it to their own server. Fixed as described under Briefings: visitor key only, endpoint from configuration only, https enforced before sending. Not exploitable before the fix in practice, because no key had been configured and the app had not been deployed. Verified: `ruff check .` clean; `python -m pytest -q` 97 passed on Python 3.12.12; the 5 new tests fail against the previous code.
+- **2026-10-17 — Pre-publication review.** An independent read of the whole app before it went public found one high-severity issue and thirteen smaller ones, all fixed here. High: every visitor shared one exceptions file, so an anonymous visitor could add a register entry (rendered as Markdown, links included) or remove the seeded ones, changing what every later visitor saw and the overdue and SLO numbers; the register is now per-session, the file is opt-in, imports are capped, and free text renders as plain text. Medium: no upload size limit (now 10 MB, and the parse cache is bounded); live Vulnrichment lookups past the first 40 CVEs of an upload never ran, because already-cached results counted toward the limit, so it now resumes with the next batch; undated findings silently missing from the time charts; README and design-note figures that no longer matched the refreshed snapshot. Low: a malformed CSV showed a traceback; a host named like a blocked cmdlet (`wusa`) made the PowerShell audit refuse itself; scanner EPSS in scientific notation (`9.7e-05`) was read about 1,000 times too high; a closed row with no fix date counted as an SLO miss; uploads were labeled as the fictional estate in exports; grammar and label fixes.

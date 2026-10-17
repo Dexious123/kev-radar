@@ -62,6 +62,16 @@ def test_html_report_contains_the_queue_and_the_directive():
     assert "Projection, not a prediction" in html
 
 
+def test_an_uploaded_export_is_not_labeled_synthetic():
+    top = _frame()
+    demo = render_html_report(_frame(), _stats(), top, AS_OF)
+    upload = render_html_report(_frame(), _stats(), top, AS_OF, estate="Uploaded export", synthetic=False)
+    assert "Synthetic estate." in demo
+    assert "Synthetic estate." not in upload
+    assert "Uploaded scanner export." in upload
+    assert "KEV Radar — Uploaded export" in upload
+
+
 def test_markdown_tickets_are_issue_shaped():
     text = render_tickets(_frame(), AS_OF)
     assert "## CVE-2024-1111 on pay.lab.invalid" in text

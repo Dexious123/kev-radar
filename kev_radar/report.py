@@ -37,6 +37,7 @@ def render_html_report(
     as_of: date,
     *,
     estate: str = "Harborline Mutual",
+    synthetic: bool = True,
 ) -> str:
     """A single HTML file a CISO can print to PDF from the browser."""
     forecast = stats["forecast"]
@@ -85,7 +86,7 @@ def render_html_report(
 <body>
 <p class="kicker">Board packet · remediation operations</p>
 <h1>KEV Radar — {_esc(estate)}</h1>
-<p class="meta">As of {_esc(as_of.isoformat())}. Synthetic estate. CVE identifiers and the vulnerability feeds are public. This packet is a status report, not a prediction.</p>
+<p class="meta">As of {_esc(as_of.isoformat())}. {"Synthetic estate." if synthetic else "Uploaded scanner export."} CVE identifiers and the vulnerability feeds are public. This packet is a status report, not a prediction.</p>
 <div class="cards">
   <div class="card"><span>Open findings</span><strong>{int(open_count)}</strong></div>
   <div class="card"><span>Overdue under BOD 26-04</span><strong>{int(stats.get("overdue", forecast.already_overdue))}</strong></div>

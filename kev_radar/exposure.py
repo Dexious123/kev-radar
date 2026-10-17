@@ -92,7 +92,7 @@ def finalize_exposure(
             True,
             "No exposure tag, public address, or network asset type. "
             "The export marks this software generally public-facing, so "
-            "BOD 26-04 step 3 treats the asset as public.",
+            "the implementation guidance's generally-public-facing rule treats the asset as public.",
             "public_facing_tag",
             False,
         )
@@ -121,7 +121,7 @@ def finalize_exposure(
     return ExposureResult(
         False,
         "No exposure tag, no public address, and asset type is not network. "
-        "BOD 26-04 step 3 (generally public-facing software) did not apply, "
+        "The implementation guidance's generally-public-facing rule did not apply, "
         "so the asset is internal.",
         "internal",
         False,

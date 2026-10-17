@@ -74,3 +74,16 @@ def test_monday_report_mentions_triage_gap():
     assert "forensicTriage: Not in this feed" in text
     assert "CVE-2026-1000" in text
     assert "Not in this estate" in text
+
+
+def test_monday_report_for_an_upload_is_not_called_synthetic():
+    report = kev_this_week([_entry()], None, {}, AS_OF)
+    text = render_monday_report(
+        catalog_version="2026.10.16",
+        as_of=AS_OF,
+        items=report["this_week"],
+        estate_name="Uploaded export",
+        synthetic=False,
+    )
+    assert "Estate: Uploaded export. Catalog" in text
+    assert "(synthetic)" not in text

@@ -122,7 +122,7 @@ def test_aging_buckets_and_mttr():
     )
     aging = aging_buckets(frame, AS_OF)
     counts = dict(zip(aging["bucket"], aging["findings"], strict=True))
-    assert counts == {"0–7 days": 1, "8–14 days": 1, "15–30 days": 1, "30+ days": 1}
+    assert counts == {"0–7 days": 1, "8–14 days": 1, "15–30 days": 1, "31+ days": 1}
     by_severity = mean_time_to_fix(frame, "severity")
     averages = dict(zip(by_severity["severity"], by_severity["average_days"], strict=True))
     assert averages["Critical"] == 10.0

@@ -144,3 +144,9 @@ def test_the_briefing_page_has_no_endpoint_field_and_no_server_key():
     source = (Path(__file__).resolve().parents[1] / "streamlit_app.py").read_text(encoding="utf-8")
     assert '"API base URL"' not in source
     assert 'settings["api_key"]' not in source
+
+
+def test_one_overdue_finding_reads_as_singular():
+    facts = _facts()
+    facts["overdue"] = 1
+    assert "1 is past the BOD 26-04 deadline" in render_offline(facts)["markdown"]

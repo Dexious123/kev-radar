@@ -18,7 +18,7 @@ BOD 22-01 is revoked. On June 10, 2026 CISA replaced it, and BOD 19-02, with BOD
 
 A catalog explorer stops at "this CVE is in KEV." A SOC lead still has to answer which host, which owner, which deadline, and whether last month's close rate will clear the ones due next week. KEV Radar is built for that second question. The estate is **Harborline Mutual**, a fictional lab: 300 hosts on `*.lab.invalid`, real CVE IDs, and no employer data.
 
-On the October 16, 2026 snapshot the lab has 1,230 host-and-CVE findings. 570 are still open. Five sit under an active exception, so the overdue count is 337. 43 are due in the next 7 days. At 23.5 closes a week, about 20 of those 43 are projected to miss. Average time to fix on closed findings is 12 days. SLO compliance sits near 20% because open historical KEVs are already past a clock that started when CISA added them. That is the backlog, not a rounding error.
+The screenshots show the October 16, 2026 snapshot. That day the lab had 1,230 host-and-CVE findings. 570 are still open. Five sit under an active exception, so the overdue count is 337. 43 are due in the next 7 days. At 23.5 closes a week, about 20 of those 43 are projected to miss. Average time to fix on closed findings is 12 days. SLO compliance sat near 20% because open historical KEVs are already past a clock that started when CISA added them. That is the backlog, not a rounding error. The data refreshes daily, so the live figures move from these.
 
 ## Architecture
 
@@ -57,7 +57,7 @@ The app reads `data/snapshots/` first. A fresh snapshot does not call the networ
 
 ![Patch preview for the top of the queue](docs/screenshots/what-if.png)
 
-**Remediation and the exceptions register.** Aging, time to fix, SLO, and the forecast. An exception needs an owner, a justification, compensating controls, an expiry, and an approver. An active exception pauses breach counting through the expiry date. Import and export the register as CSV or JSON. On this machine the operator file is `data/operator/exceptions.json`, and it is gitignored.
+**Remediation and the exceptions register.** Aging, time to fix, SLO, and the forecast. An exception needs an owner, a justification, compensating controls, an expiry, and an approver. An active exception pauses breach counting through the expiry date. Import and export the register as CSV or JSON. The register lives in your own browser session, so visitors to a shared deployment never see each other's entries. On a single-user install, set `KEV_RADAR_OPERATOR_FILE=1` to keep it in `data/operator/exceptions.json` (gitignored) across restarts.
 
 ![Remediation metrics](docs/screenshots/remediation.png)
 

@@ -84,12 +84,19 @@ def supplement_ssvc(
     *,
     fetch,
     limit: int = 40,
+    resolved: dict[str, dict] | None = None,
 ) -> tuple[dict[str, dict], dict]:
     """Fill SSVC gaps from ``fetch(cve) -> enrichment dict``.
 
     ``fetch`` should return a dict with ``found``. It may raise; a raise is
     recorded as a failure and the snapshot value (or the absence of one)
-    stays in place. At most ``limit`` live calls are made.
+    stays in place. At most ``limit`` new lookups are made per call.
+
+    ``resolved`` carries lookups from earlier calls (CVE -> record, or
+    ``{"found": False}`` for a 404) and is updated in place. Those CVEs are not
+    looked up again and do not count toward ``limit``, so a long upload is
+    enriched batch by batch instead of retrying the same first batch forever.
+    Failures are not stored, so they are retried.
     """
     merged = {str(key).upper(): value for key, value in (snapshot or {}).items()}
     report: dict[str, list[str]] = {
@@ -105,8 +112,16 @@ def supplement_ssvc(
         if not cve or cve in seen:
             continue
         seen.add(cve)
-        if cve not in merged:
+        if cve in merged:
+            continue
+        earlier = (resolved or {}).get(cve)
+        if earlier is None:
             missing.append(cve)
+        elif earlier.get("found"):
+            merged[cve] = earlier
+            report["fetched"].append(cve)
+        else:
+            report["not_published"].append(cve)
     calls = 0
     for cve in missing:
         if calls >= limit:
@@ -120,9 +135,13 @@ def supplement_ssvc(
             continue
         if not isinstance(record, dict) or not record.get("found"):
             report["not_published"].append(cve)
+            if resolved is not None:
+                resolved[cve] = {"found": False}
             continue
         merged[cve] = record
         report["fetched"].append(cve)
+        if resolved is not None:
+            resolved[cve] = record
     return merged, report
 
 

@@ -12,3 +12,5 @@ gatherUsageStats = false
 [server]
 headless = true
 fileWatcherType = "none"
+# Uploads are parsed row by row on a shared server; 10 MB is a large Tenable export.
+maxUploadSize = 10
