@@ -81,8 +81,10 @@ from kev_radar.present import (
     vendor_frame,
 )
 from kev_radar.prioritize import prioritize
+from kev_radar.radar import build_radar
 from kev_radar.report import render_html_report, render_tickets
 from kev_radar.simulate import cves_addressed_by_kb, select_open_keys, simulate
+from kev_radar.strips import render_strips
 from kev_radar.surface import exposure_heatmap, heatmap_matrix, host_findings, host_index
 
 AS_OF = date.today()
@@ -92,52 +94,160 @@ st.set_page_config(
     page_title="KEV Radar",
     page_icon="◈",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
 )
+
+# The scope palette. Every color is a signal: cyan is the system, amber is due within
+# 7 days, red is past due. Text contrast and colorblind separation are validated.
+SCOPE, BEZEL, GRATICULE = "#07161B", "#0E2229", "#1E3A42"
+SIGNAL, READOUT = "#E4F0F1", "#8AA5AB"
+CYAN, AMBER, RED = "#63D3E3", "#F2B33D", "#FF5B4E"
+HEAT = "#2C93A1"  # top of the heatmap scale, dark enough to keep white cell labels legible
 
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&display=swap');
-    html, body, [class*="css"] {font-family: "Source Sans 3", "Segoe UI", sans-serif;}
-    .block-container {padding-top: 1.05rem; padding-bottom: 2.4rem; max-width: 1180px;}
-    div[data-testid="stMetric"] {
-        background: linear-gradient(180deg, #182230 0%, #141c27 100%);
-        border: 1px solid #2c3d52;
-        border-top: 2px solid #e0a33a;
-        border-radius: 12px;
-        padding: 0.55rem 0.8rem 0.4rem 0.8rem;
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=Martian+Mono:wdth,wght@75..112.5,300..600&display=swap');
+    :root {
+        --scope: #07161B; --bezel: #0E2229; --graticule: #1E3A42;
+        --signal: #E4F0F1; --readout: #8AA5AB;
+        --cyan: #63D3E3; --amber: #F2B33D; --red: #FF5B4E;
+        --mono: 'Martian Mono', ui-monospace, Menlo, Consolas, monospace;
     }
-    div[data-testid="stMetricLabel"] {font-size: 0.86rem;}
-    .banner {
-        background: linear-gradient(135deg, #16202c 0%, #101820 70%);
-        border: 1px solid #2c4156;
-        border-radius: 14px;
-        padding: 0.95rem 1.1rem 0.8rem 1.1rem;
-        margin-bottom: 0.85rem;
+    .stApp {background: var(--scope);}
+    header[data-testid="stHeader"] {background: transparent;}
+    .block-container {padding-top: 2.2rem; padding-bottom: 3rem; max-width: 1260px;}
+    :focus-visible {outline: 2px solid var(--cyan) !important; outline-offset: 2px;}
+
+    /* Hero: a condensed title, one live sentence, and the radar. */
+    .hero {
+        display: grid; grid-template-columns: minmax(340px, 1fr) minmax(300px, 540px);
+        gap: 2.5rem; align-items: center; margin: 0 0 1.4rem 0;
     }
-    .kicker {
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: #e0a33a;
-        font-size: 0.72rem;
-        font-weight: 700;
-        margin: 0 0 0.25rem 0;
+    .hero .title {
+        font-stretch: 75%; font-weight: 640; font-size: clamp(3.4rem, 7.4vw, 5.6rem);
+        line-height: 0.9; letter-spacing: -0.01em; color: var(--signal); margin: 0 0 1.1rem 0;
     }
-    .banner h1 {font-size: 1.85rem; margin: 0 0 0.25rem 0; letter-spacing: -0.03em; font-weight: 700;}
-    .banner p {margin: 0.18rem 0; color: #c5d2e0;}
-    .path {
-        font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
-        font-size: 0.92rem;
-        line-height: 1.5;
-        background: #101820;
-        border-left: 3px solid #e0a33a;
-        padding: 0.75rem 0.9rem;
-        border-radius: 8px;
-        margin: 0.2rem 0 0.6rem 0;
+    .hero .now {font-size: 1.45rem; line-height: 1.36; font-weight: 500; color: var(--signal); max-width: 28ch; margin: 0 0 1rem 0;}
+    .nb {white-space: nowrap;}
+    .hero .source {font-size: 0.86rem; line-height: 1.6; color: var(--readout); max-width: 58ch; margin: 0;}
+    .scope {display: flex; flex-direction: column; align-items: center; gap: 0.7rem;}
+    svg.radar {width: 100%; max-width: 600px; height: auto;}
+    svg.radar text {font-family: 'Instrument Sans', -apple-system, sans-serif;}
+    svg.radar .ring {fill: none; stroke: var(--graticule); stroke-width: 1;}
+    svg.radar .spoke {stroke: var(--graticule); stroke-width: 1;}
+    svg.radar .band-label {
+        fill: var(--readout); font-size: 12px;
+        paint-order: stroke; stroke: var(--scope); stroke-width: 3.5px; stroke-linejoin: round;
     }
-    .note {color: #9fb0c2; font-size: 0.92rem;}
-    section[data-testid="stSidebar"] {border-right: 1px solid #243140;}
+    svg.radar .band-label, svg.radar .slice-label {pointer-events: none;}
+    svg.radar .slice-label {fill: var(--signal); font-size: 14.5px; font-weight: 500; dominant-baseline: middle;}
+    svg.radar .beam {stroke: var(--cyan); stroke-width: 1.4; stroke-linecap: round;}
+    svg.radar .sweep {transform-box: view-box; transform-origin: 50% 50%;}
+    svg.radar .dot {opacity: 0.9;}
+    svg.radar .dot.past {fill: var(--red);}
+    svg.radar .dot.near {fill: var(--amber);}
+    svg.radar .dot.soon, svg.radar .dot.far {fill: var(--cyan);}
+    svg.radar .core {fill: var(--signal);}
+    @media (prefers-reduced-motion: no-preference) {
+        svg.radar .sweep {animation: kr-sweep 8s linear infinite;}
+        svg.radar .dot {animation: kr-dot 8s linear infinite;}
+    }
+    @keyframes kr-sweep {to {transform: rotate(360deg);}}
+    @keyframes kr-dot {0% {opacity: 1;} 45% {opacity: 0.38;} 100% {opacity: 0.38;}}
+    .key {display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem 1.2rem; font-size: 0.82rem; color: var(--readout);}
+    .key span {display: inline-flex; align-items: center; gap: 0.45rem;}
+    .key i {width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: var(--cyan);}
+    .key .past i {background: var(--red);}
+    .key .near i {background: var(--amber);}
+    .key b {color: var(--signal); font-weight: 600;}
+    .scope .how {font-size: 0.78rem; color: var(--readout); text-align: center; max-width: 46ch; margin: 0;}
+    @media (max-width: 960px) {.hero {grid-template-columns: 1fr; gap: 1.6rem;}}
+
+    /* Readouts: one instrument band divided by hairlines. */
+    .st-key-readouts {border-top: 1px solid var(--graticule); border-bottom: 1px solid var(--graticule); padding: 0.15rem 0;}
+    .st-key-readouts [data-testid="stHorizontalBlock"] {gap: 0;}
+    .st-key-readouts [data-testid="stColumn"] {padding: 0.75rem 1.15rem;}
+    .st-key-readouts [data-testid="stColumn"] + [data-testid="stColumn"] {border-left: 1px solid var(--graticule);}
+    .st-key-readouts div[data-testid="stMetric"] {background: none; border: 0; padding: 0;}
+    [data-testid="stMetricLabel"] {color: var(--readout);}
+    [data-testid="stMetricLabel"] p {font-size: 0.85rem;}
+    [data-testid="stMetricValue"] {font-weight: 600; letter-spacing: -0.01em;}
+    div[class*="st-key-kpi-alert"] [data-testid="stMetricValue"] {color: var(--red);}
+    div[class*="st-key-kpi-alert"] [data-testid="stMetricLabel"] p::before {
+        content: "error"; font-family: "Material Symbols Rounded"; font-size: 1.05em;
+        color: var(--red); vertical-align: -0.18em; margin-right: 0.3rem; font-variation-settings: "FILL" 1;
+    }
+
+    /* Text */
+    h2, h3 {font-stretch: 85%;}
+    .note, [data-testid="stCaptionContainer"] {color: var(--readout) !important;}
+
+    /* The decision path is a sequence, so it reads as steps; the outcome is the filled one. */
+    .path {display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.45rem; margin: 0.4rem 0 0.9rem 0;}
+    .path .step {
+        font-family: var(--mono); font-size: 0.76rem; color: var(--signal);
+        padding: 0.32rem 0.6rem; border: 1px solid var(--graticule); border-radius: 6px;
+    }
+    .path .step em {font-style: normal; color: var(--readout);}
+    .path .outcome {background: var(--signal); color: var(--scope); border-color: var(--signal); font-weight: 600;}
+    .path .arrow {color: var(--readout);}
+
+    /* Flight strips: the top of the queue, in the order to work it. */
+    ol.strips {list-style: none; margin: 0.5rem 0 1.2rem 0; padding: 0; display: grid; gap: 6px;}
+    ol.strips .strip {
+        display: grid; grid-template-columns: minmax(270px, 1.35fr) minmax(130px, 0.85fr) minmax(130px, 0.8fr) minmax(0, 1.8fr);
+        gap: 1.1rem; align-items: center; padding: 0.7rem 1.1rem;
+        background: var(--bezel); border: 1px solid var(--graticule); border-left: 4px solid var(--cyan); border-radius: 4px;
+    }
+    ol.strips .strip.past {border-left-color: var(--red);}
+    ol.strips .strip.near {border-left-color: var(--amber);}
+    ol.strips .strip span {display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; font-size: 0.9rem; color: var(--signal);}
+    ol.strips .strip small {font-size: 0.78rem; color: var(--readout);}
+    ol.strips .strip .s-id {font-family: var(--mono); font-size: 0.74rem; color: var(--readout); white-space: nowrap;}
+    ol.strips .strip .s-id b, ol.strips .strip .s-id {overflow: hidden; text-overflow: ellipsis;}
+    ol.strips .strip .s-id b {font-weight: 500; font-size: 0.8rem; color: var(--signal);}
+    ol.strips .strip .s-why {font-size: 0.85rem; color: var(--readout);}
+    @media (max-width: 640px) {
+        .st-key-readouts [data-testid="stHorizontalBlock"] {flex-wrap: wrap;}
+        .st-key-readouts [data-testid="stColumn"] {
+            flex: 1 1 50% !important; width: 50% !important; min-width: 50% !important;
+            border-left: 0 !important; padding: 0.7rem 0.6rem;
+        }
+        .st-key-readouts [data-testid="stColumn"]:nth-child(even) {border-left: 1px solid var(--graticule) !important; padding-left: 1rem;}
+    }
+    @media (max-width: 760px) {
+        ol.strips .strip {grid-template-columns: 1fr 1fr;}
+        ol.strips .strip .s-id {grid-column: 1 / -1;}
+        ol.strips .strip .s-why {grid-column: 1 / -1;}
+    }
+
+    /* Sidebar: a quiet source list; the current page carries a cyan edge. */
+    section[data-testid="stSidebar"] h2 {font-size: 0.86rem; font-weight: 600; color: var(--readout); margin-top: 0.9rem;}
+    .st-key-page, .st-key-source, .st-key-page > div, .st-key-source > div {width: 100%;}
+    .st-key-page [role="radiogroup"], .st-key-source [role="radiogroup"] {gap: 1px; width: 100%;}
+    .st-key-page [role="radiogroup"] > div, .st-key-source [role="radiogroup"] > div {align-self: stretch; width: 100%;}
+    .st-key-page [data-testid="stRadioOption"], .st-key-source [data-testid="stRadioOption"] {
+        display: flex; width: 100%; align-self: stretch; margin: 0; padding: 0.42rem 0.75rem; border-radius: 6px;
+    }
+    .st-key-page [data-testid="stRadioOption"] > div > div:first-child,
+    .st-key-source [data-testid="stRadioOption"] > div > div:first-child {display: none;}
+    .st-key-page [data-testid="stRadioOption"]:hover,
+    .st-key-source [data-testid="stRadioOption"]:hover {background: rgba(228, 240, 241, 0.05);}
+    .st-key-page [data-testid="stRadioOption"][data-selected="true"],
+    .st-key-source [data-testid="stRadioOption"][data-selected="true"] {
+        background: rgba(99, 211, 227, 0.08); box-shadow: inset 2px 0 0 var(--cyan);
+    }
+    .st-key-page [data-testid="stRadioOption"][data-selected="true"] p,
+    .st-key-source [data-testid="stRadioOption"][data-selected="true"] p {color: var(--signal); font-weight: 600;}
+    .st-key-page [data-testid="stRadioOption"] p, .st-key-source [data-testid="stRadioOption"] p {font-size: 0.93rem;}
+
+    /* Charts and tables sit on the bezel. */
+    div[data-testid="stPlotlyChart"] {
+        background: var(--bezel); border: 1px solid var(--graticule); border-radius: 10px; padding: 0.4rem 0.3rem; overflow: hidden;
+    }
+    div[data-testid="stDataFrame"] {border-radius: 10px; overflow: hidden;}
+    div[data-testid="stAlert"] {border-radius: 8px;}
     </style>
     """,
     unsafe_allow_html=True,
@@ -215,12 +325,26 @@ def _style(fig):
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        font_color="#e7eef6",
-        margin=dict(l=8, r=8, t=36, b=8),
-        legend=dict(bgcolor="rgba(0,0,0,0)"),
+        font=dict(family="'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif", color=READOUT, size=12),
+        colorway=[CYAN],
+        margin=dict(l=8, r=20, t=24, b=8),
+        legend=dict(
+            bgcolor="rgba(0,0,0,0)",
+            font=dict(color=SIGNAL),
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            x=0,
+            title_text="",
+        ),
+        hoverlabel=dict(bgcolor=BEZEL, bordercolor=GRATICULE, font=dict(color=SIGNAL)),
+        bargap=0.28,
     )
-    fig.update_xaxes(gridcolor="#243140", zerolinecolor="#243140")
-    fig.update_yaxes(gridcolor="#243140", zerolinecolor="#243140")
+    grid = dict(gridcolor=GRATICULE, zerolinecolor=GRATICULE, linecolor=GRATICULE)
+    fig.update_xaxes(**grid)
+    fig.update_yaxes(**grid)
+    fig.update_traces(marker_cornerradius=4, selector=dict(type="bar"))
+    fig.update_traces(line_width=2, marker_size=8, selector=dict(type="scatter", mode="lines+markers"))
     return fig
 
 
@@ -370,49 +494,115 @@ def _metrics(frame: pd.DataFrame) -> dict:
     }
 
 
+def _path_html(path: object) -> str:
+    """A decision path as steps. The last step is the outcome; assumed values are marked."""
+    steps = [html.escape(step.strip()) for step in str(path or "").split("→") if step.strip()]
+    if not steps:
+        return ""
+    steps = [step.replace("(assumed)", "<em>(assumed)</em>") for step in steps]
+    chips = [f'<span class="step">{step}</span>' for step in steps[:-1]]
+    chips.append(f'<span class="step outcome">{steps[-1]}</span>')
+    return '<div class="path">' + '<span class="arrow">→</span>'.join(chips) + "</div>"
+
+
+def _plural(count: int, one: str, many: str) -> str:
+    return f"{count:,} {one if count == 1 else many}"
+
+
+def _hero_html(*, source: str, stats: dict | None = None, radar=None) -> str:
+    """Title, one live sentence about the filtered estate, where the data comes from, and the radar."""
+    if stats is None:
+        now = ""
+    elif not stats["open"]:
+        now = "No open findings in this filter."
+    elif stats["overdue"]:
+        verb = "is" if stats["overdue"] == 1 else "are"
+        now = (
+            f"{_plural(stats['overdue'], 'finding', 'findings')} {verb} past the BOD 26-04 deadline, "
+            f"and {stats['due_soon']:,} more {'is' if stats['due_soon'] == 1 else 'are'} due within 7 days."
+        )
+    else:
+        now = f"Nothing is past its BOD 26-04 deadline. {_plural(stats['due_soon'], 'finding is', 'findings are')} due within 7 days."
+    scope = ""
+    if radar is not None:
+        counts = radar.counts
+        later = counts["soon"] + counts["far"]
+        scope = (
+            '<div class="scope">'
+            + radar.svg
+            + '<div class="key">'
+            + f'<span class="past"><i></i>Past due <b>{counts["past"]:,}</b></span>'
+            + f'<span class="near"><i></i>Within 7 days <b>{counts["near"]:,}</b></span>'
+            + f'<span class="later"><i></i>Later <b>{later:,}</b></span>'
+            + "</div>"
+            + '<p class="how">Each dot is an open finding. Closer to the center means less time left; '
+            + "each slice is a business unit. Hover a dot for the CVE, host, and owner.</p>"
+            + "</div>"
+        )
+    now_html = (
+        '<p class="now">' + html.escape(now).replace("BOD 26-04", '<span class="nb">BOD 26-04</span>') + "</p>"
+        if now
+        else ""
+    )
+    return (
+        '<div class="hero"><div class="hero-copy"><p class="title" role="heading" aria-level="1">KEV Radar</p>'
+        + now_html
+        + f'<p class="source">{html.escape(source)}</p></div>'
+        + scope
+        + "</div>"
+    )
+
+
+def _kpi(column, label: str, value: str, help: str, *, alert: bool = False) -> None:
+    """One KPI card. ``alert`` turns the figure red; every other card stays neutral."""
+    tone = "alert" if alert else "plain"
+    column.container(key=f"kpi-{tone}-{label.lower().replace(' ', '-')}").metric(label, value, help=help)
+
+
 def _show_metrics(stats: dict) -> None:
+    with st.container(key="readouts"):
+        _readouts(stats)
+
+
+def _readouts(stats: dict) -> None:
     forecast = stats["forecast"]
     top = st.columns(4)
     bottom = st.columns(4)
-    top[0].metric(
-        "Open findings",
-        f"{stats['open']:,}",
+    slo_percent = stats["slo"]["percent"]
+    expired = stats.get("expired_exceptions", 0)
+    _kpi(
+        top[0], "Open findings", f"{stats['open']:,}",
         help="Host and CVE pairs still open or reopened in this filter.",
     )
-    top[1].metric(
-        "Overdue",
-        f"{stats['overdue']:,}",
+    _kpi(
+        top[1], "Overdue", f"{stats['overdue']:,}",
         help="Open findings past the BOD 26-04 deadline. Active exceptions are excluded. The due date itself is still on time.",
+        alert=stats["overdue"] > 0,
     )
-    top[2].metric(
-        "Due in 7 days",
-        f"{stats['due_soon']:,}",
+    _kpi(
+        top[2], "Due in 7 days", f"{stats['due_soon']:,}",
         help="Open findings whose deadline falls in the next 7 days, not counting rows already overdue or paused.",
     )
-    top[3].metric(
-        "Under exception",
-        f"{stats.get('active_exceptions', 0):,}",
+    _kpi(
+        top[3], "Under exception", f"{stats.get('active_exceptions', 0):,}",
         help="Open findings with an active risk acceptance. The SLA clock is paused through the expiry date.",
     )
-    bottom[0].metric(
-        "Projected SLA misses",
-        f"{forecast.projected_misses:,}",
-        help="A rate sketch: findings due in 7 days minus the closes expected from the last 4 weeks. Not a prediction.",
+    _kpi(
+        bottom[0], "Projected misses", f"{forecast.projected_misses:,}",
+        help="Findings projected to miss their SLA in the next 7 days: those due minus the closes expected from the last 4 weeks. A rate sketch, not a prediction.",
     )
-    bottom[1].metric(
-        "SLO compliance",
-        f"{stats['slo']['percent']:.0f}%",
+    _kpi(
+        bottom[1], "SLO compliance", f"{slo_percent:.0f}%",
         help="Share of findings that have a day-count deadline and were fixed on time, or are still open and not yet due. Fix-on-upgrade and paused rows are excluded.",
+        alert=slo_percent < 50,
     )
     mttr = "—" if stats["mttr"] is None else f"{stats['mttr']:.0f}d"
-    bottom[2].metric(
-        "Avg time to fix",
-        mttr,
+    _kpi(
+        bottom[2], "Avg time to fix", mttr,
         help="Mean days from first seen to last fixed, on closed findings. This is repair time, not the BOD clock.",
     )
-    bottom[3].metric(
-        "Expired exceptions",
-        f"{stats.get('expired_exceptions', 0):,}",
+    _kpi(
+        bottom[3], "Expired exceptions", f"{expired:,}",
         help="Open findings whose risk acceptance has lapsed. They count toward breaches again.",
     )
 
@@ -422,7 +612,7 @@ def _detail(row: pd.Series, classic: bool) -> None:
     st.subheader(title)
     st.caption(str(row.get("vuln_name") or ""))
     path = row["ssvc_path"] if classic else row["decision_path"]
-    st.markdown(f'<div class="path">{html.escape(str(path))}</div>', unsafe_allow_html=True)
+    st.markdown(_path_html(path), unsafe_allow_html=True)
     if classic:
         st.markdown(
             '<p class="note">Classic CISA SSVC (Track / Track* / Attend / Act) is a second view. '
@@ -539,19 +729,19 @@ def _remediation_page(frame: pd.DataFrame, records: list) -> None:
     left, right = st.columns(2)
     with left:
         st.markdown("**Aging of open findings**")
-        fig = px.bar(aging, x="bucket", y="findings", color_discrete_sequence=["#e8a838"])
+        fig = px.bar(aging, x="bucket", y="findings", color_discrete_sequence=[CYAN])
         fig.update_layout(showlegend=False, xaxis_title="", yaxis_title="Open findings")
         st.plotly_chart(_style(fig), width="stretch")
     with right:
         st.markdown("**Open findings, week by week**")
-        fig = px.line(burn, x="week_ending", y="open_findings", markers=True, color_discrete_sequence=["#7eb6d9"])
+        fig = px.line(burn, x="week_ending", y="open_findings", markers=True, color_discrete_sequence=[CYAN])
         fig.update_layout(xaxis_title="", yaxis_title="Still open")
         st.plotly_chart(_style(fig), width="stretch")
     st.markdown("**Open findings by BOD 26-04 outcome**")
     if mix.empty:
         st.info("No open findings in this filter.")
     else:
-        fig = px.bar(mix, x="findings", y="outcome", orientation="h", color_discrete_sequence=["#e08a4f"])
+        fig = px.bar(mix, x="findings", y="outcome", orientation="h", color_discrete_sequence=[CYAN])
         fig.update_layout(yaxis_title="", xaxis_title="Open findings", yaxis={"categoryorder": "total ascending"})
         st.plotly_chart(_style(fig), width="stretch")
     st.markdown("**Average time to fix**")
@@ -792,13 +982,14 @@ def _signals_page(frame: pd.DataFrame, catalog: dict) -> None:
                 points,
                 x="cvss",
                 y="epss_percent",
-                color="kev",
+                symbol="kev",
+                symbol_map={"In KEV": "circle", "Not in KEV": "circle-open"},
                 size="hosts",
                 hover_name="cve",
                 hover_data={"name": True, "hosts": True, "epss_percent": ":.1f"},
-                color_discrete_map={"In KEV": "#e8a838", "Not in KEV": "#7eb6d9"},
+                color_discrete_sequence=[CYAN],
             )
-            fig.update_layout(xaxis_title="CVSS base", yaxis_title="EPSS %", xaxis_range=[0, 10])
+            fig.update_layout(xaxis_title="CVSS base", yaxis_title="EPSS %", xaxis_range=[-0.3, 10.6])
             st.plotly_chart(_style(fig), width="stretch")
     with right:
         st.markdown("**Open KEV findings by vendor**")
@@ -806,12 +997,12 @@ def _signals_page(frame: pd.DataFrame, catalog: dict) -> None:
         if vendors.empty:
             st.info("No open KEV findings in this filter.")
         else:
-            fig = px.bar(vendors, x="findings", y="vendor", orientation="h", color_discrete_sequence=["#e8a838"])
+            fig = px.bar(vendors, x="findings", y="vendor", orientation="h", color_discrete_sequence=[CYAN])
             fig.update_layout(yaxis_title="", xaxis_title="Open findings", yaxis={"categoryorder": "total ascending"})
             st.plotly_chart(_style(fig), width="stretch")
     st.markdown("**KEV catalog additions**")
     additions = kev_additions_by_month(catalog.get("vulnerabilities", []))
-    fig = px.bar(additions, x="month", y="additions", color_discrete_sequence=["#7eb6d9"])
+    fig = px.bar(additions, x="month", y="additions", color_discrete_sequence=[CYAN])
     fig.update_layout(xaxis_title="", yaxis_title="CVEs added")
     st.plotly_chart(_style(fig), width="stretch")
     with st.expander("How a score is built"):
@@ -1060,7 +1251,7 @@ def _briefing_page(frame: pd.DataFrame, stats: dict, records: list) -> None:
 def _overview_page(frame: pd.DataFrame, stats: dict) -> None:
     st.subheader("Executive overview")
     st.caption(
-        "The cards above are this filter. The charts are the last eight weeks of the same rows. "
+        "The readouts above are this filter. The charts are the last eight weeks of the same rows. "
         "Earlier weeks do not replay exceptions; the latest overdue point does, so it matches the card."
     )
     if frame.empty:
@@ -1073,13 +1264,14 @@ def _overview_page(frame: pd.DataFrame, stats: dict) -> None:
     with left:
         st.markdown("**Open risk score**")
         st.caption("Sum of priority scores on findings that were still open at each week ending.")
-        fig = px.line(trend, x="week_ending", y="risk_score", markers=True, color_discrete_sequence=["#e0a33a"])
+        fig = px.line(trend, x="week_ending", y="risk_score", markers=True, color_discrete_sequence=[CYAN])
         fig.update_layout(height=220, xaxis_title="", yaxis_title="Risk score")
         st.plotly_chart(_style(fig), width="stretch")
     with right:
         st.markdown("**Overdue findings**")
         st.caption("Open and past the BOD deadline. The last point excludes today's active exceptions.")
-        fig = px.area(trend, x="week_ending", y="overdue", color_discrete_sequence=["#d26a4a"])
+        fig = px.area(trend, x="week_ending", y="overdue", color_discrete_sequence=[RED])
+        fig.update_traces(fillcolor="rgba(255, 91, 78, 0.20)", line_width=2)
         fig.update_layout(height=220, xaxis_title="", yaxis_title="Overdue")
         st.plotly_chart(_style(fig), width="stretch")
     st.markdown("**Overdue burn-down against the recent close rate**")
@@ -1099,14 +1291,14 @@ def _overview_page(frame: pd.DataFrame, stats: dict) -> None:
         x=past["week_ending"],
         y=past["count"],
         name="Overdue",
-        marker_color="#7eb6d9",
+        marker_color=CYAN,
     )
     fig.add_scatter(
         x=future["week_ending"],
         y=future["count"],
         name="If the close rate holds",
         mode="lines+markers",
-        line={"color": "#e0a33a", "dash": "dash"},
+        line={"color": SIGNAL, "dash": "dash"},
     )
     fig.update_layout(height=300, xaxis_title="", yaxis_title="Findings", legend_title="", barmode="overlay")
     st.plotly_chart(_style(fig), width="stretch")
@@ -1116,22 +1308,7 @@ def _overview_page(frame: pd.DataFrame, stats: dict) -> None:
     if top.empty:
         st.info("Nothing open is waiting on a patch in this filter.")
     else:
-        shown = top.rename(
-            columns={
-                "host_name": "Host",
-                "cve": "CVE",
-                "owner": "Owner",
-                "business_unit": "Business unit",
-                "score": "Score",
-                "sla_status": "SLA",
-                "reason": "Why this week",
-            }
-        )
-        st.dataframe(
-            shown[["CVE", "Host", "Owner", "Business unit", "SLA", "Score", "Why this week"]],
-            hide_index=True,
-            width="stretch",
-        )
+        st.markdown(render_strips(top, AS_OF), unsafe_allow_html=True)
     _export_bar(frame, stats, top)
 
 
@@ -1188,7 +1365,8 @@ def _surface_page(frame: pd.DataFrame) -> None:
                 y=units,
                 text=text,
                 texttemplate="%{text}",
-                colorscale=[[0.0, "#1a2733"], [0.45, "#c47b2b"], [1.0, "#f0c14a"]],
+                textfont={"color": "#F5F5F7", "size": 13},
+                colorscale=[[0.0, BEZEL], [1.0, HEAT]],
                 colorbar={"title": "Mean EPSS"},
                 hovertemplate="%{y}<br>%{x}<br>mean EPSS %{z:.2f}<br>open %{text}<extra></extra>",
             )
@@ -1229,7 +1407,7 @@ def _surface_page(frame: pd.DataFrame) -> None:
     path_labels = [f"{row.cve} · {row.state} · {row.sla_status}" for row in detail.itertuples(index=False)]
     pick = st.selectbox("Decision path", path_labels)
     row = detail.iloc[path_labels.index(pick)]
-    st.markdown(f'<div class="path">{html.escape(str(row["decision_path"]))}</div>', unsafe_allow_html=True)
+    st.markdown(_path_html(row["decision_path"]), unsafe_allow_html=True)
     st.caption(str(row.get("clock_reason") or ""))
     if row.get("assumption_notes"):
         st.caption(str(row["assumption_notes"]))
@@ -1362,19 +1540,12 @@ def main() -> None:
     meta = bundle.get("metadata") or {}
     version = str(catalog.get("catalogVersion") or meta.get("kev_catalog_version") or "")
 
-    st.markdown(
-        f"""
-        <div class="banner">
-          <p class="kicker">Remediation operations · BOD 26-04</p>
-          <h1>KEV Radar</h1>
-          <p>What is due, who owns it, and whether the fix will miss its SLA.
-          Harborline Mutual is a fictional estate. CVE IDs and the feeds are public.
-          No scanner login, no employer data.</p>
-          <p class="note">KEV source: {html.escape(feed_label)}.
-          EPSS date {html.escape(str(bundle.get('epss_date') or 'snapshot'))}.
-          Vulnrichment rows in the snapshot: {meta.get('vulnrichment_count', '—')}.</p>
-        </div>
-        """,
+    epss_date = str(bundle.get("epss_date") or "snapshot")
+    records_count = meta.get("vulnrichment_count", "—")
+    sources = f"the KEV catalog ({feed_label}), EPSS scores from {epss_date}, and {records_count} Vulnrichment records"
+    hero = st.empty()
+    hero.markdown(
+        _hero_html(source=f"Remediation deadlines under CISA BOD 26-04, scored against {sources}."),
         unsafe_allow_html=True,
     )
 
@@ -1387,12 +1558,14 @@ def main() -> None:
             requested = "Overview"
         if "page" not in st.session_state:
             st.session_state["page"] = requested
-        page = st.radio("Page", PAGES, key="page")
+        page = st.radio("Page", PAGES, key="page", width="stretch")
         st.query_params["page"] = page
         mode = st.radio(
             "Source",
             ["Bundled demo", "Upload CSV", "Regenerate"],
             label_visibility="collapsed",
+            key="source",
+            width="stretch",
         )
         upload = None
         seed = DEMO_SEED
@@ -1489,6 +1662,13 @@ def main() -> None:
         in set(finding_key(host, cve) for host, cve in zip(scoped["host_name"], scoped["cve"], strict=False))
     ] if not scoped.empty else []
     stats = _metrics(scoped)
+    estate_name, synthetic = _estate_label()
+    source = (
+        f"Harborline Mutual is a fictional estate built on real CVE IDs and public feeds: {sources}."
+        if synthetic
+        else f"Your uploaded export, scored against {sources}."
+    )
+    hero.markdown(_hero_html(source=source, stats=stats, radar=build_radar(scoped, AS_OF)), unsafe_allow_html=True)
     _show_metrics(stats)
     assumed = 0
     exposure_assumed = 0

@@ -10,7 +10,7 @@ KEV Radar is a remediation-ops console. It answers what is due under [CISA BOD 2
 
 That first question got harder in June 2026, when BOD 26-04 replaced BOD 22-01. A KEV due date is no longer the deadline. Each finding gets its own clock, set by the asset as well as the CVE, so the same CVE can be due in 3 days on an internet-facing host and in 60 on an internal one. KEV Radar works out that deadline for every host and CVE, then tracks it against the team's actual close rate. It runs on a fictional estate, so anyone can open it with no login and no scanner account.
 
-![Executive overview: overdue burn-down, risk trend, and the ten findings to fix this week](docs/screenshots/overview.png)
+![The deadline radar above the readouts: every open finding placed by time left and business unit](docs/screenshots/overview.png)
 
 ## Why this matters
 
@@ -18,7 +18,7 @@ BOD 22-01 is revoked. On June 10, 2026 CISA replaced it, and BOD 19-02, with BOD
 
 A catalog explorer stops at "this CVE is in KEV." A SOC lead still has to answer which host, which owner, which deadline, and whether last month's close rate will clear the ones due next week. KEV Radar is built for that second question. The estate is **Harborline Mutual**, a fictional lab: 300 hosts on `*.lab.invalid`, real CVE IDs, and no employer data.
 
-The screenshots show the October 16, 2026 snapshot. That day the lab had 1,230 host-and-CVE findings. 570 are still open. Five sit under an active exception, so the overdue count is 337. 43 are due in the next 7 days. At 23.5 closes a week, about 20 of those 43 are projected to miss. Average time to fix on closed findings is 12 days. SLO compliance sat near 20% because open historical KEVs are already past a clock that started when CISA added them. That is the backlog, not a rounding error. The data refreshes daily, so the live figures move from these.
+The screenshots show the October 17, 2026 data. That day the lab had 1,230 host-and-CVE findings. 571 are still open. Five sit under an active exception, so the overdue count is 352. 29 are due in the next 7 days. At 22.5 closes a week, about 6 of those 29 are projected to miss. Average time to fix on closed findings is 12 days. SLO compliance sat near 18% because open historical KEVs are already past a clock that started when CISA added them. That is the backlog, not a rounding error. The data refreshes daily, so the live figures move from these.
 
 ## Architecture
 
@@ -43,7 +43,9 @@ The app reads `data/snapshots/` first. A fresh snapshot does not call the networ
 
 ## Feature tour
 
-**Executive overview.** Headline KPIs, an eight-week risk trend, a burn-down of overdue findings against the recent close rate, and a top-10 list with a one-line reason for each.
+**Deadline radar.** Every open finding is a dot. Distance from the center is the time left before its BOD 26-04 deadline: past due in the middle, then due within 7 days, within 30 days, and later. Each slice is a business unit. The sweep brightens each dot as it passes, and hovering a dot names the CVE, host, and owner. It follows the sidebar filters.
+
+**Executive overview.** Readouts for the filter, an eight-week risk trend, a burn-down of overdue findings against the recent close rate, and the ten findings to fix this week as strips: owner, deadline, and why each one made the list.
 
 **Fix queue.** Every open finding carries the BOD 26-04 decision path and the deadline that path produces. The priority score sorts the queue. It does not replace the deadline.
 
