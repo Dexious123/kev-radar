@@ -2,6 +2,9 @@
 
 [![Tests](https://github.com/Dexious123/kev-radar/actions/workflows/tests.yml/badge.svg)](https://github.com/Dexious123/kev-radar/actions/workflows/tests.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)](runtime.txt)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+Built by **Juan Martinez**.
 
 KEV Radar is a remediation-ops console. It answers what is due under [CISA BOD 26-04](https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk), who owns it, whether the team will miss the SLA, and which Windows KB would fix a Microsoft CVE.
 
@@ -116,7 +119,7 @@ When the path says "3 days + forensic triage," the requirement is the directive'
 
 The 7-day breach line is a projection. It is findings due in the next week, minus the closes expected from the last four weeks. Already-overdue findings and active exceptions are outside that sentence.
 
-Assumptions, the operator register, and the snapshot layout are written down in [HANDOFF.md](HANDOFF.md).
+Assumptions, the operator register, and the snapshot layout are written down in the [design notes](docs/DESIGN.md).
 
 ## Run it locally
 
@@ -171,3 +174,7 @@ A live briefing uses only the key a visitor pastes on the Briefing page, for tha
 ## Not in this version
 
 The Monday note is a Markdown download, not a GitHub Issue or an RSS feed. The fact checker tests that a CVE, hostname, or number appears in the input. It does not prove the sentence used that number for the right claim. The PowerShell audit checks the machine it runs on. It does not connect to the fictional hosts named in the comments.
+
+## License
+
+MIT. Copyright (c) 2026 Juan Martinez. See [LICENSE](LICENSE).
