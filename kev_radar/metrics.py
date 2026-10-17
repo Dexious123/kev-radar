@@ -177,7 +177,7 @@ def _aging_bucket(days_open: int) -> str:
 
 
 def aging_buckets(findings: pd.DataFrame, as_of: date) -> pd.DataFrame:
-    """Open-finding age from first seen, in the four portfolio buckets."""
+    """Open-finding age from first seen, in four aging buckets."""
     counts = {label: 0 for label in AGING_LABELS}
     if findings.empty:
         return pd.DataFrame({"bucket": list(counts), "findings": list(counts.values())})

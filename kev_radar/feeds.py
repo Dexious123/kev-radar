@@ -99,7 +99,7 @@ def fetch_json(url: str, *, params: dict | None = None, timeout: float = 40) -> 
         url,
         params=params,
         timeout=timeout,
-        headers={"User-Agent": "kev-radar-portfolio/1.0 (public-data demo)"},
+        headers={"User-Agent": "kev-radar/1.0 (+https://github.com/Dexious123/kev-radar)"},
     )
     response.raise_for_status()
     return response.json()

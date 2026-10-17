@@ -1,6 +1,6 @@
-# HANDOFF — KEV Radar v2
+# KEV Radar: design notes
 
-Public demo app. Synthetic data only. No employer exports, hostnames, keys, or secrets.
+Synthetic data only. No employer exports, hostnames, keys, or secrets.
 
 ## Setup
 
@@ -22,7 +22,7 @@ A CVE that is not in `vulnrichment.json` is fetched from `https://raw.githubuser
 
 On this machine, October 16, 2026: snapshot load 0.02 s, CSV parse 0.85 s, prioritize 0.07 s for 1,230 findings. The parse result is cached, so changing pages does not parse the CSV again.
 
-`.github/workflows/refresh-data.yml` runs `python scripts/refresh_snapshots.py --rotate` daily at 07:20 UTC and commits `data/snapshots` and `data/demo` when they change. `.github/workflows/tests.yml` runs ruff (`ruff==0.17.1`, rules E4/E7/E9/F/I, line length ignored) and pytest on push and pull request. The refresh workflow has not been executed from this environment; the files in `data/` were produced by running the script locally on 2026-10-16.
+`.github/workflows/refresh-data.yml` runs `python scripts/refresh_snapshots.py --rotate` daily at 07:20 UTC and commits `data/snapshots` and `data/demo` when they change. `.github/workflows/tests.yml` runs ruff (`ruff==0.17.1`, rules E4/E7/E9/F/I, line length ignored) and pytest on push and pull request. The first scheduled refresh ran successfully on 2026-10-17.
 
 ## Structure
 
@@ -58,7 +58,7 @@ tests/                    deadline, exposure, enrichment, scoring, CSV, metrics,
 
 ### BOD 26-04 source of truth
 
-Direct `GET` of the directive HTML from this environment returned **HTTP 403** on 2026-10-16 (the same class of block as the earlier 404). The page is published. Its indexed text includes the clock-start sentence and the forensic-triage definition used below. The implementation guidance page was retrieved in full.
+A scripted `GET` of the directive page returned **HTTP 403** on 2026-10-16. The page is published. Its indexed text includes the clock-start sentence and the forensic-triage definition used below. The implementation guidance page was retrieved in full.
 
 - Directive: <https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk>
 - Implementation guidance, issued June 10, 2026 and updated August 25, 2026: <https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk>
@@ -153,7 +153,7 @@ Tenable Vulnerability Management export keys are the primary headers. Nessus ali
 
 `scripts/refresh_snapshots.py` keeps every KEV added in the last 45 days, 18 older ransomware KEVs, 12 other older KEVs, and 30 non-KEV CVEs. Non-KEV IDs come from NVD 2.0 windows (no API key; the script sleeps 6 seconds between calls) and are enriched from `https://cveawg.mitre.org/api/cve/{cve}`. The 30 are round-robin across the four (Automatable × Technical Impact) shapes. EPSS is requested in chunks of 100. CVSS prefers the CNA metric over an ADP metric. SSVC options are read from `containers.adp[].metrics[].other` where `type` is `ssvc`.
 
-The October 16, 2026 bundle: KEV 1,748; EPSS 1,778 scores dated 2026-10-16; Vulnrichment 121 (the pool); MSRC 16 CVEs and 129 KB articles. CVE-2014-4113 and CVE-2014-4148 are in that set with an empty patch list because the API returned no security update. User-Agent on outbound calls is `kev-radar-portfolio/1.0`.
+The October 16, 2026 bundle: KEV 1,748; EPSS 1,778 scores dated 2026-10-16; Vulnrichment 121 (the pool); MSRC 16 CVEs and 129 KB articles. CVE-2014-4113 and CVE-2014-4148 are in that set with an empty patch list because the API returned no security update. User-Agent on outbound calls is `kev-radar/1.0 (+https://github.com/Dexious123/kev-radar)`.
 
 `python scripts/refresh_snapshots.py --msrc-only` rebuilds `msrc_kb.json` from the Microsoft and Windows CVEs in `cve_pool.json` without re-downloading KEV. A failure there is logged and the previous KB file is left in place.
 
@@ -210,7 +210,7 @@ Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The k
 
 ## Known issues
 
-- This environment could not download the directive HTML (HTTP 403). The clock sentence and the forensic-triage definition are from the published page's indexed text, and the 16 cells are the CERT/CC table the directive points at. If CISA edits Table 1, re-read the page and adjust `DECISION_TABLE`.
+- The directive page blocks scripted downloads (HTTP 403). The clock sentence and the forensic-triage definition are from the published page's indexed text, and the 16 cells are the CERT/CC table the directive points at. If CISA edits Table 1, re-read the page and adjust `DECISION_TABLE`.
 - The generally-public-facing product list is KEV Radar's labeled stand-in. It is not CISA's unpublished analysis. Rows it flips are marked assumed.
 - SLO on the bundled lab is low on purpose: open historical KEVs are already past a clock that started at `dateAdded`.
 - This week's new KEVs all appear in the estate because the generator places each of them. That is a demo choice, not a property of a real upload.
@@ -221,7 +221,7 @@ Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The k
 - The fact checker allows any number that appears anywhere in the facts, including digits inside a CVE id or a date. It does not prove the sentence used that number for the right claim.
 - The KB snapshot covers Microsoft and Windows CVEs in the demo pool, not every CVE an upload might contain. CVEs MSRC does not publish stay as an empty patch list.
 - The PowerShell script checks the machine it runs on. It does not connect to the fictional hosts named in the comments.
-- Live briefings are untested against a real model in this environment. No key was available, and none is stored.
+- Live briefings have not yet been tested against a real model. No key is stored in the repo.
 - The operator exceptions file is local to the machine running Streamlit. Community Cloud will not keep it across a new container. The CSV and JSON download are the portable copy.
 - The overdue projection does not model findings that will become newly overdue. The chart says so.
 
@@ -233,4 +233,4 @@ Live mode posts to `{base}/chat/completions` with `Authorization: Bearer`. The k
 
 ## History
 
-- **2026-10-16 — Live briefing key fallback removed (security fix).** Found in a read-through before the first deployment: the Briefing page fell back to a server-side key when the visitor left the field blank, while the API base URL was editable on the page. Deployed as the README instructed (key in Streamlit secrets), any visitor could have spent that key or sent it to their own server. Fixed as described under Briefings: visitor key only, endpoint from configuration only, https enforced before sending. Not exploitable before the fix in practice, because no key had been configured and the app had not been deployed. Verified: `ruff check .` clean; `python -m pytest -q` 97 passed on Python 3.12.12; the 5 new tests fail against the previous code. Commits in this repo now use the GitHub no-reply address, set in this clone's local git config.
+- **2026-10-16 — Live briefing key fallback removed (security fix).** Found in a read-through before the first deployment: the Briefing page fell back to a server-side key when the visitor left the field blank, while the API base URL was editable on the page. Deployed as the README instructed (key in Streamlit secrets), any visitor could have spent that key or sent it to their own server. Fixed as described under Briefings: visitor key only, endpoint from configuration only, https enforced before sending. Not exploitable before the fix in practice, because no key had been configured and the app had not been deployed. Verified: `ruff check .` clean; `python -m pytest -q` 97 passed on Python 3.12.12; the 5 new tests fail against the previous code.

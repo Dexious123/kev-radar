@@ -383,7 +383,7 @@ def generate_frame(
             "protocol": "tcp",
             "output": (
                 f"Synthetic plugin output. {host.host_name} matched {cve}. "
-                "This row was generated for a portfolio demo and is not a real scan."
+                "This row is synthetic demo data, not a real scan."
             ),
             "asset.id": host.asset_id,
             "asset.name": host.asset_name,

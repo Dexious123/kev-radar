@@ -172,7 +172,7 @@ def _get_json(url: str, *, timeout: float) -> dict:
         url,
         timeout=timeout,
         headers={
-            "User-Agent": "kev-radar-portfolio/1.0 (public-data demo)",
+            "User-Agent": "kev-radar/1.0 (+https://github.com/Dexious123/kev-radar)",
             "Accept": "application/json",
         },
     )

@@ -67,7 +67,7 @@ def _default_get(url: str) -> tuple[int, dict | None]:
         response = requests.get(
             url,
             timeout=30,
-            headers={"User-Agent": "kev-radar-portfolio/1.0 (public-data demo)"},
+            headers={"User-Agent": "kev-radar/1.0 (+https://github.com/Dexious123/kev-radar)"},
         )
     except requests.RequestException as exc:
         raise EnrichmentLookupError(str(exc)) from exc

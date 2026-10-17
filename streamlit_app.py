@@ -1268,7 +1268,7 @@ def _what_if_page(frame: pd.DataFrame, msrc: dict) -> None:
 def _about_page(meta: dict, enrich_report: dict) -> None:
     st.subheader("About this console")
     st.markdown(
-        "KEV Radar is a remediation-ops console for a public portfolio. "
+        "KEV Radar is a remediation-ops console. "
         "Harborline Mutual is fictional. The CVE identifiers and the feeds are public. "
         "Nothing here is an employer export."
     )

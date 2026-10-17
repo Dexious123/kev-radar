@@ -5,8 +5,8 @@ only when the caller passes an API key at runtime. The key is an Authorization
 header, never part of the prompt and never written by this module.
 
 The checker rejects any CVE ID, hostname, IPv4 address, or number in the
-output that is not present in the facts payload. Presence is the test the
-portfolio spec asks for: a number copied from a different field still passes.
+output that is not present in the facts payload. Presence is the whole test:
+a number copied from a different field still passes.
 """
 
 from __future__ import annotations
@@ -316,7 +316,7 @@ def complete_live(facts: dict, *, api_key: str, base_url: str, model: str, timeo
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
-            "User-Agent": "kev-radar-portfolio/1.0 (public-data demo)",
+            "User-Agent": "kev-radar/1.0 (+https://github.com/Dexious123/kev-radar)",
         },
         timeout=timeout,
     )
