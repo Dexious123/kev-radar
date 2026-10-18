@@ -13,6 +13,7 @@ import pandas as pd
 
 from kev_radar.bod import DIRECTIVE_URL, FORENSIC_TRIAGE_NOTE, GUIDANCE_URL
 from kev_radar.metrics import is_open
+from kev_radar.textsafe import md_text
 
 
 def _esc(value: object) -> str:
@@ -138,19 +139,19 @@ def render_tickets(findings: pd.DataFrame, as_of: date, *, limit: int = 15) -> s
         forensics = "Yes" if bool(getattr(record, "forensics_required", False)) else "No"
         blocks.extend(
             [
-                f"## {record.cve} on {record.host_name}",
+                f"## {md_text(record.cve)} on {md_text(record.host_name)}",
                 "",
-                f"- **Owner:** {getattr(record, 'owner', '') or 'Unassigned'}",
-                f"- **Business unit:** {getattr(record, 'business_unit', '') or 'Unassigned'}",
-                f"- **SLA:** {getattr(record, 'sla_status', '')}",
+                f"- **Owner:** {md_text(getattr(record, 'owner', '') or 'Unassigned')}",
+                f"- **Business unit:** {md_text(getattr(record, 'business_unit', '') or 'Unassigned')}",
+                f"- **SLA:** {md_text(getattr(record, 'sla_status', ''))}",
                 f"- **Deadline:** {deadline}",
-                f"- **Priority score:** {float(getattr(record, 'score', 0) or 0):.1f} ({getattr(record, 'band', '')})",
+                f"- **Priority score:** {float(getattr(record, 'score', 0) or 0):.1f} ({md_text(getattr(record, 'band', ''))})",
                 f"- **Forensic triage required by the BOD path:** {forensics}",
-                f"- **Decision path:** {getattr(record, 'decision_path', '')}",
+                f"- **Decision path:** {md_text(getattr(record, 'decision_path', ''))}",
                 "",
                 "### Why",
                 "",
-                str(getattr(record, "score_summary", "") or "See the decision path."),
+                md_text(getattr(record, "score_summary", "") or "See the decision path."),
                 "",
                 "### Acceptance",
                 "",

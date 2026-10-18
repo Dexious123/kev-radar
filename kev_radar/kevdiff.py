@@ -9,6 +9,8 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import date, timedelta
 
+from kev_radar.textsafe import md_text
+
 TRIAGE_YES = "yes"
 TRIAGE_NO = "no"
 TRIAGE_MISSING = "not_in_feed"
@@ -174,7 +176,7 @@ def render_monday_report(
     lines = [
         f"# KEV Monday — {as_of.isoformat()}",
         "",
-        f"Estate: {estate_name}{' (synthetic)' if synthetic else ''}. Catalog version {catalog_version or 'unknown'}.",
+        f"Estate: {md_text(estate_name)}{' (synthetic)' if synthetic else ''}. Catalog version {md_text(catalog_version or 'unknown')}.",
         "",
         (
             f"{len(items)} KEV entries were added in this window. "
@@ -189,15 +191,15 @@ def render_monday_report(
         lines.append("No new KEV entry this window matches a finding in the estate.")
         lines.append("")
     for item in hits:
-        hosts = ", ".join(hit.host_name for hit in item.hits[:8])
+        hosts = ", ".join(md_text(hit.host_name) for hit in item.hits[:8])
         extra = ""
         if item.host_count > 8:
             extra = f" (+{item.host_count - 8} more)"
         lines.extend(
             [
-                f"### {item.cve} — {item.name}",
+                f"### {md_text(item.cve)} — {md_text(item.name)}",
                 "",
-                f"- Vendor / product: {item.vendor} / {item.product}",
+                f"- Vendor / product: {md_text(item.vendor)} / {md_text(item.product)}",
                 f"- Added: {item.date_added.isoformat() if item.date_added else 'unknown'}",
                 f"- KEV due date: {item.due_date.isoformat() if item.due_date else 'unknown'}",
                 f"- Known ransomware use: {'Known' if item.ransomware else 'Not known'}",
@@ -214,7 +216,7 @@ def render_monday_report(
         for item in misses:
             added = item.date_added.isoformat() if item.date_added else "unknown"
             lines.append(
-                f"- {item.cve} ({item.vendor} {item.product}), added {added}, "
+                f"- {md_text(item.cve)} ({md_text(item.vendor)} {md_text(item.product)}), added {added}, "
                 f"ransomware {'Known' if item.ransomware else 'not known'}, "
                 f"forensicTriage: {triage_label(item.triage)}"
             )

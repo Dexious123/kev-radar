@@ -91,6 +91,7 @@ from kev_radar.report import render_html_report, render_tickets
 from kev_radar.simulate import cves_addressed_by_kb, select_open_keys, simulate
 from kev_radar.strips import render_strips
 from kev_radar.surface import exposure_heatmap, heatmap_matrix, host_findings, host_index
+from kev_radar.textsafe import md_text, md_without_images
 
 AS_OF = date.today()
 OPEN = {"open", "reopened"}
@@ -744,7 +745,7 @@ def _readouts(stats: dict) -> None:
 def _detail(row: pd.Series, classic: bool) -> None:
     title = f"{row['cve']} on {short_host(row['host_name'])}"
     st.subheader(title)
-    st.caption(str(row.get("vuln_name") or ""))
+    st.caption(md_text(row.get("vuln_name") or ""))
     path = row["ssvc_path"] if classic else row["decision_path"]
     st.markdown(_path_html(path), unsafe_allow_html=True)
     if classic:
@@ -758,18 +759,18 @@ def _detail(row: pd.Series, classic: bool) -> None:
     with left:
         st.markdown(f"**Asset deadline.** {row['deadline'] or 'No day-count deadline'}")
         st.markdown(f"**SLA.** {row['sla_status']}")
-        st.markdown(row["clock_reason"])
+        st.markdown(md_text(row["clock_reason"]))
         if row.get("kev_due_date") and row.get("deadline") and str(row["kev_due_date"])[:10] != str(row["deadline"])[:10]:
             st.markdown(
                 f"CISA's catalog due date is **{str(row['kev_due_date'])[:10]}**. "
                 "That date is not asset-specific. This row uses the BOD 26-04 path for this host."
             )
         if row.get("assumption_notes"):
-            st.markdown(row["assumption_notes"])
-        st.markdown(row.get("exposure_reason") or "")
+            st.markdown(md_text(row["assumption_notes"]))
+        st.markdown(md_text(row.get("exposure_reason") or ""))
     with right:
-        st.markdown(f"**Priority.** {row['band']} · {row['score']:.1f}")
-        st.markdown(row["score_summary"])
+        st.markdown(f"**Priority.** {md_text(row['band'])} · {row['score']:.1f}")
+        st.markdown(md_text(row["score_summary"]))
         epss = "unavailable" if row["epss"] is None or pd.isna(row["epss"]) else f"{float(row['epss']):.1%}"
         cvss = "unavailable" if row["cvss"] is None or pd.isna(row["cvss"]) else f"{float(row['cvss']):.1f}"
         st.markdown(
@@ -794,24 +795,24 @@ def _detail(row: pd.Series, classic: bool) -> None:
         owner = row.get("owner") or "Unassigned"
         unit = row.get("business_unit") or "Unassigned"
         exposed = "publicly exposed" if bool(row["exposed"]) else "internal"
-        st.markdown(f"**{owner}** · {unit} · {exposed}")
+        st.markdown(f"**{md_text(owner)}** · {md_text(unit)} · {exposed}")
         status = str(row.get("exception_status") or "")
         if status == "Active":
             st.markdown(
-                f"SLA breach counting is **paused** until {row.get('exception_expiry')} "
-                f"({row.get('exception_id')}, approved by {row.get('exception_approver')}). "
+                f"SLA breach counting is **paused** until {md_text(row.get('exception_expiry'))} "
+                f"({md_text(row.get('exception_id'))}, approved by {md_text(row.get('exception_approver'))}). "
                 f"Without the exception this row would be **{row.get('sla_status_raw')}**."
             )
             st.text(str(row.get("exception_justification") or ""))
             st.text(f"Compensating controls: {row.get('exception_controls') or ''}")
         elif status == "Expired":
             st.markdown(
-                f"Exception **{row.get('exception_id')}** expired on {row.get('exception_expiry')}. "
+                f"Exception **{md_text(row.get('exception_id'))}** expired on {md_text(row.get('exception_expiry'))}. "
                 "The pause has ended, so this finding counts toward SLA breaches again."
             )
     if row.get("required_action"):
         with st.expander("CISA required action"):
-            st.write(str(row["required_action"]))
+            st.markdown(md_text(row["required_action"]))
 
 
 def _queue_page(queue: pd.DataFrame, classic: bool) -> None:
@@ -1024,7 +1025,10 @@ def _exceptions_register(frame: pd.DataFrame, records: list) -> None:
                     if item.pauses(AS_OF) and finding_key(item.host_name, item.cve) == finding_key(record.host_name, record.cve)
                 ]
                 if active:
-                    st.error(f"{record.cve} on {record.host_name} already has active exception {active[0].exception_id}.")
+                    st.error(
+                        f"{md_text(record.cve)} on {md_text(record.host_name)} already has active exception "
+                        f"{md_text(active[0].exception_id)}."
+                    )
                 else:
                     st.session_state.setdefault("exception_extra", []).append(record.to_dict())
                     _persist_exceptions()
@@ -1085,7 +1089,7 @@ def _week_page(frame: pd.DataFrame, catalog: dict, previous: dict | None, versio
         choice = st.selectbox("Hosts for a new KEV", [item.cve for item in week if item.in_estate] or ["—"])
         chosen = next((item for item in week if item.cve == choice), None)
         if chosen and chosen.hits:
-            st.markdown(f"**{chosen.cve}** — {chosen.name}")
+            st.markdown(f"**{md_text(chosen.cve)}** — {md_text(chosen.name)}")
             host_frame = pd.DataFrame(
                 [
                     {
@@ -1342,7 +1346,7 @@ def _show_checked_briefing(markdown: str, result, file_name: str) -> None:
         for item in result.violations:
             st.write(item)
         return
-    st.markdown(markdown)
+    st.markdown(md_without_images(markdown))
     st.download_button(
         "Download briefing",
         data=markdown,
@@ -1389,7 +1393,7 @@ def _briefing_page(frame: pd.DataFrame, stats: dict, records: list) -> None:
                     live_check = check_text(draft, facts)
                     if live_check.passed:
                         st.success("Fact check passed on the live draft.")
-                        st.markdown(draft)
+                        st.markdown(md_without_images(draft))
                     else:
                         st.error("Fact check rejected the live draft. It is not the briefing.")
                         for item in live_check.violations:
@@ -1542,7 +1546,8 @@ def _surface_page(frame: pd.DataFrame) -> None:
     host = index.iloc[labels.index(choice)]
     exposed = "publicly exposed" if bool(host["exposed"]) else "internal"
     st.markdown(
-        f"**{short_host(host['host_name'])}** is owned by {host['owner']} in {host['business_unit']} and is {exposed}. "
+        f"**{md_text(short_host(host['host_name']))}** is owned by {md_text(host['owner'])} in "
+        f"{md_text(host['business_unit'])} and is {exposed}. "
         f"{int(host['open_findings'])} open, {int(host['overdue'])} overdue."
     )
     detail = host_findings(frame, str(host["host_name"]))
@@ -1564,9 +1569,9 @@ def _surface_page(frame: pd.DataFrame) -> None:
     pick = st.selectbox("Decision path", path_labels)
     row = detail.iloc[path_labels.index(pick)]
     st.markdown(_path_html(row["decision_path"]), unsafe_allow_html=True)
-    st.caption(str(row.get("clock_reason") or ""))
+    st.caption(md_text(row.get("clock_reason") or ""))
     if row.get("assumption_notes"):
-        st.caption(str(row["assumption_notes"]))
+        st.caption(md_text(row["assumption_notes"]))
 
 
 def _what_if_page(frame: pd.DataFrame, msrc: dict) -> None:
@@ -1591,7 +1596,7 @@ def _what_if_page(frame: pd.DataFrame, msrc: dict) -> None:
     kb_cves = cves_addressed_by_kb(msrc, kb_text) if kb_text.strip() else []
     if kb_text.strip():
         if kb_cves:
-            st.caption(f"{kb_text.strip()} maps to {', '.join(kb_cves)}.")
+            st.caption(f"{md_text(kb_text.strip())} maps to {', '.join(kb_cves)}.")
         else:
             st.warning("That KB is not in the MSRC snapshot, so it does not select any findings.")
     pairs = []

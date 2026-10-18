@@ -7,6 +7,7 @@ from urllib.parse import urlencode
 import pandas as pd
 
 from kev_radar.metrics import is_open
+from kev_radar.textsafe import spreadsheet_cell
 
 LAB_DOMAIN = ".lab.invalid"
 
@@ -123,7 +124,7 @@ def csv_download(findings: pd.DataFrame) -> str:
         return ""
     export = findings.copy()
     for column in export.columns:
-        export[column] = export[column].map(lambda value: "" if value is None else value)
+        export[column] = export[column].map(lambda value: "" if value is None else spreadsheet_cell(value))
     return export.to_csv(index=False)
 
 

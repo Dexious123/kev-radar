@@ -19,6 +19,7 @@ from pathlib import Path
 import pandas as pd
 
 from kev_radar.metrics import is_open
+from kev_radar.textsafe import from_spreadsheet_cell, spreadsheet_cell
 
 OPERATOR_REGISTER = Path(__file__).resolve().parents[1] / "data" / "operator" / "exceptions.json"
 OPERATOR_FILE_ENV = "KEV_RADAR_OPERATOR_FILE"
@@ -344,7 +345,7 @@ def exceptions_to_csv(records: list[RiskException]) -> str:
     writer = csv.DictWriter(buffer, fieldnames=list(_EXPORT_FIELDS))
     writer.writeheader()
     for record in records:
-        writer.writerow(record.to_dict())
+        writer.writerow({key: spreadsheet_cell(value) for key, value in record.to_dict().items()})
     return buffer.getvalue()
 
 
@@ -354,7 +355,7 @@ def _normalize_payload(raw: dict) -> dict:
         canonical = _HEADER_ALIASES.get(str(key).strip().lower())
         if canonical is None or canonical == "_ignore":
             continue
-        payload[canonical] = "" if value is None else str(value).strip()
+        payload[canonical] = "" if value is None else str(from_spreadsheet_cell(str(value).strip()))
     return payload
 
 

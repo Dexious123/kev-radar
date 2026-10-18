@@ -22,6 +22,7 @@ import pandas as pd
 import requests
 
 from kev_radar.metrics import is_open
+from kev_radar.textsafe import md_text
 
 CVE_RE = re.compile(r"CVE-\d{4}-\d{4,}", re.IGNORECASE)
 HOST_RE = re.compile(
@@ -154,8 +155,8 @@ def build_facts(
 
 
 def render_offline(facts: dict) -> dict[str, str]:
-    """Template briefing. Every figure is copied from ``facts``."""
-    estate = facts["estate"]
+    """Template briefing. Every figure is copied from ``facts``; every name is escaped for Markdown."""
+    estate = md_text(facts["estate"])
     as_of = facts["as_of"]
     summary = [
         f"{estate}, as of {as_of}.",
@@ -186,9 +187,9 @@ def render_offline(facts: dict) -> dict[str, str]:
         top = findings[0]
         when = top["deadline"] or "no day-count deadline"
         summary.append(
-            f"Highest open score: {top['cve']} on {top['host_name']}, "
-            f"owner {top['owner']}, business unit {top['business_unit']}, "
-            f"deadline {when}, score {top['score']}, status {top['sla_status']}."
+            f"Highest open score: {md_text(top['cve'])} on {md_text(top['host_name'])}, "
+            f"owner {md_text(top['owner'])}, business unit {md_text(top['business_unit'])}, "
+            f"deadline {when}, score {top['score']}, status {md_text(top['sla_status'])}."
         )
     else:
         summary.append("No open findings are in this filter.")
@@ -196,8 +197,8 @@ def render_offline(facts: dict) -> dict[str, str]:
         if item.get("status") != "Active":
             continue
         summary.append(
-            f"Active exception {item['exception_id']} covers {item['cve']} on {item['host_name']} "
-            f"until {item['expiry']}, approved by {item['approver']}."
+            f"Active exception {md_text(item['exception_id'])} covers {md_text(item['cve'])} on {md_text(item['host_name'])} "
+            f"until {md_text(item['expiry'])}, approved by {md_text(item['approver'])}."
         )
         break
 
@@ -207,15 +208,15 @@ def render_offline(facts: dict) -> dict[str, str]:
         by_owner.setdefault(item["owner"], []).append(item)
     for owner, rows in by_owner.items():
         lines = [
-            f"Owner: {owner}",
-            f"Business unit: {rows[0]['business_unit']}",
+            f"Owner: {md_text(owner)}",
+            f"Business unit: {md_text(rows[0]['business_unit'])}",
             "Findings in this draft:",
         ]
         for item in rows:
             when = item["deadline"] or "no day-count deadline"
             lines.append(
-                f"- {item['cve']} on {item['host_name']}, deadline {when}, "
-                f"score {item['score']}, status {item['sla_status']}."
+                f"- {md_text(item['cve'])} on {md_text(item['host_name'])}, deadline {when}, "
+                f"score {item['score']}, status {md_text(item['sla_status'])}."
             )
         tickets.append("\n".join(lines))
 
