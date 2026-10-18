@@ -5,7 +5,15 @@ from datetime import date, timedelta
 
 import pandas as pd
 
-from kev_radar.radar import BANDS, MAX_DOTS, SWEEP_SECONDS, band_for, build_radar, radial_fraction
+from kev_radar.radar import (
+    BANDS,
+    MAX_DOTS,
+    RADAR_SCRIPT,
+    SWEEP_SECONDS,
+    band_for,
+    build_radar,
+    radial_fraction,
+)
 
 AS_OF = date(2026, 10, 17)
 
@@ -52,7 +60,7 @@ def test_only_open_unpaused_findings_with_a_deadline_are_plotted():
     )
     radar = build_radar(frame, AS_OF)
     assert radar.plotted == 3
-    assert radar.counts == {"past": 1, "near": 1, "soon": 0, "far": 1}
+    assert radar.counts == {"past": 1, "near": 1, "soon": 0, "far": 1, "new": 0}
     assert radar.svg.count('<circle class="dot') == 3
     assert "CVE-2026-0004" not in radar.svg and "CVE-2026-0005" not in radar.svg
 
@@ -62,6 +70,40 @@ def test_text_from_an_upload_is_escaped():
     svg = build_radar(frame, AS_OF).svg
     assert "<script>" not in svg and "<b>h</b>" not in svg
     assert "&lt;script&gt;" in svg
+
+
+def test_text_cannot_break_out_of_a_data_attribute():
+    frame = pd.DataFrame([_row("CVE-2026-0001", -3, host='x" onmouseover="alert(1)')])
+    svg = build_radar(frame, AS_OF).svg
+    assert 'onmouseover="' not in svg
+    assert 'data-host="x&quot; onmouseover=&quot;alert(1)"' in svg
+
+
+def test_each_dot_carries_what_the_data_block_shows():
+    frame = pd.DataFrame([_row("CVE-2026-0001", -12, unit="Claims")])
+    svg = build_radar(frame, AS_OF).svg
+    dot = re.search(r'<circle class="dot past"[^>]*/>', svg).group(0)
+    for expected in (
+        'data-cve="CVE-2026-0001"',
+        'data-host="h.lab.invalid"',
+        'data-owner="Priya Shah"',
+        'data-unit="Claims"',
+        'data-when="12 days past due"',
+        'data-due="Oct 5, 2026"',
+        'data-days="-12"',
+    ):
+        assert expected in dot
+
+
+def test_the_radar_script_writes_text_never_markup():
+    assert "textContent" in RADAR_SCRIPT
+    for sink in ("innerHTML", "outerHTML", "insertAdjacentHTML", "document.write", "eval("):
+        assert sink not in RADAR_SCRIPT
+
+
+def test_the_radar_script_survives_streamlits_sanitizer():
+    # DOMPurify removes a script whose text looks like it holds markup; st.html would then run nothing.
+    assert re.search(r"<[/\w]", RADAR_SCRIPT) is None
 
 
 def test_positions_are_stable_and_each_dot_flashes_when_the_sweep_passes():
@@ -84,6 +126,24 @@ def test_more_than_eight_units_fold_into_other():
     svg = build_radar(pd.DataFrame(rows), AS_OF).svg
     assert svg.count('class="slice-label"') == 8
     assert ">Other<" in svg
+
+
+def test_findings_first_seen_in_the_latest_scan_wear_a_ring():
+    old = dict(_row("CVE-2026-0001", 4), first_observed=AS_OF - timedelta(days=9))
+    new = dict(_row("CVE-2026-0002", 12, host="n.lab.invalid"), first_observed=AS_OF)
+    radar = build_radar(pd.DataFrame([old, new]), AS_OF, new_on=AS_OF)
+    assert radar.counts["new"] == 1
+    assert radar.svg.count('class="contact"') == 1
+    assert radar.svg.count('data-new="1"') == 1
+    assert "1 first seen in the latest scan." in radar.svg
+    assert build_radar(pd.DataFrame([old, new]), AS_OF).svg.count('class="contact"') == 0
+
+
+def test_new_contacts_survive_the_dot_cap():
+    rows = [_row(f"CVE-2026-{n:05d}", 10, score=90, host=f"h{n}.lab.invalid") for n in range(MAX_DOTS)]
+    rows.append(dict(_row("CVE-2026-99999", 10, score=1, host="new.lab.invalid"), first_observed=AS_OF))
+    radar = build_radar(pd.DataFrame(rows), AS_OF, new_on=AS_OF)
+    assert radar.plotted == MAX_DOTS and "CVE-2026-99999" in radar.svg
 
 
 def test_an_empty_estate_still_draws_the_scope():

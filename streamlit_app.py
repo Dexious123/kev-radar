@@ -31,6 +31,7 @@ from kev_radar.briefing import (
     resolve_llm_settings,
 )
 from kev_radar.enrich import fetch_enrichment, ssvc_from_enrichment, supplement_ssvc
+from kev_radar.evolve import QUIET_DAY, day_clauses, join_clauses, load_log
 from kev_radar.exceptions import (
     RiskException,
     apply_exceptions,
@@ -49,6 +50,7 @@ from kev_radar.exceptions import (
 )
 from kev_radar.feeds import (
     DEMO_CSV,
+    ESTATE_LOG,
     fetch_epss,
     fetch_kev,
     load_bundle,
@@ -81,7 +83,7 @@ from kev_radar.present import (
     vendor_frame,
 )
 from kev_radar.prioritize import prioritize
-from kev_radar.radar import build_radar
+from kev_radar.radar import RADAR_SCRIPT, build_radar
 from kev_radar.report import render_html_report, render_tickets
 from kev_radar.simulate import cves_addressed_by_kb, select_open_keys, simulate
 from kev_radar.strips import render_strips
@@ -130,6 +132,7 @@ st.markdown(
     }
     .hero .now {font-size: 1.45rem; line-height: 1.36; font-weight: 500; color: var(--signal); max-width: 28ch; margin: 0 0 1rem 0;}
     .nb {white-space: nowrap;}
+    .hero .today {font-size: 1rem; line-height: 1.55; color: var(--signal); max-width: 50ch; margin: 0 0 1rem 0;}
     .hero .source {font-size: 0.86rem; line-height: 1.6; color: var(--readout); max-width: 58ch; margin: 0;}
     .scope {display: flex; flex-direction: column; align-items: center; gap: 0.7rem;}
     svg.radar {width: 100%; max-width: 600px; height: auto;}
@@ -149,6 +152,31 @@ st.markdown(
     svg.radar .dot.near {fill: var(--amber);}
     svg.radar .dot.soon, svg.radar .dot.far {fill: var(--cyan);}
     svg.radar .core {fill: var(--signal);}
+    svg.radar .contact {fill: none; stroke: var(--signal); stroke-width: 1.2; opacity: 0.85; pointer-events: none;}
+    svg.radar {touch-action: manipulation;}
+    svg.radar:focus {outline: none;}
+    svg.radar:focus-visible {outline: 1px solid var(--graticule) !important; outline-offset: 4px; border-radius: 8px;}
+    [data-testid="stLayoutWrapper"]:has(> .st-key-radar-script), .st-key-radar-script {display: none;}
+    /* The data block: what a controller reads next to a target. */
+    .kr-overlay {position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999991; overflow: visible;}
+    .kr-reticle {fill: none; stroke: var(--signal); stroke-width: 1.5;}
+    .kr-leader {stroke: var(--readout); stroke-width: 1;}
+    .kr-block {
+        position: fixed; z-index: 999992; min-width: 12.5rem; max-width: min(20rem, calc(100vw - 16px));
+        padding: 0.6rem 0.8rem 0.65rem; background: var(--bezel); border: 1px solid var(--graticule); border-radius: 6px;
+        color: var(--signal); font-size: 0.84rem; line-height: 1.45; pointer-events: none;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    }
+    .kr-block[hidden] {display: none;}
+    .kr-block.pinned {pointer-events: auto; border-color: var(--readout); user-select: text;}
+    .kr-block .cve {font-family: var(--mono); font-size: 0.88rem; font-weight: 500;}
+    .kr-block .host {font-family: var(--mono); font-size: 0.72rem; color: var(--readout); overflow-wrap: anywhere;}
+    .kr-block .who {margin-top: 0.4rem;}
+    .kr-block .when {display: flex; align-items: center; gap: 0.45rem; margin-top: 0.1rem; font-weight: 500;}
+    .kr-block .when i {flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--cyan);}
+    .kr-block .when.past i {background: var(--red);}
+    .kr-block .when.near i {background: var(--amber);}
+    .kr-block .due {color: var(--readout); font-size: 0.78rem;}
     @media (prefers-reduced-motion: no-preference) {
         svg.radar .sweep {animation: kr-sweep 8s linear infinite;}
         svg.radar .dot {animation: kr-dot 8s linear infinite;}
@@ -160,6 +188,7 @@ st.markdown(
     .key i {width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: var(--cyan);}
     .key .past i {background: var(--red);}
     .key .near i {background: var(--amber);}
+    .key .new i {width: 10px; height: 10px; background: transparent; box-shadow: inset 0 0 0 1.5px var(--signal);}
     .key b {color: var(--signal); font-weight: 600;}
     .scope .how {font-size: 0.78rem; color: var(--readout); text-align: center; max-width: 46ch; margin: 0;}
     @media (max-width: 960px) {.hero {grid-template-columns: 1fr; gap: 1.6rem;}}
@@ -509,8 +538,22 @@ def _plural(count: int, one: str, many: str) -> str:
     return f"{count:,} {one if count == 1 else many}"
 
 
-def _hero_html(*, source: str, stats: dict | None = None, radar=None) -> str:
-    """Title, one live sentence about the filtered estate, where the data comes from, and the radar."""
+def _today_line(log: dict | None, as_of: date) -> str:
+    """What changed across the bundled lab in its latest simulated day, or nothing."""
+    days = (log or {}).get("days") or []
+    if not days:
+        return ""
+    latest = days[-1]
+    day = date.fromisoformat(latest["date"])
+    if day == as_of:
+        lead = "Across the lab since yesterday"
+    else:
+        lead = f"Across the lab on {day:%A}, {day:%B} {day.day}"
+    return f"{lead}: {join_clauses(day_clauses(latest)) or QUIET_DAY}."
+
+
+def _hero_html(*, source: str, stats: dict | None = None, radar=None, today: str = "") -> str:
+    """Title, one live sentence about the filtered estate, the lab's latest day, the source, and the radar."""
     if stats is None:
         now = ""
     elif not stats["open"]:
@@ -527,6 +570,7 @@ def _hero_html(*, source: str, stats: dict | None = None, radar=None) -> str:
     if radar is not None:
         counts = radar.counts
         later = counts["soon"] + counts["far"]
+        fresh = counts.get("new", 0)
         scope = (
             '<div class="scope">'
             + radar.svg
@@ -534,9 +578,10 @@ def _hero_html(*, source: str, stats: dict | None = None, radar=None) -> str:
             + f'<span class="past"><i></i>Past due <b>{counts["past"]:,}</b></span>'
             + f'<span class="near"><i></i>Within 7 days <b>{counts["near"]:,}</b></span>'
             + f'<span class="later"><i></i>Later <b>{later:,}</b></span>'
+            + (f'<span class="new"><i></i>New in the latest scan <b>{fresh:,}</b></span>' if fresh else "")
             + "</div>"
             + '<p class="how">Each dot is an open finding. Closer to the center means less time left; '
-            + "each slice is a business unit. Hover a dot for the CVE, host, and owner.</p>"
+            + "each slice is a business unit. Point at or tap a dot for its CVE, host, owner, and deadline.</p>"
             + "</div>"
         )
     now_html = (
@@ -544,9 +589,11 @@ def _hero_html(*, source: str, stats: dict | None = None, radar=None) -> str:
         if now
         else ""
     )
+    today_html = f'<p class="today">{html.escape(today)}</p>' if today else ""
     return (
         '<div class="hero"><div class="hero-copy"><p class="title" role="heading" aria-level="1">KEV Radar</p>'
         + now_html
+        + today_html
         + f'<p class="source">{html.escape(source)}</p></div>'
         + scope
         + "</div>"
@@ -1482,8 +1529,9 @@ def _about_page(meta: dict, enrich_report: dict) -> None:
     st.subheader("About this console")
     st.markdown(
         "KEV Radar is a remediation-ops console. "
-        "Harborline Mutual is fictional. The CVE identifiers and the feeds are public. "
-        "Nothing here is an employer export."
+        "Harborline Mutual is fictional, and it moves forward one simulated day every morning: "
+        "owners close findings, the scanner finds new ones, and new KEV entries land on its hosts. "
+        "The CVE identifiers and the feeds are public. Nothing here is an employer export."
     )
     st.markdown("**Sources for the deadline engine**")
     st.markdown(
@@ -1663,12 +1711,29 @@ def main() -> None:
     ] if not scoped.empty else []
     stats = _metrics(scoped)
     estate_name, synthetic = _estate_label()
-    source = (
-        f"Harborline Mutual is a fictional estate built on real CVE IDs and public feeds: {sources}."
-        if synthetic
-        else f"Your uploaded export, scored against {sources}."
+    log = load_log(ESTATE_LOG) if mode == "Bundled demo" else None
+    if not synthetic:
+        source = f"Your uploaded export, scored against {sources}."
+    elif log is not None:
+        source = (
+            "Harborline Mutual is a fictional estate that moves forward one simulated day at a time, "
+            f"built on real CVE IDs and public feeds: {sources}."
+        )
+    else:
+        source = f"Harborline Mutual is a fictional estate built on real CVE IDs and public feeds: {sources}."
+    latest_scan = date.fromisoformat(log["as_of"]) if log is not None else None
+    hero.markdown(
+        _hero_html(
+            source=source,
+            stats=stats,
+            radar=build_radar(scoped, AS_OF, new_on=latest_scan),
+            today=_today_line(log, AS_OF),
+        ),
+        unsafe_allow_html=True,
     )
-    hero.markdown(_hero_html(source=source, stats=stats, radar=build_radar(scoped, AS_OF)), unsafe_allow_html=True)
+    # A fixed script from the package, with no data in it: it reads the dots' escaped attributes.
+    with st.container(key="radar-script"):
+        st.html(f"<script>{RADAR_SCRIPT}</script>", unsafe_allow_javascript=True)
     _show_metrics(stats)
     assumed = 0
     exposure_assumed = 0

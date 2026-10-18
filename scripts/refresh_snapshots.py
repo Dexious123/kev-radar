@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Refresh the public KEV, EPSS, and Vulnrichment snapshots, then rebuild the demo CSV.
+"""Refresh the public KEV, EPSS, and Vulnrichment snapshots, then advance the demo estate.
 
-No API key. Safe to re-run. Pass --rotate to copy the current KEV snapshot
-to kev_previous.json before downloading, which is what the daily workflow does.
+No API key. Safe to re-run: the estate moves forward one simulated day per calendar day,
+so a second run on the same day changes nothing. Pass --rotate to copy the current KEV
+snapshot to kev_previous.json before downloading, which is what the daily workflow does.
 """
 
 from __future__ import annotations
@@ -21,15 +22,25 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from kev_radar.evolve import (  # noqa: E402
+    advance_to,
+    load_log,
+    read_estate,
+    save_log,
+    summarize_day,
+    write_estate,
+)
 from kev_radar.feeds import (  # noqa: E402
     DEMO_CSV,
     EPSS_URL,
+    ESTATE_LOG,
     SNAPSHOT_DIR,
     extract_enrichment,
     fetch_cve_record,
     fetch_epss,
     fetch_json,
     fetch_kev,
+    load_json,
     parse_iso_date,
     snapshot_path,
     write_json,
@@ -124,6 +135,78 @@ def _pool_from_kev(catalog: dict, as_of: date) -> list[dict]:
         f"{min(OLD_RANSOM, len(old_ransom))} older ransomware, {min(OLD_OTHER, len(old_other))} older other"
     )
     return chosen
+
+
+def _estate_carryover(pool: list[dict], kev_by_id: dict[str, dict], previous: list) -> list[dict]:
+    """Pool records for CVEs the estate still holds but today's pool slice left out.
+
+    The pool is re-picked every morning while the estate keeps its findings, so without
+    this an older finding would lose its CVSS, EPSS, Vulnrichment, and MSRC coverage.
+    """
+    if not DEMO_CSV.exists():
+        return []
+    estate = read_estate(DEMO_CSV.read_text(encoding="utf-8"))
+    in_pool = {entry["cve"] for entry in pool}
+    earlier = {str(entry.get("cve", "")).upper(): entry for entry in previous if isinstance(entry, dict)}
+    carried = []
+    for row in estate.drop_duplicates("definition.cve").to_dict("records"):
+        cve = str(row["definition.cve"]).upper()
+        if not cve or cve in in_pool:
+            continue
+        if cve in kev_by_id:
+            record = _kev_record(kev_by_id[cve])
+        elif cve in earlier:
+            record = dict(earlier[cve])
+        else:
+            name = row["definition.name"] or cve
+            record = {
+                "cve": cve,
+                "vendor": "",
+                "product": "",
+                "name": name,
+                "family": family_for(name),
+                "in_kev": False,
+                "ransomware": False,
+                "date_added": None,
+                "cvss": float(row["definition.cvss3.base_score"]) if row["definition.cvss3.base_score"] else None,
+                "cvss_vector": row["definition.cvss3.base_vector"] or None,
+                "epss": None,
+            }
+        carried.append(record)
+    return carried
+
+
+def _write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        handle.write(text)
+
+
+def _advance_estate(pool: list[dict], as_of: date, *, rebuild: bool = False) -> None:
+    """Move the synthetic estate forward to ``as_of``, or build it if there is none yet."""
+    log = None if rebuild else load_log(ESTATE_LOG)
+    if log is None or not DEMO_CSV.exists():
+        _write_text(DEMO_CSV, generate_csv(pool, as_of=as_of, seed=DEMO_SEED))
+        save_log(ESTATE_LOG, as_of, [])
+        print(f"built a new synthetic estate as of {as_of.isoformat()}")
+        days: list[dict] = []
+    else:
+        since = date.fromisoformat(log["as_of"])
+        if since >= as_of:
+            print(f"estate is already at {since.isoformat()}; nothing to advance")
+            return
+        frame = read_estate(DEMO_CSV.read_text(encoding="utf-8"))
+        frame, days = advance_to(frame, pool, since, as_of, seed=int(log.get("seed") or DEMO_SEED))
+        _write_text(DEMO_CSV, write_estate(frame))
+        save_log(ESTATE_LOG, as_of, list(log.get("days") or []) + days)
+        for events in days:
+            print(f"  {events['date']}: {summarize_day(events)}")
+        print(f"advanced the estate {len(days)} day(s) to {as_of.isoformat()}: {len(frame)} rows")
+    meta_path = snapshot_path("metadata.json")
+    if meta_path.exists():
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        meta["estate_as_of"] = as_of.isoformat()
+        meta_path.write_text(json.dumps(meta, indent=1), encoding="utf-8")
 
 
 def _non_kev_candidates(kev_ids: set[str]) -> list[str]:
@@ -232,8 +315,9 @@ def _fetch_epss_map(cves: list[str]) -> tuple[dict[str, dict], str | None]:
     return scores, score_date
 
 
-def refresh(rotate: bool) -> None:
+def refresh(rotate: bool, *, rebuild: bool = False) -> None:
     as_of = date.today()
+    previous_pool = load_json("cve_pool.json") if snapshot_path("cve_pool.json").exists() else []
     if rotate:
         _rotate()
     print("downloading KEV catalog")
@@ -242,13 +326,16 @@ def refresh(rotate: bool) -> None:
     print(f"KEV {catalog.get('catalogVersion')} count={catalog.get('count')}")
     _ensure_previous(catalog, as_of)
 
-    kev_ids = {str(entry["cveID"]).upper() for entry in catalog.get("vulnerabilities", [])}
+    kev_by_id = {str(entry["cveID"]).upper(): entry for entry in catalog.get("vulnerabilities", [])}
+    kev_ids = set(kev_by_id)
     pool = _pool_from_kev(catalog, as_of)
+    carried = [] if rebuild else _estate_carryover(pool, kev_by_id, previous_pool if isinstance(previous_pool, list) else [])
+    print(f"carrying {len(carried)} CVEs the estate still holds")
     print("looking for non-KEV CVEs in EPSS pages")
     candidates = _non_kev_candidates(kev_ids)
     print(f"{len(candidates)} non-KEV candidates")
 
-    to_enrich = [entry["cve"] for entry in pool] + candidates[:80]
+    to_enrich = list(dict.fromkeys([entry["cve"] for entry in pool + carried] + candidates[:80]))
     print(f"fetching CVE records for {len(to_enrich)} ids")
     enriched = _enrich(to_enrich)
 
@@ -294,6 +381,8 @@ def refresh(rotate: bool) -> None:
         record.pop("_shape", None)
     print(f"non-KEV kept: {len(non_kev)} from {len(valid)} enriched, shapes={sorted(by_shape)}")
     pool.extend(non_kev)
+    present = {entry["cve"] for entry in pool}
+    pool.extend(entry for entry in carried if entry["cve"] not in present)
 
     print("fetching EPSS for the KEV catalog and the pool")
     epss_scores, epss_date = _fetch_epss_map(sorted(kev_ids | {entry["cve"] for entry in pool}))
@@ -352,10 +441,7 @@ def refresh(rotate: bool) -> None:
     except Exception as exc:
         print(f"MSRC snapshot skipped: {exc}")
 
-    print("generating synthetic estate")
-    DEMO_CSV.parent.mkdir(parents=True, exist_ok=True)
-    DEMO_CSV.write_text(generate_csv(pool, as_of=as_of, seed=DEMO_SEED), encoding="utf-8")
-    print(f"wrote {DEMO_CSV}")
+    _advance_estate(pool, as_of, rebuild=rebuild)
 
 
 def _refresh_msrc(pool: list[dict]) -> None:
@@ -391,16 +477,27 @@ def main() -> None:
         action="store_true",
         help="Refresh only the MSRC KB snapshot from the current CVE pool.",
     )
+    parser.add_argument(
+        "--estate-only",
+        action="store_true",
+        help="Advance the demo estate to today from the current CVE pool, without downloading anything.",
+    )
+    parser.add_argument(
+        "--rebuild",
+        action="store_true",
+        help="Throw the estate's history away and generate a fresh one as of today.",
+    )
     args = parser.parse_args()
-    if args.msrc_only:
-        from kev_radar.feeds import load_json
-
+    if args.msrc_only or args.estate_only:
         pool = load_json("cve_pool.json")
         if not isinstance(pool, list):
             raise SystemExit("cve_pool.json is not a list")
-        _refresh_msrc(pool)
+        if args.msrc_only:
+            _refresh_msrc(pool)
+        else:
+            _advance_estate(pool, date.today(), rebuild=args.rebuild)
         return
-    refresh(rotate=args.rotate)
+    refresh(rotate=args.rotate, rebuild=args.rebuild)
 
 
 if __name__ == "__main__":

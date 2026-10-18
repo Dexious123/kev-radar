@@ -8,7 +8,7 @@ Built by **Juan Martinez**.
 
 KEV Radar is a remediation-ops console. It answers what is due under [CISA BOD 26-04](https://www.cisa.gov/news-events/directives/bod-26-04-prioritizing-security-updates-based-risk), who owns it, whether the team will miss the SLA, and which Windows KB would fix a Microsoft CVE.
 
-That first question got harder in June 2026, when BOD 26-04 replaced BOD 22-01. A KEV due date is no longer the deadline. Each finding gets its own clock, set by the asset as well as the CVE, so the same CVE can be due in 3 days on an internet-facing host and in 60 on an internal one. KEV Radar works out that deadline for every host and CVE, then tracks it against the team's actual close rate. It runs on a fictional estate, so anyone can open it with no login and no scanner account.
+That first question got harder in June 2026, when BOD 26-04 replaced BOD 22-01. A KEV due date is no longer the deadline. Each finding gets its own clock, set by the asset as well as the CVE, so the same CVE can be due in 3 days on an internet-facing host and in 60 on an internal one. KEV Radar works out that deadline for every host and CVE, then tracks it against the team's actual close rate. It runs on a fictional estate that moves forward one simulated day every morning, so anyone can open it with no login and no scanner account, and it is a little different each time.
 
 ![The deadline radar above the readouts: every open finding placed by time left and business unit](docs/screenshots/overview.png)
 
@@ -18,7 +18,7 @@ BOD 22-01 is revoked. On June 10, 2026 CISA replaced it, and BOD 19-02, with BOD
 
 A catalog explorer stops at "this CVE is in KEV." A SOC lead still has to answer which host, which owner, which deadline, and whether last month's close rate will clear the ones due next week. KEV Radar is built for that second question. The estate is **Harborline Mutual**, a fictional lab: 300 hosts on `*.lab.invalid`, real CVE IDs, and no employer data.
 
-The screenshots show the October 17, 2026 data. That day the lab had 1,230 host-and-CVE findings. 571 are still open. Five sit under an active exception, so the overdue count is 352. 29 are due in the next 7 days. At 22.5 closes a week, about 6 of those 29 are projected to miss. Average time to fix on closed findings is 12 days. SLO compliance sat near 18% because open historical KEVs are already past a clock that started when CISA added them. That is the backlog, not a rounding error. The data refreshes daily, so the live figures move from these.
+The screenshots show the October 17, 2026 data. That day the lab had 1,231 host-and-CVE findings. 570 are still open. Five sit under an active exception, so the overdue count is 354. 27 are due in the next 7 days. At 23.5 closes a week, about 4 of those 27 are projected to miss. Average time to fix on closed findings is 12 days. SLO compliance sat near 18% because open historical KEVs are already past a clock that started when CISA added them. That is the backlog, not a rounding error. The lab moves forward a day every morning, so the live figures move from these.
 
 ## Architecture
 
@@ -43,7 +43,11 @@ The app reads `data/snapshots/` first. A fresh snapshot does not call the networ
 
 ## Feature tour
 
-**Deadline radar.** Every open finding is a dot. Distance from the center is the time left before its BOD 26-04 deadline: past due in the middle, then due within 7 days, within 30 days, and later. Each slice is a business unit. The sweep brightens each dot as it passes, and hovering a dot names the CVE, host, and owner. It follows the sidebar filters.
+**Deadline radar.** Every open finding is a dot. Distance from the center is the time left before its BOD 26-04 deadline: past due in the middle, then due within 7 days, within 30 days, and later. Each slice is a business unit. The sweep brightens each dot as it passes. Point near a dot, or tap it on a phone, and a data block opens beside it, the way a controller's label sits next to a target: CVE, host, owner and business unit, time left, and the deadline date. Clicking pins the block so the CVE can be copied. With the radar focused, the arrow keys step through findings from the most overdue, and Escape closes the block. It follows the sidebar filters.
+
+![A data block pinned on a finding due in 3 days](docs/screenshots/radar.png)
+
+**A lab that changes every day.** Each morning the refresh job moves Harborline Mutual forward one simulated day. The scanner sees every open finding again. KEV entries CISA added in the last few days turn up on matching hosts, at least one exposed and one internal. A few non-KEV CVEs show up on hosts that did not have them. Owners close three to six findings on a weekday, newest KEVs and exposed hosts first, and almost none at the weekend. Now and then a fix does not hold and the finding reopens. The header says what changed since yesterday, and findings first seen in the latest scan wear a ring on the radar. Every random choice is seeded by the date, so a re-run changes nothing and a missed morning is replayed on the next run. The CVE IDs, KEV dates, and EPSS scores are real. The hosts, the owners, and their work are simulated.
 
 **Executive overview.** Readouts for the filter, an eight-week risk trend, a burn-down of overdue findings against the recent close rate, and the ten findings to fix this week as strips: owner, deadline, and why each one made the list.
 
@@ -148,15 +152,15 @@ Refresh the offline snapshot (needs network access to CISA, FIRST, MITRE, NVD, a
 python scripts/refresh_snapshots.py
 ```
 
-`--rotate` copies the current KEV catalog onto the previous snapshot before downloading. `--msrc-only` refreshes just the KB snapshot from the CVE pool already on disk.
+`--rotate` copies the current KEV catalog onto the previous snapshot before downloading. `--msrc-only` refreshes just the KB snapshot from the CVE pool already on disk. `--estate-only` moves the lab forward to today from the pool already on disk, with no downloads. `--rebuild` discards the lab's history and generates a fresh one as of today.
 
-On a warm process the bundled snapshot loads in a few hundredths of a second, scoring 1,230 findings takes about 70 ms, and the CSV parse (about 0.8 s) is cached for the day so page changes do not repeat it.
+On a warm process the bundled snapshot loads in a few hundredths of a second, scoring about 1,230 findings takes about 70 ms, and the CSV parse (about 0.8 s) is cached for the day so page changes do not repeat it.
 
 ## Streamlit Community Cloud
 
 `streamlit_app.py` is the entry point, `requirements.txt` pins the runtime, and `runtime.txt` selects Python 3.12. Live KEV, EPSS, Vulnrichment, and single-CVE MSRC lookups use `st.cache_data(ttl=86400)`. If the bundled KEV snapshot is under 20 hours old, the app serves it and does not call CISA. If a feed is down, the files in `data/snapshots/` still load the demo.
 
-[`.github/workflows/tests.yml`](.github/workflows/tests.yml) runs ruff and pytest on every push and pull request. [`.github/workflows/refresh-data.yml`](.github/workflows/refresh-data.yml) rebuilds the snapshots every day at 07:20 UTC and commits them when they change.
+[`.github/workflows/tests.yml`](.github/workflows/tests.yml) runs ruff and pytest on every push and pull request. [`.github/workflows/refresh-data.yml`](.github/workflows/refresh-data.yml) refreshes the snapshots and moves the lab forward one day every morning at 07:20 UTC, then commits the result.
 
 A live briefing uses only the key a visitor pastes on the Briefing page, for that one request. The app never reads a key from the environment or from Streamlit secrets, so a public deployment holds nothing for a visitor to spend. The endpoint is set by configuration (`KEV_RADAR_LLM_BASE_URL`, https only) and cannot be changed from the page. The repo does not contain a key. Offline template mode is the default.
 

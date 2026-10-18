@@ -19,5 +19,6 @@
  },
  "msrc_fetched_at": "2026-10-18T12:05:31Z",
  "msrc_cve_count": 14,
- "msrc_patch_count": 109
+ "msrc_patch_count": 109,
+ "estate_as_of": "2026-10-17"
 }

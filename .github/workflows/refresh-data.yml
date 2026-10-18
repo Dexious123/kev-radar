@@ -19,7 +19,7 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Refresh snapshots and rebuild the demo estate
+      - name: Refresh snapshots and move the demo estate forward one day
         run: python scripts/refresh_snapshots.py --rotate
       - name: Commit updated snapshots
         run: |
@@ -29,6 +29,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data changes"
           else
-            git commit -m "Refresh KEV, EPSS, and Vulnrichment snapshots"
+            git commit -m "Refresh public data and advance the demo estate"
             git push
           fi

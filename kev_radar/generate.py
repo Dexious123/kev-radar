@@ -240,6 +240,78 @@ def _matching(hosts: list[Host], family: str) -> list[Host]:
     return matched or list(hosts)
 
 
+PLUGIN_FAMILY = {
+    "windows": "Windows",
+    "linux": "General",
+    "network": "Firewalls",
+    "workstation": "Windows",
+    "cloud": "General",
+}
+
+
+def export_row(
+    host: Host,
+    entry: dict,
+    *,
+    plugin: int,
+    state: str,
+    first: date,
+    last_seen: date,
+    last_fixed: date | None,
+) -> dict:
+    """One Tenable-shaped export row for a host and a pool entry. Shared with evolve.py."""
+    cve = str(entry["cve"]).upper()
+    cvss = entry.get("cvss")
+    try:
+        cvss_value = float(cvss) if cvss is not None and str(cvss) != "" else None
+    except (TypeError, ValueError):
+        cvss_value = None
+    name = str(entry.get("name") or cve)
+    family = str(entry.get("family") or "any")
+    epss = entry.get("epss")
+    tags = json.dumps(
+        {
+            "Owner": [host.owner],
+            "Business Unit": [host.business_unit],
+            "Internet Exposed": ["Yes" if host.exposed else "No"],
+            "Environment": ["Synthetic lab"],
+        },
+        separators=(",", ":"),
+    )
+    return {
+        "definition.id": str(plugin),
+        "definition.name": name,
+        "definition.cve": cve,
+        "definition.cvss3.base_score": "" if cvss_value is None else f"{cvss_value:.1f}",
+        "definition.cvss3.base_vector": entry.get("cvss_vector") or "",
+        "definition.epss.score": "" if epss in (None, "") else f"{float(epss):.5f}",
+        "definition.family": PLUGIN_FAMILY.get(family, "Misc."),
+        "definition.synopsis": f"Synthetic check for {name}.",
+        "definition.solution": (
+            "Apply the vendor fix and rescan. Synthetic guidance for the Harborline Mutual lab, "
+            "not an instruction for a production system."
+        ),
+        "severity": _severity(cvss_value, bool(entry.get("in_kev"))),
+        "state": state,
+        "first_observed": _iso(first),
+        "last_seen": _iso(last_seen),
+        "last_fixed": _iso(last_fixed) if last_fixed else "",
+        "port": "443",
+        "protocol": "tcp",
+        "output": (
+            f"Synthetic plugin output. {host.host_name} matched {cve}. "
+            "This row is synthetic demo data, not a real scan."
+        ),
+        "asset.id": host.asset_id,
+        "asset.name": host.asset_name,
+        "asset.host_name": host.host_name,
+        "asset.display_ipv4_address": host.ip,
+        "asset.operating_system": host.operating_system,
+        "asset.system_type": host.system_type,
+        "asset.tags": tags,
+    }
+
+
 def generate_frame(
     pool: list[dict],
     *,
@@ -312,17 +384,11 @@ def generate_frame(
     plugin = 9_000_000
     for host, entry, this_week in pairs:
         plugin += 1
-        cve = str(entry["cve"]).upper()
-        cvss = entry.get("cvss")
-        try:
-            cvss_value = float(cvss) if cvss is not None and str(cvss) != "" else None
-        except (TypeError, ValueError):
-            cvss_value = None
         age = _age_days(rng, entry, this_week, as_of)
         first = as_of - timedelta(days=age)
+        fixed: date | None = None
         if not _should_fix(rng, entry, this_week, as_of):
             state = "REOPENED" if (not this_week and rng.random() < 0.08) else "OPEN"
-            last_fixed = ""
             last_seen = as_of - timedelta(days=rng.randint(0, 2))
         else:
             state = "FIXED"
@@ -340,59 +406,8 @@ def generate_frame(
                 fixed = first + timedelta(days=rng.randint(3, 24))
                 if fixed > as_of:
                     fixed = as_of
-            last_fixed = _iso(fixed)
             last_seen = fixed
-        name = str(entry.get("name") or cve)
-        family = str(entry.get("family") or "any")
-        plugin_family = {
-            "windows": "Windows",
-            "linux": "General",
-            "network": "Firewalls",
-            "workstation": "Windows",
-            "cloud": "General",
-        }.get(family, "Misc.")
-        epss = entry.get("epss")
-        tags = json.dumps(
-            {
-                "Owner": [host.owner],
-                "Business Unit": [host.business_unit],
-                "Internet Exposed": ["Yes" if host.exposed else "No"],
-                "Environment": ["Synthetic lab"],
-            },
-            separators=(",", ":"),
-        )
-        base = {
-            "definition.id": str(plugin),
-            "definition.name": name,
-            "definition.cve": cve,
-            "definition.cvss3.base_score": "" if cvss_value is None else f"{cvss_value:.1f}",
-            "definition.cvss3.base_vector": entry.get("cvss_vector") or "",
-            "definition.epss.score": "" if epss in (None, "") else f"{float(epss):.5f}",
-            "definition.family": plugin_family,
-            "definition.synopsis": f"Synthetic check for {name}.",
-            "definition.solution": (
-                "Apply the vendor fix and rescan. Synthetic guidance for the Harborline Mutual lab, "
-                "not an instruction for a production system."
-            ),
-            "severity": _severity(cvss_value, bool(entry.get("in_kev"))),
-            "state": state,
-            "first_observed": _iso(first),
-            "last_seen": _iso(last_seen),
-            "last_fixed": last_fixed,
-            "port": "443",
-            "protocol": "tcp",
-            "output": (
-                f"Synthetic plugin output. {host.host_name} matched {cve}. "
-                "This row is synthetic demo data, not a real scan."
-            ),
-            "asset.id": host.asset_id,
-            "asset.name": host.asset_name,
-            "asset.host_name": host.host_name,
-            "asset.display_ipv4_address": host.ip,
-            "asset.operating_system": host.operating_system,
-            "asset.system_type": host.system_type,
-            "asset.tags": tags,
-        }
+        base = export_row(host, entry, plugin=plugin, state=state, first=first, last_seen=last_seen, last_fixed=fixed)
         rows.append(base)
         if rng.random() < 0.12:
             duplicate = dict(base)
@@ -401,7 +416,7 @@ def generate_frame(
             later = min(as_of, first + timedelta(days=1))
             duplicate["first_observed"] = _iso(later)
             duplicate["output"] = (
-                f"Synthetic plugin output, second port. {host.host_name} matched {cve} on 8443."
+                f"Synthetic plugin output, second port. {host.host_name} matched {base['definition.cve']} on 8443."
             )
             rows.append(duplicate)
 
@@ -418,5 +433,5 @@ def generate_csv(
 ) -> str:
     frame = generate_frame(pool, as_of=as_of, seed=seed, host_count=host_count)
     buffer = StringIO()
-    frame.to_csv(buffer, index=False)
+    frame.to_csv(buffer, index=False, lineterminator="\n")
     return buffer.getvalue()

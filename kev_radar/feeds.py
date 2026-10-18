@@ -15,6 +15,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 SNAPSHOT_DIR = ROOT / "data" / "snapshots"
 DEMO_CSV = ROOT / "data" / "demo" / "tenable_findings.csv"
+ESTATE_LOG = ROOT / "data" / "demo" / "estate_log.json"
 
 KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 EPSS_URL = "https://api.first.org/data/v1/epss"

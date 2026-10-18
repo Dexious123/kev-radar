@@ -5,7 +5,11 @@ is past due, then due within 7 days, within 30 days, and later. Each slice is a
 business unit. Inside its slice and its band, a dot's exact spot comes from a stable
 hash of host and CVE, so a finding always lands in the same place; only the slice and
 the distance carry meaning. Each dot's animation delay is set from its angle, so it
-brightens as the sweep passes over it.
+brightens as the sweep passes over it. A finding the scanner first saw in the latest
+scan wears an open ring, like a new contact on a scope.
+
+Each dot carries its details as escaped data attributes. ``radar.js`` (``RADAR_SCRIPT``)
+turns them into a data block for the dot nearest the pointer, a tap, or the arrow keys.
 """
 
 from __future__ import annotations
@@ -15,10 +19,13 @@ import html
 import math
 from dataclasses import dataclass, field
 from datetime import date
+from pathlib import Path
 
 import pandas as pd
 
 from kev_radar.metrics import is_open
+
+RADAR_SCRIPT = Path(__file__).with_name("radar.js").read_text(encoding="utf-8")
 
 RADIUS = 165
 # Wide and short: slice labels sit beside the rings, so only the sides need room.
@@ -98,13 +105,22 @@ def _point(angle_deg: float, distance: float) -> tuple[float, float]:
 def _when(days: int) -> str:
     if days < 0:
         late = -days
-        return f"{late} day{'' if late == 1 else 's'} past due"
+        return f"{late:,} day{'' if late == 1 else 's'} past due"
     if days == 0:
         return "Due today"
-    return f"Due in {days} day{'' if days == 1 else 's'}"
+    return f"Due in {days:,} day{'' if days == 1 else 's'}"
 
 
-def build_radar(frame: pd.DataFrame, as_of: date) -> Radar:
+def _day(value: object) -> date | None:
+    if value is None or (not isinstance(value, date) and pd.isna(value)):
+        return None
+    if isinstance(value, pd.Timestamp):
+        return value.date()
+    return value if isinstance(value, date) else None
+
+
+def build_radar(frame: pd.DataFrame, as_of: date, *, new_on: date | None = None) -> Radar:
+    """``new_on`` is the latest scan day; findings first seen that day get a ring."""
     rows = []
     if not frame.empty:
         for row in frame.itertuples(index=False):
@@ -126,26 +142,33 @@ def build_radar(frame: pd.DataFrame, as_of: date) -> Radar:
                     "host": str(getattr(row, "host_name", "")),
                     "owner": str(getattr(row, "owner", None) or "Unassigned"),
                     "score": float(getattr(row, "score", 0) or 0),
+                    "new": new_on is not None and _day(getattr(row, "first_observed", None)) == new_on,
                 }
             )
     counts = {key: 0 for key, _, _ in BANDS}
     for item in rows:
         counts[band_for(item["days"])] += 1
+    counts["new"] = sum(1 for item in rows if item["new"])
     if len(rows) > MAX_DOTS:
-        rows = sorted(rows, key=lambda item: item["score"], reverse=True)[:MAX_DOTS]
+        # New contacts always stay on the scope, whatever their score.
+        rows = sorted(rows, key=lambda item: (item["new"], item["score"]), reverse=True)[:MAX_DOTS]
 
     slices = _slices([item["unit"] for item in rows]) if rows else []
     span = 360.0 / len(slices) if slices else 360.0
     index = {name: i for i, name in enumerate(slices)}
 
     parts: list[str] = []
-    total = sum(counts.values())
+    total = sum(counts[key] for key, _, _ in BANDS)
     summary = (
         f"{total} open findings with a deadline: {counts['past']} past due, {counts['near']} due within 7 days, "
         f"{counts['soon']} within 30 days, {counts['far']} later. Slices are business units."
     )
+    if counts["new"]:
+        summary += f" {counts['new']} first seen in the latest scan."
+    summary += " Arrow keys step through the findings, most overdue first; Escape closes the details."
     parts.append(
-        f'<svg class="radar" viewBox="0 0 {WIDTH} {HEIGHT:.0f}" role="img" aria-labelledby="kr-t kr-d">'
+        f'<svg class="radar" viewBox="0 0 {WIDTH} {HEIGHT:.0f}" role="group" tabindex="0" '
+        'aria-labelledby="kr-t" aria-describedby="kr-d">'
         '<title id="kr-t">Deadline radar</title>'
         f'<desc id="kr-d">{html.escape(summary)}</desc>'
         '<defs><linearGradient id="kr-sweep" x1="0" y1="0" x2="1" y2="0">'
@@ -184,10 +207,24 @@ def build_radar(frame: pd.DataFrame, as_of: date) -> Radar:
         x, y = _point(angle, radial_fraction(item["days"], key) * RADIUS)
         size = 1.3 + 2.0 * min(1.0, max(0.0, item["score"] / 100.0))
         delay = angle / 360.0 * SWEEP_SECONDS - SWEEP_SECONDS
-        tip = f"{item['cve']} on {item['host']}, owner {item['owner']}. {_when(item['days'])} ({item['deadline'].isoformat()})."
+        if item["new"]:
+            parts.append(f'<circle class="contact" cx="{x:.1f}" cy="{y:.1f}" r="{size + 3.2:.1f}"/>')
+        deadline = item["deadline"]
+        data = {
+            "cve": item["cve"],
+            "host": item["host"],
+            "owner": item["owner"],
+            "unit": item["unit"],
+            "when": _when(item["days"]),
+            "due": f"{deadline:%b} {deadline.day}, {deadline.year}",
+            "days": str(item["days"]),
+        }
+        if item["new"]:
+            data["new"] = "1"
+        attributes = " ".join(f'data-{key}="{html.escape(value, quote=True)}"' for key, value in data.items())
         parts.append(
             f'<circle class="dot {band_for(item["days"])}" cx="{x:.1f}" cy="{y:.1f}" r="{size:.1f}" '
-            f'style="animation-delay:{delay:.2f}s"><title>{html.escape(tip)}</title></circle>'
+            f'style="animation-delay:{delay:.2f}s" {attributes}/>'
         )
     parts.append(f'<circle class="core" cx="{CX}" cy="{CY}" r="2.5"/>')
     parts.append("</svg>")

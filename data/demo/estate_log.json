@@ -1,0 +1,24 @@
+{
+ "seed": 2604,
+ "as_of": "2026-10-17",
+ "days": [
+  {
+   "date": "2026-10-17",
+   "fixed": [
+    {
+     "cve": "CVE-2026-81928",
+     "host": "hl-portal-lnx-032.lab.invalid",
+     "owner": "Jonah Reid"
+    }
+   ],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84335",
+     "host": "hl-pay-ws-010.lab.invalid"
+    }
+   ],
+   "reopened": []
+  }
+ ]
+}
