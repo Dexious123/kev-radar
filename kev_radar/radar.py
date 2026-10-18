@@ -165,7 +165,9 @@ def build_radar(frame: pd.DataFrame, as_of: date, *, new_on: date | None = None)
     )
     if counts["new"]:
         summary += f" {counts['new']} first seen in the latest scan."
-    summary += " Arrow keys step through the findings, most overdue first; Escape closes the details."
+    summary += (
+        " Arrow keys step through the findings, most overdue first; Enter enlarges the radar; Escape closes the details."
+    )
     parts.append(
         f'<svg class="radar" viewBox="0 0 {WIDTH} {HEIGHT:.0f}" role="group" tabindex="0" '
         'aria-labelledby="kr-t" aria-describedby="kr-d">'
@@ -194,8 +196,10 @@ def build_radar(frame: pd.DataFrame, as_of: date, *, new_on: date | None = None)
 
     lead = _point(0, RADIUS)
     trail = _point(-48, RADIUS)
+    # The rotation origin is pinned in user units: a percentage origin follows the viewBox, and the
+    # enlarged view crops the viewBox to the scope.
     parts.append(
-        '<g class="sweep">'
+        f'<g class="sweep" style="transform-origin:{CX:.0f}px {CY:.0f}px">'
         f'<path d="M{CX} {CY} L{trail[0]:.1f} {trail[1]:.1f} A{RADIUS} {RADIUS} 0 0 1 {lead[0]:.1f} {lead[1]:.1f} Z" fill="url(#kr-sweep)"/>'
         f'<line class="beam" x1="{CX}" y1="{CY}" x2="{lead[0]:.1f}" y2="{lead[1]:.1f}"/>'
         "</g>"

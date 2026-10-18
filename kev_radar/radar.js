@@ -1,7 +1,8 @@
-// Deadline radar interaction: a data block for the dot nearest the pointer, a tap, or the arrow keys.
+// Deadline radar interaction: a data block for the dot nearest the pointer, a tap, or the arrow keys,
+// and an enlarged view opened by a double-click, the Enlarge button, or Enter.
 // The radar SVG is re-rendered by Streamlit on every rerun, so nothing here holds on to it: state is
-// per SVG element, and the overlay hangs off document.body, outside the trees React manages.
-// Dot text comes from data attributes and is written with textContent only, never as HTML.
+// per SVG element, and the overlay and the enlarged view hang off document.body, outside the trees
+// React manages. Dot text comes from data attributes and is written with textContent only, never as HTML.
 // Streamlit passes this file through DOMPurify, which drops a script whose text has a less-than
 // sign directly before a letter or a slash, so the source must never contain that pair.
 (() => {
@@ -29,10 +30,33 @@
   block.setAttribute("aria-live", "polite");
   block.hidden = true;
   overlay.style.display = "none";
-  document.body.append(overlay, block);
+
+  const modal = document.createElement("div");
+  modal.className = "kr-modal";
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-modal", "true");
+  modal.setAttribute("aria-label", "Deadline radar, enlarged");
+  modal.hidden = true;
+  const bar = document.createElement("div");
+  bar.className = "kr-bar";
+  const heading = document.createElement("p");
+  heading.textContent = "Deadline radar";
+  const closer = document.createElement("button");
+  closer.type = "button";
+  closer.className = "kr-close";
+  closer.textContent = "Close";
+  bar.append(heading, closer);
+  const stage = document.createElement("div");
+  stage.className = "kr-stage";
+  const hint = document.createElement("p");
+  hint.className = "kr-hint";
+  modal.append(bar, stage, hint);
+
+  document.body.append(modal, overlay, block);
 
   let current = null; // {svg, dot}
   let pinned = false;
+  let opener = null;
 
   function stateFor(svg) {
     let state = states.get(svg);
@@ -149,6 +173,99 @@
     overlay.style.display = "none";
   }
 
+  // The enlarged view is a copy of the radar. On an upright phone the side labels would take half
+  // the width, so the copy crops to the scope and folds each business-unit label inside its slice.
+  function geometry(svg) {
+    const rings = svg.querySelectorAll("circle.ring");
+    const outer = rings[rings.length - 1];
+    return {
+      cx: Number(outer.getAttribute("cx")),
+      cy: Number(outer.getAttribute("cy")),
+      r: Number(outer.getAttribute("r")),
+    };
+  }
+
+  function layout() {
+    if (modal.hidden) return;
+    const svg = stage.querySelector("svg.radar");
+    if (!svg) return;
+    const viewWidth = document.documentElement.clientWidth;
+    const viewHeight = document.documentElement.clientHeight;
+    // A short screen (a phone on its side) gives the scope the full height: Close moves to a corner
+    // and the title, key, and hint step aside.
+    const compact = viewHeight < 560;
+    const fold = compact || viewWidth < 720 || viewWidth < viewHeight;
+    modal.classList.toggle("compact", compact);
+    const { cx, cy, r } = geometry(svg);
+    svg.classList.toggle("folded", fold);
+    if (fold) {
+      const edge = r + 6;
+      svg.setAttribute("viewBox", `${cx - edge} ${cy - edge} ${2 * edge} ${2 * edge}`);
+    } else {
+      svg.setAttribute("viewBox", svg.dataset.view);
+    }
+    svg.querySelectorAll("text.slice-label").forEach((label) => {
+      if (fold) {
+        // Inside the rim; side labels run inward so they never cross the edge.
+        const angle = Math.atan2(Number(label.dataset.y) - cy, Number(label.dataset.x) - cx);
+        const across = Math.cos(angle);
+        label.setAttribute("x", cx + across * (r - 12));
+        label.setAttribute("y", cy + Math.sin(angle) * (r - 14));
+        label.setAttribute("text-anchor", across > 0.3 ? "end" : across < -0.3 ? "start" : "middle");
+      } else {
+        label.setAttribute("x", label.dataset.x);
+        label.setAttribute("y", label.dataset.y);
+        label.setAttribute("text-anchor", label.dataset.anchor);
+      }
+    });
+    const box = svg.getAttribute("viewBox").split(" ").map(Number);
+    const key = stage.querySelector(".key");
+    const reserved = compact ? 16 : bar.offsetHeight + hint.offsetHeight + (key ? key.offsetHeight : 0) + 64;
+    const width = Math.max(200, Math.min(viewWidth - 24, ((viewHeight - reserved) * box[2]) / box[3]));
+    svg.style.width = `${width}px`;
+  }
+
+  function open(svg) {
+    hide();
+    const copy = svg.cloneNode(true);
+    const renames = { "kr-t": "kr-t-big", "kr-d": "kr-d-big", "kr-sweep": "kr-sweep-big" };
+    for (const [from, to] of Object.entries(renames)) {
+      const element = copy.querySelector(`[id="${from}"]`);
+      if (element) element.id = to;
+    }
+    copy.setAttribute("aria-labelledby", "kr-t-big");
+    copy.setAttribute("aria-describedby", "kr-d-big");
+    const sweep = copy.querySelector(".sweep path");
+    if (sweep) sweep.setAttribute("fill", "url(#kr-sweep-big)");
+    copy.dataset.view = copy.getAttribute("viewBox");
+    copy.querySelectorAll("text.slice-label").forEach((label) => {
+      label.dataset.x = label.getAttribute("x");
+      label.dataset.y = label.getAttribute("y");
+      label.dataset.anchor = label.getAttribute("text-anchor") || "middle";
+    });
+    copy.style.width = "";
+    stage.replaceChildren(copy);
+    const scope = svg.closest(".scope");
+    const key = scope ? scope.querySelector(".key") : null;
+    if (key) stage.append(key.cloneNode(true));
+    opener = svg;
+    hint.textContent = window.matchMedia("(pointer: coarse)").matches
+      ? "Tap a dot for details."
+      : "Point at a dot for details. Double-click or press Escape to close.";
+    modal.hidden = false;
+    layout();
+    copy.focus({ preventScroll: true });
+  }
+
+  function closeModal() {
+    if (modal.hidden) return;
+    hide();
+    modal.hidden = true;
+    stage.replaceChildren();
+    if (opener && opener.isConnected) opener.focus({ preventScroll: true });
+    opener = null;
+  }
+
   document.addEventListener(
     "pointermove",
     (event) => {
@@ -163,10 +280,22 @@
 
   document.addEventListener("click", (event) => {
     const target = event.target instanceof Element ? event.target : null;
-    if (target && block.contains(target)) return;
-    const svg = target ? target.closest("svg.radar") : null;
+    if (!target || block.contains(target)) return;
+    const expand = target.closest(".kr-expand");
+    if (expand) {
+      const scope = expand.closest(".scope");
+      const svg = scope ? scope.querySelector("svg.radar") : null;
+      if (svg) open(svg);
+      return;
+    }
+    if (target.closest(".kr-close")) {
+      closeModal();
+      return;
+    }
+    const svg = target.closest("svg.radar");
     if (!svg) {
       if (current) hide();
+      if (modal.contains(target) && !target.closest(".kr-bar, .key")) closeModal();
       return;
     }
     const reach = event.pointerType === "mouse" ? HOVER_PX : TAP_PX;
@@ -175,13 +304,35 @@
     else show(svg, dot, true);
   });
 
+  document.addEventListener("dblclick", (event) => {
+    const svg = event.target instanceof Element ? event.target.closest("svg.radar") : null;
+    if (!svg) return;
+    event.preventDefault();
+    if (modal.contains(svg)) closeModal();
+    else open(svg);
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       if (current) hide();
+      else closeModal();
+      return;
+    }
+    if (!modal.hidden && event.key === "Tab") {
+      const stops = [closer, stage.querySelector("svg.radar")].filter(Boolean);
+      const at = stops.indexOf(document.activeElement);
+      const next = (at + (event.shiftKey ? -1 : 1) + stops.length) % stops.length;
+      event.preventDefault();
+      stops[next].focus({ preventScroll: true });
       return;
     }
     const svg = document.activeElement;
     if (!(svg instanceof SVGElement) || !svg.matches("svg.radar")) return;
+    if (event.key === "Enter" && !modal.contains(svg)) {
+      event.preventDefault();
+      open(svg);
+      return;
+    }
     const order = stateFor(svg).order;
     if (!order.length) return;
     const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
@@ -204,5 +355,12 @@
     if (current) window.requestAnimationFrame(place);
   };
   document.addEventListener("scroll", reposition, { capture: true, passive: true });
-  window.addEventListener("resize", reposition, { passive: true });
+  window.addEventListener(
+    "resize",
+    () => {
+      layout();
+      reposition();
+    },
+    { passive: true },
+  );
 })();

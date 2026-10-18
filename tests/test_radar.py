@@ -101,6 +101,12 @@ def test_the_radar_script_writes_text_never_markup():
         assert sink not in RADAR_SCRIPT
 
 
+def test_the_radar_can_be_enlarged_by_double_click_button_or_enter():
+    assert '"dblclick"' in RADAR_SCRIPT
+    assert '".kr-expand"' in RADAR_SCRIPT
+    assert 'event.key === "Enter"' in RADAR_SCRIPT
+
+
 def test_the_radar_script_survives_streamlits_sanitizer():
     # DOMPurify removes a script whose text looks like it holds markup; st.html would then run nothing.
     assert re.search(r"<[/\w]", RADAR_SCRIPT) is None

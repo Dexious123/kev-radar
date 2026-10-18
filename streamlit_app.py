@@ -153,16 +153,41 @@ st.markdown(
     svg.radar .dot.soon, svg.radar .dot.far {fill: var(--cyan);}
     svg.radar .core {fill: var(--signal);}
     svg.radar .contact {fill: none; stroke: var(--signal); stroke-width: 1.2; opacity: 0.85; pointer-events: none;}
-    svg.radar {touch-action: manipulation;}
+    svg.radar {touch-action: manipulation; user-select: none; -webkit-user-select: none;}
+    .kr-expand, .kr-close {
+        display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.32rem 0.9rem;
+        background: transparent; color: var(--signal); border: 1px solid var(--graticule); border-radius: 999px;
+        font: inherit; font-size: 0.82rem; line-height: 1.3;
+    }
+    .kr-expand:hover, .kr-close:hover {border-color: var(--readout);}
+    .kr-expand svg {width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;}
+    /* The enlarged scope: a full-screen copy of the radar, opened by double-click, the button, or Enter. */
+    .kr-modal {
+        position: fixed; inset: 0; z-index: 999995; display: flex; flex-direction: column; align-items: center;
+        justify-content: center; gap: 0.7rem; padding: 0.8rem 12px 1rem; background: var(--scope);
+        overscroll-behavior: contain; font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .kr-modal[hidden] {display: none;}
+    .kr-bar {width: 100%; max-width: 1400px; display: flex; align-items: center; justify-content: space-between; gap: 1rem;}
+    .kr-bar p {margin: 0; font-stretch: 75%; font-weight: 640; font-size: 1.8rem; line-height: 1; color: var(--signal);}
+    .kr-stage {display: flex; flex-direction: column; align-items: center; gap: 0.7rem;}
+    .kr-modal svg.radar {display: block; max-width: none; height: auto;}
+    .kr-modal svg.radar.folded .slice-label {
+        font-size: 12px; paint-order: stroke; stroke: var(--scope); stroke-width: 3.5px; stroke-linejoin: round;
+    }
+    .kr-hint {margin: 0; font-size: 0.8rem; color: var(--readout); text-align: center;}
+    .kr-modal.compact {padding: 8px;}
+    .kr-modal.compact .kr-bar {position: absolute; top: 8px; right: 12px; width: auto; z-index: 1;}
+    .kr-modal.compact .kr-bar p, .kr-modal.compact .kr-hint, .kr-modal.compact .key {display: none;}
     svg.radar:focus {outline: none;}
     svg.radar:focus-visible {outline: 1px solid var(--graticule) !important; outline-offset: 4px; border-radius: 8px;}
     [data-testid="stLayoutWrapper"]:has(> .st-key-radar-script), .st-key-radar-script {display: none;}
     /* The data block: what a controller reads next to a target. */
-    .kr-overlay {position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999991; overflow: visible;}
+    .kr-overlay {position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999996; overflow: visible;}
     .kr-reticle {fill: none; stroke: var(--signal); stroke-width: 1.5;}
     .kr-leader {stroke: var(--readout); stroke-width: 1;}
     .kr-block {
-        position: fixed; z-index: 999992; min-width: 12.5rem; max-width: min(20rem, calc(100vw - 16px));
+        position: fixed; z-index: 999997; min-width: 12.5rem; max-width: min(20rem, calc(100vw - 16px));
         padding: 0.6rem 0.8rem 0.65rem; background: var(--bezel); border: 1px solid var(--graticule); border-radius: 6px;
         color: var(--signal); font-size: 0.84rem; line-height: 1.45; pointer-events: none;
         box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
@@ -581,7 +606,11 @@ def _hero_html(*, source: str, stats: dict | None = None, radar=None, today: str
             + (f'<span class="new"><i></i>New in the latest scan <b>{fresh:,}</b></span>' if fresh else "")
             + "</div>"
             + '<p class="how">Each dot is an open finding. Closer to the center means less time left; '
-            + "each slice is a business unit. Point at or tap a dot for its CVE, host, owner, and deadline.</p>"
+            + "each slice is a business unit. Point at or tap a dot for its CVE, host, owner, and deadline. "
+            + "Double-click the radar to enlarge it.</p>"
+            + '<button class="kr-expand" type="button" aria-haspopup="dialog">'
+            + '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg>'
+            + "Enlarge radar</button>"
             + "</div>"
         )
     now_html = (

@@ -43,7 +43,7 @@ The app reads `data/snapshots/` first. A fresh snapshot does not call the networ
 
 ## Feature tour
 
-**Deadline radar.** Every open finding is a dot. Distance from the center is the time left before its BOD 26-04 deadline: past due in the middle, then due within 7 days, within 30 days, and later. Each slice is a business unit. The sweep brightens each dot as it passes. Point near a dot, or tap it on a phone, and a data block opens beside it, the way a controller's label sits next to a target: CVE, host, owner and business unit, time left, and the deadline date. Clicking pins the block so the CVE can be copied. With the radar focused, the arrow keys step through findings from the most overdue, and Escape closes the block. It follows the sidebar filters.
+**Deadline radar.** Every open finding is a dot. Distance from the center is the time left before its BOD 26-04 deadline: past due in the middle, then due within 7 days, within 30 days, and later. Each slice is a business unit. The sweep brightens each dot as it passes. Point near a dot, or tap it on a phone, and a data block opens beside it, the way a controller's label sits next to a target: CVE, host, owner and business unit, time left, and the deadline date. Clicking pins the block so the CVE can be copied. With the radar focused, the arrow keys step through findings from the most overdue, and Escape closes the block. Double-click the radar, press Enter, or use **Enlarge radar** to open it full screen with the same data blocks; on a phone held upright, the enlarged view folds the business-unit labels inside the rim so the scope fills the width. It follows the sidebar filters.
 
 ![A data block pinned on a finding due in 3 days](docs/screenshots/radar.png)
 
