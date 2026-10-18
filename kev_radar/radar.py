@@ -119,8 +119,12 @@ def _day(value: object) -> date | None:
     return value if isinstance(value, date) else None
 
 
-def build_radar(frame: pd.DataFrame, as_of: date, *, new_on: date | None = None) -> Radar:
-    """``new_on`` is the latest scan day; findings first seen that day get a ring."""
+def build_radar(frame: pd.DataFrame, as_of: date, *, new_on: date | None = None, mini: bool = False) -> Radar:
+    """``new_on`` is the latest scan day; findings first seen that day get a ring.
+
+    ``mini`` crops the view to the scope for the slim page header, where the radar is a
+    button that opens the enlarged view; ``data-full`` keeps the full view for that.
+    """
     rows = []
     if not frame.empty:
         for row in frame.itertuples(index=False):
@@ -165,11 +169,18 @@ def build_radar(frame: pd.DataFrame, as_of: date, *, new_on: date | None = None)
     )
     if counts["new"]:
         summary += f" {counts['new']} first seen in the latest scan."
-    summary += (
-        " Arrow keys step through the findings, most overdue first; Enter enlarges the radar; Escape closes the details."
-    )
+    if mini:
+        summary += " Select the radar to enlarge it."
+    else:
+        summary += (
+            " Arrow keys step through the findings, most overdue first; Enter opens the selected finding in the fix "
+            "queue, or enlarges the radar when none is selected; Escape closes the details."
+        )
+    full = f"0 0 {WIDTH} {HEIGHT:.0f}"
+    edge = RADIUS + 8
+    view = f"{CX - edge:.0f} {CY - edge:.0f} {2 * edge} {2 * edge}" if mini else full
     parts.append(
-        f'<svg class="radar" viewBox="0 0 {WIDTH} {HEIGHT:.0f}" role="group" tabindex="0" '
+        f'<svg class="radar" viewBox="{view}" data-full="{full}" role="group" tabindex="0" '
         'aria-labelledby="kr-t" aria-describedby="kr-d">'
         '<title id="kr-t">Deadline radar</title>'
         f'<desc id="kr-d">{html.escape(summary)}</desc>'

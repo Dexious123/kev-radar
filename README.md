@@ -18,7 +18,7 @@ BOD 22-01 is revoked. On June 10, 2026 CISA replaced it, and BOD 19-02, with BOD
 
 A catalog explorer stops at "this CVE is in KEV." A SOC lead still has to answer which host, which owner, which deadline, and whether last month's close rate will clear the ones due next week. KEV Radar is built for that second question. The estate is **Harborline Mutual**, a fictional lab: 300 hosts on `*.lab.invalid`, real CVE IDs, and no employer data.
 
-The screenshots show the October 17, 2026 data. That day the lab had 1,231 host-and-CVE findings. 570 are still open. Five sit under an active exception, so the overdue count is 354. 27 are due in the next 7 days. At 23.5 closes a week, about 4 of those 27 are projected to miss. Average time to fix on closed findings is 12 days. SLO compliance sat near 18% because open historical KEVs are already past a clock that started when CISA added them. That is the backlog, not a rounding error. The lab moves forward a day every morning, so the live figures move from these.
+The screenshots show the lab as scored on October 18, 2026. It had 1,231 host-and-CVE findings. 570 are still open. Five sit under an active exception, so the overdue count is 358. 25 are due in the next 7 days. At 23.5 closes a week, about 2 of those 25 are projected to miss. Average time to fix on closed findings is 12 days. SLO compliance sat near 18% because open historical KEVs are already past a clock that started when CISA added them. That is the backlog, not a rounding error. The lab moves forward a day every morning, so the live figures move from these.
 
 ## Architecture
 
@@ -43,17 +43,17 @@ The app reads `data/snapshots/` first. A fresh snapshot does not call the networ
 
 ## Feature tour
 
-**Deadline radar.** Every open finding is a dot. Distance from the center is the time left before its BOD 26-04 deadline: past due in the middle, then due within 7 days, within 30 days, and later. Each slice is a business unit. The sweep brightens each dot as it passes. Point near a dot, or tap it on a phone, and a data block opens beside it, the way a controller's label sits next to a target: CVE, host, owner and business unit, time left, and the deadline date. Clicking pins the block so the CVE can be copied. With the radar focused, the arrow keys step through findings from the most overdue, and Escape closes the block. Double-click the radar, press Enter, or use **Enlarge radar** to open it full screen with the same data blocks; on a phone held upright, the enlarged view folds the business-unit labels inside the rim so the scope fills the width. It follows the sidebar filters.
+**Deadline radar.** Every open finding is a dot. Distance from the center is the time left before its BOD 26-04 deadline: past due in the middle, then due within 7 days, within 30 days, and later. Each slice is a business unit. The sweep brightens each dot as it passes. Point near a dot, or tap it on a phone, and a data block opens beside it, the way a controller's label sits next to a target: CVE, host, owner and business unit, time left, and the deadline date. Clicking pins the block, so the CVE can be copied, and adds **Open in fix queue**, which opens that finding's decision path and deadline detail. With the radar focused, the arrow keys step through findings from the most overdue, Enter opens the selected one in the fix queue, and Escape closes the block. Double-click the radar, or use **Enlarge radar**, to open it full screen with the same data blocks; on a phone held upright, the enlarged view folds the business-unit labels inside the rim so the scope fills the width. Every other page keeps a small live radar beside the title, and selecting it opens the same enlarged view. It follows the sidebar filters.
 
-![A data block pinned on a finding due in 3 days](docs/screenshots/radar.png)
+![A pinned data block on the radar, with its link into the fix queue](docs/screenshots/radar.png)
 
 **A lab that changes every day.** Each morning the refresh job moves Harborline Mutual forward one simulated day. The scanner sees every open finding again. KEV entries CISA added in the last few days turn up on matching hosts, at least one exposed and one internal. A few non-KEV CVEs show up on hosts that did not have them. Owners close three to six findings on a weekday, newest KEVs and exposed hosts first, and almost none at the weekend. Now and then a fix does not hold and the finding reopens. The header says what changed since yesterday, and findings first seen in the latest scan wear a ring on the radar. Every random choice is seeded by the date, so a re-run changes nothing and a missed morning is replayed on the next run. The CVE IDs, KEV dates, and EPSS scores are real. The hosts, the owners, and their work are simulated.
 
-**Executive overview.** Readouts for the filter, an eight-week risk trend, a burn-down of overdue findings against the recent close rate, and the ten findings to fix this week as strips: owner, deadline, and why each one made the list.
+**Executive overview.** Readouts for the filter, an eight-week risk trend, a burn-down of overdue findings against the recent close rate, and the ten CVEs to fix this week as strips. One patch usually covers every host with the same CVE, so each strip lists them together (on October 18, CVE-2026-23760 sat on nine lab hosts), with the owners, the most urgent deadline, and short tags for why it made the list. Each CVE opens in the fix queue.
 
 **Fix queue.** Every open finding carries the BOD 26-04 decision path and the deadline that path produces. The priority score sorts the queue. It does not replace the deadline.
 
-![Decision path on the fix queue](docs/screenshots/fix-queue.png)
+![The fix queue under the slim header, with readable columns and the decision path](docs/screenshots/fix-queue.png)
 
 **Attack surface.** Open findings by business unit, split into four lanes: internal or exposed, crossed with KEV or not. Color is mean EPSS. Pick a host and every finding on it is listed with its decision path.
 

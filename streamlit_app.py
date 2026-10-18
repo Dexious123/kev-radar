@@ -73,13 +73,16 @@ from kev_radar.metrics import (
     slo_compliance,
 )
 from kev_radar.msrc import is_windows_text, lookup_cve_live, patches_for, render_audit_script
-from kev_radar.overview import headline, projected_burndown, risk_trend, top_to_fix
+from kev_radar.overview import headline, projected_burndown, risk_trend, top_groups, top_to_fix
 from kev_radar.parse import ParseError, ParseResult, parse_findings
 from kev_radar.present import (
+    QUEUE_LABELS,
     csv_download,
+    find_in_queue,
     kev_additions_by_month,
     queue_frame,
     scatter_frame,
+    short_host,
     vendor_frame,
 )
 from kev_radar.prioritize import prioritize
@@ -202,6 +205,14 @@ st.markdown(
     .kr-block .when.past i {background: var(--red);}
     .kr-block .when.near i {background: var(--amber);}
     .kr-block .due {color: var(--readout); font-size: 0.78rem;}
+    .kr-block .hint {margin-top: 0.45rem; color: var(--readout); font-size: 0.74rem;}
+    .kr-block.pinned .hint {display: none;}
+    .kr-block .go {
+        display: none; width: fit-content; margin-top: 0.6rem; padding: 0.3rem 0.85rem; border: 1px solid var(--readout);
+        border-radius: 999px; color: var(--signal); font-size: 0.8rem; text-decoration: none;
+    }
+    .kr-block.pinned .go {display: inline-flex;}
+    .kr-block .go:hover {border-color: var(--cyan);}
     @media (prefers-reduced-motion: no-preference) {
         svg.radar .sweep {animation: kr-sweep 8s linear infinite;}
         svg.radar .dot {animation: kr-dot 8s linear infinite;}
@@ -250,7 +261,7 @@ st.markdown(
     /* Flight strips: the top of the queue, in the order to work it. */
     ol.strips {list-style: none; margin: 0.5rem 0 1.2rem 0; padding: 0; display: grid; gap: 6px;}
     ol.strips .strip {
-        display: grid; grid-template-columns: minmax(270px, 1.35fr) minmax(130px, 0.85fr) minmax(130px, 0.8fr) minmax(0, 1.8fr);
+        display: grid; grid-template-columns: minmax(270px, 1.3fr) minmax(175px, 0.95fr) minmax(135px, 0.75fr) minmax(0, 1.7fr);
         gap: 1.1rem; align-items: center; padding: 0.7rem 1.1rem;
         background: var(--bezel); border: 1px solid var(--graticule); border-left: 4px solid var(--cyan); border-radius: 4px;
     }
@@ -260,8 +271,28 @@ st.markdown(
     ol.strips .strip small {font-size: 0.78rem; color: var(--readout);}
     ol.strips .strip .s-id {font-family: var(--mono); font-size: 0.74rem; color: var(--readout); white-space: nowrap;}
     ol.strips .strip .s-id b, ol.strips .strip .s-id {overflow: hidden; text-overflow: ellipsis;}
-    ol.strips .strip .s-id b {font-weight: 500; font-size: 0.8rem; color: var(--signal);}
-    ol.strips .strip .s-why {font-size: 0.85rem; color: var(--readout);}
+    ol.strips .strip .s-id a {
+        font-weight: 500; font-size: 0.8rem; color: var(--signal); overflow: hidden; text-overflow: ellipsis;
+        text-decoration: underline; text-decoration-color: var(--graticule); text-underline-offset: 3px;
+    }
+    ol.strips .strip .s-id a:hover {text-decoration-color: var(--cyan);}
+    ol.strips .strip .s-id em {font-style: normal; white-space: normal;}
+    ol.strips .strip .s-why {flex-direction: row; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.35rem;}
+    ol.strips .strip .s-why i {
+        font-style: normal; font-size: 0.76rem; line-height: 1.3; color: var(--readout);
+        padding: 0.12rem 0.5rem; border: 1px solid var(--graticule); border-radius: 4px; white-space: nowrap;
+    }
+    ol.strips .strip .s-why i.rule {color: var(--signal); border-color: #3A5961;}
+
+    /* Slim header on every page but the overview: the radar stays in view and opens full size. */
+    .bar {display: flex; align-items: center; gap: 1.25rem; margin: 0 0 1.3rem 0; padding: 0 0 1.1rem 0; border-bottom: 1px solid var(--graticule);}
+    .bar .scope.mini {flex: none; width: 92px; gap: 0;}
+    .bar .scope.mini svg.radar {width: 92px; height: 92px; max-width: 92px;}
+    .bar .scope.mini .key, .bar .scope.mini svg.radar text {display: none;}
+    .bar .scope.mini:hover svg.radar .ring {stroke: var(--readout);}
+    .bar .bar-copy {min-width: 0;}
+    .bar .title {font-stretch: 75%; font-weight: 640; font-size: clamp(2rem, 4vw, 2.6rem); line-height: 0.95; letter-spacing: -0.01em; color: var(--signal); margin: 0 0 0.4rem 0;}
+    .bar .now {font-size: 1.05rem; line-height: 1.4; color: var(--signal); margin: 0; max-width: 62ch;}
     @media (max-width: 640px) {
         .st-key-readouts [data-testid="stHorizontalBlock"] {flex-wrap: wrap;}
         .st-key-readouts [data-testid="stColumn"] {
@@ -559,6 +590,11 @@ def _path_html(path: object) -> str:
     return '<div class="path">' + '<span class="arrow">→</span>'.join(chips) + "</div>"
 
 
+def _fit_height(rows: int, cap: int) -> int:
+    """A table tall enough for its rows and no taller, so short tables do not trail empty lines."""
+    return min(cap, 38 + 35 * max(rows, 1) + 2)
+
+
 def _plural(count: int, one: str, many: str) -> str:
     return f"{count:,} {one if count == 1 else many}"
 
@@ -577,34 +613,60 @@ def _today_line(log: dict | None, as_of: date) -> str:
     return f"{lead}: {join_clauses(day_clauses(latest)) or QUIET_DAY}."
 
 
-def _hero_html(*, source: str, stats: dict | None = None, radar=None, today: str = "") -> str:
-    """Title, one live sentence about the filtered estate, the lab's latest day, the source, and the radar."""
+def _now_sentence(stats: dict | None) -> str:
     if stats is None:
-        now = ""
-    elif not stats["open"]:
-        now = "No open findings in this filter."
-    elif stats["overdue"]:
+        return ""
+    if not stats["open"]:
+        return "No open findings in this filter."
+    if stats["overdue"]:
         verb = "is" if stats["overdue"] == 1 else "are"
-        now = (
+        return (
             f"{_plural(stats['overdue'], 'finding', 'findings')} {verb} past the BOD 26-04 deadline, "
             f"and {stats['due_soon']:,} more {'is' if stats['due_soon'] == 1 else 'are'} due within 7 days."
         )
-    else:
-        now = f"Nothing is past its BOD 26-04 deadline. {_plural(stats['due_soon'], 'finding is', 'findings are')} due within 7 days."
+    return f"Nothing is past its BOD 26-04 deadline. {_plural(stats['due_soon'], 'finding is', 'findings are')} due within 7 days."
+
+
+def _now_html(stats: dict | None) -> str:
+    now = _now_sentence(stats)
+    if not now:
+        return ""
+    return '<p class="now">' + html.escape(now).replace("BOD 26-04", '<span class="nb">BOD 26-04</span>') + "</p>"
+
+
+def _key_html(counts: dict) -> str:
+    later = counts["soon"] + counts["far"]
+    fresh = counts.get("new", 0)
+    return (
+        '<div class="key">'
+        + f'<span class="past"><i></i>Past due <b>{counts["past"]:,}</b></span>'
+        + f'<span class="near"><i></i>Within 7 days <b>{counts["near"]:,}</b></span>'
+        + f'<span class="later"><i></i>Later <b>{later:,}</b></span>'
+        + (f'<span class="new"><i></i>New in the latest scan <b>{fresh:,}</b></span>' if fresh else "")
+        + "</div>"
+    )
+
+
+def _bar_html(*, stats: dict | None = None, radar=None) -> str:
+    """The slim header for every page but the overview: a small live radar that enlarges, the title, and the status."""
+    scope = f'<div class="scope mini" title="Enlarge the radar">{radar.svg}{_key_html(radar.counts)}</div>' if radar else ""
+    return (
+        '<div class="bar">'
+        + scope
+        + '<div class="bar-copy"><p class="title" role="heading" aria-level="1">KEV Radar</p>'
+        + _now_html(stats)
+        + "</div></div>"
+    )
+
+
+def _hero_html(*, source: str, stats: dict | None = None, radar=None, today: str = "") -> str:
+    """Title, one live sentence about the filtered estate, the lab's latest day, the source, and the radar."""
     scope = ""
     if radar is not None:
-        counts = radar.counts
-        later = counts["soon"] + counts["far"]
-        fresh = counts.get("new", 0)
         scope = (
             '<div class="scope">'
             + radar.svg
-            + '<div class="key">'
-            + f'<span class="past"><i></i>Past due <b>{counts["past"]:,}</b></span>'
-            + f'<span class="near"><i></i>Within 7 days <b>{counts["near"]:,}</b></span>'
-            + f'<span class="later"><i></i>Later <b>{later:,}</b></span>'
-            + (f'<span class="new"><i></i>New in the latest scan <b>{fresh:,}</b></span>' if fresh else "")
-            + "</div>"
+            + _key_html(radar.counts)
             + '<p class="how">Each dot is an open finding. Closer to the center means less time left; '
             + "each slice is a business unit. Point at or tap a dot for its CVE, host, owner, and deadline. "
             + "Double-click the radar to enlarge it.</p>"
@@ -613,11 +675,7 @@ def _hero_html(*, source: str, stats: dict | None = None, radar=None, today: str
             + "Enlarge radar</button>"
             + "</div>"
         )
-    now_html = (
-        '<p class="now">' + html.escape(now).replace("BOD 26-04", '<span class="nb">BOD 26-04</span>') + "</p>"
-        if now
-        else ""
-    )
+    now_html = _now_html(stats)
     today_html = f'<p class="today">{html.escape(today)}</p>' if today else ""
     return (
         '<div class="hero"><div class="hero-copy"><p class="title" role="heading" aria-level="1">KEV Radar</p>'
@@ -684,7 +742,7 @@ def _readouts(stats: dict) -> None:
 
 
 def _detail(row: pd.Series, classic: bool) -> None:
-    title = f"{row['cve']} on {row['host_name']}"
+    title = f"{row['cve']} on {short_host(row['host_name'])}"
     st.subheader(title)
     st.caption(str(row.get("vuln_name") or ""))
     path = row["ssvc_path"] if classic else row["decision_path"]
@@ -767,7 +825,11 @@ def _queue_page(queue: pd.DataFrame, classic: bool) -> None:
         if not classic
         else "The path column is the older CISA SSVC decision. Deadlines on the other view stay on BOD 26-04."
     )
+    requested = find_in_queue(queue, st.query_params.get("finding"))
+    from_radar = st.container()
     shown = queue_frame(queue, classic=classic)
+    shown["host_name"] = shown["host_name"].map(short_host)
+    shown = shown.rename(columns=QUEUE_LABELS)
     event = st.dataframe(
         shown,
         hide_index=True,
@@ -776,10 +838,24 @@ def _queue_page(queue: pd.DataFrame, classic: bool) -> None:
         on_select="rerun",
         selection_mode="single-row",
         key="queue-table",
+        column_config={
+            "Score": st.column_config.NumberColumn(format="%.1f", width="small"),
+            "Band": st.column_config.TextColumn(width="small"),
+            "CVE": st.column_config.TextColumn(width="medium"),
+            "Vulnerability": st.column_config.TextColumn(width="large"),
+            "EPSS": st.column_config.NumberColumn(format="percent", width="small"),
+            "CVSS": st.column_config.NumberColumn(format="%.1f", width="small"),
+            "Decision path": st.column_config.TextColumn(width="large"),
+        },
     )
     selected = list(getattr(getattr(event, "selection", None), "rows", []) or [])
-    index = selected[0] if selected else 0
-    _detail(queue.iloc[index], classic)
+    if not selected and requested is not None:
+        # Arrived from a radar dot or a strip: show that finding first, above the queue.
+        with from_radar:
+            _detail(queue.iloc[requested], classic)
+            st.caption("Pick any row in the queue below to see its detail instead.")
+    else:
+        _detail(queue.iloc[selected[0] if selected else 0], classic)
     st.download_button(
         "Download this queue as CSV",
         data=csv_download(queue),
@@ -863,7 +939,7 @@ def _exceptions_register(frame: pd.DataFrame, records: list) -> None:
             "Yes" if finding_key(host, cve) in keys else "No"
             for host, cve in zip(table["Host"], table["CVE"], strict=True)
         ]
-        st.dataframe(table, hide_index=True, width="stretch", height=280)
+        st.dataframe(table, hide_index=True, width="stretch", height=_fit_height(len(table), 280))
         csv_col, json_col = st.columns(2)
         csv_col.download_button(
             "Download register as CSV",
@@ -915,7 +991,7 @@ def _exceptions_register(frame: pd.DataFrame, records: list) -> None:
         st.caption("There is no open finding in this filter to attach an exception to.")
     else:
         options = open_rows.reset_index(drop=True)
-        labels = [f"{row.cve} on {row.host_name}" for row in options.itertuples(index=False)]
+        labels = [f"{row.cve} on {short_host(row.host_name)}" for row in options.itertuples(index=False)]
         with st.form("add-exception"):
             choice = st.selectbox("Finding", labels)
             owner = st.text_input("Owner", help="Leave blank to use the finding's owner.")
@@ -1005,7 +1081,7 @@ def _week_page(frame: pd.DataFrame, catalog: dict, previous: dict | None, versio
                 }
             )
         table = pd.DataFrame(rows)
-        st.dataframe(table, hide_index=True, width="stretch", height=420)
+        st.dataframe(table, hide_index=True, width="stretch", height=_fit_height(len(table), 420))
         choice = st.selectbox("Hosts for a new KEV", [item.cve for item in week if item.in_estate] or ["—"])
         chosen = next((item for item in week if item.cve == choice), None)
         if chosen and chosen.hits:
@@ -1223,7 +1299,7 @@ def _windows_page(frame: pd.DataFrame, snapshot: dict) -> None:
             }
         )
     summary = pd.DataFrame(summary_rows).sort_values(["Open hosts", "CVE"], ascending=[False, True])
-    st.dataframe(summary, hide_index=True, width="stretch", height=360)
+    st.dataframe(summary, hide_index=True, width="stretch", height=_fit_height(len(summary), 360))
     if missing:
         label = f"Look up {min(15, len(missing))} CVEs missing from the snapshot"
         if st.button(label):
@@ -1379,13 +1455,17 @@ def _overview_page(frame: pd.DataFrame, stats: dict) -> None:
     fig.update_layout(height=300, xaxis_title="", yaxis_title="Findings", legend_title="", barmode="overlay")
     st.plotly_chart(_style(fig), width="stretch")
     st.markdown("**Top 10 to fix this week**")
-    st.caption("Overdue first, then due within 7 days, then the highest score. Active exceptions are left off this list.")
-    top = top_to_fix(frame, AS_OF, limit=10)
-    if top.empty:
+    st.caption(
+        "Overdue first, then due within 7 days, then the highest score. Each CVE appears once with every host that "
+        "has it, since one patch usually covers them all. Active exceptions are left off this list. "
+        "Select a CVE to open it in the fix queue."
+    )
+    groups = top_groups(frame, AS_OF, limit=10)
+    if groups.empty:
         st.info("Nothing open is waiting on a patch in this filter.")
     else:
-        st.markdown(render_strips(top, AS_OF), unsafe_allow_html=True)
-    _export_bar(frame, stats, top)
+        st.markdown(render_strips(groups, AS_OF), unsafe_allow_html=True)
+    _export_bar(frame, stats, top_to_fix(frame, AS_OF, limit=10))
 
 
 def _export_bar(frame: pd.DataFrame, stats: dict, top: pd.DataFrame) -> None:
@@ -1455,14 +1535,14 @@ def _surface_page(frame: pd.DataFrame) -> None:
         st.info("No hosts in this filter.")
         return
     labels = [
-        f"{row.host_name} · {row.open_findings} open · score {row.max_score}"
+        f"{short_host(row.host_name)}, {row.open_findings} open, top score {row.max_score}"
         for row in index.itertuples(index=False)
     ]
     choice = st.selectbox("Host", labels)
     host = index.iloc[labels.index(choice)]
     exposed = "publicly exposed" if bool(host["exposed"]) else "internal"
     st.markdown(
-        f"**{host['host_name']}** · {host['owner']} · {host['business_unit']} · {exposed}. "
+        f"**{short_host(host['host_name'])}** is owned by {host['owner']} in {host['business_unit']} and is {exposed}. "
         f"{int(host['open_findings'])} open, {int(host['overdue'])} overdue."
     )
     detail = host_findings(frame, str(host["host_name"]))
@@ -1472,15 +1552,15 @@ def _surface_page(frame: pd.DataFrame) -> None:
     shown = pd.DataFrame(
         {
             "CVE": detail["cve"],
-            "State": detail["state"],
+            "State": detail["state"].map(lambda value: str(value).capitalize()),
             "SLA": detail["sla_status"],
             "Score": detail["score"].round(1),
             "Deadline": detail["deadline"].map(lambda value: "—" if value is None or pd.isna(value) else str(value)[:10]),
             "Decision path": detail["decision_path"],
         }
     )
-    st.dataframe(shown, hide_index=True, width="stretch", height=360)
-    path_labels = [f"{row.cve} · {row.state} · {row.sla_status}" for row in detail.itertuples(index=False)]
+    st.dataframe(shown, hide_index=True, width="stretch", height=_fit_height(len(shown), 360))
+    path_labels = [f"{row.cve}, {str(row.state).lower()}, {row.sla_status.lower()}" for row in detail.itertuples(index=False)]
     pick = st.selectbox("Decision path", path_labels)
     row = detail.iloc[path_labels.index(pick)]
     st.markdown(_path_html(row["decision_path"]), unsafe_allow_html=True)
@@ -1504,7 +1584,7 @@ def _what_if_page(frame: pd.DataFrame, msrc: dict) -> None:
         st.info("Nothing open in this filter, so there is nothing to patch.")
         return
     options = open_rows.head(40)
-    labels = [f"{row.cve} on {row.host_name}" for row in options.itertuples(index=False)]
+    labels = [f"{row.cve} on {short_host(row.host_name)}" for row in options.itertuples(index=False)]
     chosen = st.multiselect("Findings", labels, help="The first 40 open rows in the current sort. A CVE below covers every open instance.")
     cve_text = st.text_input("Or CVE IDs, comma separated")
     kb_text = st.text_input("Or a KB article", help="Matched against the MSRC snapshot. KB3154070 and 3154070 are the same article.")
@@ -1621,10 +1701,6 @@ def main() -> None:
     records_count = meta.get("vulnrichment_count", "—")
     sources = f"the KEV catalog ({feed_label}), EPSS scores from {epss_date}, and {records_count} Vulnrichment records"
     hero = st.empty()
-    hero.markdown(
-        _hero_html(source=f"Remediation deadlines under CISA BOD 26-04, scored against {sources}."),
-        unsafe_allow_html=True,
-    )
 
     with st.sidebar:
         st.header("Estate")
@@ -1637,6 +1713,15 @@ def main() -> None:
             st.session_state["page"] = requested
         page = st.radio("Page", PAGES, key="page", width="stretch")
         st.query_params["page"] = page
+        if page != "Fix queue" and "finding" in st.query_params:
+            del st.query_params["finding"]
+        # Shown while the estate loads; replaced below once the numbers exist.
+        hero.markdown(
+            _hero_html(source=f"Remediation deadlines under CISA BOD 26-04, scored against {sources}.")
+            if page == "Overview"
+            else _bar_html(),
+            unsafe_allow_html=True,
+        )
         mode = st.radio(
             "Source",
             ["Bundled demo", "Upload CSV", "Regenerate"],
@@ -1751,32 +1836,33 @@ def main() -> None:
     else:
         source = f"Harborline Mutual is a fictional estate built on real CVE IDs and public feeds: {sources}."
     latest_scan = date.fromisoformat(log["as_of"]) if log is not None else None
-    hero.markdown(
-        _hero_html(
-            source=source,
-            stats=stats,
-            radar=build_radar(scoped, AS_OF, new_on=latest_scan),
-            today=_today_line(log, AS_OF),
-        ),
-        unsafe_allow_html=True,
-    )
+    overview = page == "Overview"
+    radar = build_radar(scoped, AS_OF, new_on=latest_scan, mini=not overview)
+    if overview:
+        hero.markdown(
+            _hero_html(source=source, stats=stats, radar=radar, today=_today_line(log, AS_OF)),
+            unsafe_allow_html=True,
+        )
+    else:
+        hero.markdown(_bar_html(stats=stats, radar=radar), unsafe_allow_html=True)
     # A fixed script from the package, with no data in it: it reads the dots' escaped attributes.
     with st.container(key="radar-script"):
         st.html(f"<script>{RADAR_SCRIPT}</script>", unsafe_allow_javascript=True)
-    _show_metrics(stats)
-    assumed = 0
-    exposure_assumed = 0
-    if not scoped.empty:
-        assumed_mask = scoped["automatable_assumed"].map(bool) | scoped["technical_impact_assumed"].map(bool)
-        assumed = int(assumed_mask.sum())
-        if "exposure_assumed" in scoped.columns:
-            exposure_assumed = int(scoped["exposure_assumed"].map(bool).sum())
-    st.caption(
-        f"{parsed.raw_rows:,} export rows collapsed to {parsed.collapsed_findings:,} host + CVE findings. "
-        f"Showing {len(scoped):,} after filters. "
-        f"{assumed:,} use an assumed Automatable or Technical Impact value. "
-        f"{exposure_assumed:,} use an assumed public-facing exposure."
-    )
+    if overview:
+        _show_metrics(stats)
+        assumed = 0
+        exposure_assumed = 0
+        if not scoped.empty:
+            assumed_mask = scoped["automatable_assumed"].map(bool) | scoped["technical_impact_assumed"].map(bool)
+            assumed = int(assumed_mask.sum())
+            if "exposure_assumed" in scoped.columns:
+                exposure_assumed = int(scoped["exposure_assumed"].map(bool).sum())
+        st.caption(
+            f"{parsed.raw_rows:,} export rows collapsed to {parsed.collapsed_findings:,} host + CVE findings. "
+            f"Showing {len(scoped):,} after filters. "
+            f"{assumed:,} use an assumed Automatable or Technical Impact value. "
+            f"{exposure_assumed:,} use an assumed public-facing exposure."
+        )
     if enrich_report.get("failed"):
         st.warning(
             "Vulnrichment could not be read for "

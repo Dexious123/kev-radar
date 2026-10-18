@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 import pandas as pd
 
-from kev_radar.overview import fix_reason, headline, projected_burndown, risk_trend, top_to_fix
+from kev_radar.overview import fix_reason, headline, projected_burndown, risk_trend, top_groups, top_to_fix
 
 AS_OF = date(2026, 10, 16)
 
@@ -136,3 +136,22 @@ def test_trend_latest_overdue_matches_the_paused_kpi():
     assert burn.iloc[0]["kind"] == "actual"
     assert burn.iloc[-1]["kind"] == "projection"
     assert int(burn.iloc[-1]["overdue"]) <= numbers["overdue"]
+
+def test_top_groups_lists_each_cve_once_with_every_host():
+    frame = _frame()
+    twin = frame.iloc[[0]].copy()
+    twin["host_name"] = "c.lab.invalid"
+    twin["owner"] = "Cy"
+    twin["score"] = 10
+    twin["days_left"] = 5
+    twin["sla_status"] = "Due soon"
+    frame = pd.concat([frame, twin], ignore_index=True)
+    groups = top_groups(frame, AS_OF, limit=10)
+    assert groups["cve"].tolist().count("CVE-2024-0001") == 1
+    first = groups.iloc[0]
+    assert first["cve"] == "CVE-2024-0001" and first["host_name"] == "a.lab.invalid"
+    assert first["hosts"] == ["a.lab.invalid", "c.lab.invalid"]
+    assert first["owners"] == ["Ada", "Cy"]
+    limited = top_groups(frame, AS_OF, limit=1)
+    assert len(limited) == 1 and limited.iloc[0]["hosts"] == ["a.lab.invalid", "c.lab.invalid"]
+    assert top_groups(frame.iloc[0:0], AS_OF).empty

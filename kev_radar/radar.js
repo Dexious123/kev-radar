@@ -99,20 +99,35 @@
     return element;
   }
 
+  function queueUrl(data) {
+    const url = new URL(window.location.href);
+    url.search = "";
+    url.hash = "";
+    url.searchParams.set("page", "Fix queue");
+    url.searchParams.set("finding", `${data.host || ""}|${data.cve || ""}`);
+    return url.toString();
+  }
+
   function fill(dot) {
     const data = dot.el.dataset;
     const band = ["past", "near", "soon", "far"].find((name) => dot.el.classList.contains(name)) || "far";
     const when = document.createElement("div");
     when.className = `when ${band}`;
     when.append(document.createElement("i"), document.createTextNode(data.when || ""));
+    const go = document.createElement("a");
+    go.className = "go";
+    go.href = queueUrl(data);
+    go.target = "_self";
+    go.textContent = "Open in fix queue";
     const rows = [
       line("cve", data.cve || ""),
-      line("host", data.host || ""),
+      line("host", (data.host || "").replace(/\.lab\.invalid$/, "")),
       line("who", [data.owner, data.unit].filter(Boolean).join(", ")),
       when,
       line("due", `Deadline ${data.due || "unknown"}`),
     ];
     if (data.new === "1") rows.push(line("due", "First seen in the latest scan"));
+    rows.push(line("hint", "Click the dot to keep this open."), go);
     block.replaceChildren(...rows);
   }
 
@@ -237,7 +252,7 @@
     copy.setAttribute("aria-describedby", "kr-d-big");
     const sweep = copy.querySelector(".sweep path");
     if (sweep) sweep.setAttribute("fill", "url(#kr-sweep-big)");
-    copy.dataset.view = copy.getAttribute("viewBox");
+    copy.dataset.view = svg.dataset.full || copy.getAttribute("viewBox");
     copy.querySelectorAll("text.slice-label").forEach((label) => {
       label.dataset.x = label.getAttribute("x");
       label.dataset.y = label.getAttribute("y");
@@ -270,7 +285,8 @@
     "pointermove",
     (event) => {
       if (pinned || event.pointerType === "touch") return;
-      const svg = event.target instanceof Element ? event.target.closest("svg.radar") : null;
+      let svg = event.target instanceof Element ? event.target.closest("svg.radar") : null;
+      if (svg && svg.closest(".mini")) svg = null; // the header's small radar is a button, not a scope
       const dot = svg ? nearest(svg, event.clientX, event.clientY, HOVER_PX) : null;
       if (dot) show(svg, dot, false);
       else if (current) hide();
@@ -296,6 +312,10 @@
     if (!svg) {
       if (current) hide();
       if (modal.contains(target) && !target.closest(".kr-bar, .key")) closeModal();
+      return;
+    }
+    if (svg.closest(".mini")) {
+      open(svg);
       return;
     }
     const reach = event.pointerType === "mouse" ? HOVER_PX : TAP_PX;
@@ -328,11 +348,18 @@
     }
     const svg = document.activeElement;
     if (!(svg instanceof SVGElement) || !svg.matches("svg.radar")) return;
-    if (event.key === "Enter" && !modal.contains(svg)) {
-      event.preventDefault();
-      open(svg);
+    if (event.key === "Enter") {
+      const link = block.querySelector("a.go");
+      if (current && current.svg === svg && pinned && link) {
+        event.preventDefault();
+        window.location.assign(link.href);
+      } else if (!modal.contains(svg)) {
+        event.preventDefault();
+        open(svg);
+      }
       return;
     }
+    if (svg.closest(".mini")) return;
     const order = stateFor(svg).order;
     if (!order.length) return;
     const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];

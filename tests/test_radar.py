@@ -152,6 +152,24 @@ def test_new_contacts_survive_the_dot_cap():
     assert radar.plotted == MAX_DOTS and "CVE-2026-99999" in radar.svg
 
 
+def test_the_mini_radar_crops_to_the_scope_and_keeps_the_full_view():
+    frame = pd.DataFrame([_row("CVE-2026-0001", 4)])
+    full = build_radar(frame, AS_OF).svg
+    mini = build_radar(frame, AS_OF, mini=True).svg
+    full_view = re.search(r'viewBox="([^"]+)"', full).group(1)
+    mini_view = re.search(r'viewBox="([^"]+)"', mini).group(1)
+    width, height = (float(v) for v in mini_view.split()[2:])
+    assert width == height and mini_view != full_view
+    assert f'data-full="{full_view}"' in mini
+    assert "Select the radar to enlarge it." in mini
+    assert 'transform-origin:' in mini
+
+
+def test_the_data_block_links_to_the_fix_queue():
+    assert '"Open in fix queue"' in RADAR_SCRIPT
+    assert 'searchParams.set("page", "Fix queue")' in RADAR_SCRIPT
+
+
 def test_an_empty_estate_still_draws_the_scope():
     radar = build_radar(pd.DataFrame(), AS_OF)
     assert radar.plotted == 0 and radar.svg.startswith("<svg") and "Past due" in radar.svg

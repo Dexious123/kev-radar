@@ -4,7 +4,7 @@ from datetime import date, timedelta
 
 import pandas as pd
 
-from kev_radar.strips import render_strips
+from kev_radar.strips import render_strips, tags
 
 AS_OF = date(2026, 10, 17)
 
@@ -30,14 +30,44 @@ def test_strips_keep_queue_order_and_mark_the_deadline_band():
     assert "1 day past due" in html and "Due in 1 day" in html and "Due in 45 days" in html
 
 
-def test_the_reason_drops_the_timing_the_strip_already_shows():
+def test_the_reason_becomes_tags_without_the_timing_the_strip_already_shows():
     html = render_strips(
         _top([["CVE-2026-0001", "h", "o", "u", AS_OF - timedelta(days=3), "3 days overdue · forensic triage required · EPSS 97%"]]),
         AS_OF,
     )
     why = html.split('class="s-why">')[1]
-    assert why.startswith("forensic triage required, EPSS 97%")
-    assert "3 days overdue" not in why
+    assert why.startswith('<i class="tag">Forensic triage</i><i class="tag">EPSS 97%</i>')
+    assert "overdue" not in why
+
+
+def test_the_deadline_rule_leads_and_says_forensic_triage_once():
+    reason = "262 days overdue · 3 days + forensic triage · forensic triage required · known ransomware use · publicly exposed · EPSS 97%"
+    assert tags(reason) == [
+        ("rule", "3 days + forensic triage"),
+        ("tag", "Ransomware"),
+        ("tag", "Exposed"),
+        ("tag", "EPSS 97%"),
+    ]
+
+
+def test_a_grouped_cve_lists_its_hosts_and_links_to_the_queue():
+    groups = pd.DataFrame(
+        [
+            {
+                "cve": "CVE-2026-23760",
+                "hosts": ["a.lab.invalid", "b.lab.invalid", "c.lab.invalid", "d.lab.invalid"],
+                "owners": ["Hannah Brooks", "Owen Park", "Amira Haddad"],
+                "units": ["Corporate IT", "Edge Network"],
+                "deadline": AS_OF - timedelta(days=262),
+                "reason": "262 days overdue · 3 days + forensic triage",
+            }
+        ]
+    )
+    html = render_strips(groups, AS_OF)
+    assert ">a and 3 more hosts<" in html and 'title="a, b, c, d"' in html
+    assert ">Hannah Brooks and 2 more<" in html and ">2 business units<" in html
+    assert 'href="?page=Fix+queue&amp;finding=a.lab.invalid%7CCVE-2026-23760"' in html
+    assert ".lab.invalid</em>" not in html
 
 
 def test_strip_text_is_escaped():

@@ -206,6 +206,35 @@ def top_to_fix(findings: pd.DataFrame, as_of: date, *, limit: int = 10) -> pd.Da
     return pd.DataFrame(rows)
 
 
+GROUP_COLUMNS = ["cve", "hosts", "owners", "units", "host_name", "owner", "business_unit", "deadline", "sla_status", "score", "reason"]
+
+
+def top_groups(findings: pd.DataFrame, as_of: date, *, limit: int = 10) -> pd.DataFrame:
+    """The top of the queue with each CVE once, since one patch usually fixes every host that has it.
+
+    A group takes its place, deadline, and reason from its most urgent host; ``hosts`` lists
+    every open, unpaused host with that CVE, most urgent first.
+    """
+    if findings.empty:
+        return pd.DataFrame(columns=GROUP_COLUMNS)
+    ranked = top_to_fix(findings, as_of, limit=len(findings))
+    if ranked.empty:
+        return pd.DataFrame(columns=GROUP_COLUMNS)
+    groups: dict[str, dict] = {}
+    for row in ranked.to_dict("records"):
+        cve = str(row["cve"])
+        if cve not in groups:
+            if len(groups) == limit:
+                continue
+            groups[cve] = {**row, "hosts": [], "owners": [], "units": []}
+        group = groups[cve]
+        group["hosts"].append(row["host_name"])
+        for key, value in (("owners", row["owner"]), ("units", row["business_unit"])):
+            if value and value not in group[key]:
+                group[key].append(value)
+    return pd.DataFrame(list(groups.values()))[GROUP_COLUMNS]
+
+
 def headline(findings: pd.DataFrame, as_of: date) -> dict:
     """Numbers the overview cards show."""
     forecast = breach_forecast(findings, as_of)

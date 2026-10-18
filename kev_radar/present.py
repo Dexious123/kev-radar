@@ -2,35 +2,79 @@
 
 from __future__ import annotations
 
+from urllib.parse import urlencode
+
 import pandas as pd
 
 from kev_radar.metrics import is_open
 
+LAB_DOMAIN = ".lab.invalid"
+
+# Display names for the queue's columns; the frame keeps its own names for exports.
+QUEUE_LABELS = {
+    "band": "Band",
+    "score": "Score",
+    "host_name": "Host",
+    "owner": "Owner",
+    "business_unit": "Business unit",
+    "cve": "CVE",
+    "vuln_name": "Vulnerability",
+    "exposed": "Exposed",
+    "epss": "EPSS",
+    "cvss": "CVSS",
+    "deadline": "Deadline",
+    "days_left": "Time left",
+    "sla_status": "Status",
+    "decision_path": "Decision path",
+    "ssvc_decision": "SSVC decision",
+    "ssvc_path": "SSVC path",
+}
+
+
+def short_host(name: object) -> str:
+    """The lab's hosts all end in the reserved .lab.invalid domain, so the suffix carries no information."""
+    text = str(name or "")
+    return text[: -len(LAB_DOMAIN)] if text.endswith(LAB_DOMAIN) else text
+
+
+def queue_link(host: object, cve: object) -> str:
+    """A link that opens the fix queue on one finding. Values are URL-encoded; escape it again for HTML."""
+    return "?" + urlencode({"page": "Fix queue", "finding": f"{host}|{cve}"})
+
+
+def find_in_queue(queue: pd.DataFrame, requested: object) -> int | None:
+    """Row position of a ``host|cve`` finding in the queue, or None."""
+    host, sep, cve = str(requested or "").partition("|")
+    if not sep or queue.empty:
+        return None
+    hits = queue.index[(queue["host_name"].astype(str) == host) & (queue["cve"].astype(str).str.upper() == cve.upper())]
+    return int(queue.index.get_loc(hits[0])) if len(hits) else None
+
 QUEUE_COLUMNS = [
     "band",
     "score",
+    "cve",
+    "vuln_name",
     "host_name",
     "owner",
     "business_unit",
-    "cve",
-    "vuln_name",
+    "sla_status",
+    "days_left",
+    "deadline",
     "exposed",
     "epss",
     "cvss",
-    "deadline",
-    "days_left",
-    "sla_status",
     "decision_path",
 ]
 
 CLASSIC_COLUMNS = [
     "band",
     "score",
+    "cve",
+    "vuln_name",
     "host_name",
     "owner",
     "business_unit",
-    "cve",
-    "vuln_name",
     "ssvc_decision",
     "ssvc_path",
     "decision_path",
