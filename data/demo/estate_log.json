@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-17",
+ "as_of": "2026-10-18",
  "days": [
   {
    "date": "2026-10-17",
@@ -19,6 +19,31 @@
     }
    ],
    "reopened": []
+  },
+  {
+   "date": "2026-10-18",
+   "fixed": [],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84351",
+     "host": "hl-claims-srv-008.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84325",
+     "host": "hl-claims-ws-052.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84348",
+     "host": "hl-corp-ws-017.lab.invalid"
+    }
+   ],
+   "reopened": [
+    {
+     "cve": "CVE-2026-74906",
+     "host": "hl-claims-srv-008.lab.invalid"
+    }
+   ]
   }
  ]
 }
