@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-18",
+ "as_of": "2026-10-19",
  "days": [
   {
    "date": "2026-10-17",
@@ -44,6 +44,39 @@
      "host": "hl-claims-srv-008.lab.invalid"
     }
    ]
+  },
+  {
+   "date": "2026-10-19",
+   "fixed": [
+    {
+     "cve": "CVE-2026-65660",
+     "host": "hl-corp-ws-058.lab.invalid",
+     "owner": "Hannah Brooks"
+    },
+    {
+     "cve": "CVE-2026-87902",
+     "host": "hl-corp-srv-092.lab.invalid",
+     "owner": "Hannah Brooks"
+    },
+    {
+     "cve": "CVE-2026-102490",
+     "host": "hl-id-lnx-036.lab.invalid",
+     "owner": "Marcus Chen"
+    },
+    {
+     "cve": "CVE-2026-7273",
+     "host": "hl-portal-lnx-010.lab.invalid",
+     "owner": "Jonah Reid"
+    }
+   ],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2026-75627",
+     "host": "hl-edge-fw-021.lab.invalid"
+    }
+   ],
+   "reopened": []
   }
  ]
 }

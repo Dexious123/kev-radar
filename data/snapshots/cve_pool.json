@@ -10,7 +10,7 @@
   "date_added": "2026-10-16",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.00601
+  "epss": 0.0118
  },
  {
   "cve": "CVE-2025-61624",
@@ -23,7 +23,7 @@
   "date_added": "2026-10-16",
   "cvss": 5.4,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H/E:P/RL:O/RC:C",
-  "epss": 0.0058
+  "epss": 0.01081
  },
  {
   "cve": "CVE-2026-21589",
@@ -36,7 +36,7 @@
   "date_added": "2026-10-15",
   "cvss": null,
   "cvss_vector": null,
-  "epss": 0.12711
+  "epss": null
  },
  {
   "cve": "CVE-2026-105134",
@@ -166,7 +166,7 @@
   "date_added": "2026-10-08",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.19352
+  "epss": 0.20136
  },
  {
   "cve": "CVE-2015-3306",
@@ -855,7 +855,7 @@
   "date_added": "2026-01-26",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.96544
+  "epss": 0.96432
  },
  {
   "cve": "CVE-2023-35078",
