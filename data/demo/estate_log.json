@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-20",
+ "as_of": "2026-10-21",
  "days": [
   {
    "date": "2026-10-17",
@@ -114,6 +114,108 @@
    ],
    "new_kev": [],
    "discovered": [],
+   "reopened": []
+  },
+  {
+   "date": "2026-10-21",
+   "fixed": [
+    {
+     "cve": "CVE-2023-22894",
+     "host": "hl-edge-rtr-007.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-76519",
+     "host": "hl-edge-fw-006.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2026-102764",
+     "host": "hl-edge-fw-010.lab.invalid",
+     "owner": "Owen Park"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-106931",
+     "name": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+     "vendor": "EG Secure Solutions",
+     "product": "SiteGuard Server Edition",
+     "hosts": [
+      "hl-pay-srv-027.lab.invalid",
+      "hl-id-cld-003.lab.invalid",
+      "hl-corp-srv-015.lab.invalid",
+      "hl-pay-ws-028.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-110936",
+     "name": "Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+     "vendor": "Siemens",
+     "product": "Software Center",
+     "hosts": [
+      "hl-pay-srv-027.lab.invalid",
+      "hl-portal-lnx-025.lab.invalid",
+      "hl-corp-ws-070.lab.invalid",
+      "hl-claims-srv-006.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-96652",
+     "name": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+     "vendor": "Plex",
+     "product": "Media Server",
+     "hosts": [
+      "hl-edge-fw-004.lab.invalid",
+      "hl-portal-ws-042.lab.invalid",
+      "hl-portal-cld-015.lab.invalid",
+      "hl-portal-ws-060.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-96654",
+     "name": "Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+     "vendor": "Plex",
+     "product": "Media Server",
+     "hosts": [
+      "hl-id-lnx-050.lab.invalid",
+      "hl-portal-lnx-041.lab.invalid",
+      "hl-edge-fw-032.lab.invalid",
+      "hl-edge-rtr-007.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-96655",
+     "name": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+     "vendor": "Plex",
+     "product": "Media Server",
+     "hosts": [
+      "hl-portal-cld-010.lab.invalid",
+      "hl-claims-ws-065.lab.invalid",
+      "hl-pay-srv-076.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-96656",
+     "name": "Plex Media Server External Control of File Name or Path Vulnerability",
+     "vendor": "Plex",
+     "product": "Media Server",
+     "hosts": [
+      "hl-edge-fw-023.lab.invalid",
+      "hl-pay-lnx-046.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84356",
+     "host": "hl-pay-ws-009.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84349",
+     "host": "hl-corp-ws-017.lab.invalid"
+    }
+   ],
    "reopened": []
   }
  ]

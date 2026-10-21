@@ -1,5 +1,83 @@
 [
  {
+  "cve": "CVE-2026-106931",
+  "vendor": "EG Secure Solutions",
+  "product": "SiteGuard Server Edition",
+  "name": "EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-20",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.00662
+ },
+ {
+  "cve": "CVE-2026-96656",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "name": "Plex Media Server External Control of File Name or Path Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-20",
+  "cvss": 8.6,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+  "epss": 0.00396
+ },
+ {
+  "cve": "CVE-2026-96655",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "name": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-20",
+  "cvss": 4.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+  "epss": 0.00222
+ },
+ {
+  "cve": "CVE-2026-96654",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "name": "Plex Media Server Improper Neutralization of Encoded URI Schemes in a Web Page Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-20",
+  "cvss": 6.9,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+  "epss": 0.00227
+ },
+ {
+  "cve": "CVE-2026-96652",
+  "vendor": "Plex",
+  "product": "Media Server",
+  "name": "Plex Media Server Server-Side Request Forgery (SSRF) Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-20",
+  "cvss": 4.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+  "epss": 0.00222
+ },
+ {
+  "cve": "CVE-2026-110936",
+  "vendor": "Siemens",
+  "product": "Software Center",
+  "name": "Siemens Software Center Uncontrolled Search Path Element Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-20",
+  "cvss": 6.7,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.00135
+ },
+ {
   "cve": "CVE-2026-102764",
   "vendor": "BeyondTrust",
   "product": "Remote Support",
@@ -36,7 +114,7 @@
   "date_added": "2026-10-15",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H",
-  "epss": null
+  "epss": 0.12711
  },
  {
   "cve": "CVE-2026-105134",
@@ -1050,7 +1128,7 @@
   "date_added": "2022-05-25",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.48986
+  "epss": 0.48832
  },
  {
   "cve": "CVE-2009-0238",
