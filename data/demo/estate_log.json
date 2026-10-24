@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-23",
+ "as_of": "2026-10-24",
  "days": [
   {
    "date": "2026-10-17",
@@ -284,6 +284,45 @@
     {
      "cve": "CVE-2026-75089",
      "host": "hl-pay-lnx-016.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-10-24",
+   "fixed": [],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-110447",
+     "name": "Collabora Online \u2013 Built-in CODE Server OS Command Injection Vulnerability",
+     "vendor": "Collabora",
+     "product": "Collabora Online \u2013 Built-in CODE Server",
+     "hosts": [
+      "hl-edge-fw-018.lab.invalid",
+      "hl-id-cld-019.lab.invalid",
+      "hl-corp-srv-062.lab.invalid",
+      "hl-pay-lnx-051.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-114625",
+     "name": "Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+     "vendor": "Arista",
+     "product": "VeloCloud Orchestrator",
+     "hosts": [
+      "hl-edge-fw-028.lab.invalid",
+      "hl-id-cld-005.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-81928",
+     "host": "hl-pay-srv-087.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84349",
+     "host": "hl-portal-ws-060.lab.invalid"
     }
    ],
    "reopened": []

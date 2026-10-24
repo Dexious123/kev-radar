@@ -1,5 +1,31 @@
 [
  {
+  "cve": "CVE-2026-114625",
+  "vendor": "Arista",
+  "product": "VeloCloud Orchestrator",
+  "name": "Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-23",
+  "cvss": 9.9,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.00555
+ },
+ {
+  "cve": "CVE-2026-110447",
+  "vendor": "Collabora",
+  "product": "Collabora Online \u2013 Built-in CODE Server",
+  "name": "Collabora Online \u2013 Built-in CODE Server OS Command Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-23",
+  "cvss": 9.2,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+  "epss": 0.01225
+ },
+ {
   "cve": "CVE-2026-106931",
   "vendor": "EG Secure Solutions",
   "product": "SiteGuard Server Edition",
@@ -348,7 +374,7 @@
   "date_added": "2026-09-27",
   "cvss": 9.5,
   "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.01301
+  "epss": 0.05305
  },
  {
   "cve": "CVE-2026-88771",
@@ -361,7 +387,7 @@
   "date_added": "2026-09-27",
   "cvss": 9.5,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.01083
+  "epss": 0.04722
  },
  {
   "cve": "CVE-2026-67279",
@@ -715,58 +741,6 @@
   "epss": 0.88472
  },
  {
-  "cve": "CVE-2026-75650",
-  "vendor": "Adobe",
-  "product": "Commerce and Magento",
-  "name": "Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
-  "family": "workstation",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-08",
-  "cvss": 10.0,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.03949
- },
- {
-  "cve": "CVE-2026-81963",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Link Following Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-08",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.00393
- },
- {
-  "cve": "CVE-2026-86218",
-  "vendor": "N-able",
-  "product": "N-central",
-  "name": "N-able N-central Static Code Injection Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-08",
-  "cvss": 10.0,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.13349
- },
- {
-  "cve": "CVE-2026-85880",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Heap-Based Buffer Overflow Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-08",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.03616
- },
- {
   "cve": "CVE-2025-53770",
   "vendor": "Microsoft",
   "product": "SharePoint",
@@ -842,7 +816,7 @@
   "date_added": "2022-03-28",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.98802
+  "epss": 0.98773
  },
  {
   "cve": "CVE-2018-13382",
@@ -1001,160 +975,160 @@
   "epss": 0.99934
  },
  {
-  "cve": "CVE-2013-1331",
+  "cve": "CVE-2021-4102",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Use-After-Free Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2021-12-15",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.07836
+ },
+ {
+  "cve": "CVE-2024-38014",
   "vendor": "Microsoft",
-  "product": "Office",
-  "name": "Microsoft Office Buffer Overflow Vulnerability",
+  "product": "Windows",
+  "name": "Microsoft Windows Installer Improper Privilege Management Vulnerability",
   "family": "windows",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-06-08",
+  "date_added": "2024-09-10",
   "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.79822
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+  "epss": 0.06263
  },
  {
-  "cve": "CVE-2023-23529",
-  "vendor": "Apple",
-  "product": "Multiple Products",
-  "name": "Apple Multiple Products WebKit Type Confusion Vulnerability",
-  "family": "workstation",
+  "cve": "CVE-2017-9841",
+  "vendor": "PHPUnit",
+  "product": "PHPUnit",
+  "name": "PHPUnit Command Injection Vulnerability",
+  "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2023-02-14",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.09426
+  "date_added": "2022-02-15",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.99999
  },
  {
-  "cve": "CVE-2021-1871",
-  "vendor": "Apple",
-  "product": "iOS, iPadOS, and macOS",
-  "name": "Apple iOS, iPadOS, and macOS WebKit Remote Code Execution Vulnerability",
-  "family": "workstation",
+  "cve": "CVE-2022-20775",
+  "vendor": "Cisco",
+  "product": "SD-WAN",
+  "name": "Cisco SD-WAN Path Traversal Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-02-25",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.12475
+ },
+ {
+  "cve": "CVE-2020-14882",
+  "vendor": "Oracle",
+  "product": "WebLogic Server",
+  "name": "Oracle WebLogic Server Remote Code Execution Vulnerability",
+  "family": "any",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2021-11-03",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.07002
+  "epss": 0.99997
  },
  {
-  "cve": "CVE-2023-21839",
-  "vendor": "Oracle",
-  "product": "WebLogic Server",
-  "name": "Oracle WebLogic Server Unspecified Vulnerability",
+  "cve": "CVE-2024-35250",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Kernel-Mode Driver Untrusted Pointer Dereference Vulnerability ",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2024-12-16",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+  "epss": 0.25222
+ },
+ {
+  "cve": "CVE-2025-33053",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": " Microsoft Windows External Control of File Name or Path Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2025-06-10",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+  "epss": 0.87015
+ },
+ {
+  "cve": "CVE-2023-42917",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products WebKit Memory Corruption Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2023-12-04",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.09295
+ },
+ {
+  "cve": "CVE-2025-32701",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Common Log File System (CLFS) Driver Use-After-Free Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2025-05-13",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+  "epss": 0.01416
+ },
+ {
+  "cve": "CVE-2022-22620",
+  "vendor": "Apple",
+  "product": "iOS, iPadOS, and macOS",
+  "name": "Apple iOS, iPadOS, and macOS Webkit Use-After-Free Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-02-11",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.16342
+ },
+ {
+  "cve": "CVE-2025-59374",
+  "vendor": "ASUS",
+  "product": "Live Update",
+  "name": "ASUS Live Update Embedded Malicious Code Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2023-05-01",
-  "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.999
+  "date_added": "2025-12-17",
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+  "epss": 0.01197
  },
  {
-  "cve": "CVE-2019-11707",
-  "vendor": "Mozilla",
-  "product": "Firefox and Thunderbird",
-  "name": "Mozilla Firefox and Thunderbird Type Confusion Vulnerability",
-  "family": "workstation",
+  "cve": "CVE-2020-0069",
+  "vendor": "MediaTek",
+  "product": "Multiple Chipsets",
+  "name": "Mediatek Multiple Chipsets Insufficient Input Validation Vulnerability",
+  "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-05-23",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.37696
- },
- {
-  "cve": "CVE-2008-0015",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": " Microsoft Windows Video ActiveX Control Remote Code Execution Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-02-17",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.76576
- },
- {
-  "cve": "CVE-2025-59287",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Server Update Service (WSUS) Deserialization of Untrusted Data Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-10-24",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:O/RC:C",
-  "epss": 0.9998
- },
- {
-  "cve": "CVE-2016-1010",
-  "vendor": "Adobe",
-  "product": "Flash Player and AIR",
-  "name": "Adobe Flash Player and AIR Integer Overflow Vulnerability",
-  "family": "workstation",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-05-25",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.19333
- },
- {
-  "cve": "CVE-2013-2596",
-  "vendor": "Linux",
-  "product": "Kernel",
-  "name": "Linux Kernel Integer Overflow Vulnerability",
-  "family": "linux",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-09-15",
+  "date_added": "2021-11-03",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.03212
- },
- {
-  "cve": "CVE-2015-1671",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Remote Code Execution Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-05-25",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.48832
- },
- {
-  "cve": "CVE-2009-0238",
-  "vendor": "Microsoft",
-  "product": "Office",
-  "name": "Microsoft Office Remote Code Execution",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-04-14",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.42941
- },
- {
-  "cve": "CVE-2015-0016",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows TS WebProxy Directory Traversal Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-05-25",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.75777
+  "epss": 0.0137
  },
  {
   "cve": "CVE-2026-84430",
@@ -1245,7 +1219,7 @@
   "date_added": null,
   "cvss": 8.7,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.00409
+  "epss": 0.00377
  },
  {
   "cve": "CVE-2026-75627",
@@ -1297,7 +1271,7 @@
   "date_added": null,
   "cvss": 8.7,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.00504
+  "epss": 0.00449
  },
  {
   "cve": "CVE-2026-34884",
@@ -1703,6 +1677,19 @@
   "epss": 0.86928
  },
  {
+  "cve": "CVE-2026-86218",
+  "vendor": "N-able",
+  "product": "N-central",
+  "name": "N-able N-central Static Code Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-08",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+  "epss": 0.13349
+ },
+ {
   "cve": "CVE-2021-30657",
   "vendor": "Apple",
   "product": "macOS",
@@ -1727,6 +1714,32 @@
   "cvss": 7.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
   "epss": 0.59407
+ },
+ {
+  "cve": "CVE-2026-81963",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Link Following Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-08",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+  "epss": 0.00393
+ },
+ {
+  "cve": "CVE-2026-85880",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Heap-Based Buffer Overflow Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-08",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+  "epss": 0.03616
  },
  {
   "cve": "CVE-2026-85046",
@@ -1779,6 +1792,19 @@
   "cvss": 7.1,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
   "epss": 0.01354
+ },
+ {
+  "cve": "CVE-2026-75650",
+  "vendor": "Adobe",
+  "product": "Commerce and Magento",
+  "name": "Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-08",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.03949
  },
  {
   "cve": "CVE-2026-59822",
