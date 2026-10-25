@@ -10,7 +10,7 @@
   "date_added": "2026-10-23",
   "cvss": 9.9,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.00555
+  "epss": 0.00813
  },
  {
   "cve": "CVE-2026-110447",
@@ -23,7 +23,7 @@
   "date_added": "2026-10-23",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.01225
+  "epss": 0.02285
  },
  {
   "cve": "CVE-2026-106931",
@@ -387,7 +387,7 @@
   "date_added": "2026-09-27",
   "cvss": 9.5,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.04722
+  "epss": 0.05108
  },
  {
   "cve": "CVE-2026-67279",
@@ -582,7 +582,7 @@
   "date_added": "2026-09-16",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.14026
+  "epss": 0.66643
  },
  {
   "cve": "CVE-2026-87886",
@@ -687,58 +687,6 @@
   "cvss": 8.8,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N",
   "epss": 0.0156
- },
- {
-  "cve": "CVE-2026-19490",
-  "vendor": "Citrix",
-  "product": "NetScaler",
-  "name": "Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-09",
-  "cvss": 9.3,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L",
-  "epss": 0.23158
- },
- {
-  "cve": "CVE-2025-25249",
-  "vendor": "Fortinet",
-  "product": "Multiple Products",
-  "name": "Fortinet Multiple Products Heap-based Buffer Overflow Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-09",
-  "cvss": 7.4,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C",
-  "epss": 0.03802
- },
- {
-  "cve": "CVE-2026-87491",
-  "vendor": "Google",
-  "product": "Chromium V8",
-  "name": "Google Chromium V8 Out of Bounds Write Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-09",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.03142
- },
- {
-  "cve": "CVE-2026-20079",
-  "vendor": "Cisco",
-  "product": "Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management",
-  "name": "Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-09",
-  "cvss": 10.0,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.88472
  },
  {
   "cve": "CVE-2025-53770",
@@ -975,160 +923,160 @@
   "epss": 0.99934
  },
  {
-  "cve": "CVE-2021-4102",
-  "vendor": "Google",
-  "product": "Chromium V8",
-  "name": "Google Chromium V8 Use-After-Free Vulnerability",
-  "family": "any",
+  "cve": "CVE-2025-38352",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Time-of-Check Time-of-Use (TOCTOU) Race Condition Vulnerability",
+  "family": "linux",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2021-12-15",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.07836
- },
- {
-  "cve": "CVE-2024-38014",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Installer Improper Privilege Management Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2024-09-10",
+  "date_added": "2025-09-04",
   "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.06263
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.01357
  },
  {
-  "cve": "CVE-2017-9841",
-  "vendor": "PHPUnit",
-  "product": "PHPUnit",
-  "name": "PHPUnit Command Injection Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-02-15",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.99999
- },
- {
-  "cve": "CVE-2022-20775",
-  "vendor": "Cisco",
-  "product": "SD-WAN",
-  "name": "Cisco SD-WAN Path Traversal Vulnerability",
+  "cve": "CVE-2020-8196",
+  "vendor": "Citrix",
+  "product": "Application Delivery Controller (ADC), Gateway, and SD-WAN WANOP Appliance",
+  "name": "Citrix ADC, Gateway, and SD-WAN WANOP Appliance Information Disclosure Vulnerability",
   "family": "network",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2026-02-25",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.12475
+  "date_added": "2021-11-03",
+  "cvss": 4.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+  "epss": 0.26333
  },
  {
-  "cve": "CVE-2020-14882",
-  "vendor": "Oracle",
-  "product": "WebLogic Server",
-  "name": "Oracle WebLogic Server Remote Code Execution Vulnerability",
+  "cve": "CVE-2024-20399",
+  "vendor": "Cisco",
+  "product": "NX-OS",
+  "name": "Cisco NX-OS Command Injection Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2024-07-02",
+  "cvss": 6.0,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N",
+  "epss": 0.04306
+ },
+ {
+  "cve": "CVE-2023-49897",
+  "vendor": "FXC",
+  "product": "AE1021, AE1021PE",
+  "name": "FXC AE1021, AE1021PE OS Command Injection Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2021-11-03",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.99997
- },
- {
-  "cve": "CVE-2024-35250",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Kernel-Mode Driver Untrusted Pointer Dereference Vulnerability ",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2024-12-16",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
-  "epss": 0.25222
- },
- {
-  "cve": "CVE-2025-33053",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": " Microsoft Windows External Control of File Name or Path Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-06-10",
+  "date_added": "2023-12-21",
   "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.87015
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.50447
  },
  {
-  "cve": "CVE-2023-42917",
-  "vendor": "Apple",
-  "product": "Multiple Products",
-  "name": "Apple Multiple Products WebKit Memory Corruption Vulnerability",
-  "family": "workstation",
+  "cve": "CVE-2019-9621",
+  "vendor": "Synacor",
+  "product": "Zimbra Collaboration Suite (ZCS)",
+  "name": "Synacor Zimbra Collaboration Suite (ZCS) Server-Side Request Forgery (SSRF) Vulnerability",
+  "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2023-12-04",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.09295
+  "date_added": "2025-07-07",
+  "cvss": 7.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+  "epss": 0.81037
  },
  {
-  "cve": "CVE-2025-32701",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Common Log File System (CLFS) Driver Use-After-Free Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-05-13",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.01416
- },
- {
-  "cve": "CVE-2022-22620",
+  "cve": "CVE-2022-32917",
   "vendor": "Apple",
   "product": "iOS, iPadOS, and macOS",
-  "name": "Apple iOS, iPadOS, and macOS Webkit Use-After-Free Vulnerability",
+  "name": "Apple iOS, iPadOS, and macOS Remote Code Execution Vulnerability",
   "family": "workstation",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-02-11",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.16342
+  "date_added": "2022-09-14",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.05603
  },
  {
-  "cve": "CVE-2025-59374",
-  "vendor": "ASUS",
-  "product": "Live Update",
-  "name": "ASUS Live Update Embedded Malicious Code Vulnerability",
+  "cve": "CVE-2021-25370",
+  "vendor": "Samsung",
+  "product": "Mobile Devices",
+  "name": "Samsung Mobile Devices Memory Corruption Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2025-12-17",
-  "cvss": 9.3,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.01197
+  "date_added": "2022-11-08",
+  "cvss": 6.1,
+  "cvss_vector": "CVSS:3.1/AV:P/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.0089
  },
  {
-  "cve": "CVE-2020-0069",
-  "vendor": "MediaTek",
-  "product": "Multiple Chipsets",
-  "name": "Mediatek Multiple Chipsets Insufficient Input Validation Vulnerability",
+  "cve": "CVE-2026-34909",
+  "vendor": "Ubiquiti",
+  "product": "UniFi OS",
+  "name": "Ubiquiti UniFi OS Path Traversal Vulnerability",
   "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-06-23",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.01793
+ },
+ {
+  "cve": "CVE-2021-30657",
+  "vendor": "Apple",
+  "product": "macOS",
+  "name": "Apple macOS Unspecified Vulnerability",
+  "family": "workstation",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2021-11-03",
+  "cvss": 5.5,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+  "epss": 0.68531
+ },
+ {
+  "cve": "CVE-2025-48384",
+  "vendor": "Git",
+  "product": "Git",
+  "name": "Git Link Following Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2025-08-25",
+  "cvss": 8.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:H/I:H/A:H",
+  "epss": 0.04379
+ },
+ {
+  "cve": "CVE-2015-1130",
+  "vendor": "Apple",
+  "product": "OS X",
+  "name": "Apple OS X Authentication Bypass Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-02-10",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.0137
+  "epss": 0.09887
+ },
+ {
+  "cve": "CVE-2023-29360",
+  "vendor": "Microsoft",
+  "product": "Streaming Service",
+  "name": "Microsoft Streaming Service Untrusted Pointer Dereference Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2024-02-29",
+  "cvss": 8.4,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+  "epss": 0.2162
  },
  {
   "cve": "CVE-2026-84430",
@@ -1625,6 +1573,19 @@
   "epss": 0.2351
  },
  {
+  "cve": "CVE-2026-87491",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Out of Bounds Write Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-09",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.03142
+ },
+ {
   "cve": "CVE-2014-4148",
   "vendor": "Microsoft",
   "product": "Windows",
@@ -1688,19 +1649,6 @@
   "cvss": 10.0,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
   "epss": 0.13349
- },
- {
-  "cve": "CVE-2021-30657",
-  "vendor": "Apple",
-  "product": "macOS",
-  "name": "Apple macOS Unspecified Vulnerability",
-  "family": "workstation",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2021-11-03",
-  "cvss": 5.5,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
-  "epss": 0.68531
  },
  {
   "cve": "CVE-2021-33742",
@@ -1781,6 +1729,19 @@
   "epss": 0.93983
  },
  {
+  "cve": "CVE-2026-19490",
+  "vendor": "Citrix",
+  "product": "NetScaler",
+  "name": "Citrix NetScaler Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-09",
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L",
+  "epss": 0.23158
+ },
+ {
   "cve": "CVE-2024-53150",
   "vendor": "Linux",
   "product": "Kernel",
@@ -1805,6 +1766,19 @@
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
   "epss": 0.03949
+ },
+ {
+  "cve": "CVE-2026-20079",
+  "vendor": "Cisco",
+  "product": "Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management",
+  "name": "Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-09",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.88472
  },
  {
   "cve": "CVE-2026-59822",

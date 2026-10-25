@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-24",
+ "as_of": "2026-10-25",
  "days": [
   {
    "date": "2026-10-17",
@@ -323,6 +323,32 @@
     {
      "cve": "CVE-2026-84349",
      "host": "hl-portal-ws-060.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-10-25",
+   "fixed": [
+    {
+     "cve": "CVE-2026-105134",
+     "host": "hl-id-cld-011.lab.invalid",
+     "owner": "Marcus Chen"
+    }
+   ],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2026-34884",
+     "host": "hl-portal-cld-018.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-11801",
+     "host": "hl-portal-cld-008.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84359",
+     "host": "hl-portal-ws-027.lab.invalid"
     }
    ],
    "reopened": []
