@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-26",
+ "as_of": "2026-10-27",
  "days": [
   {
    "date": "2026-10-17",
@@ -387,6 +387,65 @@
     {
      "cve": "CVE-2026-11801",
      "host": "hl-claims-ws-043.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-10-27",
+   "fixed": [
+    {
+     "cve": "CVE-2026-93616",
+     "host": "hl-corp-srv-082.lab.invalid",
+     "owner": "Sofia Almeida"
+    },
+    {
+     "cve": "CVE-2026-82329",
+     "host": "hl-pay-ws-024.lab.invalid",
+     "owner": "Priya Shah"
+    },
+    {
+     "cve": "CVE-2026-105133",
+     "host": "hl-portal-ws-033.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-0322",
+     "host": "hl-edge-fw-020.lab.invalid",
+     "owner": "Jonah Reid"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-109618",
+     "name": "PHP Memory Corruption Vulnerability",
+     "vendor": "PHP Group",
+     "product": "PHP",
+     "hosts": [
+      "hl-portal-cld-010.lab.invalid",
+      "hl-pay-srv-096.lab.invalid",
+      "hl-claims-srv-037.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-109619",
+     "name": "PHP Stale Internal Request-State Vulnerability",
+     "vendor": "PHP Group",
+     "product": "PHP",
+     "hosts": [
+      "hl-edge-fw-012.lab.invalid",
+      "hl-id-srv-091.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-15585",
+     "host": "hl-corp-ws-019.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84358",
+     "host": "hl-corp-ws-045.lab.invalid"
     }
    ],
    "reopened": []

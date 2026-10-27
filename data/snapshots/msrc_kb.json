@@ -1,16 +1,9 @@
 {
- "fetched_at": "2026-10-26T14:19:36Z",
+ "fetched_at": "2026-10-27T13:15:40Z",
  "source": "https://api.msrc.microsoft.com/cvrf/v3.0/",
- "cve_count": 19,
+ "cve_count": 17,
  "patch_count": 139,
  "cves": {
-  "CVE-2014-1761": {
-   "document_id": null,
-   "document_title": "",
-   "patches": [],
-   "source": "live",
-   "note": "MSRC has no security update for this CVE."
-  },
   "CVE-2014-4113": {
    "document_id": null,
    "document_title": "",
@@ -165,6 +158,155 @@
      "fixed_builds": [],
      "url": "https://www.microsoft.com/download/details.aspx?familyid=876a7a9b-9a83-4a71-9761-ff815e83bea8",
      "restart": "Maybe"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
+  "CVE-2017-0022": {
+   "document_id": "2017-Mar",
+   "document_title": "March 2017 Security Updates",
+   "patches": [
+    {
+     "kb": "KB3216916",
+     "products": [
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Microsoft XML Core Services 3.0 on Windows Vista x64 Edition Service Pack 2",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 for Itanium-Based Systems Service Pack 2",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows Vista Service Pack 2"
+     ],
+     "product_count": 7,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3216916",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4012212",
+     "products": [
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows 7 for x64-based Systems Service Pack 1",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1",
+      "Microsoft XML Core Services 3.0 on Windows 7 for 32-bit Systems Service Pack 1"
+     ],
+     "product_count": 6,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012212",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4012213",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows Server 2012 R2",
+      "Microsoft XML Core Services 3.0 on Windows Server 2012 R2 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows 8.1 for 32-bit systems",
+      "Microsoft XML Core Services 3.0 on Windows 8.1 for x64-based systems"
+     ],
+     "product_count": 8,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012213",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4012214",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows Server 2012",
+      "Microsoft XML Core Services 3.0 on Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012214",
+     "restart": ""
+    },
+    {
+     "kb": "KB4012215",
+     "products": [
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1",
+      "Microsoft XML Core Services 3.0 on Windows 7 for 32-bit Systems Service Pack 1",
+      "Microsoft XML Core Services 3.0 on Windows 7 for x64-based Systems Service Pack 1"
+     ],
+     "product_count": 6,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012215",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4012216",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows Server 2012 R2",
+      "Microsoft XML Core Services 3.0 on Windows Server 2012 R2 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows 8.1 for 32-bit systems",
+      "Microsoft XML Core Services 3.0 on Windows 8.1 for x64-based systems"
+     ],
+     "product_count": 9,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012216",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4012217",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)",
+      "Microsoft XML Core Services 3.0 on Windows Server 2012",
+      "Microsoft XML Core Services 3.0 on Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012217",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4012606",
+     "products": [
+      "Microsoft XML Core Services 3.0 on Windows 10 for 32-bit Systems",
+      "Microsoft XML Core Services 3.0 on Windows 10 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012606",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4013198",
+     "products": [
+      "Microsoft XML Core Services 3.0 on Windows 10 Version 1511 for 32-bit Systems",
+      "Microsoft XML Core Services 3.0 on Windows 10 Version 1511 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4013198",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4013429",
+     "products": [
+      "Microsoft XML Core Services 3.0 on Windows 10 Version 1607 for 32-bit Systems",
+      "Microsoft XML Core Services 3.0 on Windows 10 Version 1607 for x64-based Systems",
+      "Microsoft XML Core Services 3.0 on Windows Server 2016",
+      "Microsoft XML Core Services 3.0 on Windows Server 2016 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4013429",
+     "restart": "Yes"
     }
    ],
    "source": "live",
@@ -666,104 +808,6 @@
    "source": "live",
    "note": ""
   },
-  "CVE-2022-21971": {
-   "document_id": "2022-Feb",
-   "document_title": "February 2022 Security Updates",
-   "patches": [
-    {
-     "kb": "KB5010342",
-     "products": [
-      "Windows 10 Version 21H1 for x64-based Systems",
-      "Windows 10 Version 21H1 for ARM64-based Systems",
-      "Windows 10 Version 21H1 for 32-bit Systems",
-      "Windows 10 Version 20H2 for 32-bit Systems",
-      "Windows 10 Version 20H2 for ARM64-based Systems",
-      "Windows Server, version 20H2 (Server Core Installation)",
-      "Windows 10 Version 21H2 for 32-bit Systems",
-      "Windows 10 Version 21H2 for ARM64-based Systems"
-     ],
-     "product_count": 9,
-     "fixed_builds": [
-      "10.0.19043.1526",
-      "10.0.19042.1526",
-      "10.0.19044.1526"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010342",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010345",
-     "products": [
-      "Windows 10 Version 1909 for 32-bit Systems",
-      "Windows 10 Version 1909 for x64-based Systems",
-      "Windows 10 Version 1909 for ARM64-based Systems"
-     ],
-     "product_count": 3,
-     "fixed_builds": [
-      "10.0.18363.2094"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010345",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010351",
-     "products": [
-      "Windows 10 Version 1809 for 32-bit Systems",
-      "Windows 10 Version 1809 for x64-based Systems",
-      "Windows 10 Version 1809 for ARM64-based Systems",
-      "Windows Server 2019",
-      "Windows Server 2019 (Server Core installation)"
-     ],
-     "product_count": 5,
-     "fixed_builds": [
-      "10.0.17763.2565"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010351",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010354",
-     "products": [
-      "Windows Server 2022",
-      "Windows Server 2022 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.20348.524"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010354",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010386",
-     "products": [
-      "Windows 11 version 21H2 for x64-based Systems",
-      "Windows 11 version 21H2 for ARM64-based Systems"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.22000.493"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010386",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010456",
-     "products": [
-      "Windows Server 2022",
-      "Windows Server 2022 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.20348.525"
-     ],
-     "url": "",
-     "restart": "Yes"
-    }
-   ],
-   "source": "live",
-   "note": ""
-  },
   "CVE-2022-21999": {
    "document_id": "2022-Feb",
    "document_title": "February 2022 Security Updates",
@@ -1231,68 +1275,6 @@
       "6.3.9600.20337"
      ],
      "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5012670",
-     "restart": "Yes"
-    }
-   ],
-   "source": "live",
-   "note": ""
-  },
-  "CVE-2024-38080": {
-   "document_id": "2024-Jul",
-   "document_title": "July 2024 Security Updates",
-   "patches": [
-    {
-     "kb": "KB5040431",
-     "products": [
-      "Windows 11 version 21H2 for x64-based Systems",
-      "Windows 11 version 21H2 for ARM64-based Systems"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.22000.3079"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5040431",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5040437",
-     "products": [
-      "Windows Server 2022",
-      "Windows Server 2022 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.20348.2582"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5040437",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5040438",
-     "products": [
-      "Windows Server 2022, 23H2 Edition (Server Core installation)"
-     ],
-     "product_count": 1,
-     "fixed_builds": [
-      "10.0.25398.1009"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5040438",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5040442",
-     "products": [
-      "Windows 11 Version 22H2 for ARM64-based Systems",
-      "Windows 11 Version 22H2 for x64-based Systems",
-      "Windows 11 Version 23H2 for ARM64-based Systems",
-      "Windows 11 Version 23H2 for x64-based Systems"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.22621.3880",
-      "10.0.22631.3880"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5040442",
      "restart": "Yes"
     }
    ],
