@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-27",
+ "as_of": "2026-10-28",
  "days": [
   {
    "date": "2026-10-17",
@@ -446,6 +446,79 @@
     {
      "cve": "CVE-2026-84358",
      "host": "hl-corp-ws-045.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-10-28",
+   "fixed": [
+    {
+     "cve": "CVE-2015-5477",
+     "host": "hl-claims-srv-025.lab.invalid",
+     "owner": "Noah Berger"
+    },
+    {
+     "cve": "CVE-2026-42018",
+     "host": "hl-edge-fw-004.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-110936",
+     "host": "hl-pay-srv-027.lab.invalid",
+     "owner": "Priya Shah"
+    },
+    {
+     "cve": "CVE-2026-84430",
+     "host": "hl-edge-fw-036.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2015-3306",
+     "host": "hl-portal-cld-012.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-74906",
+     "host": "hl-edge-fw-021.lab.invalid",
+     "owner": "Owen Park"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-111497",
+     "name": "Google Brotli Unchecked Return Value Vulnerability",
+     "vendor": "Google",
+     "product": "Brotli",
+     "hosts": [
+      "hl-portal-cld-012.lab.invalid",
+      "hl-edge-fw-036.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-48356",
+     "name": "Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+     "vendor": "Adobe",
+     "product": "Commerce and Magento",
+     "hosts": [
+      "hl-pay-ws-064.lab.invalid",
+      "hl-claims-ws-030.lab.invalid",
+      "hl-pay-ws-057.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-74904",
+     "host": "hl-portal-lnx-009.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84354",
+     "host": "hl-corp-ws-045.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84334",
+     "host": "hl-claims-srv-030.lab.invalid"
     }
    ],
    "reopened": []

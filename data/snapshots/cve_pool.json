@@ -1,5 +1,31 @@
 [
  {
+  "cve": "CVE-2026-48356",
+  "vendor": "Adobe",
+  "product": "Commerce and Magento",
+  "name": "Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-27",
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
+  "epss": 0.30582
+ },
+ {
+  "cve": "CVE-2026-111497",
+  "vendor": "Google",
+  "product": "Brotli",
+  "name": "Google Brotli Unchecked Return Value Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-27",
+  "cvss": 9.2,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+  "epss": 0.55483
+ },
+ {
   "cve": "CVE-2026-109618",
   "vendor": "PHP Group",
   "product": "PHP",
@@ -10,7 +36,7 @@
   "date_added": "2026-10-26",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.99981
+  "epss": 0.99999
  },
  {
   "cve": "CVE-2026-109619",
@@ -23,7 +49,7 @@
   "date_added": "2026-10-26",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.99997
+  "epss": 0.99999
  },
  {
   "cve": "CVE-2026-114625",
@@ -49,7 +75,7 @@
   "date_added": "2026-10-23",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.12328
+  "epss": 0.11634
  },
  {
   "cve": "CVE-2026-106931",
@@ -140,7 +166,7 @@
   "date_added": "2026-10-16",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.20341
+  "epss": 0.1895
  },
  {
   "cve": "CVE-2025-61624",
@@ -179,7 +205,7 @@
   "date_added": "2026-10-14",
   "cvss": 10.0,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A",
-  "epss": 0.86266
+  "epss": 0.81763
  },
  {
   "cve": "CVE-2026-76519",
@@ -205,7 +231,7 @@
   "date_added": "2026-10-14",
   "cvss": 6.9,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:A",
-  "epss": 0.79236
+  "epss": 0.7947
  },
  {
   "cve": "CVE-2026-0322",
