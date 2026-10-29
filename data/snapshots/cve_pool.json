@@ -1,5 +1,31 @@
 [
  {
+  "cve": "CVE-2026-41709",
+  "vendor": "Broadcom",
+  "product": "VMware ESX",
+  "name": "Broadcom VMWare ESX Insufficient Logging Vulnerability",
+  "family": "linux",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-28",
+  "cvss": 2.7,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N",
+  "epss": 0.00297
+ },
+ {
+  "cve": "CVE-2026-46300",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Missing Initialization of a Variable Vulnerability",
+  "family": "linux",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-28",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.10192
+ },
+ {
   "cve": "CVE-2026-48356",
   "vendor": "Adobe",
   "product": "Commerce and Magento",
@@ -10,7 +36,7 @@
   "date_added": "2026-10-27",
   "cvss": 9.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
-  "epss": 0.30582
+  "epss": 0.59078
  },
  {
   "cve": "CVE-2026-111497",
@@ -23,7 +49,7 @@
   "date_added": "2026-10-27",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.55483
+  "epss": 0.87988
  },
  {
   "cve": "CVE-2026-109618",
