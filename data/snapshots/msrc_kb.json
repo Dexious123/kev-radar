@@ -1,9 +1,16 @@
 {
- "fetched_at": "2026-10-29T14:24:22Z",
+ "fetched_at": "2026-10-30T14:13:08Z",
  "source": "https://api.msrc.microsoft.com/cvrf/v3.0/",
- "cve_count": 17,
- "patch_count": 139,
+ "cve_count": 20,
+ "patch_count": 158,
  "cves": {
+  "CVE-2013-3896": {
+   "document_id": null,
+   "document_title": "",
+   "patches": [],
+   "source": "live",
+   "note": "MSRC has no security update for this CVE."
+  },
   "CVE-2014-4113": {
    "document_id": null,
    "document_title": "",
@@ -163,155 +170,6 @@
    "source": "live",
    "note": ""
   },
-  "CVE-2017-0022": {
-   "document_id": "2017-Mar",
-   "document_title": "March 2017 Security Updates",
-   "patches": [
-    {
-     "kb": "KB3216916",
-     "products": [
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 for x64-based Systems Service Pack 2",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 for 32-bit Systems Service Pack 2",
-      "Microsoft XML Core Services 3.0 on Windows Vista x64 Edition Service Pack 2",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 for Itanium-Based Systems Service Pack 2",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows Vista Service Pack 2"
-     ],
-     "product_count": 7,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3216916",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB4012212",
-     "products": [
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows 7 for x64-based Systems Service Pack 1",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1",
-      "Microsoft XML Core Services 3.0 on Windows 7 for 32-bit Systems Service Pack 1"
-     ],
-     "product_count": 6,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012212",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB4012213",
-     "products": [
-      "Windows 8.1 for 32-bit systems",
-      "Windows 8.1 for x64-based systems",
-      "Windows Server 2012 R2",
-      "Windows Server 2012 R2 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows Server 2012 R2",
-      "Microsoft XML Core Services 3.0 on Windows Server 2012 R2 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows 8.1 for 32-bit systems",
-      "Microsoft XML Core Services 3.0 on Windows 8.1 for x64-based systems"
-     ],
-     "product_count": 8,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012213",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB4012214",
-     "products": [
-      "Windows Server 2012",
-      "Windows Server 2012 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows Server 2012",
-      "Microsoft XML Core Services 3.0 on Windows Server 2012 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012214",
-     "restart": ""
-    },
-    {
-     "kb": "KB4012215",
-     "products": [
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1",
-      "Microsoft XML Core Services 3.0 on Windows 7 for 32-bit Systems Service Pack 1",
-      "Microsoft XML Core Services 3.0 on Windows 7 for x64-based Systems Service Pack 1"
-     ],
-     "product_count": 6,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012215",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB4012216",
-     "products": [
-      "Windows 8.1 for 32-bit systems",
-      "Windows 8.1 for x64-based systems",
-      "Windows Server 2012 R2",
-      "Windows Server 2012 R2 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows Server 2012 R2",
-      "Microsoft XML Core Services 3.0 on Windows Server 2012 R2 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows 8.1 for 32-bit systems",
-      "Microsoft XML Core Services 3.0 on Windows 8.1 for x64-based systems"
-     ],
-     "product_count": 9,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012216",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB4012217",
-     "products": [
-      "Windows Server 2012",
-      "Windows Server 2012 (Server Core installation)",
-      "Microsoft XML Core Services 3.0 on Windows Server 2012",
-      "Microsoft XML Core Services 3.0 on Windows Server 2012 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012217",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB4012606",
-     "products": [
-      "Microsoft XML Core Services 3.0 on Windows 10 for 32-bit Systems",
-      "Microsoft XML Core Services 3.0 on Windows 10 for x64-based Systems"
-     ],
-     "product_count": 2,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4012606",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB4013198",
-     "products": [
-      "Microsoft XML Core Services 3.0 on Windows 10 Version 1511 for 32-bit Systems",
-      "Microsoft XML Core Services 3.0 on Windows 10 Version 1511 for x64-based Systems"
-     ],
-     "product_count": 2,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4013198",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB4013429",
-     "products": [
-      "Microsoft XML Core Services 3.0 on Windows 10 Version 1607 for 32-bit Systems",
-      "Microsoft XML Core Services 3.0 on Windows 10 Version 1607 for x64-based Systems",
-      "Microsoft XML Core Services 3.0 on Windows Server 2016",
-      "Microsoft XML Core Services 3.0 on Windows Server 2016 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4013429",
-     "restart": "Yes"
-    }
-   ],
-   "source": "live",
-   "note": ""
-  },
   "CVE-2018-0802": {
    "document_id": "2018-Jan",
    "document_title": "January 2018 Security Updates",
@@ -403,6 +261,194 @@
      "fixed_builds": [],
      "url": "https://www.microsoft.com/downloads/details.aspx?familyid=2a266bf5-20d3-4a81-a447-3ba52cf10c0d",
      "restart": "Maybe"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
+  "CVE-2018-8611": {
+   "document_id": "2018-Dec",
+   "document_title": "December 2018 Security Updates",
+   "patches": [
+    {
+     "kb": "KB4471318",
+     "products": [
+      "Windows 7 for 32-bit Systems Service Pack 1",
+      "Windows 7 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471318",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471319",
+     "products": [
+      "Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Windows Server 2008 for Itanium-Based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471319",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471320",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows RT 8.1",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471320",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471321",
+     "products": [
+      "Windows 10 Version 1607 for 32-bit Systems",
+      "Windows 10 Version 1607 for x64-based Systems",
+      "Windows Server 2016",
+      "Windows Server 2016  (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471321",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471322",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471322",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471323",
+     "products": [
+      "Windows 10 for 32-bit Systems",
+      "Windows 10 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471323",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471324",
+     "products": [
+      "Windows 10 Version 1803 for 32-bit Systems",
+      "Windows 10 Version 1803 for x64-based Systems",
+      "Windows Server, version 1803  (Server Core Installation)",
+      "Windows 10 Version 1803 for ARM64-based Systems"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471324",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471325",
+     "products": [
+      "Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Windows Server 2008 for Itanium-Based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471325",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471326",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471326",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471327",
+     "products": [
+      "Windows 10 Version 1703 for 32-bit Systems",
+      "Windows 10 Version 1703 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471327",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471328",
+     "products": [
+      "Windows 7 for 32-bit Systems Service Pack 1",
+      "Windows 7 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471328",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471329",
+     "products": [
+      "Windows 10 Version 1709 for 32-bit Systems",
+      "Windows 10 Version 1709 for x64-based Systems",
+      "Windows 10 Version 1709 for ARM64-based Systems",
+      "Windows Server, version 1709  (Server Core Installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471329",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471330",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471330",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4471332",
+     "products": [
+      "Windows 10 Version 1809 for 32-bit Systems",
+      "Windows 10 Version 1809 for x64-based Systems",
+      "Windows 10 Version 1809 for ARM64-based Systems",
+      "Windows Server 2019",
+      "Windows Server 2019  (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4471332",
+     "restart": "Yes"
     }
    ],
    "source": "live",
@@ -560,6 +606,210 @@
       "6.2.9200.23372"
      ],
      "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5003697",
+     "restart": "Yes"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
+  "CVE-2021-34484": {
+   "document_id": "2021-Aug",
+   "document_title": "August 2021 Security Updates",
+   "patches": [
+    {
+     "kb": "KB5005030",
+     "products": [
+      "Windows 10 Version 1809 for 32-bit Systems",
+      "Windows 10 Version 1809 for x64-based Systems",
+      "Windows 10 Version 1809 for ARM64-based Systems",
+      "Windows Server 2019",
+      "Windows Server 2019 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [
+      "10.0.17763.2114"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005030",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005031",
+     "products": [
+      "Windows 10 Version 1909 for 32-bit Systems",
+      "Windows 10 Version 1909 for x64-based Systems",
+      "Windows 10 Version 1909 for ARM64-based Systems"
+     ],
+     "product_count": 3,
+     "fixed_builds": [
+      "10.0.18363.1734"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005031",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005033",
+     "products": [
+      "Windows 10 Version 21H1 for x64-based Systems",
+      "Windows 10 Version 21H1 for ARM64-based Systems",
+      "Windows 10 Version 21H1 for 32-bit Systems",
+      "Windows 10 Version 2004 for 32-bit Systems",
+      "Windows 10 Version 2004 for ARM64-based Systems",
+      "Windows 10 Version 2004 for x64-based Systems",
+      "Windows Server, version 2004 (Server Core installation)",
+      "Windows 10 Version 20H2 for 32-bit Systems"
+     ],
+     "product_count": 10,
+     "fixed_builds": [
+      "10.0.19043.1165",
+      "10.0.19041.1165",
+      "10.0.19042.1165"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005033",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005040",
+     "products": [
+      "Windows 10 for 32-bit Systems",
+      "Windows 10 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.10240.19022"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005040",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005043",
+     "products": [
+      "Windows 10 Version 1607 for 32-bit Systems",
+      "Windows 10 Version 1607 for x64-based Systems",
+      "Windows Server 2016",
+      "Windows Server 2016 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.14393.4583"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005043",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005076",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)",
+      "Windows RT 8.1"
+     ],
+     "product_count": 5,
+     "fixed_builds": [
+      "6.3.9600.20094"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005076",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005088",
+     "products": [
+      "Windows 7 for 32-bit Systems Service Pack 1",
+      "Windows 7 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.1.7601.25685"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005088",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005089",
+     "products": [
+      "Windows 7 for 32-bit Systems Service Pack 1",
+      "Windows 7 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.1.7601.25685"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005089",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005090",
+     "products": [
+      "Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.0.6003.21192"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005090",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005094",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.2.9200.23435"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005094",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005095",
+     "products": [
+      "Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.0.6003.21192"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005095",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005099",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.2.9200.23435"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005099",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5005106",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.3.9600.20094"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5005106",
      "restart": "Yes"
     }
    ],
@@ -1276,6 +1526,38 @@
      ],
      "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5012670",
      "restart": "Yes"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
+  "CVE-2023-38180": {
+   "document_id": "2023-Aug",
+   "document_title": "August 2023 Security Updates",
+   "patches": [
+    {
+     "kb": "KB5029688",
+     "products": [
+      ".NET 6.0"
+     ],
+     "product_count": 1,
+     "fixed_builds": [
+      "6.0.21"
+     ],
+     "url": "https://dotnet.microsoft.com/download/dotnet/6.0",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5029689",
+     "products": [
+      ".NET 7.0"
+     ],
+     "product_count": 1,
+     "fixed_builds": [
+      "7.0.10"
+     ],
+     "url": "https://dotnet.microsoft.com/download/dotnet/7.0",
+     "restart": "Maybe"
     }
    ],
    "source": "live",

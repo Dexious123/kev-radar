@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-29",
+ "as_of": "2026-10-30",
  "days": [
   {
    "date": "2026-10-17",
@@ -593,6 +593,57 @@
      "host": "hl-id-cld-003.lab.invalid"
     }
    ],
+   "reopened": []
+  },
+  {
+   "date": "2026-10-30",
+   "fixed": [
+    {
+     "cve": "CVE-2026-84347",
+     "host": "hl-claims-ws-023.lab.invalid",
+     "owner": "Hannah Brooks"
+    },
+    {
+     "cve": "CVE-2026-114625",
+     "host": "hl-edge-fw-028.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-83548",
+     "host": "hl-edge-rtr-003.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2026-109619",
+     "host": "hl-id-srv-091.lab.invalid",
+     "owner": "Marcus Chen"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-76418",
+     "name": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+     "vendor": "Cisco",
+     "product": "Secure Firewall ASA Software and Cisco Secure FTD Software",
+     "hosts": [
+      "hl-edge-fw-016.lab.invalid",
+      "hl-edge-rtr-008.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-97229",
+     "name": "GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
+     "vendor": "GitLab",
+     "product": "Community Edition and Enterprise Edition",
+     "hosts": [
+      "hl-edge-fw-028.lab.invalid",
+      "hl-claims-srv-025.lab.invalid",
+      "hl-id-srv-038.lab.invalid",
+      "hl-claims-ws-006.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [],
    "reopened": []
   }
  ]

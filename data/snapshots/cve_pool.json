@@ -1,5 +1,31 @@
 [
  {
+  "cve": "CVE-2026-97229",
+  "vendor": "GitLab",
+  "product": "Community Edition and Enterprise Edition",
+  "name": "GitLab Community Edition and Enterprise Edition Integer Overflow or Wraparound Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-29",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.18427
+ },
+ {
+  "cve": "CVE-2026-76418",
+  "vendor": "Cisco",
+  "product": "Secure Firewall ASA Software and Cisco Secure FTD Software",
+  "name": "Cisco Secure Firewall ASA Software and Cisco Secure FTD Software Unchecked Return Value to NULL Pointer Dereference Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-29",
+  "cvss": 8.6,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
+  "epss": 0.00574
+ },
+ {
   "cve": "CVE-2026-41709",
   "vendor": "Broadcom",
   "product": "VMware ESX",
@@ -10,7 +36,7 @@
   "date_added": "2026-10-28",
   "cvss": 2.7,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N",
-  "epss": 0.00297
+  "epss": 0.00764
  },
  {
   "cve": "CVE-2026-46300",
@@ -23,7 +49,7 @@
   "date_added": "2026-10-28",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.10192
+  "epss": 0.15719
  },
  {
   "cve": "CVE-2026-48356",
@@ -36,7 +62,7 @@
   "date_added": "2026-10-27",
   "cvss": 9.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
-  "epss": 0.59078
+  "epss": 0.44579
  },
  {
   "cve": "CVE-2026-111497",
@@ -49,7 +75,7 @@
   "date_added": "2026-10-27",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.87988
+  "epss": 0.82641
  },
  {
   "cve": "CVE-2026-109618",
@@ -101,7 +127,7 @@
   "date_added": "2026-10-23",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.11634
+  "epss": 0.73307
  },
  {
   "cve": "CVE-2026-106931",
@@ -387,7 +413,7 @@
   "date_added": "2026-10-02",
   "cvss": 8.5,
   "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:Y/V:D",
-  "epss": 0.00857
+  "epss": 0.10936
  },
  {
   "cve": "CVE-2026-102489",
@@ -400,7 +426,7 @@
   "date_added": "2026-10-02",
   "cvss": 8.7,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/E:A/AU:Y/V:C",
-  "epss": 0.01955
+  "epss": 0.22478
  },
  {
   "cve": "CVE-2026-104286",
@@ -676,19 +702,6 @@
   "epss": 0.00233
  },
  {
-  "cve": "CVE-2026-76461",
-  "vendor": "Cisco",
-  "product": "Secure Email Gateway",
-  "name": "Cisco Secure Email Gateway SQL Injection Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-14",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.29543
- },
- {
   "cve": "CVE-2025-53770",
   "vendor": "Microsoft",
   "product": "SharePoint",
@@ -923,98 +936,98 @@
   "epss": 0.99934
  },
  {
-  "cve": "CVE-2024-57968",
-  "vendor": "Advantive",
-  "product": "VeraCore",
-  "name": "Advantive VeraCore Unrestricted File Upload Vulnerability",
-  "family": "any",
+  "cve": "CVE-2024-13159",
+  "vendor": "Ivanti",
+  "product": "Endpoint Manager (EPM)",
+  "name": "Ivanti Endpoint Manager (EPM) Absolute Path Traversal Vulnerability",
+  "family": "network",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2025-03-10",
-  "cvss": 9.9,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.32284
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.99993
  },
  {
-  "cve": "CVE-2012-0754",
+  "cve": "CVE-2012-0767",
   "vendor": "Adobe",
   "product": "Flash Player",
-  "name": "Adobe Flash Player Memory Corruption Vulnerability",
+  "name": "Adobe Flash Player Cross-Site Scripting (XSS) Vulnerability",
   "family": "workstation",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2022-06-08",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.91085
+  "cvss": 6.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+  "epss": 0.06187
  },
  {
-  "cve": "CVE-2017-18368",
-  "vendor": "Zyxel",
-  "product": "P660HN-T1A Routers",
-  "name": "Zyxel P660HN-T1A Routers Command Injection Vulnerability",
-  "family": "any",
+  "cve": "CVE-2023-38180",
+  "vendor": "Microsoft",
+  "product": ".NET Core and Visual Studio",
+  "name": "Microsoft .NET Core and Visual Studio Denial-of-Service Vulnerability",
+  "family": "windows",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2023-08-07",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.94508
+  "date_added": "2023-08-09",
+  "cvss": 7.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P/RL:O/RC:C",
+  "epss": 0.14127
  },
  {
-  "cve": "CVE-2017-0022",
+  "cve": "CVE-2018-8611",
   "vendor": "Microsoft",
-  "product": "XML Core Services",
-  "name": "Microsoft XML Core Services Information Disclosure Vulnerability",
+  "product": "Windows",
+  "name": "Microsoft Windows Kernel Privilege Escalation Vulnerability",
   "family": "windows",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2022-05-24",
-  "cvss": 6.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
-  "epss": 0.18069
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.04196
  },
  {
-  "cve": "CVE-2024-0769",
-  "vendor": "D-Link",
-  "product": "DIR-859 Router",
-  "name": " D-Link DIR-859 Router Path Traversal Vulnerability",
+  "cve": "CVE-2025-6543",
+  "vendor": "Citrix",
+  "product": "NetScaler ADC and Gateway",
+  "name": "Citrix NetScaler ADC and Gateway Buffer Overflow Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2025-06-30",
+  "cvss": 9.2,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L",
+  "epss": 0.10433
+ },
+ {
+  "cve": "CVE-2021-25370",
+  "vendor": "Samsung",
+  "product": "Mobile Devices",
+  "name": "Samsung Mobile Devices Memory Corruption Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2025-06-25",
-  "cvss": 5.3,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-  "epss": 0.82714
+  "date_added": "2022-11-08",
+  "cvss": 6.1,
+  "cvss_vector": "CVSS:3.1/AV:P/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.0089
  },
  {
-  "cve": "CVE-2022-3723",
-  "vendor": "Google",
-  "product": "Chromium V8",
-  "name": "Google Chromium V8 Type Confusion Vulnerability",
-  "family": "any",
+  "cve": "CVE-2011-1823",
+  "vendor": "Android",
+  "product": "Android OS",
+  "name": "Android OS Privilege Escalation Vulnerability",
+  "family": "workstation",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-10-28",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.07921
+  "date_added": "2022-09-08",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.41367
  },
  {
-  "cve": "CVE-2022-24706",
-  "vendor": "Apache",
-  "product": "CouchDB",
-  "name": "Apache CouchDB Insecure Default Initialization of Resource Vulnerability",
-  "family": "linux",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-08-25",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.9251
- },
- {
-  "cve": "CVE-2017-6737",
+  "cve": "CVE-2017-6738",
   "vendor": "Cisco",
   "product": "IOS and IOS XE Software",
   "name": "Cisco IOS and IOS XE Software SNMP Remote Code Execution Vulnerability",
@@ -1024,59 +1037,59 @@
   "date_added": "2022-03-03",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.4524
+  "epss": 0.10855
  },
  {
-  "cve": "CVE-2016-2386",
+  "cve": "CVE-2021-38163",
   "vendor": "SAP",
   "product": "NetWeaver",
-  "name": "SAP NetWeaver SQL Injection Vulnerability",
+  "name": "SAP NetWeaver Unrestricted File Upload Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2022-06-09",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.71522
+  "cvss": 9.9,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.36898
  },
  {
-  "cve": "CVE-2021-21551",
-  "vendor": "Dell",
-  "product": "dbutil Driver",
-  "name": "Dell dbutil Driver Insufficient Access Control Vulnerability",
-  "family": "any",
+  "cve": "CVE-2021-34484",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows User Profile Service Privilege Escalation Vulnerability",
+  "family": "windows",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2022-03-31",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.79628
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+  "epss": 0.21827
  },
  {
-  "cve": "CVE-2013-2423",
-  "vendor": "Oracle",
-  "product": "Java Runtime Environment (JRE)",
-  "name": "Oracle JRE Unspecified Vulnerability",
-  "family": "any",
+  "cve": "CVE-2013-3896",
+  "vendor": "Microsoft",
+  "product": "Silverlight",
+  "name": "Microsoft Silverlight Information Disclosure Vulnerability",
+  "family": "windows",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2022-05-25",
-  "cvss": 3.7,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
-  "epss": 0.85215
+  "cvss": 5.5,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+  "epss": 0.67959
  },
  {
-  "cve": "CVE-2025-5086",
-  "vendor": "Dassault Syst\u00e8mes",
-  "product": "DELMIA Apriso",
-  "name": "Dassault Syst\u00e8mes DELMIA Apriso Deserialization of Untrusted Data Vulnerability",
+  "cve": "CVE-2025-10585",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Type Confusion Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2025-09-11",
-  "cvss": 9.0,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.96915
+  "date_added": "2025-09-23",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.08974
  },
  {
   "cve": "CVE-2026-84430",
@@ -1714,6 +1727,19 @@
   "cvss": 10.0,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
   "epss": 0.15385
+ },
+ {
+  "cve": "CVE-2026-76461",
+  "vendor": "Cisco",
+  "product": "Secure Email Gateway",
+  "name": "Cisco Secure Email Gateway SQL Injection Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-14",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.29543
  },
  {
   "cve": "CVE-2021-30657",
