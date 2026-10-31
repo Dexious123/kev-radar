@@ -1,5 +1,31 @@
 [
  {
+  "cve": "CVE-2026-118527",
+  "vendor": "Ivanti",
+  "product": "Connect Secure",
+  "name": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-30",
+  "cvss": null,
+  "cvss_vector": null,
+  "epss": null
+ },
+ {
+  "cve": "CVE-2026-111357",
+  "vendor": "Ivanti",
+  "product": "Connect Secure",
+  "name": "Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-30",
+  "cvss": 7.0,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.00316
+ },
+ {
   "cve": "CVE-2026-97229",
   "vendor": "GitLab",
   "product": "Community Edition and Enterprise Edition",
@@ -10,7 +36,7 @@
   "date_added": "2026-10-29",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.18427
+  "epss": 0.26569
  },
  {
   "cve": "CVE-2026-76418",
@@ -23,7 +49,7 @@
   "date_added": "2026-10-29",
   "cvss": 8.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
-  "epss": 0.00574
+  "epss": 0.0091
  },
  {
   "cve": "CVE-2026-41709",
@@ -36,7 +62,7 @@
   "date_added": "2026-10-28",
   "cvss": 2.7,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N",
-  "epss": 0.00764
+  "epss": 0.00689
  },
  {
   "cve": "CVE-2026-46300",
@@ -49,7 +75,7 @@
   "date_added": "2026-10-28",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.15719
+  "epss": 0.1613
  },
  {
   "cve": "CVE-2026-48356",
@@ -1895,7 +1921,7 @@
   "date_added": "2026-09-09",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.88472
+  "epss": 0.88658
  },
  {
   "cve": "CVE-2026-59822",

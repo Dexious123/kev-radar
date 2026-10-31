@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-30",
+ "as_of": "2026-10-31",
  "days": [
   {
    "date": "2026-10-17",
@@ -644,6 +644,42 @@
     }
    ],
    "discovered": [],
+   "reopened": []
+  },
+  {
+   "date": "2026-10-31",
+   "fixed": [],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-111357",
+     "name": "Ivanti Connect Secure Missing Authentication for Critical Function Vulnerability",
+     "vendor": "Ivanti",
+     "product": "Connect Secure",
+     "hosts": [
+      "hl-edge-fw-019.lab.invalid",
+      "hl-edge-rtr-007.lab.invalid",
+      "hl-edge-fw-027.lab.invalid",
+      "hl-edge-rtr-002.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-118527",
+     "name": "Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
+     "vendor": "Ivanti",
+     "product": "Connect Secure",
+     "hosts": [
+      "hl-edge-fw-030.lab.invalid",
+      "hl-edge-fw-002.lab.invalid",
+      "hl-edge-fw-025.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84334",
+     "host": "hl-pay-srv-002.lab.invalid"
+    }
+   ],
    "reopened": []
   }
  ]
