@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-10-31",
+ "as_of": "2026-11-01",
  "days": [
   {
    "date": "2026-10-17",
@@ -678,6 +678,28 @@
     {
      "cve": "CVE-2026-84334",
      "host": "hl-pay-srv-002.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-01",
+   "fixed": [
+    {
+     "cve": "CVE-2013-2465",
+     "host": "hl-portal-ws-034.lab.invalid",
+     "owner": "Jonah Reid"
+    }
+   ],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2026-75091",
+     "host": "hl-edge-fw-003.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84353",
+     "host": "hl-corp-ws-037.lab.invalid"
     }
    ],
    "reopened": []

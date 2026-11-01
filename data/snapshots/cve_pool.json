@@ -23,7 +23,7 @@
   "date_added": "2026-10-30",
   "cvss": 7.0,
   "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00316
+  "epss": 0.00533
  },
  {
   "cve": "CVE-2026-97229",
@@ -36,7 +36,7 @@
   "date_added": "2026-10-29",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.26569
+  "epss": null
  },
  {
   "cve": "CVE-2026-76418",
@@ -49,7 +49,7 @@
   "date_added": "2026-10-29",
   "cvss": 8.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
-  "epss": 0.0091
+  "epss": null
  },
  {
   "cve": "CVE-2026-41709",
@@ -179,7 +179,7 @@
   "date_added": "2026-10-20",
   "cvss": 8.6,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.01785
+  "epss": null
  },
  {
   "cve": "CVE-2026-96655",
@@ -192,7 +192,7 @@
   "date_added": "2026-10-20",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-  "epss": 0.01637
+  "epss": null
  },
  {
   "cve": "CVE-2026-96654",
@@ -205,7 +205,7 @@
   "date_added": "2026-10-20",
   "cvss": 6.9,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.01949
+  "epss": null
  },
  {
   "cve": "CVE-2026-96652",
@@ -218,7 +218,7 @@
   "date_added": "2026-10-20",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-  "epss": 0.01821
+  "epss": null
  },
  {
   "cve": "CVE-2026-110936",
@@ -296,7 +296,7 @@
   "date_added": "2026-10-14",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02152
+  "epss": null
  },
  {
   "cve": "CVE-2026-105133",
@@ -348,7 +348,7 @@
   "date_added": "2026-10-13",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.09813
+  "epss": null
  },
  {
   "cve": "CVE-2015-5477",
@@ -426,7 +426,7 @@
   "date_added": "2026-10-04",
   "cvss": 8.7,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.11388
+  "epss": null
  },
  {
   "cve": "CVE-2026-102490",
@@ -478,7 +478,7 @@
   "date_added": "2026-09-30",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.38928
+  "epss": null
  },
  {
   "cve": "CVE-2026-86950",
@@ -491,7 +491,7 @@
   "date_added": "2026-09-29",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.26166
+  "epss": null
  },
  {
   "cve": "CVE-2026-88772",
@@ -504,7 +504,7 @@
   "date_added": "2026-09-27",
   "cvss": 9.5,
   "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.78162
+  "epss": null
  },
  {
   "cve": "CVE-2026-88771",
@@ -517,7 +517,7 @@
   "date_added": "2026-09-27",
   "cvss": 9.5,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.8216
+  "epss": null
  },
  {
   "cve": "CVE-2026-67279",
@@ -530,7 +530,7 @@
   "date_added": "2026-09-25",
   "cvss": 6.9,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.02277
+  "epss": null
  },
  {
   "cve": "CVE-2026-65660",
@@ -543,7 +543,7 @@
   "date_added": "2026-09-25",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
-  "epss": 0.08189
+  "epss": null
  },
  {
   "cve": "CVE-2026-87902",
@@ -556,7 +556,7 @@
   "date_added": "2026-09-25",
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.95769
+  "epss": null
  },
  {
   "cve": "CVE-2026-5430",
@@ -582,7 +582,7 @@
   "date_added": "2026-09-24",
   "cvss": 9.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-  "epss": 0.90491
+  "epss": null
  },
  {
   "cve": "CVE-2026-93952",
@@ -595,7 +595,7 @@
   "date_added": "2026-09-22",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.01384
+  "epss": null
  },
  {
   "cve": "CVE-2026-94127",
@@ -608,7 +608,7 @@
   "date_added": "2026-09-22",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.24938
+  "epss": null
  },
  {
   "cve": "CVE-2026-93616",
@@ -621,7 +621,7 @@
   "date_added": "2026-09-22",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.91605
+  "epss": null
  },
  {
   "cve": "CVE-2026-85102",
@@ -634,7 +634,7 @@
   "date_added": "2026-09-22",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.5414
+  "epss": null
  },
  {
   "cve": "CVE-2026-7273",
@@ -647,7 +647,7 @@
   "date_added": "2026-09-21",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02778
+  "epss": null
  },
  {
   "cve": "CVE-2025-39964",
@@ -687,45 +687,6 @@
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
   "epss": 0.03252
- },
- {
-  "cve": "CVE-2026-58704",
-  "vendor": "Google",
-  "product": "Pixel",
-  "name": "Google Pixel Improper Authorization Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-16",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00625
- },
- {
-  "cve": "CVE-2026-76460",
-  "vendor": "Cisco",
-  "product": "Identity Services Engine",
-  "name": "Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-16",
-  "cvss": 10.0,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.75599
- },
- {
-  "cve": "CVE-2026-87886",
-  "vendor": "Acronis",
-  "product": "Backup",
-  "name": "Acronis Backup Incorrect Default Permissions Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-16",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00233
  },
  {
   "cve": "CVE-2025-53770",
@@ -962,160 +923,160 @@
   "epss": 0.99934
  },
  {
-  "cve": "CVE-2024-13159",
-  "vendor": "Ivanti",
-  "product": "Endpoint Manager (EPM)",
-  "name": "Ivanti Endpoint Manager (EPM) Absolute Path Traversal Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-03-10",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.99993
- },
- {
-  "cve": "CVE-2012-0767",
-  "vendor": "Adobe",
-  "product": "Flash Player",
-  "name": "Adobe Flash Player Cross-Site Scripting (XSS) Vulnerability",
-  "family": "workstation",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-06-08",
-  "cvss": 6.1,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-  "epss": 0.06187
- },
- {
-  "cve": "CVE-2023-38180",
+  "cve": "CVE-2009-0557",
   "vendor": "Microsoft",
-  "product": ".NET Core and Visual Studio",
-  "name": "Microsoft .NET Core and Visual Studio Denial-of-Service Vulnerability",
+  "product": "Office",
+  "name": "Microsoft Office Object Record Corruption Vulnerability",
   "family": "windows",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2023-08-09",
-  "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:P/RL:O/RC:C",
-  "epss": 0.14127
+  "date_added": "2022-06-08",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.52845
  },
  {
-  "cve": "CVE-2018-8611",
+  "cve": "CVE-2020-2883",
+  "vendor": "Oracle",
+  "product": "WebLogic Server",
+  "name": "Oracle WebLogic Server Unspecified Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2025-01-07",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.94582
+ },
+ {
+  "cve": "CVE-2014-4404",
+  "vendor": "Apple",
+  "product": "OS X",
+  "name": "Apple OS X Heap-Based Buffer Overflow Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-02-10",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.48923
+ },
+ {
+  "cve": "CVE-2026-20963",
   "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Kernel Privilege Escalation Vulnerability",
+  "product": "SharePoint",
+  "name": "Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-03-18",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+  "epss": 0.29201
+ },
+ {
+  "cve": "CVE-2017-0149",
+  "vendor": "Microsoft",
+  "product": "Internet Explorer",
+  "name": "Microsoft Internet Explorer Memory Corruption Vulnerability",
   "family": "windows",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2022-05-24",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.04196
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.29178
  },
  {
-  "cve": "CVE-2025-6543",
-  "vendor": "Citrix",
-  "product": "NetScaler ADC and Gateway",
-  "name": "Citrix NetScaler ADC and Gateway Buffer Overflow Vulnerability",
+  "cve": "CVE-2020-3118",
+  "vendor": "Cisco",
+  "product": "IOS XR",
+  "name": "Cisco IOS XR Software Discovery Protocol Format String Vulnerability",
   "family": "network",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2025-06-30",
-  "cvss": 9.2,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L",
-  "epss": 0.10433
+  "date_added": "2021-11-03",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.11685
  },
  {
-  "cve": "CVE-2021-25370",
-  "vendor": "Samsung",
-  "product": "Mobile Devices",
-  "name": "Samsung Mobile Devices Memory Corruption Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-11-08",
-  "cvss": 6.1,
-  "cvss_vector": "CVSS:3.1/AV:P/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.0089
- },
- {
-  "cve": "CVE-2011-1823",
-  "vendor": "Android",
-  "product": "Android OS",
-  "name": "Android OS Privilege Escalation Vulnerability",
+  "cve": "CVE-2010-1297",
+  "vendor": "Adobe",
+  "product": "Flash Player",
+  "name": "Adobe Flash Player Memory Corruption Vulnerability",
   "family": "workstation",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-09-08",
+  "date_added": "2022-06-08",
   "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.41367
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.82531
  },
  {
-  "cve": "CVE-2017-6738",
-  "vendor": "Cisco",
-  "product": "IOS and IOS XE Software",
-  "name": "Cisco IOS and IOS XE Software SNMP Remote Code Execution Vulnerability",
+  "cve": "CVE-2012-5054",
+  "vendor": "Adobe",
+  "product": "Flash Player",
+  "name": "Adobe Flash Player Integer Overflow Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-06-08",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.21194
+ },
+ {
+  "cve": "CVE-2026-9082",
+  "vendor": "Drupal",
+  "product": "Core",
+  "name": "Drupal Core SQL Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-05-22",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": null
+ },
+ {
+  "cve": "CVE-2013-2729",
+  "vendor": "Adobe",
+  "product": "Reader and Acrobat",
+  "name": "Adobe Reader and Acrobat Arbitrary Integer Overflow Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-03-28",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.66555
+ },
+ {
+  "cve": "CVE-2023-28771",
+  "vendor": "Zyxel",
+  "product": "Multiple Firewalls",
+  "name": "Zyxel Multiple Firewalls OS Command Injection Vulnerability",
   "family": "network",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-03-03",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.10855
+  "date_added": "2023-05-31",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.99284
  },
  {
-  "cve": "CVE-2021-38163",
-  "vendor": "SAP",
-  "product": "NetWeaver",
-  "name": "SAP NetWeaver Unrestricted File Upload Vulnerability",
-  "family": "any",
+  "cve": "CVE-2023-41992",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products Kernel Privilege Escalation Vulnerability",
+  "family": "linux",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-06-09",
-  "cvss": 9.9,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.36898
- },
- {
-  "cve": "CVE-2021-34484",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows User Profile Service Privilege Escalation Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-03-31",
+  "date_added": "2023-09-25",
   "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
-  "epss": 0.21827
- },
- {
-  "cve": "CVE-2013-3896",
-  "vendor": "Microsoft",
-  "product": "Silverlight",
-  "name": "Microsoft Silverlight Information Disclosure Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-05-25",
-  "cvss": 5.5,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
-  "epss": 0.67959
- },
- {
-  "cve": "CVE-2025-10585",
-  "vendor": "Google",
-  "product": "Chromium V8",
-  "name": "Google Chromium V8 Type Confusion Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-09-23",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.08974
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.09515
  },
  {
   "cve": "CVE-2026-84430",
@@ -1128,7 +1089,7 @@
   "date_added": null,
   "cvss": 5.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00431
+  "epss": null
  },
  {
   "cve": "CVE-2026-84354",
@@ -1141,7 +1102,7 @@
   "date_added": null,
   "cvss": 9.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00444
+  "epss": null
  },
  {
   "cve": "CVE-2026-81928",
@@ -1154,7 +1115,7 @@
   "date_added": null,
   "cvss": 7.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-  "epss": 0.00684
+  "epss": null
  },
  {
   "cve": "CVE-2026-84325",
@@ -1167,7 +1128,7 @@
   "date_added": null,
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00402
+  "epss": null
  },
  {
   "cve": "CVE-2026-84427",
@@ -1180,7 +1141,7 @@
   "date_added": null,
   "cvss": 5.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00471
+  "epss": null
  },
  {
   "cve": "CVE-2026-84353",
@@ -1193,7 +1154,7 @@
   "date_added": null,
   "cvss": 9.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00462
+  "epss": null
  },
  {
   "cve": "CVE-2026-74906",
@@ -1206,7 +1167,7 @@
   "date_added": null,
   "cvss": 8.7,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.00377
+  "epss": null
  },
  {
   "cve": "CVE-2026-75627",
@@ -1219,7 +1180,7 @@
   "date_added": null,
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.00844
+  "epss": null
  },
  {
   "cve": "CVE-2026-84425",
@@ -1232,7 +1193,7 @@
   "date_added": null,
   "cvss": 5.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00471
+  "epss": null
  },
  {
   "cve": "CVE-2026-84352",
@@ -1245,7 +1206,7 @@
   "date_added": null,
   "cvss": 9.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00462
+  "epss": null
  },
  {
   "cve": "CVE-2026-74904",
@@ -1258,7 +1219,7 @@
   "date_added": null,
   "cvss": 8.7,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.00449
+  "epss": null
  },
  {
   "cve": "CVE-2026-34884",
@@ -1284,7 +1245,7 @@
   "date_added": null,
   "cvss": 3.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
-  "epss": 0.0023
+  "epss": null
  },
  {
   "cve": "CVE-2026-84351",
@@ -1297,7 +1258,7 @@
   "date_added": null,
   "cvss": 8.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00444
+  "epss": null
  },
  {
   "cve": "CVE-2026-15585",
@@ -1336,7 +1297,7 @@
   "date_added": null,
   "cvss": 4.2,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:L",
-  "epss": 0.00216
+  "epss": null
  },
  {
   "cve": "CVE-2026-84350",
@@ -1349,7 +1310,7 @@
   "date_added": null,
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.00382
+  "epss": null
  },
  {
   "cve": "CVE-2026-75091",
@@ -1362,7 +1323,7 @@
   "date_added": null,
   "cvss": 7.2,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
-  "epss": 0.00318
+  "epss": null
  },
  {
   "cve": "CVE-2026-84357",
@@ -1375,7 +1336,7 @@
   "date_added": null,
   "cvss": 6.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
-  "epss": 0.00274
+  "epss": null
  },
  {
   "cve": "CVE-2026-84349",
@@ -1388,7 +1349,7 @@
   "date_added": null,
   "cvss": 8.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00404
+  "epss": null
  },
  {
   "cve": "CVE-2026-11801",
@@ -1414,7 +1375,7 @@
   "date_added": null,
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
-  "epss": 0.00245
+  "epss": null
  },
  {
   "cve": "CVE-2026-84347",
@@ -1427,7 +1388,7 @@
   "date_added": null,
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.00523
+  "epss": null
  },
  {
   "cve": "CVE-2026-75090",
@@ -1440,7 +1401,7 @@
   "date_added": null,
   "cvss": 5.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00688
+  "epss": null
  },
  {
   "cve": "CVE-2026-84355",
@@ -1453,7 +1414,7 @@
   "date_added": null,
   "cvss": 3.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
-  "epss": 0.00244
+  "epss": null
  },
  {
   "cve": "CVE-2026-84335",
@@ -1466,7 +1427,7 @@
   "date_added": null,
   "cvss": 8.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00389
+  "epss": null
  },
  {
   "cve": "CVE-2026-75089",
@@ -1479,7 +1440,7 @@
   "date_added": null,
   "cvss": 6.9,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00431
+  "epss": null
  },
  {
   "cve": "CVE-2026-84348",
@@ -1492,7 +1453,7 @@
   "date_added": null,
   "cvss": 6.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
-  "epss": 0.00318
+  "epss": null
  },
  {
   "cve": "CVE-2026-84334",
@@ -1505,7 +1466,7 @@
   "date_added": null,
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.00122
+  "epss": null
  },
  {
   "cve": "CVE-2026-86060",
@@ -1518,7 +1479,7 @@
   "date_added": "2026-09-10",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.06392
+  "epss": null
  },
  {
   "cve": "CVE-2026-42016",
@@ -1544,7 +1505,7 @@
   "date_added": "2026-09-02",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.18979
+  "epss": null
  },
  {
   "cve": "CVE-2025-24983",
@@ -1570,7 +1531,7 @@
   "date_added": "2026-09-02",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.14372
+  "epss": null
  },
  {
   "cve": "CVE-2022-26138",
@@ -1609,7 +1570,7 @@
   "date_added": "2026-09-10",
   "cvss": 8.8,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.0156
+  "epss": null
  },
  {
   "cve": "CVE-2024-43572",
@@ -1651,6 +1612,19 @@
   "epss": 0.2351
  },
  {
+  "cve": "CVE-2026-58704",
+  "vendor": "Google",
+  "product": "Pixel",
+  "name": "Google Pixel Improper Authorization Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-16",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": null
+ },
+ {
   "cve": "CVE-2026-42018",
   "vendor": "JFrog",
   "product": "Artifactory",
@@ -1674,7 +1648,7 @@
   "date_added": "2026-09-11",
   "cvss": 9.9,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.00924
+  "epss": null
  },
  {
   "cve": "CVE-2026-87491",
@@ -1687,7 +1661,7 @@
   "date_added": "2026-09-09",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.03507
+  "epss": null
  },
  {
   "cve": "CVE-2014-4148",
@@ -1752,7 +1726,7 @@
   "date_added": "2026-09-08",
   "cvss": 10.0,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.15385
+  "epss": null
  },
  {
   "cve": "CVE-2026-76461",
@@ -1765,7 +1739,7 @@
   "date_added": "2026-09-14",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.29543
+  "epss": null
  },
  {
   "cve": "CVE-2021-30657",
@@ -1804,7 +1778,7 @@
   "date_added": "2026-09-08",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.00393
+  "epss": null
  },
  {
   "cve": "CVE-2026-85880",
@@ -1817,7 +1791,20 @@
   "date_added": "2026-09-08",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.00387
+  "epss": null
+ },
+ {
+  "cve": "CVE-2026-87886",
+  "vendor": "Acronis",
+  "product": "Backup",
+  "name": "Acronis Backup Incorrect Default Permissions Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-16",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": null
  },
  {
   "cve": "CVE-2026-85706",
@@ -1830,7 +1817,7 @@
   "date_added": "2026-09-11",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
-  "epss": 0.97355
+  "epss": null
  },
  {
   "cve": "CVE-2026-85046",
@@ -1843,7 +1830,7 @@
   "date_added": "2026-09-04",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.01806
+  "epss": null
  },
  {
   "cve": "CVE-2026-83548",
@@ -1856,7 +1843,7 @@
   "date_added": "2026-09-02",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.08043
+  "epss": null
  },
  {
   "cve": "CVE-2026-35616",
@@ -1908,7 +1895,7 @@
   "date_added": "2026-09-08",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.03949
+  "epss": null
  },
  {
   "cve": "CVE-2026-20079",
@@ -1934,6 +1921,6 @@
   "date_added": "2026-09-02",
   "cvss": 8.8,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.00836
+  "epss": null
  }
 ]
