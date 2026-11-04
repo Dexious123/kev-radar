@@ -1,5 +1,18 @@
 [
  {
+  "cve": "CVE-2026-119977",
+  "vendor": "WordPress",
+  "product": "WordPress Core",
+  "name": "WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-03",
+  "cvss": 8.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.0102
+ },
+ {
   "cve": "CVE-2026-118527",
   "vendor": "Ivanti",
   "product": "Connect Secure",
@@ -10,7 +23,7 @@
   "date_added": "2026-10-30",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-  "epss": null
+  "epss": 0.00822
  },
  {
   "cve": "CVE-2026-111357",
@@ -36,7 +49,7 @@
   "date_added": "2026-10-29",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.27692
+  "epss": 0.6522
  },
  {
   "cve": "CVE-2026-76418",
@@ -88,7 +101,7 @@
   "date_added": "2026-10-27",
   "cvss": 9.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
-  "epss": 0.44579
+  "epss": 0.47472
  },
  {
   "cve": "CVE-2026-111497",
@@ -244,7 +257,7 @@
   "date_added": "2026-10-16",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.1895
+  "epss": 0.77994
  },
  {
   "cve": "CVE-2025-61624",
@@ -270,7 +283,7 @@
   "date_added": "2026-10-15",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H",
-  "epss": 0.99477
+  "epss": 0.99664
  },
  {
   "cve": "CVE-2026-105134",
@@ -517,7 +530,7 @@
   "date_added": "2026-09-27",
   "cvss": 9.5,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.8216
+  "epss": 0.83203
  },
  {
   "cve": "CVE-2026-67279",
@@ -1024,7 +1037,7 @@
   "date_added": "2025-07-01",
   "cvss": 5.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-  "epss": 0.11567
+  "epss": 0.12152
  },
  {
   "cve": "CVE-2020-4006",
@@ -1596,7 +1609,7 @@
   "date_added": "2026-09-11",
   "cvss": 7.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.09805
+  "epss": 0.09983
  },
  {
   "cve": "CVE-2026-84869",

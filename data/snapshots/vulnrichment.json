@@ -1,12 +1,21 @@
 {
+ "CVE-2026-119977": {
+  "automatable": "no",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 8.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
  "CVE-2026-118527": {
-  "automatable": null,
-  "technical_impact": null,
-  "exploitation": null,
+  "automatable": "no",
+  "technical_impact": "partial",
+  "exploitation": "active",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
   "cvss_version": "3.1",
-  "ssvc_version": null
+  "ssvc_version": "2.0.3"
  },
  "CVE-2026-111357": {
   "automatable": "no",
