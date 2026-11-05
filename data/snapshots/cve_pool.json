@@ -1,5 +1,18 @@
 [
  {
+  "cve": "CVE-2024-27834",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products Improper Authentication Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-04",
+  "cvss": 5.5,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+  "epss": 0.01414
+ },
+ {
   "cve": "CVE-2026-119977",
   "vendor": "WordPress",
   "product": "WordPress Core",
@@ -10,7 +23,7 @@
   "date_added": "2026-11-03",
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.0102
+  "epss": 0.01157
  },
  {
   "cve": "CVE-2026-118527",
@@ -205,7 +218,7 @@
   "date_added": "2026-10-20",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-  "epss": 0.01637
+  "epss": 0.10724
  },
  {
   "cve": "CVE-2026-96654",
@@ -517,7 +530,7 @@
   "date_added": "2026-09-27",
   "cvss": 9.5,
   "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.78162
+  "epss": 0.76566
  },
  {
   "cve": "CVE-2026-88771",
@@ -530,7 +543,7 @@
   "date_added": "2026-09-27",
   "cvss": 9.5,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.83203
+  "epss": 0.81894
  },
  {
   "cve": "CVE-2026-67279",
@@ -1869,7 +1882,7 @@
   "date_added": "2026-09-18",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.03252
+  "epss": 0.03198
  },
  {
   "cve": "CVE-2025-39964",
@@ -1908,7 +1921,7 @@
   "date_added": "2026-09-08",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.03949
+  "epss": 0.34741
  },
  {
   "cve": "CVE-2026-20079",

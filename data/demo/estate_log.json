@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-11-04",
+ "as_of": "2026-11-05",
  "days": [
   {
    "date": "2026-10-17",
@@ -847,6 +847,51 @@
     {
      "cve": "CVE-2026-75089",
      "host": "hl-pay-srv-098.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-05",
+   "fixed": [
+    {
+     "cve": "CVE-2026-67277",
+     "host": "hl-corp-srv-016.lab.invalid",
+     "owner": "Hannah Brooks"
+    },
+    {
+     "cve": "CVE-2026-85102",
+     "host": "hl-id-lnx-048.lab.invalid",
+     "owner": "Marcus Chen"
+    },
+    {
+     "cve": "CVE-2026-11801",
+     "host": "hl-id-lnx-050.lab.invalid",
+     "owner": "Marcus Chen"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2024-27834",
+     "name": "Apple Multiple Products Improper Authentication Vulnerability",
+     "vendor": "Apple",
+     "product": "Multiple Products",
+     "hosts": [
+      "hl-portal-ws-033.lab.invalid",
+      "hl-claims-ws-022.lab.invalid",
+      "hl-portal-ws-063.lab.invalid",
+      "hl-pay-ws-009.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84358",
+     "host": "hl-portal-ws-066.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84357",
+     "host": "hl-claims-ws-013.lab.invalid"
     }
    ],
    "reopened": []
