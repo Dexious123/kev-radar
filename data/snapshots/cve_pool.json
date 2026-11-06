@@ -10,7 +10,7 @@
   "date_added": "2026-11-04",
   "cvss": 5.5,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
-  "epss": 0.01414
+  "epss": 0.01502
  },
  {
   "cve": "CVE-2026-119977",
@@ -322,7 +322,7 @@
   "date_added": "2026-10-14",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02152
+  "epss": 0.06227
  },
  {
   "cve": "CVE-2026-105133",
@@ -663,19 +663,6 @@
   "epss": 0.5414
  },
  {
-  "cve": "CVE-2026-7273",
-  "vendor": "Zyxel",
-  "product": "GS1900 Series Switches",
-  "name": "Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-21",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02778
- },
- {
   "cve": "CVE-2025-53770",
   "vendor": "Microsoft",
   "product": "SharePoint",
@@ -910,17 +897,17 @@
   "epss": 0.99934
  },
  {
-  "cve": "CVE-2024-38213",
+  "cve": "CVE-2024-38193",
   "vendor": "Microsoft",
   "product": "Windows",
-  "name": "Microsoft Windows SmartScreen Security Feature Bypass Vulnerability",
+  "name": "Microsoft Windows Ancillary Function Driver for WinSock Privilege Escalation Vulnerability",
   "family": "windows",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2024-08-13",
-  "cvss": 6.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N/E:F/RL:O/RC:C",
-  "epss": 0.13626
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+  "epss": 0.28739
  },
  {
   "cve": "CVE-2010-1871",
@@ -936,69 +923,69 @@
   "epss": 0.83397
  },
  {
-  "cve": "CVE-2019-11707",
-  "vendor": "Mozilla",
-  "product": "Firefox and Thunderbird",
-  "name": "Mozilla Firefox and Thunderbird Type Confusion Vulnerability",
+  "cve": "CVE-2020-6572",
+  "vendor": "Google",
+  "product": "Chrome Media",
+  "name": "Google Chrome Media Use-After-Free Vulnerability",
   "family": "workstation",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-05-23",
+  "date_added": "2022-01-10",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.37951
+  "epss": 0.10586
  },
  {
-  "cve": "CVE-2021-40655",
-  "vendor": "D-Link",
-  "product": "DIR-605 Router",
-  "name": "D-Link DIR-605 Router Information Disclosure Vulnerability",
+  "cve": "CVE-2024-4761",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Out-of-Bounds Memory Write Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2024-05-16",
-  "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.87039
+  "cvss": 8.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+  "epss": 0.11007
  },
  {
-  "cve": "CVE-2025-2775",
-  "vendor": "SysAid",
-  "product": "SysAid On-Prem",
-  "name": "SysAid On-Prem Improper Restriction of XML External Entity Reference Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-07-22",
-  "cvss": 9.3,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:L",
-  "epss": 0.42612
- },
- {
-  "cve": "CVE-2024-21182",
-  "vendor": "Oracle",
-  "product": "WebLogic Server",
-  "name": "Oracle WebLogic Server Unspecified Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-06-01",
-  "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.74162
- },
- {
-  "cve": "CVE-2018-0175",
+  "cve": "CVE-2025-20281",
   "vendor": "Cisco",
-  "product": "IOS, XR, and XE Software",
-  "name": "Cisco IOS, XR, and XE Software Buffer Overflow Vulnerability",
+  "product": "Identity Services Engine",
+  "name": "Cisco Identity Services Engine Injection Vulnerability",
   "family": "network",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-03-03",
-  "cvss": 8.0,
-  "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.03478
+  "date_added": "2025-07-28",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.97601
+ },
+ {
+  "cve": "CVE-2025-48595",
+  "vendor": "Android",
+  "product": "Framework",
+  "name": "Android Framework Integer Overflow Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-06-02",
+  "cvss": 8.4,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.01947
+ },
+ {
+  "cve": "CVE-2015-5123",
+  "vendor": "Adobe",
+  "product": "Flash Player",
+  "name": "Adobe Flash Player Use-After-Free Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-04-13",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.1883
  },
  {
   "cve": "CVE-2019-11581",
@@ -1014,43 +1001,43 @@
   "epss": 0.84621
  },
  {
-  "cve": "CVE-2022-34713",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Support Diagnostic Tool (MSDT) Remote Code Execution Vulnerability",
-  "family": "windows",
+  "cve": "CVE-2017-15944",
+  "vendor": "Palo Alto Networks",
+  "product": "PAN-OS",
+  "name": "Palo Alto Networks PAN-OS Remote Code Execution Vulnerability",
+  "family": "network",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-08-09",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.67757
+  "date_added": "2022-08-18",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.9834
  },
  {
-  "cve": "CVE-2009-4324",
+  "cve": "CVE-2010-1297",
   "vendor": "Adobe",
-  "product": "Acrobat and Reader",
-  "name": "Adobe Acrobat and Reader Use-After-Free Vulnerability",
+  "product": "Flash Player",
+  "name": "Adobe Flash Player Memory Corruption Vulnerability",
   "family": "workstation",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2022-06-08",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.8188
+  "epss": 0.82531
  },
  {
-  "cve": "CVE-2025-48927",
+  "cve": "CVE-2025-48928",
   "vendor": "TeleMessage",
   "product": "TM SGNL",
-  "name": "TeleMessage TM SGNL Initialization of a Resource with an Insecure Default Vulnerability",
+  "name": "TeleMessage TM SGNL Exposure of Core Dump File to an Unauthorized Control Sphere Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2025-07-01",
-  "cvss": 5.3,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
-  "epss": 0.12152
+  "cvss": 4.0,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+  "epss": 0.00577
  },
  {
   "cve": "CVE-2020-4006",
@@ -1586,6 +1573,19 @@
   "epss": 0.43308
  },
  {
+  "cve": "CVE-2026-7273",
+  "vendor": "Zyxel",
+  "product": "GS1900 Series Switches",
+  "name": "Zyxel GS1900 Series Switches Stack-Based Buffer Overflow Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-09-21",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.02734
+ },
+ {
   "cve": "CVE-2022-4262",
   "vendor": "Google",
   "product": "Chromium V8",
@@ -1726,7 +1726,7 @@
   "date_added": "2026-09-14",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.29543
+  "epss": 0.4016
  },
  {
   "cve": "CVE-2026-53266",
