@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-11-06",
+ "as_of": "2026-11-07",
  "days": [
   {
    "date": "2026-10-17",
@@ -947,6 +947,44 @@
     }
    ],
    "reopened": []
+  },
+  {
+   "date": "2026-11-07",
+   "fixed": [],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-19868",
+     "name": "SonicWall SonicOS SSLVPN Use of Single-factor Authentication Vulnerability",
+     "vendor": "SonicWall",
+     "product": "SonicOS SSLVPN",
+     "hosts": [
+      "hl-edge-fw-028.lab.invalid",
+      "hl-edge-fw-002.lab.invalid",
+      "hl-edge-rtr-001.lab.invalid",
+      "hl-edge-fw-025.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84351",
+     "host": "hl-pay-srv-002.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84354",
+     "host": "hl-pay-ws-026.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84357",
+     "host": "hl-portal-ws-063.lab.invalid"
+    }
+   ],
+   "reopened": [
+    {
+     "cve": "CVE-2026-84869",
+     "host": "hl-pay-lnx-015.lab.invalid"
+    }
+   ]
   }
  ]
 }
