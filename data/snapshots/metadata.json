@@ -1,11 +1,11 @@
 {
- "fetched_at": "2026-11-07T14:04:51Z",
- "as_of": "2026-11-07",
+ "fetched_at": "2026-11-08T14:19:34Z",
+ "as_of": "2026-11-08",
  "kev_catalog_version": "2026.11.06",
  "kev_count": 1769,
  "kev_released": "2026-11-06T19:44:45.1797Z",
- "epss_date": "2026-11-06",
- "epss_count": 1798,
+ "epss_date": "2026-11-07",
+ "epss_count": 1799,
  "vulnrichment_count": 151,
  "pool_count": 151,
  "previous_snapshot": "The first previous snapshot is the catalog with entries added in the last 7 days removed, so the diff matches that window. The daily workflow copies the prior kev.json over it before each refresh.",
@@ -17,8 +17,8 @@
   "implementation_guidance": "https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk",
   "msrc": "https://api.msrc.microsoft.com/cvrf/v3.0/"
  },
- "msrc_fetched_at": "2026-11-07T14:05:16Z",
+ "msrc_fetched_at": "2026-11-08T14:20:00Z",
  "msrc_cve_count": 16,
  "msrc_patch_count": 129,
- "estate_as_of": "2026-11-07"
+ "estate_as_of": "2026-11-08"
 }
