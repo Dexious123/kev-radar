@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-11-08",
+ "as_of": "2026-11-09",
  "days": [
   {
    "date": "2026-10-17",
@@ -994,6 +994,82 @@
     {
      "cve": "CVE-2026-15748",
      "host": "hl-id-srv-048.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-09",
+   "fixed": [
+    {
+     "cve": "CVE-2026-46300",
+     "host": "hl-id-lnx-050.lab.invalid",
+     "owner": "Marcus Chen"
+    },
+    {
+     "cve": "CVE-2026-85046",
+     "host": "hl-pay-srv-023.lab.invalid",
+     "owner": "Priya Shah"
+    },
+    {
+     "cve": "CVE-2021-34527",
+     "host": "hl-id-srv-070.lab.invalid",
+     "owner": "Marcus Chen"
+    },
+    {
+     "cve": "CVE-2026-67277",
+     "host": "hl-corp-srv-046.lab.invalid",
+     "owner": "Sofia Almeida"
+    },
+    {
+     "cve": "CVE-2026-46300",
+     "host": "hl-id-lnx-048.lab.invalid",
+     "owner": "Marcus Chen"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-102895",
+     "name": "GPUStack Improper Authentication Vulnerability",
+     "vendor": "GPUStack",
+     "product": "GPUStack",
+     "hosts": [
+      "hl-edge-fw-004.lab.invalid",
+      "hl-portal-lnx-002.lab.invalid",
+      "hl-corp-ws-068.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-116779",
+     "name": "SignalWire FreeSwitch Code Injection Vulnerability",
+     "vendor": "SignalWire",
+     "product": "FreeSwitch",
+     "hosts": [
+      "hl-portal-cld-002.lab.invalid",
+      "hl-portal-lnx-042.lab.invalid",
+      "hl-corp-ws-053.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-123158",
+     "name": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
+     "vendor": "OpenBSD",
+     "product": "OpenSSH",
+     "hosts": [
+      "hl-portal-cld-012.lab.invalid",
+      "hl-portal-lnx-006.lab.invalid",
+      "hl-id-lnx-012.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84430",
+     "host": "hl-edge-rtr-004.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84356",
+     "host": "hl-pay-ws-064.lab.invalid"
     }
    ],
    "reopened": []

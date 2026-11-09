@@ -1,9 +1,16 @@
 {
- "fetched_at": "2026-11-08T14:20:00Z",
+ "fetched_at": "2026-11-09T17:33:04Z",
  "source": "https://api.msrc.microsoft.com/cvrf/v3.0/",
- "cve_count": 16,
- "patch_count": 129,
+ "cve_count": 20,
+ "patch_count": 156,
  "cves": {
+  "CVE-2010-3962": {
+   "document_id": null,
+   "document_title": "",
+   "patches": [],
+   "source": "live",
+   "note": "MSRC has no security update for this CVE."
+  },
   "CVE-2014-4113": {
    "document_id": null,
    "document_title": "",
@@ -254,6 +261,122 @@
      "fixed_builds": [],
      "url": "https://www.microsoft.com/downloads/details.aspx?familyid=2a266bf5-20d3-4a81-a447-3ba52cf10c0d",
      "restart": "Maybe"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
+  "CVE-2018-8373": {
+   "document_id": "2018-Aug",
+   "document_title": "August 2018 Security Updates",
+   "patches": [
+    {
+     "kb": "KB4343205",
+     "products": [
+      "Internet Explorer 10 on Windows Server 2012",
+      "Internet Explorer 9 on Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Internet Explorer 9 on Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Internet Explorer 11 on Windows 7 for 32-bit Systems Service Pack 1",
+      "Internet Explorer 11 on Windows 7 for x64-based Systems Service Pack 1",
+      "Internet Explorer 11 on Windows 8.1 for 32-bit systems",
+      "Internet Explorer 11 on Windows 8.1 for x64-based systems",
+      "Internet Explorer 11 on Windows Server 2008 R2 for x64-based Systems Service Pack 1"
+     ],
+     "product_count": 9,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4343205",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4343885",
+     "products": [
+      "Internet Explorer 11 on Windows 10 Version 1703 for 32-bit Systems",
+      "Internet Explorer 11 on Windows 10 Version 1703 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4343885",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4343887",
+     "products": [
+      "Internet Explorer 11 on Windows 10 Version 1607 for 32-bit Systems",
+      "Internet Explorer 11 on Windows 10 Version 1607 for x64-based Systems",
+      "Internet Explorer 11 on Windows Server 2016"
+     ],
+     "product_count": 3,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4343887",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4343892",
+     "products": [
+      "Internet Explorer 11 on Windows 10 for 32-bit Systems",
+      "Internet Explorer 11 on Windows 10 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4343892",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4343897",
+     "products": [
+      "Internet Explorer 11 on Windows 10 Version 1709 for 32-bit Systems",
+      "Internet Explorer 11 on Windows 10 Version 1709 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4343897",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4343898",
+     "products": [
+      "Internet Explorer 11 on Windows 8.1 for 32-bit systems",
+      "Internet Explorer 11 on Windows 8.1 for x64-based systems",
+      "Internet Explorer 11 on Windows RT 8.1",
+      "Internet Explorer 11 on Windows Server 2012 R2"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4343898",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4343900",
+     "products": [
+      "Internet Explorer 11 on Windows 7 for 32-bit Systems Service Pack 1",
+      "Internet Explorer 11 on Windows 7 for x64-based Systems Service Pack 1",
+      "Internet Explorer 11 on Windows Server 2008 R2 for x64-based Systems Service Pack 1"
+     ],
+     "product_count": 3,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4343900",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4343901",
+     "products": [
+      "Internet Explorer 10 on Windows Server 2012"
+     ],
+     "product_count": 1,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4343901",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB4343909",
+     "products": [
+      "Internet Explorer 11 on Windows 10 Version 1803 for 32-bit Systems",
+      "Internet Explorer 11 on Windows 10 Version 1803 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB4343909",
+     "restart": "Yes"
     }
    ],
    "source": "live",
@@ -1132,6 +1255,150 @@
    "source": "live",
    "note": ""
   },
+  "CVE-2023-29336": {
+   "document_id": "2023-May",
+   "document_title": "May 2023 Security Updates",
+   "patches": [
+    {
+     "kb": "KB5026363",
+     "products": [
+      "Windows 10 Version 1607 for 32-bit Systems",
+      "Windows 10 Version 1607 for x64-based Systems",
+      "Windows Server 2016",
+      "Windows Server 2016 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.14393.5921"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026363",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5026382",
+     "products": [
+      "Windows 10 for 32-bit Systems",
+      "Windows 10 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.10240.19926"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026382",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5026408",
+     "products": [
+      "Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.0.6003.22070"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026408",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5026409",
+     "products": [
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.3.9600.20969"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026409",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5026411",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.2.9200.24266"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026411",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5026413",
+     "products": [
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.1.7601.26519"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026413",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5026415",
+     "products": [
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.3.9600.20969"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026415",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5026419",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.2.9200.24266"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026419",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5026426",
+     "products": [
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.1.7601.26519"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026426",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5026427",
+     "products": [
+      "Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.0.6003.22070"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5026427",
+     "restart": "Yes"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
   "CVE-2024-43572": {
    "document_id": "2024-Oct",
    "document_title": "October 2024 Security Updates",
@@ -1531,6 +1798,134 @@
      ],
      "url": "https://www.microsoft.com/en-us/download/details.aspx?id=108285",
      "restart": "Maybe"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
+  "CVE-2025-62221": {
+   "document_id": "2025-Dec",
+   "document_title": "December 2025 Security Updates",
+   "patches": [
+    {
+     "kb": "KB5071413",
+     "products": [
+      "Windows Server 2022 (Server Core installation)",
+      "Windows Server 2022"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.20348.4467"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5071413",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5071417",
+     "products": [
+      "Windows 11 Version 23H2 for x64-based Systems",
+      "Windows 11 Version 23H2 for ARM64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.22631.6345"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5071417",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5071542",
+     "products": [
+      "Windows Server 2022, 23H2 Edition (Server Core installation)"
+     ],
+     "product_count": 1,
+     "fixed_builds": [
+      "10.0.25398.2025"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5071542",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5071544",
+     "products": [
+      "Windows 10 Version 1809 for 32-bit Systems",
+      "Windows 10 Version 1809 for x64-based Systems",
+      "Windows Server 2019",
+      "Windows Server 2019 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.17763.8146"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5071544",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5071546",
+     "products": [
+      "Windows 10 Version 21H2 for 32-bit Systems",
+      "Windows 10 Version 21H2 for ARM64-based Systems",
+      "Windows 10 Version 21H2 for x64-based Systems",
+      "Windows 10 Version 22H2 for ARM64-based Systems",
+      "Windows 10 Version 22H2 for x64-based Systems",
+      "Windows 10 Version 22H2 for 32-bit Systems"
+     ],
+     "product_count": 6,
+     "fixed_builds": [
+      "10.0.19044.6691",
+      "10.0.19045.6691"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5071546",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5071547",
+     "products": [
+      "Windows Server 2022 (Server Core installation)",
+      "Windows Server 2022"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.20348.4529"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5071547",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5072014",
+     "products": [
+      "Windows Server 2025 (Server Core installation)",
+      "Windows 11 Version 24H2 for ARM64-based Systems",
+      "Windows 11 Version 24H2 for x64-based Systems",
+      "Windows Server 2025",
+      "Windows 11 Version 25H2 for ARM64-based Systems",
+      "Windows 11 Version 25H2 for x64-based Systems"
+     ],
+     "product_count": 6,
+     "fixed_builds": [
+      "10.0.26100.7392",
+      "10.0.26200.7392"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5072014",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5072033",
+     "products": [
+      "Windows Server 2025 (Server Core installation)",
+      "Windows 11 Version 24H2 for ARM64-based Systems",
+      "Windows 11 Version 24H2 for x64-based Systems",
+      "Windows Server 2025",
+      "Windows 11 Version 25H2 for ARM64-based Systems",
+      "Windows 11 Version 25H2 for x64-based Systems"
+     ],
+     "product_count": 6,
+     "fixed_builds": [
+      "10.0.26100.7462",
+      "10.0.26200.7462"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5072033",
+     "restart": "Yes"
     }
    ],
    "source": "live",

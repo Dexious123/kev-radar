@@ -1,4 +1,31 @@
 {
+ "CVE-2026-102895": {
+  "automatable": "yes",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2026-123158": {
+  "automatable": "no",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 8.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2026-116779": {
+  "automatable": "yes",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
  "CVE-2026-19868": {
   "automatable": "no",
   "technical_impact": "partial",
@@ -413,24 +440,6 @@
   "cvss_version": "3.1",
   "ssvc_version": "2.0.3"
  },
- "CVE-2026-5430": {
-  "automatable": "yes",
-  "technical_impact": "total",
-  "exploitation": "active",
-  "cvss": 10.0,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
- "CVE-2026-71362": {
-  "automatable": "yes",
-  "technical_impact": "total",
-  "exploitation": "active",
-  "cvss": 9.1,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
  "CVE-2025-53770": {
   "automatable": "yes",
   "technical_impact": "total",
@@ -593,111 +602,111 @@
   "cvss_version": "3.1",
   "ssvc_version": "2.0.3"
  },
- "CVE-2023-26359": {
-  "automatable": "yes",
-  "technical_impact": "total",
-  "exploitation": "active",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
- "CVE-2020-5722": {
-  "automatable": "yes",
-  "technical_impact": "total",
-  "exploitation": "active",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
- "CVE-2021-40655": {
-  "automatable": "no",
-  "technical_impact": "partial",
-  "exploitation": "active",
-  "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
- "CVE-2023-6448": {
-  "automatable": "yes",
-  "technical_impact": "total",
-  "exploitation": "active",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
- "CVE-2021-25297": {
+ "CVE-2022-0185": {
   "automatable": "no",
   "technical_impact": "total",
   "exploitation": "active",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "cvss": 8.4,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
   "cvss_version": "3.1",
   "ssvc_version": "2.0.3"
  },
- "CVE-2023-29298": {
+ "CVE-2010-3962": {
   "automatable": "yes",
-  "technical_impact": "partial",
+  "technical_impact": "total",
   "exploitation": "active",
-  "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+  "cvss": 8.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
   "cvss_version": "3.1",
   "ssvc_version": "2.0.3"
  },
- "CVE-2025-38352": {
+ "CVE-2025-62221": {
   "automatable": "no",
   "technical_impact": "total",
   "exploitation": "active",
   "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
   "cvss_version": "3.1",
   "ssvc_version": "2.0.3"
  },
- "CVE-2019-17026": {
+ "CVE-2025-14611": {
+  "automatable": "no",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 7.1,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:H/SI:H/SA:H/E:A",
+  "cvss_version": "4.0",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2016-8562": {
+  "automatable": "no",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 7.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2016-5195": {
+  "automatable": "no",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 7.0,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2017-15944": {
+  "automatable": "yes",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2024-8956": {
+  "automatable": "yes",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 9.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2023-29336": {
+  "automatable": "no",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2018-8373": {
+  "automatable": "no",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 7.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2022-23131": {
+  "automatable": "yes",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 9.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2024-44308": {
   "automatable": "no",
   "technical_impact": "total",
   "exploitation": "active",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
- "CVE-2020-9054": {
-  "automatable": "no",
-  "technical_impact": "total",
-  "exploitation": "active",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
- "CVE-2024-12686": {
-  "automatable": "no",
-  "technical_impact": "total",
-  "exploitation": "active",
-  "cvss": 6.6,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
- "CVE-2025-32433": {
-  "automatable": "yes",
-  "technical_impact": "total",
-  "exploitation": "active",
-  "cvss": 10.0,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "cvss_version": "3.1",
-  "ssvc_version": "2.0.3"
- },
- "CVE-2022-23748": {
-  "automatable": "no",
-  "technical_impact": "total",
-  "exploitation": "active",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
   "cvss_version": "3.1",
   "ssvc_version": "2.0.3"
  },
@@ -1076,6 +1085,15 @@
   "exploitation": "active",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
+ },
+ "CVE-2026-5430": {
+  "automatable": "yes",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
   "cvss_version": "3.1",
   "ssvc_version": "2.0.3"
  },
