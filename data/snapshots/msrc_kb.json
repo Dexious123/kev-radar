@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-11-10T15:38:19Z",
+ "fetched_at": "2026-11-11T15:16:24Z",
  "source": "https://api.msrc.microsoft.com/cvrf/v3.0/",
- "cve_count": 18,
+ "cve_count": 19,
  "patch_count": 157,
  "cves": {
   "CVE-2014-4113": {
@@ -1944,6 +1944,13 @@
      "restart": "Maybe"
     }
    ],
+   "source": "live",
+   "note": ""
+  },
+  "CVE-2026-124194": {
+   "document_id": "2026-Nov",
+   "document_title": "November 2026 Security Updates",
+   "patches": [],
    "source": "live",
    "note": ""
   },

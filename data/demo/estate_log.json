@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-11-10",
+ "as_of": "2026-11-11",
  "days": [
   {
    "date": "2026-10-17",
@@ -1121,6 +1121,125 @@
     {
      "cve": "CVE-2026-75089",
      "host": "hl-portal-lnx-011.lab.invalid"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-11",
+   "fixed": [
+    {
+     "cve": "CVE-2026-11801",
+     "host": "hl-corp-srv-053.lab.invalid",
+     "owner": "Hannah Brooks"
+    },
+    {
+     "cve": "CVE-2026-97229",
+     "host": "hl-edge-fw-028.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-123218",
+     "host": "hl-id-srv-045.lab.invalid",
+     "owner": "Marcus Chen"
+    },
+    {
+     "cve": "CVE-2026-116779",
+     "host": "hl-portal-cld-002.lab.invalid",
+     "owner": "Amira Haddad"
+    },
+    {
+     "cve": "CVE-2026-19868",
+     "host": "hl-edge-fw-025.lab.invalid",
+     "owner": "Jonah Reid"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-111560",
+     "name": "Barracuda Networks Multiple Products OS Command Injection Vulnerability",
+     "vendor": "Barracuda Networks",
+     "product": "Multiple Products",
+     "hosts": [
+      "hl-edge-fw-031.lab.invalid",
+      "hl-edge-rtr-012.lab.invalid",
+      "hl-edge-fw-013.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-111793",
+     "name": "Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+     "vendor": "Openwave Messaging Limited",
+     "product": "Webtop Media Transcoder",
+     "hosts": [
+      "hl-edge-fw-031.lab.invalid",
+      "hl-portal-lnx-028.lab.invalid",
+      "hl-claims-srv-093.lab.invalid",
+      "hl-pay-ws-069.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-116606",
+     "name": "Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+     "vendor": "Barracuda Networks",
+     "product": "Barracuda Email Security Gateway (ESG)",
+     "hosts": [
+      "hl-edge-fw-014.lab.invalid",
+      "hl-edge-fw-026.lab.invalid",
+      "hl-edge-fw-028.lab.invalid",
+      "hl-edge-fw-001.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-124194",
+     "name": "Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+     "vendor": "Microsoft",
+     "product": "Office",
+     "hosts": [
+      "hl-id-cld-014.lab.invalid",
+      "hl-portal-ws-001.lab.invalid",
+      "hl-corp-ws-016.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-125350",
+     "name": "Google Chromium Use-After-Free Vulnerability",
+     "vendor": "Google",
+     "product": "Chromium",
+     "hosts": [
+      "hl-portal-cld-018.lab.invalid",
+      "hl-id-cld-006.lab.invalid",
+      "hl-claims-ws-013.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-20320",
+     "name": "Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+     "vendor": "Cisco",
+     "product": "BroadWorks",
+     "hosts": [
+      "hl-edge-fw-016.lab.invalid",
+      "hl-edge-rtr-012.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84325",
+     "host": "hl-corp-ws-031.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84350",
+     "host": "hl-portal-ws-001.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84349",
+     "host": "hl-corp-ws-047.lab.invalid"
+    }
+   ],
+   "reopened": [
+    {
+     "cve": "CVE-2026-7273",
+     "host": "hl-portal-lnx-010.lab.invalid"
     }
    ]
   }
