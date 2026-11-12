@@ -10,7 +10,7 @@
   "date_added": "2026-11-10",
   "cvss": 6.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:H/RL:O/RC:C",
-  "epss": null
+  "epss": 0.0162
  },
  {
   "cve": "CVE-2026-111793",
@@ -23,7 +23,7 @@
   "date_added": "2026-11-10",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
-  "epss": 0.00274
+  "epss": 0.00638
  },
  {
   "cve": "CVE-2026-20320",
@@ -36,7 +36,7 @@
   "date_added": "2026-11-10",
   "cvss": 7.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.00385
+  "epss": 0.0082
  },
  {
   "cve": "CVE-2026-111560",
@@ -49,7 +49,7 @@
   "date_added": "2026-11-10",
   "cvss": 8.6,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.0106
+  "epss": 0.06196
  },
  {
   "cve": "CVE-2026-116606",
@@ -62,7 +62,7 @@
   "date_added": "2026-11-10",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.01602
+  "epss": 0.08934
  },
  {
   "cve": "CVE-2026-125350",
@@ -75,7 +75,7 @@
   "date_added": "2026-11-10",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": null
+  "epss": 0.00962
  },
  {
   "cve": "CVE-2026-102895",
@@ -88,7 +88,7 @@
   "date_added": "2026-11-09",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00555
+  "epss": 0.00517
  },
  {
   "cve": "CVE-2026-123158",
@@ -101,7 +101,7 @@
   "date_added": "2026-11-09",
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.16501
+  "epss": 0.189
  },
  {
   "cve": "CVE-2026-116779",
@@ -114,7 +114,7 @@
   "date_added": "2026-11-09",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02177
+  "epss": 0.02473
  },
  {
   "cve": "CVE-2026-123218",
@@ -127,7 +127,7 @@
   "date_added": "2026-11-09",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00705
+  "epss": 0.00535
  },
  {
   "cve": "CVE-2026-19868",
@@ -205,7 +205,7 @@
   "date_added": "2026-10-29",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.6522
+  "epss": 0.69289
  },
  {
   "cve": "CVE-2026-76418",
@@ -413,7 +413,7 @@
   "date_added": "2026-10-16",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.77994
+  "epss": 0.79485
  },
  {
   "cve": "CVE-2025-61624",
@@ -426,7 +426,7 @@
   "date_added": "2026-10-16",
   "cvss": 5.4,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H/E:P/RL:O/RC:C",
-  "epss": 0.01343
+  "epss": 0.01395
  },
  {
   "cve": "CVE-2026-21589",
@@ -491,7 +491,7 @@
   "date_added": "2026-10-14",
   "cvss": 8.6,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:N/R:U/V:D/RE:M/U:Red",
-  "epss": 0.0174
+  "epss": 0.02147
  },
  {
   "cve": "CVE-2026-104935",
@@ -661,32 +661,6 @@
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
   "epss": 0.26166
- },
- {
-  "cve": "CVE-2026-88772",
-  "vendor": "Citrix",
-  "product": "NetScaler",
-  "name": "Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-27",
-  "cvss": 9.5,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.76566
- },
- {
-  "cve": "CVE-2026-88771",
-  "vendor": "Citrix",
-  "product": "NetScaler",
-  "name": "Citrix NetScaler Improper Input Validation Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-09-27",
-  "cvss": 9.5,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.81894
  },
  {
   "cve": "CVE-2025-53770",
@@ -923,160 +897,160 @@
   "epss": 0.99934
  },
  {
-  "cve": "CVE-2022-26923",
-  "vendor": "Microsoft",
-  "product": "Active Directory",
-  "name": "Microsoft Active Directory Domain Services Privilege Escalation Vulnerability",
-  "family": "windows",
+  "cve": "CVE-2022-32893",
+  "vendor": "Apple",
+  "product": "iOS and macOS",
+  "name": "Apple iOS and macOS Out-of-Bounds Write Vulnerability",
+  "family": "workstation",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2022-08-18",
   "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
-  "epss": 0.835
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.10492
  },
  {
-  "cve": "CVE-2020-2883",
-  "vendor": "Oracle",
-  "product": "WebLogic Server",
-  "name": "Oracle WebLogic Server Unspecified Vulnerability",
-  "family": "any",
+  "cve": "CVE-2025-21333",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Hyper-V NT Kernel Integration VSP Heap-based Buffer Overflow Vulnerability",
+  "family": "windows",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2025-01-07",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.94582
+  "date_added": "2025-01-14",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+  "epss": 0.10066
  },
  {
-  "cve": "CVE-2026-2441",
-  "vendor": "Google",
-  "product": "Chromium",
-  "name": "Google Chromium CSS Use-After-Free Vulnerability",
+  "cve": "CVE-2024-7694",
+  "vendor": "TeamT5",
+  "product": "ThreatSonar Anti-Ransomware",
+  "name": "TeamT5 ThreatSonar Anti-Ransomware Unrestricted Upload of File with Dangerous Type Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2026-02-17",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.54461
+  "cvss": 7.2,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.01792
  },
  {
-  "cve": "CVE-2017-6743",
+  "cve": "CVE-2018-0125",
   "vendor": "Cisco",
-  "product": "IOS and IOS XE Software",
-  "name": "Cisco IOS and IOS XE Software SNMP Remote Code Execution Vulnerability",
+  "product": "VPN Routers",
+  "name": "Cisco VPN Routers Remote Code Execution Vulnerability",
   "family": "network",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-03-03",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.10855
- },
- {
-  "cve": "CVE-2020-2555",
-  "vendor": "Oracle",
-  "product": "Multiple Products",
-  "name": "Oracle Multiple Products Remote Code Execution Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2021-11-03",
+  "date_added": "2022-03-25",
   "cvss": 9.8,
-  "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.97116
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.55186
  },
  {
-  "cve": "CVE-2025-6543",
-  "vendor": "Citrix",
-  "product": "NetScaler ADC and Gateway",
-  "name": "Citrix NetScaler ADC and Gateway Buffer Overflow Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-06-30",
-  "cvss": 9.2,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L",
-  "epss": 0.10433
- },
- {
-  "cve": "CVE-2025-32701",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Common Log File System (CLFS) Driver Use-After-Free Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-05-13",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.01416
- },
- {
-  "cve": "CVE-2011-2462",
-  "vendor": "Adobe",
-  "product": "Reader and Acrobat",
-  "name": "Adobe Reader and Acrobat Universal 3D Memory Corruption Vulnerability",
-  "family": "workstation",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-06-08",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.88581
- },
- {
-  "cve": "CVE-2014-0196",
-  "vendor": "Linux",
-  "product": "Kernel",
-  "name": "Linux Kernel Race Condition Vulnerability",
-  "family": "linux",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2023-05-12",
-  "cvss": 5.5,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
-  "epss": 0.20329
- },
- {
-  "cve": "CVE-2024-50603",
-  "vendor": "Aviatrix",
-  "product": "Controllers",
-  "name": "Aviatrix Controllers OS Command Injection Vulnerability",
+  "cve": "CVE-2019-19356",
+  "vendor": "Netis",
+  "product": "WF2419 Devices",
+  "name": "Netis WF2419 Devices Remote Code Execution Vulnerability",
   "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-01-16",
-  "cvss": 10.0,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.98518
- },
- {
-  "cve": "CVE-2019-6223",
-  "vendor": "Apple",
-  "product": "iOS and macOS",
-  "name": "Apple iOS and macOS Group Facetime Vulnerability",
-  "family": "workstation",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2021-11-03",
   "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.02629
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.28075
  },
  {
-  "cve": "CVE-2010-1871",
-  "vendor": "Red Hat",
-  "product": "JBoss Seam 2",
-  "name": "Red Hat Linux JBoss Seam 2 Remote Code Execution Vulnerability",
-  "family": "linux",
+  "cve": "CVE-2025-48928",
+  "vendor": "TeleMessage",
+  "product": "TM SGNL",
+  "name": "TeleMessage TM SGNL Exposure of Core Dump File to an Unauthorized Control Sphere Vulnerability",
+  "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2021-12-10",
+  "date_added": "2025-07-01",
+  "cvss": 4.0,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+  "epss": 0.00577
+ },
+ {
+  "cve": "CVE-2025-30397",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Scripting Engine Type Confusion Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2025-05-13",
+  "cvss": 7.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+  "epss": 0.27465
+ },
+ {
+  "cve": "CVE-2012-0754",
+  "vendor": "Adobe",
+  "product": "Flash Player",
+  "name": "Adobe Flash Player Memory Corruption Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-06-08",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.91187
+ },
+ {
+  "cve": "CVE-2023-25717",
+  "vendor": "Ruckus Wireless",
+  "product": "Multiple Products",
+  "name": "Multiple Ruckus Wireless Products CSRF and RCE Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2023-05-12",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.98069
+ },
+ {
+  "cve": "CVE-2025-24085",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products Use-After-Free Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2025-01-29",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.17401
+ },
+ {
+  "cve": "CVE-2021-30858",
+  "vendor": "Apple",
+  "product": "iOS, iPadOS, and macOS",
+  "name": "Apple iOS, iPadOS, macOS Use-After-Free Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2021-11-03",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.83397
+  "epss": 0.13379
+ },
+ {
+  "cve": "CVE-2019-16920",
+  "vendor": "D-Link",
+  "product": "Multiple Routers",
+  "name": "D-Link Multiple Routers Command Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-03-25",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.99996
  },
  {
   "cve": "CVE-2026-84430",
@@ -1869,7 +1843,7 @@
   "date_added": "2026-09-08",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.00393
+  "epss": 0.07115
  },
  {
   "cve": "CVE-2026-85880",
