@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-11-12",
+ "as_of": "2026-11-13",
  "days": [
   {
    "date": "2026-10-17",
@@ -1270,6 +1270,58 @@
    "new_kev": [],
    "discovered": [],
    "reopened": []
+  },
+  {
+   "date": "2026-11-13",
+   "fixed": [
+    {
+     "cve": "CVE-2026-93616",
+     "host": "hl-claims-srv-008.lab.invalid",
+     "owner": "Hannah Brooks"
+    },
+    {
+     "cve": "CVE-2026-96655",
+     "host": "hl-portal-cld-010.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-116606",
+     "host": "hl-edge-fw-001.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-118527",
+     "host": "hl-edge-fw-002.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2024-27199",
+     "host": "hl-portal-ws-060.lab.invalid",
+     "owner": "Amira Haddad"
+    },
+    {
+     "cve": "CVE-2026-116606",
+     "host": "hl-edge-fw-014.lab.invalid",
+     "owner": "Jonah Reid"
+    }
+   ],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2026-11801",
+     "host": "hl-claims-ws-049.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-34884",
+     "host": "hl-id-cld-014.lab.invalid"
+    }
+   ],
+   "reopened": [
+    {
+     "cve": "CVE-2026-119977",
+     "host": "hl-pay-srv-031.lab.invalid"
+    }
+   ]
   }
  ]
 }

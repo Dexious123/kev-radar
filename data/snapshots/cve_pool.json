@@ -36,7 +36,7 @@
   "date_added": "2026-11-10",
   "cvss": 7.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.0082
+  "epss": 0.00976
  },
  {
   "cve": "CVE-2026-111560",
@@ -49,7 +49,7 @@
   "date_added": "2026-11-10",
   "cvss": 8.6,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.06196
+  "epss": 0.09082
  },
  {
   "cve": "CVE-2026-116606",
@@ -62,7 +62,7 @@
   "date_added": "2026-11-10",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.08934
+  "epss": 0.10947
  },
  {
   "cve": "CVE-2026-125350",
@@ -1053,17 +1053,199 @@
   "epss": 0.99996
  },
  {
-  "cve": "CVE-2026-84430",
-  "vendor": "n/a",
-  "product": "gouguoa",
-  "name": "gouguoa edit_personal Endpoint Index.php update dynamically-determined object attributes",
+  "cve": "CVE-2026-84442",
+  "vendor": "MapQuest",
+  "product": "Get Directions App",
+  "name": "MapQuest Get Directions App com.mapquest.android.ace ExpoShareIntentModule.kt getDataColumn path traversal",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 4.8,
+  "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.0021
+ },
+ {
+  "cve": "CVE-2026-84715",
+  "vendor": "MythicalLTD",
+  "product": "FeatherPanel",
+  "name": "FeatherPanel before 1.3.7.10 Privilege Escalation via Subuser Permission Update",
   "family": "any",
   "in_kev": false,
   "ransomware": false,
   "date_added": null,
-  "cvss": 5.3,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00431
+  "cvss": 8.7,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+  "epss": 0.00564
+ },
+ {
+  "cve": "CVE-2026-84441",
+  "vendor": "n/a",
+  "product": "Piwigo",
+  "name": "Piwigo Image Derivative i.php path traversal",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 6.9,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.00587
+ },
+ {
+  "cve": "CVE-2026-84699",
+  "vendor": "Team Password Manager",
+  "product": "Team Password Manager",
+  "name": "Team Password Manager before 14.184.308 Authentication Bypass in Password Reset",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+  "epss": 0.00629
+ },
+ {
+  "cve": "CVE-2026-14982",
+  "vendor": "JoomUnited",
+  "product": "WP File Download",
+  "name": "WP File Download <= 6.3.4 - Authenticated (Subscriber+) Arbitrary File Deletion via 'remoteurl' Parameter",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+  "epss": 0.00821
+ },
+ {
+  "cve": "CVE-2026-82968",
+  "vendor": "Red Hat",
+  "product": "Red Hat build of Keycloak 26.6.8",
+  "name": "Keycloak-services: keycloak-services: cross-session email verification proof not bound to upstream identity for social providers",
+  "family": "linux",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 6.4,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:N",
+  "epss": 0.00325
+ },
+ {
+  "cve": "CVE-2026-14957",
+  "vendor": "The Libreswan Project",
+  "product": "libreswan",
+  "name": "FIPS mode assertion failure via malicious CERT payload",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 7.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+  "epss": 0.00468
+ },
+ {
+  "cve": "CVE-2026-84325",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84325",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.00402
+ },
+ {
+  "cve": "CVE-2026-84438",
+  "vendor": "n/a",
+  "product": "OpenCart",
+  "name": "OpenCart Autocomplete Workflow edit.php cross site scripting",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 5.1,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.00331
+ },
+ {
+  "cve": "CVE-2026-84696",
+  "vendor": "Phison Electronics Corporation",
+  "product": "PS3111-S11 Controller Firmware",
+  "name": "Phison PS3111-S11 Controller Firmware Missing Authentication on Vendor Unique Commands",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
+  "epss": 0.00221
+ },
+ {
+  "cve": "CVE-2026-84485",
+  "vendor": "apitable",
+  "product": "apitable",
+  "name": "APITable through 1.13.0-beta.1 Missing Authentication on the Internal Organization Load or Search Endpoint",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.7,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+  "epss": 0.00612
+ },
+ {
+  "cve": "CVE-2026-84437",
+  "vendor": "n/a",
+  "product": "OpenCart",
+  "name": "OpenCart Autocomplete Workflow address.php cross site scripting",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 5.1,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.00331
+ },
+ {
+  "cve": "CVE-2026-84694",
+  "vendor": "coollabsio",
+  "product": "coolify",
+  "name": "Coolify before 4.2.0 Remote Code Execution via Environment Variable Key",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.7,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+  "epss": 0.00845
+ },
+ {
+  "cve": "CVE-2026-84484",
+  "vendor": "nasa-jpl",
+  "product": "ION-DTN",
+  "name": "ION-DTN before 4.2.0 Out-of-Bounds Read via decodeSdnv",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.7,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+  "epss": 0.00867
+ },
+ {
+  "cve": "CVE-2026-84431",
+  "vendor": "AirAsia",
+  "product": "MOVE App",
+  "name": "AirAsia MOVE App com.airasia.mobile com.airasia.core.utils.RealPathUtil.getRealPath path traversal",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 4.8,
+  "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.0021
  },
  {
   "cve": "CVE-2026-84354",
@@ -1076,6 +1258,123 @@
   "date_added": null,
   "cvss": 9.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+  "epss": 0.00444
+ },
+ {
+  "cve": "CVE-2026-84702",
+  "vendor": "facefusion",
+  "product": "facefusion",
+  "name": "facefusion before 3.7.0 Path Traversal via Job Identifier",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.7,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:H/VA:N/SC:N/SI:N/SA:N",
+  "epss": 0.00564
+ },
+ {
+  "cve": "CVE-2026-84701",
+  "vendor": "nocobase",
+  "product": "nocobase",
+  "name": "NocoBase Rich Text Field Stored Cross-Site Scripting via API",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 5.1,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:L/VI:L/VA:N/SC:L/SI:L/SA:N",
+  "epss": 0.00298
+ },
+ {
+  "cve": "CVE-2026-84353",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84353",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 9.6,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+  "epss": 0.00462
+ },
+ {
+  "cve": "CVE-2026-84700",
+  "vendor": "OpenAtomFoundation",
+  "product": "pikiwidb",
+  "name": "Pika Unauthenticated Replication Access via Internal Protobuf Port",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:L/SC:N/SI:N/SA:N",
+  "epss": 0.00581
+ },
+ {
+  "cve": "CVE-2026-84698",
+  "vendor": "PX4",
+  "product": "PX4-Autopilot",
+  "name": "PX4 Autopilot sd_bench Heap Buffer Overflow via Block Size",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 7.1,
+  "cvss_vector": "CVSS:4.0/AV:A/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+  "epss": 0.00434
+ },
+ {
+  "cve": "CVE-2026-84352",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84352",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 9.6,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+  "epss": 0.00462
+ },
+ {
+  "cve": "CVE-2026-84697",
+  "vendor": "axllent",
+  "product": "mailpit",
+  "name": "Mailpit SSRF Deny List Bypass via Azure Metadata and IPv6 Prefix",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 6.9,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+  "epss": 0.00397
+ },
+ {
+  "cve": "CVE-2026-84695",
+  "vendor": "bookstackapp",
+  "product": "bookstack",
+  "name": "BookStack before 26.05.4 Stored XSS via Drawing Upload",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:P/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N",
+  "epss": 0.0047
+ },
+ {
+  "cve": "CVE-2026-84351",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84351",
+  "family": "windows",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
   "epss": 0.00444
  },
  {
@@ -1092,186 +1391,17 @@
   "epss": 0.00684
  },
  {
-  "cve": "CVE-2026-84325",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84325",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00402
- },
- {
-  "cve": "CVE-2026-84427",
-  "vendor": "zhayujie",
-  "product": "CowAgent",
-  "name": "zhayujie CowAgent Bash Tool bash.py denial of service",
+  "cve": "CVE-2026-84430",
+  "vendor": "n/a",
+  "product": "gouguoa",
+  "name": "gouguoa edit_personal Endpoint Index.php update dynamically-determined object attributes",
   "family": "any",
   "in_kev": false,
   "ransomware": false,
   "date_added": null,
   "cvss": 5.3,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00471
- },
- {
-  "cve": "CVE-2026-84353",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84353",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 9.6,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00462
- },
- {
-  "cve": "CVE-2026-74906",
-  "vendor": "siyuan-note",
-  "product": "siyuan",
-  "name": "SiYuan before v3.7.4 Incorrect Authorization via Publish Access",
-  "family": "any",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 8.7,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.00377
- },
- {
-  "cve": "CVE-2026-75627",
-  "vendor": "bastillion-io",
-  "product": "Bastillion",
-  "name": "Bastillion Authentication Bypass via Path-Prefix Routing Mismatch",
-  "family": "any",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 9.3,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.00844
- },
- {
-  "cve": "CVE-2026-84425",
-  "vendor": "zhayujie",
-  "product": "CowAgent",
-  "name": "zhayujie CowAgent Browser Tool browser_tool.py BrowserTool denial of service",
-  "family": "any",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 5.3,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00471
- },
- {
-  "cve": "CVE-2026-84352",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84352",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 9.6,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00462
- },
- {
-  "cve": "CVE-2026-74904",
-  "vendor": "siyuan-note",
-  "product": "siyuan",
-  "name": "SiYuan before v3.7.4 Missing Authorization via block API",
-  "family": "linux",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 8.7,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.00449
- },
- {
-  "cve": "CVE-2026-34884",
-  "vendor": "Apache Software Foundation",
-  "product": "Apache SkyWalking MCP",
-  "name": "Apache SkyWalking MCP: SSRF via set_skywalking_url Tool and GraphQL Expression Injection in MCP Server",
-  "family": "linux",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.0069
- },
- {
-  "cve": "CVE-2026-84359",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84359",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 3.1,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
-  "epss": 0.00196
- },
- {
-  "cve": "CVE-2026-84351",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84351",
-  "family": "windows",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 8.3,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00444
- },
- {
-  "cve": "CVE-2026-15585",
-  "vendor": "AKIN Software Computer Import Export Industry and Trade Ltd.",
-  "product": "AKINSOFT Wolvox9 ERP / KontrolPanel.exe",
-  "name": "Path Traversal in AKIN Software's Wolvox9 ERP",
-  "family": "any",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.00503
- },
- {
-  "cve": "CVE-2026-15748",
-  "vendor": "wpmudev",
-  "product": "Forminator Forms \u2013 Contact Form, Payment Form & Custom Form Builder",
-  "name": "Forminator Forms <= 1.56.1 - Unauthenticated Arbitrary File Upload via Forged Upload Field Configuration",
-  "family": "any",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.04088
- },
- {
-  "cve": "CVE-2026-84358",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84358",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 4.2,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:L",
-  "epss": 0.00216
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.00431
  },
  {
   "cve": "CVE-2026-84350",
@@ -1287,30 +1417,17 @@
   "epss": 0.00382
  },
  {
-  "cve": "CVE-2026-75091",
-  "vendor": "mdmag",
-  "product": "Quill Forms | Conversational Multi Step Forms, Surveys & quizzes",
-  "name": "Quill Forms  <= 5.7.1 - Unauthenticated Stored Cross-Site Scripting",
+  "cve": "CVE-2026-84427",
+  "vendor": "zhayujie",
+  "product": "CowAgent",
+  "name": "zhayujie CowAgent Bash Tool bash.py denial of service",
   "family": "any",
   "in_kev": false,
   "ransomware": false,
   "date_added": null,
-  "cvss": 7.2,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
-  "epss": 0.00318
- },
- {
-  "cve": "CVE-2026-84357",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84357",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 6.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
-  "epss": 0.00274
+  "cvss": 5.3,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.00471
  },
  {
   "cve": "CVE-2026-84349",
@@ -1326,121 +1443,17 @@
   "epss": 0.00404
  },
  {
-  "cve": "CVE-2026-11801",
-  "vendor": "gwin",
-  "product": "WPAdverts \u2013 Classifieds Plugin",
-  "name": "WPAdverts <= 2.3.2 - Missing Authorization to Unauthenticated Sensitive Information Disclosure via classifieds-types REST Endpoint",
-  "family": "any",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.01642
- },
- {
-  "cve": "CVE-2026-84356",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84356",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 4.3,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
-  "epss": 0.00245
- },
- {
-  "cve": "CVE-2026-84347",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84347",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.00523
- },
- {
-  "cve": "CVE-2026-75090",
-  "vendor": "EricLBuehler",
-  "product": "Mistral.rs",
-  "name": "EricLBuehler Mistral.rs GGUF Tokenizer gguf_tokenizer.rs convert_gguf_to_hf_tokenizer out-of-bounds",
+  "cve": "CVE-2026-84425",
+  "vendor": "zhayujie",
+  "product": "CowAgent",
+  "name": "zhayujie CowAgent Browser Tool browser_tool.py BrowserTool denial of service",
   "family": "any",
   "in_kev": false,
   "ransomware": false,
   "date_added": null,
   "cvss": 5.3,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00688
- },
- {
-  "cve": "CVE-2026-84355",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84355",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 3.1,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
-  "epss": 0.00244
- },
- {
-  "cve": "CVE-2026-84335",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84335",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 8.3,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
-  "epss": 0.00389
- },
- {
-  "cve": "CVE-2026-75089",
-  "vendor": "PHPGurukul",
-  "product": "Complaint Management System",
-  "name": "PHPGurukul Complaint Management System check_availability.php sql injection",
-  "family": "any",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 6.9,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
-  "epss": 0.00431
- },
- {
-  "cve": "CVE-2026-84348",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84348",
-  "family": "workstation",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 6.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
-  "epss": 0.00318
- },
- {
-  "cve": "CVE-2026-84334",
-  "vendor": "Google",
-  "product": "Chrome",
-  "name": "CVE-2026-84334",
-  "family": "windows",
-  "in_kev": false,
-  "ransomware": false,
-  "date_added": null,
-  "cvss": 8.1,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.00122
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.00471
  },
  {
   "cve": "CVE-2026-93952",
@@ -1456,6 +1469,19 @@
   "epss": 0.01384
  },
  {
+  "cve": "CVE-2026-75091",
+  "vendor": "mdmag",
+  "product": "Quill Forms | Conversational Multi Step Forms, Surveys & quizzes",
+  "name": "Quill Forms  <= 5.7.1 - Unauthenticated Stored Cross-Site Scripting",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 7.2,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+  "epss": 0.00318
+ },
+ {
   "cve": "CVE-2026-86060",
   "vendor": "MikroTik",
   "product": "RouterOS",
@@ -1469,6 +1495,19 @@
   "epss": 0.06392
  },
  {
+  "cve": "CVE-2026-34884",
+  "vendor": "Apache Software Foundation",
+  "product": "Apache SkyWalking MCP",
+  "name": "Apache SkyWalking MCP: SSRF via set_skywalking_url Tool and GraphQL Expression Injection in MCP Server",
+  "family": "linux",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.0069
+ },
+ {
   "cve": "CVE-2026-42016",
   "vendor": "JFrog",
   "product": "Artifactory",
@@ -1480,6 +1519,32 @@
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:N",
   "epss": 0.08643
+ },
+ {
+  "cve": "CVE-2026-15748",
+  "vendor": "wpmudev",
+  "product": "Forminator Forms \u2013 Contact Form, Payment Form & Custom Form Builder",
+  "name": "Forminator Forms <= 1.56.1 - Unauthenticated Arbitrary File Upload via Forged Upload Field Configuration",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.04088
+ },
+ {
+  "cve": "CVE-2026-15585",
+  "vendor": "AKIN Software Computer Import Export Industry and Trade Ltd.",
+  "product": "AKINSOFT Wolvox9 ERP / KontrolPanel.exe",
+  "name": "Path Traversal in AKIN Software's Wolvox9 ERP",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 7.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+  "epss": 0.00503
  },
  {
   "cve": "CVE-2026-9586",
@@ -1534,6 +1599,19 @@
   "epss": 0.98241
  },
  {
+  "cve": "CVE-2026-75090",
+  "vendor": "EricLBuehler",
+  "product": "Mistral.rs",
+  "name": "EricLBuehler Mistral.rs GGUF Tokenizer gguf_tokenizer.rs convert_gguf_to_hf_tokenizer out-of-bounds",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 5.3,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.00688
+ },
+ {
   "cve": "CVE-2026-48710",
   "vendor": "Kludex",
   "product": "Starlette",
@@ -1545,6 +1623,19 @@
   "cvss": 6.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
   "epss": 0.70288
+ },
+ {
+  "cve": "CVE-2026-75627",
+  "vendor": "bastillion-io",
+  "product": "Bastillion",
+  "name": "Bastillion Authentication Bypass via Path-Prefix Routing Mismatch",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+  "epss": 0.00844
  },
  {
   "cve": "CVE-2026-67277",
@@ -1573,6 +1664,19 @@
   "epss": 0.66695
  },
  {
+  "cve": "CVE-2026-11801",
+  "vendor": "gwin",
+  "product": "WPAdverts \u2013 Classifieds Plugin",
+  "name": "WPAdverts <= 2.3.2 - Missing Authorization to Unauthenticated Sensitive Information Disclosure via classifieds-types REST Endpoint",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 7.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+  "epss": 0.01642
+ },
+ {
   "cve": "CVE-2026-85102",
   "vendor": "Check Point",
   "product": "Multiple Products",
@@ -1584,6 +1688,19 @@
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
   "epss": 0.5414
+ },
+ {
+  "cve": "CVE-2026-75089",
+  "vendor": "PHPGurukul",
+  "product": "Complaint Management System",
+  "name": "PHPGurukul Complaint Management System check_availability.php sql injection",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 6.9,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P",
+  "epss": 0.00431
  },
  {
   "cve": "CVE-2026-67279",
@@ -1651,6 +1768,19 @@
   "epss": 0.2351
  },
  {
+  "cve": "CVE-2026-74906",
+  "vendor": "siyuan-note",
+  "product": "siyuan",
+  "name": "SiYuan before v3.7.4 Incorrect Authorization via Publish Access",
+  "family": "any",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.7,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+  "epss": 0.00377
+ },
+ {
   "cve": "CVE-2026-93616",
   "vendor": "Check Point",
   "product": "Multiple Products",
@@ -1700,7 +1830,7 @@
   "date_added": "2026-09-11",
   "cvss": 9.9,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.00924
+  "epss": 0.01173
  },
  {
   "cve": "CVE-2026-87491",
@@ -1859,6 +1989,19 @@
   "epss": 0.00387
  },
  {
+  "cve": "CVE-2026-84358",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84358",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 4.2,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:L",
+  "epss": 0.00216
+ },
+ {
   "cve": "CVE-2026-87886",
   "vendor": "Acronis",
   "product": "Backup",
@@ -1870,6 +2013,19 @@
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
   "epss": 0.00233
+ },
+ {
+  "cve": "CVE-2026-74904",
+  "vendor": "siyuan-note",
+  "product": "siyuan",
+  "name": "SiYuan before v3.7.4 Missing Authorization via block API",
+  "family": "linux",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.7,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+  "epss": 0.00449
  },
  {
   "cve": "CVE-2026-85706",
@@ -1896,6 +2052,32 @@
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
   "epss": 0.01806
+ },
+ {
+  "cve": "CVE-2026-84356",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84356",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 4.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N",
+  "epss": 0.00245
+ },
+ {
+  "cve": "CVE-2026-84347",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84347",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.00523
  },
  {
   "cve": "CVE-2026-83548",
@@ -1950,6 +2132,19 @@
   "epss": 0.2655
  },
  {
+  "cve": "CVE-2026-84335",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84335",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+  "epss": 0.00389
+ },
+ {
   "cve": "CVE-2026-87902",
   "vendor": "WordPress",
   "product": "Core",
@@ -1961,6 +2156,32 @@
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
   "epss": 0.95769
+ },
+ {
+  "cve": "CVE-2026-84357",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84357",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 6.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N",
+  "epss": 0.00274
+ },
+ {
+  "cve": "CVE-2026-84334",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84334",
+  "family": "windows",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 8.1,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.00122
  },
  {
   "cve": "CVE-2025-39682",
@@ -1987,6 +2208,32 @@
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
   "epss": 0.01607
+ },
+ {
+  "cve": "CVE-2026-84359",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84359",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 3.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
+  "epss": 0.00196
+ },
+ {
+  "cve": "CVE-2026-84355",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84355",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 3.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
+  "epss": 0.00244
  },
  {
   "cve": "CVE-2024-53150",
@@ -2039,6 +2286,19 @@
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
   "epss": 0.88658
+ },
+ {
+  "cve": "CVE-2026-84348",
+  "vendor": "Google",
+  "product": "Chrome",
+  "name": "CVE-2026-84348",
+  "family": "workstation",
+  "in_kev": false,
+  "ransomware": false,
+  "date_added": null,
+  "cvss": 6.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+  "epss": 0.00318
  },
  {
   "cve": "CVE-2026-59822",
