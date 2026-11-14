@@ -1,8 +1,8 @@
 {
- "fetched_at": "2026-11-13T15:27:41Z",
+ "fetched_at": "2026-11-14T14:12:22Z",
  "source": "https://api.msrc.microsoft.com/cvrf/v3.0/",
  "cve_count": 19,
- "patch_count": 150,
+ "patch_count": 149,
  "cves": {
   "CVE-2014-4113": {
    "document_id": null,
@@ -1350,7 +1350,7 @@
    "source": "live",
    "note": ""
   },
-  "CVE-2025-21333": {
+  "CVE-2025-21334": {
    "document_id": "2025-Jan",
    "document_title": "January 2025 Security Updates",
    "patches": [
@@ -1533,7 +1533,7 @@
    "source": "live",
    "note": ""
   },
-  "CVE-2025-30397": {
+  "CVE-2025-32709": {
    "document_id": "2025-May",
    "document_title": "May 2025 Security Updates",
    "patches": [
@@ -1553,25 +1553,6 @@
       "10.0.19045.5854"
      ],
      "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058379",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058380",
-     "products": [
-      "Windows Server 2008 for 32-bit Systems Service Pack 2",
-      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
-      "Windows Server 2008 for x64-based Systems Service Pack 2",
-      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)",
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
-      "Windows Server 2012",
-      "Windows Server 2012 (Server Core installation)"
-     ],
-     "product_count": 10,
-     "fixed_builds": [
-      "1.003"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058380",
      "restart": "Yes"
     },
     {
@@ -1687,49 +1668,6 @@
      "restart": "Yes"
     },
     {
-     "kb": "KB5058429",
-     "products": [
-      "Windows Server 2008 for 32-bit Systems Service Pack 2",
-      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
-      "Windows Server 2008 for x64-based Systems Service Pack 2",
-      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "6.0.6003.23279"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058429",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058430",
-     "products": [
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "6.1.7601.27729"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058430",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058449",
-     "products": [
-      "Windows Server 2008 for 32-bit Systems Service Pack 2",
-      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
-      "Windows Server 2008 for x64-based Systems Service Pack 2",
-      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "6.0.6003.23279"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058449",
-     "restart": "Yes"
-    },
-    {
      "kb": "KB5058451",
      "products": [
       "Windows Server 2012",
@@ -1740,19 +1678,6 @@
       "6.2.9200.25475"
      ],
      "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058451",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058454",
-     "products": [
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "6.1.7601.27729"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058454",
      "restart": "Yes"
     },
     {
@@ -1780,6 +1705,62 @@
       "10.0.20348.3630"
      ],
      "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058500",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5061195",
+     "products": [
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.1.7601.27730"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5061195",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5061196",
+     "products": [
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.1.7601.27730"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5061196",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5061197",
+     "products": [
+      "Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.0.6003.23317"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5061197",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5061198",
+     "products": [
+      "Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.0.6003.23317"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5061198",
      "restart": "Yes"
     }
    ],

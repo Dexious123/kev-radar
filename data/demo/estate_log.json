@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-11-13",
+ "as_of": "2026-11-14",
  "days": [
   {
    "date": "2026-10-17",
@@ -1322,6 +1322,56 @@
      "host": "hl-pay-srv-031.lab.invalid"
     }
    ]
+  },
+  {
+   "date": "2026-11-14",
+   "fixed": [
+    {
+     "cve": "CVE-2026-9586",
+     "host": "hl-pay-srv-034.lab.invalid",
+     "owner": "Priya Shah"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-114713",
+     "name": "UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+     "vendor": "UnrealIRCd",
+     "product": "UnrealIRCd",
+     "hosts": [
+      "hl-portal-ws-033.lab.invalid",
+      "hl-corp-srv-009.lab.invalid",
+      "hl-portal-lnx-034.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-123039",
+     "name": "Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+     "vendor": "Check Point",
+     "product": "Multiple Products",
+     "hosts": [
+      "hl-edge-fw-030.lab.invalid",
+      "hl-claims-srv-066.lab.invalid",
+      "hl-edge-fw-028.lab.invalid",
+      "hl-claims-srv-025.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84357",
+     "host": "hl-claims-ws-011.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-75091",
+     "host": "hl-claims-srv-004.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84350",
+     "host": "hl-pay-ws-005.lab.invalid"
+    }
+   ],
+   "reopened": []
   }
  ]
 }
