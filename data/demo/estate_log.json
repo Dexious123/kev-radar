@@ -1,6 +1,6 @@
 {
  "seed": 2604,
- "as_of": "2026-11-14",
+ "as_of": "2026-11-15",
  "days": [
   {
    "date": "2026-10-17",
@@ -1369,6 +1369,18 @@
     {
      "cve": "CVE-2026-84350",
      "host": "hl-pay-ws-005.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-15",
+   "fixed": [],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2024-6228",
+     "host": "hl-edge-fw-002.lab.invalid"
     }
    ],
    "reopened": []

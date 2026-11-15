@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-14T14:12:22Z",
+ "fetched_at": "2026-11-15T14:47:46Z",
  "source": "https://api.msrc.microsoft.com/cvrf/v3.0/",
  "cve_count": 19,
  "patch_count": 149,
@@ -1132,6 +1132,285 @@
    "source": "live",
    "note": ""
   },
+  "CVE-2024-29059": {
+   "document_id": "2024-Mar",
+   "document_title": "March 2024 Security Updates",
+   "patches": [
+    {
+     "kb": "KB5033910",
+     "products": [
+      "Microsoft .NET Framework 4.8 on Windows 10 Version 1607 for 32-bit Systems",
+      "Microsoft .NET Framework 4.8 on Windows 10 Version 1607 for x64-based Systems",
+      "Microsoft .NET Framework 4.8 on Windows Server 2016",
+      "Microsoft .NET Framework 4.8 on Windows Server 2016 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "4.8.04690.02"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033910",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5033917",
+     "products": [
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows Server 2022, 23H2 Edition (Server Core installation)"
+     ],
+     "product_count": 1,
+     "fixed_builds": [
+      "4.8.09214.01"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033917",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5033920",
+     "products": [
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 11 Version 22H2 for ARM64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 11 Version 22H2 for x64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 11 Version 23H2 for ARM64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 11 Version 23H2 for x64-based Systems"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "4.8.09214.01"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033920",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034119",
+     "products": [
+      "Microsoft .NET Framework 3.5 AND 4.7.2 on Windows 10 Version 1607 for 32-bit Systems",
+      "Microsoft .NET Framework 3.5 AND 4.7.2 on Windows 10 Version 1607 for x64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.7.2 on Windows Server 2016",
+      "Microsoft .NET Framework 3.5 AND 4.7.2 on Windows Server 2016 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.14393.6614"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5034119",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5034134",
+     "products": [
+      "Microsoft .NET Framework 3.5 AND 4.6/4.6.2 on Windows 10 for 32-bit Systems",
+      "Microsoft .NET Framework 3.5 AND 4.6/4.6.2 on Windows 10 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.10240.20402"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5034134",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5034269",
+     "products": [
+      "Microsoft .NET Framework 4.8 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Microsoft .NET Framework 4.8 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
+      "Microsoft .NET Framework 4.6.2/4.7/4.7.1/4.7.2 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Microsoft .NET Framework 4.6.2/4.7/4.7.1/4.7.2 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
+      "Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 6,
+     "fixed_builds": [
+      "4.8.04690.01",
+      "3.0.30729.8959"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033948",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034270",
+     "products": [
+      "Microsoft .NET Framework 4.6.2 on Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Microsoft .NET Framework 4.6.2 on Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Microsoft .NET Framework 4.6.2 on Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Microsoft .NET Framework 4.6.2 on Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)",
+      "Microsoft .NET Framework 2.0 Service Pack 2 on Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Microsoft .NET Framework 2.0 Service Pack 2 on Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Microsoft .NET Framework 3.0 Service Pack 2 on Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Microsoft .NET Framework 3.0 Service Pack 2 on Windows Server 2008 for x64-based Systems Service Pack 2"
+     ],
+     "product_count": 8,
+     "fixed_builds": [
+      "4.7.04081.02",
+      "3.0.50727.8976"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033947",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034272",
+     "products": [
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows Server 2022",
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows Server 2022 (Server Core installation)",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows Server 2022",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows Server 2022 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "4.8.09214.01"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033922",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034273",
+     "products": [
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 10 Version 1809 for 32-bit Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 10 Version 1809 for x64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows Server 2019",
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows Server 2019 (Server Core installation)",
+      "Microsoft .NET Framework 3.5 AND 4.7.2 on Windows 10 Version 1809 for x64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.7.2 on Windows Server 2019",
+      "Microsoft .NET Framework 3.5 AND 4.7.2 on Windows Server 2019 (Server Core installation)"
+     ],
+     "product_count": 7,
+     "fixed_builds": [
+      "4.8.04690.02",
+      "4.7.04081.03"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033911",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034274",
+     "products": [
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 10 Version 21H2 for 32-bit Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 10 Version 21H2 for ARM64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 10 Version 21H2 for x64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 10 Version 21H2 for 32-bit Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 10 Version 21H2 for ARM64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 10 Version 21H2 for x64-based Systems"
+     ],
+     "product_count": 6,
+     "fixed_builds": [
+      "4.8.04690.02",
+      "4.8.09214.01"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033909",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034275",
+     "products": [
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 10 Version 22H2 for x64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 10 Version 22H2 for ARM64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 10 Version 22H2 for 32-bit Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 10 Version 22H2 for x64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 10 Version 22H2 for ARM64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 10 Version 22H2 for 32-bit Systems"
+     ],
+     "product_count": 6,
+     "fixed_builds": [
+      "4.8.04690.02",
+      "4.8.09214.01"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033909",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034276",
+     "products": [
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 11 version 21H2 for x64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8 on Windows 11 version 21H2 for ARM64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 11 version 21H2 for x64-based Systems",
+      "Microsoft .NET Framework 3.5 AND 4.8.1 on Windows 11 version 21H2 for ARM64-based Systems"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "4.8.04690.02",
+      "4.8.09214.01"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033912",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034277",
+     "products": [
+      "Microsoft .NET Framework 4.8 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Microsoft .NET Framework 4.8 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
+      "Microsoft .NET Framework 4.6.2/4.7/4.7.1/4.7.2 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Microsoft .NET Framework 4.6.2/4.7/4.7.1/4.7.2 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)",
+      "Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Microsoft .NET Framework 3.5.1 on Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 6,
+     "fixed_builds": [
+      "4.8.04690.02",
+      "4.7.04081.03",
+      "3.0.30729.8959"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033916",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034278",
+     "products": [
+      "Microsoft .NET Framework 4.8 on Windows Server 2012",
+      "Microsoft .NET Framework 4.8 on Windows Server 2012 (Server Core installation)",
+      "Microsoft .NET Framework 4.6.2/4.7/4.7.1/4.7.2 on Windows Server 2012",
+      "Microsoft .NET Framework 4.6.2/4.7/4.7.1/4.7.2 on Windows Server 2012 (Server Core installation)",
+      "Microsoft .NET Framework 3.5 on Windows Server 2012",
+      "Microsoft .NET Framework 3.5 on Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 6,
+     "fixed_builds": [
+      "4.8.04690.02",
+      "4.7.04081.03",
+      "3.0.50727.8976"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033913",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034279",
+     "products": [
+      "Microsoft .NET Framework 4.8 on Windows Server 2012 R2",
+      "Microsoft .NET Framework 4.8 on Windows Server 2012 R2 (Server Core installation)",
+      "Microsoft .NET Framework 4.6.2/4.7/4.7.1/4.7.2 on Windows Server 2012 R2",
+      "Microsoft .NET Framework 4.6.2/4.7/4.7.1/4.7.2 on Windows Server 2012 R2 (Server Core installation)",
+      "Microsoft .NET Framework 3.5 on Windows Server 2012 R2",
+      "Microsoft .NET Framework 3.5 on Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 6,
+     "fixed_builds": [
+      "4.8.04690.02",
+      "4.7.04081.03",
+      "3.0.50727.8976"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033915",
+     "restart": "Maybe"
+    },
+    {
+     "kb": "KB5034280",
+     "products": [
+      "Microsoft .NET Framework 4.6.2 on Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Microsoft .NET Framework 4.6.2 on Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Microsoft .NET Framework 4.6.2 on Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Microsoft .NET Framework 4.6.2 on Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)",
+      "Microsoft .NET Framework 2.0 Service Pack 2 on Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Microsoft .NET Framework 2.0 Service Pack 2 on Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Microsoft .NET Framework 3.0 Service Pack 2 on Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Microsoft .NET Framework 3.0 Service Pack 2 on Windows Server 2008 for x64-based Systems Service Pack 2"
+     ],
+     "product_count": 8,
+     "fixed_builds": [
+      "4.7.04081.03",
+      "3.0.50727.8976"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5033907",
+     "restart": "Maybe"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
   "CVE-2024-43572": {
    "document_id": "2024-Oct",
    "document_title": "October 2024 Security Updates",
@@ -1350,7 +1629,7 @@
    "source": "live",
    "note": ""
   },
-  "CVE-2025-21334": {
+  "CVE-2025-21335": {
    "document_id": "2025-Jan",
    "document_title": "January 2025 Security Updates",
    "patches": [
@@ -1527,240 +1806,6 @@
       "6.0.6003.23168"
      ],
      "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053995",
-     "restart": "Yes"
-    }
-   ],
-   "source": "live",
-   "note": ""
-  },
-  "CVE-2025-32709": {
-   "document_id": "2025-May",
-   "document_title": "May 2025 Security Updates",
-   "patches": [
-    {
-     "kb": "KB5058379",
-     "products": [
-      "Windows 10 Version 21H2 for 32-bit Systems",
-      "Windows 10 Version 21H2 for ARM64-based Systems",
-      "Windows 10 Version 21H2 for x64-based Systems",
-      "Windows 10 Version 22H2 for x64-based Systems",
-      "Windows 10 Version 22H2 for ARM64-based Systems",
-      "Windows 10 Version 22H2 for 32-bit Systems"
-     ],
-     "product_count": 6,
-     "fixed_builds": [
-      "10.0.19044.5854",
-      "10.0.19045.5854"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058379",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058383",
-     "products": [
-      "Windows 10 Version 1607 for 32-bit Systems",
-      "Windows 10 Version 1607 for x64-based Systems",
-      "Windows Server 2016",
-      "Windows Server 2016 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.14393.8066"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058383",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058384",
-     "products": [
-      "Windows Server 2022, 23H2 Edition (Server Core installation)"
-     ],
-     "product_count": 1,
-     "fixed_builds": [
-      "10.0.25398.1611"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058384",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058385",
-     "products": [
-      "Windows Server 2022",
-      "Windows Server 2022 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.20348.3692"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058385",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058387",
-     "products": [
-      "Windows 10 for 32-bit Systems",
-      "Windows 10 for x64-based Systems"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.10240.21014"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058387",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058392",
-     "products": [
-      "Windows 10 Version 1809 for 32-bit Systems",
-      "Windows 10 Version 1809 for x64-based Systems",
-      "Windows Server 2019",
-      "Windows Server 2019 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.17763.7314"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058392",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058403",
-     "products": [
-      "Windows Server 2012 R2",
-      "Windows Server 2012 R2 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "6.3.9600.22577"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058403",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058405",
-     "products": [
-      "Windows 11 Version 22H2 for ARM64-based Systems",
-      "Windows 11 Version 22H2 for x64-based Systems",
-      "Windows 11 Version 23H2 for ARM64-based Systems",
-      "Windows 11 Version 23H2 for x64-based Systems"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.22621.5335",
-      "10.0.22631.5335"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058405",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058411",
-     "products": [
-      "Windows Server 2025 (Server Core installation)",
-      "Windows 11 Version 24H2 for ARM64-based Systems",
-      "Windows 11 Version 24H2 for x64-based Systems",
-      "Windows Server 2025"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.26100.4061"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058411",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058451",
-     "products": [
-      "Windows Server 2012",
-      "Windows Server 2012 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "6.2.9200.25475"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058451",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058497",
-     "products": [
-      "Windows Server 2025 (Server Core installation)",
-      "Windows 11 Version 24H2 for ARM64-based Systems",
-      "Windows 11 Version 24H2 for x64-based Systems",
-      "Windows Server 2025"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.26100.3981"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058497",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5058500",
-     "products": [
-      "Windows Server 2022"
-     ],
-     "product_count": 1,
-     "fixed_builds": [
-      "10.0.20348.3630"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5058500",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5061195",
-     "products": [
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "6.1.7601.27730"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5061195",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5061196",
-     "products": [
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "6.1.7601.27730"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5061196",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5061197",
-     "products": [
-      "Windows Server 2008 for 32-bit Systems Service Pack 2",
-      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
-      "Windows Server 2008 for x64-based Systems Service Pack 2",
-      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "6.0.6003.23317"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5061197",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5061198",
-     "products": [
-      "Windows Server 2008 for 32-bit Systems Service Pack 2",
-      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
-      "Windows Server 2008 for x64-based Systems Service Pack 2",
-      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "6.0.6003.23317"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5061198",
      "restart": "Yes"
     }
    ],
