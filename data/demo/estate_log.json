@@ -1,25 +1,7 @@
 {
  "seed": 2604,
- "as_of": "2026-11-15",
+ "as_of": "2026-11-16",
  "days": [
-  {
-   "date": "2026-10-17",
-   "fixed": [
-    {
-     "cve": "CVE-2026-81928",
-     "host": "hl-portal-lnx-032.lab.invalid",
-     "owner": "Jonah Reid"
-    }
-   ],
-   "new_kev": [],
-   "discovered": [
-    {
-     "cve": "CVE-2026-84335",
-     "host": "hl-pay-ws-010.lab.invalid"
-    }
-   ],
-   "reopened": []
-  },
   {
    "date": "2026-10-18",
    "fixed": [],
@@ -1384,6 +1366,53 @@
     }
    ],
    "reopened": []
+  },
+  {
+   "date": "2026-11-16",
+   "fixed": [
+    {
+     "cve": "CVE-2026-87886",
+     "host": "hl-claims-ws-011.lab.invalid",
+     "owner": "Noah Berger"
+    },
+    {
+     "cve": "CVE-2021-30657",
+     "host": "hl-claims-ws-052.lab.invalid",
+     "owner": "Hannah Brooks"
+    },
+    {
+     "cve": "CVE-2026-116606",
+     "host": "hl-edge-fw-026.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-87491",
+     "host": "hl-pay-ws-048.lab.invalid",
+     "owner": "Priya Shah"
+    },
+    {
+     "cve": "CVE-2026-119977",
+     "host": "hl-pay-srv-031.lab.invalid",
+     "owner": "Luis Ortega"
+    }
+   ],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2026-81928",
+     "host": "hl-corp-ws-019.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84325",
+     "host": "hl-claims-ws-006.lab.invalid"
+    }
+   ],
+   "reopened": [
+    {
+     "cve": "CVE-2026-42018",
+     "host": "hl-edge-fw-004.lab.invalid"
+    }
+   ]
   }
  ]
 }
