@@ -10,7 +10,7 @@
   "date_added": "2026-11-13",
   "cvss": 8.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
-  "epss": 0.00508
+  "epss": 0.00467
  },
  {
   "cve": "CVE-2026-123039",
@@ -23,7 +23,7 @@
   "date_added": "2026-11-13",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02191
+  "epss": 0.01938
  },
  {
   "cve": "CVE-2026-124194",
@@ -192,7 +192,7 @@
   "date_added": "2026-11-03",
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.01199
+  "epss": 0.01586
  },
  {
   "cve": "CVE-2026-118527",
@@ -624,32 +624,6 @@
   "epss": 0.11388
  },
  {
-  "cve": "CVE-2026-102490",
-  "vendor": "Zammad GmbH",
-  "product": "Zammad",
-  "name": "Zammad GmbH Zammad Improper Privilege Management Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-10-02",
-  "cvss": 8.5,
-  "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:Y/V:D",
-  "epss": 0.10936
- },
- {
-  "cve": "CVE-2026-102489",
-  "vendor": "Zammad GmbH",
-  "product": "Zammad",
-  "name": "Zammad GmbH Zammad Session Fixation Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-10-02",
-  "cvss": 8.7,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/E:A/AU:Y/V:C",
-  "epss": 0.49915
- },
- {
   "cve": "CVE-2025-53770",
   "vendor": "Microsoft",
   "product": "SharePoint",
@@ -884,160 +858,160 @@
   "epss": 0.99934
  },
  {
-  "cve": "CVE-2022-23227",
-  "vendor": "NUUO",
-  "product": "NVRmini2 Devices",
-  "name": "NUUO NVRmini2 Devices Missing Authentication Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2024-12-18",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.48497
- },
- {
-  "cve": "CVE-2020-1631",
-  "vendor": "Juniper",
-  "product": "Junos OS",
-  "name": "Juniper Junos OS Path Traversal Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-03-25",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.04865
- },
- {
-  "cve": "CVE-2025-14174",
-  "vendor": "Google",
-  "product": "Chromium",
-  "name": "Google Chromium Out of Bounds Memory Access Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-12-12",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.43263
- },
- {
-  "cve": "CVE-2017-18368",
-  "vendor": "Zyxel",
-  "product": "P660HN-T1A Routers",
-  "name": "Zyxel P660HN-T1A Routers Command Injection Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2023-08-07",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.94508
- },
- {
-  "cve": "CVE-2025-66376",
-  "vendor": "Synacor",
-  "product": "Zimbra Collaboration Suite (ZCS)",
-  "name": "Synacor Zimbra Collaboration Suite (ZCS) Cross-Site Scripting Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-03-18",
-  "cvss": 7.2,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
-  "epss": 0.20227
- },
- {
-  "cve": "CVE-2022-0028",
-  "vendor": "Palo Alto Networks",
-  "product": "PAN-OS",
-  "name": "Palo Alto Networks PAN-OS Reflected Amplification Denial-of-Service Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-08-22",
-  "cvss": 8.6,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
-  "epss": 0.0269
- },
- {
-  "cve": "CVE-2015-2424",
+  "cve": "CVE-2024-49138",
   "vendor": "Microsoft",
-  "product": "PowerPoint",
-  "name": "Microsoft PowerPoint Memory Corruption Vulnerability",
+  "product": "Windows",
+  "name": "Microsoft Windows Common Log File System (CLFS) Driver Heap-Based Buffer Overflow Vulnerability",
   "family": "windows",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-03-03",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.40124
+  "date_added": "2024-12-10",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+  "epss": 0.26215
  },
  {
-  "cve": "CVE-2025-21043",
-  "vendor": "Samsung",
-  "product": "Mobile Devices",
-  "name": "Samsung Mobile Devices Out-of-Bounds Write Vulnerability",
+  "cve": "CVE-2020-13965",
+  "vendor": "Roundcube",
+  "product": "Webmail",
+  "name": "Roundcube Webmail Cross-Site Scripting (XSS) Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2025-10-02",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.02216
+  "date_added": "2024-06-26",
+  "cvss": 6.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L",
+  "epss": 0.76596
  },
  {
-  "cve": "CVE-2017-6738",
-  "vendor": "Cisco",
-  "product": "IOS and IOS XE Software",
-  "name": "Cisco IOS and IOS XE Software SNMP Remote Code Execution Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-03-03",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.10855
- },
- {
-  "cve": "CVE-2015-2590",
-  "vendor": "Oracle",
-  "product": "Java SE",
-  "name": "Oracle Java SE and Java SE Embedded Remote Code Execution Vulnerability",
+  "cve": "CVE-2025-58360",
+  "vendor": "OSGeo",
+  "product": "GeoServer",
+  "name": "OSGeo GeoServer Improper Restriction of XML External Entity Reference Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-03-03",
+  "date_added": "2025-12-11",
+  "cvss": 8.2,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:L",
+  "epss": 0.61169
+ },
+ {
+  "cve": "CVE-2008-0015",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Video ActiveX Control Remote Code Execution Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-02-17",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.76576
+ },
+ {
+  "cve": "CVE-2018-5430",
+  "vendor": "TIBCO",
+  "product": "JasperReports",
+  "name": "TIBCO JasperReports Server Information Disclosure Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-12-29",
+  "cvss": 7.7,
+  "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+  "epss": 0.48054
+ },
+ {
+  "cve": "CVE-2022-21971",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Runtime Remote Code Execution Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-08-18",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
+  "epss": 0.53934
+ },
+ {
+  "cve": "CVE-2025-31201",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products Arbitrary Read and Write Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2025-04-17",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.25469
+  "epss": 0.13973
  },
  {
-  "cve": "CVE-2023-28434",
-  "vendor": "MinIO",
-  "product": "MinIO",
-  "name": "MinIO Security Feature Bypass Vulnerability",
-  "family": "any",
+  "cve": "CVE-2022-32893",
+  "vendor": "Apple",
+  "product": "iOS and macOS",
+  "name": "Apple iOS and macOS Out-of-Bounds Write Vulnerability",
+  "family": "workstation",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2023-09-19",
+  "date_added": "2022-08-18",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.10492
+ },
+ {
+  "cve": "CVE-2016-1010",
+  "vendor": "Adobe",
+  "product": "Flash Player and AIR",
+  "name": "Adobe Flash Player and AIR Integer Overflow Vulnerability",
+  "family": "workstation",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-05-25",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.19333
+ },
+ {
+  "cve": "CVE-2013-6282",
+  "vendor": "Linux",
+  "product": "Kernel",
+  "name": "Linux Kernel Improper Input Validation Vulnerability",
+  "family": "linux",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-09-15",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.07917
+  "epss": 0.39711
  },
  {
-  "cve": "CVE-2020-5722",
-  "vendor": "Grandstream",
-  "product": "UCM6200",
-  "name": "Grandstream Networks UCM6200 Series SQL Injection Vulnerability",
+  "cve": "CVE-2010-0840",
+  "vendor": "Oracle",
+  "product": "Java Runtime Environment (JRE)",
+  "name": "Oracle JRE Unspecified Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-01-28",
+  "date_added": "2022-05-25",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.84287
+  "epss": 0.96319
+ },
+ {
+  "cve": "CVE-2021-4102",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Use-After-Free Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2021-12-15",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.08534
  },
  {
   "cve": "CVE-2026-84430",
@@ -1622,7 +1596,7 @@
   "date_added": "2026-09-24",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.2239
+  "epss": 0.7884
  },
  {
   "cve": "CVE-2026-7273",
@@ -1807,6 +1781,19 @@
   "epss": 0.00934
  },
  {
+  "cve": "CVE-2026-102489",
+  "vendor": "Zammad GmbH",
+  "product": "Zammad",
+  "name": "Zammad GmbH Zammad Session Fixation Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-02",
+  "cvss": 8.7,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/E:A/AU:Y/V:C",
+  "epss": 0.49915
+ },
+ {
   "cve": "CVE-2021-30657",
   "vendor": "Apple",
   "product": "macOS",
@@ -1896,6 +1883,19 @@
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
   "epss": 0.01806
+ },
+ {
+  "cve": "CVE-2026-102490",
+  "vendor": "Zammad GmbH",
+  "product": "Zammad",
+  "name": "Zammad GmbH Zammad Improper Privilege Management Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-02",
+  "cvss": 8.5,
+  "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:Y/V:D",
+  "epss": 0.10936
  },
  {
   "cve": "CVE-2026-83548",

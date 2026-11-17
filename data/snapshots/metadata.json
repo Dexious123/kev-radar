@@ -1,10 +1,10 @@
 {
- "fetched_at": "2026-11-16T17:05:04Z",
- "as_of": "2026-11-16",
+ "fetched_at": "2026-11-17T16:54:56Z",
+ "as_of": "2026-11-17",
  "kev_catalog_version": "2026.11.13",
  "kev_count": 1781,
  "kev_released": "2026-11-13T20:24:18.3008Z",
- "epss_date": "2026-11-16",
+ "epss_date": "2026-11-17",
  "epss_count": 1812,
  "vulnrichment_count": 160,
  "pool_count": 160,
@@ -17,8 +17,8 @@
   "implementation_guidance": "https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk",
   "msrc": "https://api.msrc.microsoft.com/cvrf/v3.0/"
  },
- "msrc_fetched_at": "2026-11-16T17:05:35Z",
- "msrc_cve_count": 18,
- "msrc_patch_count": 129,
- "estate_as_of": "2026-11-16"
+ "msrc_fetched_at": "2026-11-17T16:55:20Z",
+ "msrc_cve_count": 20,
+ "msrc_patch_count": 151,
+ "estate_as_of": "2026-11-17"
 }
