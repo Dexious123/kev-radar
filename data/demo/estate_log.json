@@ -1,40 +1,7 @@
 {
  "seed": 2604,
- "as_of": "2026-11-17",
+ "as_of": "2026-11-18",
  "days": [
-  {
-   "date": "2026-10-19",
-   "fixed": [
-    {
-     "cve": "CVE-2026-65660",
-     "host": "hl-corp-ws-058.lab.invalid",
-     "owner": "Hannah Brooks"
-    },
-    {
-     "cve": "CVE-2026-87902",
-     "host": "hl-corp-srv-092.lab.invalid",
-     "owner": "Hannah Brooks"
-    },
-    {
-     "cve": "CVE-2026-102490",
-     "host": "hl-id-lnx-036.lab.invalid",
-     "owner": "Marcus Chen"
-    },
-    {
-     "cve": "CVE-2026-7273",
-     "host": "hl-portal-lnx-010.lab.invalid",
-     "owner": "Jonah Reid"
-    }
-   ],
-   "new_kev": [],
-   "discovered": [
-    {
-     "cve": "CVE-2026-75627",
-     "host": "hl-edge-fw-021.lab.invalid"
-    }
-   ],
-   "reopened": []
-  },
   {
    "date": "2026-10-20",
    "fixed": [
@@ -1428,6 +1395,45 @@
      "host": "hl-portal-lnx-006.lab.invalid"
     }
    ],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-18",
+   "fixed": [
+    {
+     "cve": "CVE-2026-5430",
+     "host": "hl-portal-lnx-052.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-84869",
+     "host": "hl-pay-lnx-015.lab.invalid",
+     "owner": "Luis Ortega"
+    },
+    {
+     "cve": "CVE-2026-116606",
+     "host": "hl-edge-fw-028.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-123218",
+     "host": "hl-pay-srv-087.lab.invalid",
+     "owner": "Luis Ortega"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-115731",
+     "name": "Perforce Puppet Enterprise Deserialization of Untrusted Data Vulnerability",
+     "vendor": "Perforce",
+     "product": "Puppet Enterprise",
+     "hosts": [
+      "hl-edge-rtr-001.lab.invalid",
+      "hl-corp-ws-051.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [],
    "reopened": []
   }
  ]
