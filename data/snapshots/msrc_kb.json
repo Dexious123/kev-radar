@@ -1,16 +1,9 @@
 {
- "fetched_at": "2026-11-18T16:29:20Z",
+ "fetched_at": "2026-11-19T16:37:00Z",
  "source": "https://api.msrc.microsoft.com/cvrf/v3.0/",
- "cve_count": 20,
- "patch_count": 151,
+ "cve_count": 21,
+ "patch_count": 174,
  "cves": {
-  "CVE-2008-0015": {
-   "document_id": null,
-   "document_title": "",
-   "patches": [],
-   "source": "live",
-   "note": "MSRC has no security update for this CVE."
-  },
   "CVE-2014-4113": {
    "document_id": null,
    "document_title": "",
@@ -165,6 +158,142 @@
      "fixed_builds": [],
      "url": "https://www.microsoft.com/download/details.aspx?familyid=876a7a9b-9a83-4a71-9761-ff815e83bea8",
      "restart": "Maybe"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
+  "CVE-2016-7256": {
+   "document_id": "2016-Nov",
+   "document_title": "November 2016 Security Updates",
+   "patches": [
+    {
+     "kb": "KB3197867",
+     "products": [
+      "Windows 7 for 32-bit Systems Service Pack 1",
+      "Windows 7 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3197867",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB3197868",
+     "products": [
+      "Windows 7 for 32-bit Systems Service Pack 1",
+      "Windows 7 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3197868",
+     "restart": ""
+    },
+    {
+     "kb": "KB3197873",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3197873",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB3197874",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows RT 8.1",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3197874",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB3197876",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3197876",
+     "restart": ""
+    },
+    {
+     "kb": "KB3197877",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3197877",
+     "restart": ""
+    },
+    {
+     "kb": "KB3198585",
+     "products": [
+      "Windows 10 for 32-bit Systems",
+      "Windows 10 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3198585",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB3198586",
+     "products": [
+      "Windows 10 Version 1511 for 32-bit Systems",
+      "Windows 10 Version 1511 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3198586",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB3200970",
+     "products": [
+      "Windows Server 2016  (Server Core installation)",
+      "Windows 10 Version 1607 for 32-bit Systems",
+      "Windows 10 Version 1607 for x64-based Systems",
+      "Windows Server 2016"
+     ],
+     "product_count": 4,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3200970",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB3203859",
+     "products": [
+      "Windows Server 2008 for 32-bit Systems Service Pack 2",
+      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
+      "Windows Server 2008 for Itanium-Based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2",
+      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)",
+      "Windows Vista Service Pack 2",
+      "Windows Vista x64 Edition Service Pack 2"
+     ],
+     "product_count": 7,
+     "fixed_builds": [],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3203859",
+     "restart": "Yes"
     }
    ],
    "source": "live",
@@ -666,104 +795,6 @@
    "source": "live",
    "note": ""
   },
-  "CVE-2022-21971": {
-   "document_id": "2022-Feb",
-   "document_title": "February 2022 Security Updates",
-   "patches": [
-    {
-     "kb": "KB5010342",
-     "products": [
-      "Windows 10 Version 21H1 for x64-based Systems",
-      "Windows 10 Version 21H1 for ARM64-based Systems",
-      "Windows 10 Version 21H1 for 32-bit Systems",
-      "Windows 10 Version 20H2 for 32-bit Systems",
-      "Windows 10 Version 20H2 for ARM64-based Systems",
-      "Windows Server, version 20H2 (Server Core Installation)",
-      "Windows 10 Version 21H2 for 32-bit Systems",
-      "Windows 10 Version 21H2 for ARM64-based Systems"
-     ],
-     "product_count": 9,
-     "fixed_builds": [
-      "10.0.19043.1526",
-      "10.0.19042.1526",
-      "10.0.19044.1526"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010342",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010345",
-     "products": [
-      "Windows 10 Version 1909 for 32-bit Systems",
-      "Windows 10 Version 1909 for x64-based Systems",
-      "Windows 10 Version 1909 for ARM64-based Systems"
-     ],
-     "product_count": 3,
-     "fixed_builds": [
-      "10.0.18363.2094"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010345",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010351",
-     "products": [
-      "Windows 10 Version 1809 for 32-bit Systems",
-      "Windows 10 Version 1809 for x64-based Systems",
-      "Windows 10 Version 1809 for ARM64-based Systems",
-      "Windows Server 2019",
-      "Windows Server 2019 (Server Core installation)"
-     ],
-     "product_count": 5,
-     "fixed_builds": [
-      "10.0.17763.2565"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010351",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010354",
-     "products": [
-      "Windows Server 2022",
-      "Windows Server 2022 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.20348.524"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010354",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010386",
-     "products": [
-      "Windows 11 version 21H2 for x64-based Systems",
-      "Windows 11 version 21H2 for ARM64-based Systems"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.22000.493"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5010386",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5010456",
-     "products": [
-      "Windows Server 2022",
-      "Windows Server 2022 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.20348.525"
-     ],
-     "url": "",
-     "restart": "Yes"
-    }
-   ],
-   "source": "live",
-   "note": ""
-  },
   "CVE-2022-21999": {
    "document_id": "2022-Feb",
    "document_title": "February 2022 Security Updates",
@@ -1237,6 +1268,326 @@
    "source": "live",
    "note": ""
   },
+  "CVE-2022-26923": {
+   "document_id": "2022-May",
+   "document_title": "May 2022 Security Updates",
+   "patches": [
+    {
+     "kb": "KB5013942",
+     "products": [
+      "Windows 10 Version 21H1 for x64-based Systems",
+      "Windows 10 Version 21H1 for ARM64-based Systems",
+      "Windows 10 Version 21H1 for 32-bit Systems",
+      "Windows 10 Version 21H2 for 32-bit Systems",
+      "Windows 10 Version 20H2 for 32-bit Systems",
+      "Windows 10 Version 20H2 for ARM64-based Systems",
+      "Windows Server, version 20H2 (Server Core Installation)",
+      "Windows 10 Version 21H2 for ARM64-based Systems"
+     ],
+     "product_count": 9,
+     "fixed_builds": [
+      "10.0.19043.1706",
+      "10.0.19042.1706",
+      "10.0.19044.1706"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5013942",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5013945",
+     "products": [
+      "Windows 10 Version 1909 for 32-bit Systems",
+      "Windows 10 Version 1909 for x64-based Systems",
+      "Windows 10 Version 1909 for ARM64-based Systems"
+     ],
+     "product_count": 3,
+     "fixed_builds": [
+      "10.0.18363.2274"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5013945",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5013963",
+     "products": [
+      "Windows 10 for 32-bit Systems",
+      "Windows 10 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.10240.19297"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5013963",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5014001",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.3.9600.20365"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5014001",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5014011",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.3.9600.20371"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5014011",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5014025",
+     "products": [
+      "Windows RT 8.1"
+     ],
+     "product_count": 1,
+     "fixed_builds": [
+      "6.3.9600.20367"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5014025",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5025224",
+     "products": [
+      "Windows 11 version 21H2 for x64-based Systems",
+      "Windows 11 version 21H2 for ARM64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.22000.1817"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5025224",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5025228",
+     "products": [
+      "Windows 10 Version 1607 for 32-bit Systems",
+      "Windows 10 Version 1607 for x64-based Systems",
+      "Windows Server 2016",
+      "Windows Server 2016 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.14393.5850"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5025228",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5025229",
+     "products": [
+      "Windows 10 Version 1809 for 32-bit Systems",
+      "Windows 10 Version 1809 for x64-based Systems",
+      "Windows 10 Version 1809 for ARM64-based Systems",
+      "Windows Server 2019",
+      "Windows Server 2019 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [
+      "10.0.17763.4252"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5025229",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5025230",
+     "products": [
+      "Windows Server 2022",
+      "Windows Server 2022 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.20348.1668"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5025230",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5025285",
+     "products": [
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.3.9600.20919"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5025285",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5025288",
+     "products": [
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.3.9600.20919"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5025288",
+     "restart": "Yes"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
+  "CVE-2023-21674": {
+   "document_id": "2023-Jan",
+   "document_title": "January 2023 Security Updates",
+   "patches": [
+    {
+     "kb": "KB5022282",
+     "products": [
+      "Windows 10 Version 20H2 for 32-bit Systems",
+      "Windows 10 Version 20H2 for ARM64-based Systems",
+      "Windows 10 Version 21H2 for 32-bit Systems",
+      "Windows 10 Version 21H2 for ARM64-based Systems",
+      "Windows 10 Version 21H2 for x64-based Systems",
+      "Windows 10 Version 22H2 for x64-based Systems",
+      "Windows 10 Version 22H2 for ARM64-based Systems",
+      "Windows 10 Version 22H2 for 32-bit Systems"
+     ],
+     "product_count": 8,
+     "fixed_builds": [
+      "10.0.19042.2486",
+      "10.0.19044.2486",
+      "10.0.19045.2486"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5022282",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5022286",
+     "products": [
+      "Windows 10 Version 1809 for 32-bit Systems",
+      "Windows 10 Version 1809 for x64-based Systems",
+      "Windows 10 Version 1809 for ARM64-based Systems",
+      "Windows Server 2019",
+      "Windows Server 2019 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [
+      "10.0.17763.3887"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5022286",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5022287",
+     "products": [
+      "Windows 11 version 21H2 for x64-based Systems",
+      "Windows 11 version 21H2 for ARM64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.22000.1455"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5022287",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5022289",
+     "products": [
+      "Windows 10 Version 1607 for 32-bit Systems",
+      "Windows 10 Version 1607 for x64-based Systems",
+      "Windows Server 2016",
+      "Windows Server 2016 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.14393.5648"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5022289",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5022291",
+     "products": [
+      "Windows Server 2022",
+      "Windows Server 2022 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.20348.1487"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5022291",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5022297",
+     "products": [
+      "Windows 10 for 32-bit Systems",
+      "Windows 10 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.10240.19685"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5022297",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5022303",
+     "products": [
+      "Windows 11 Version 22H2 for ARM64-based Systems",
+      "Windows 11 Version 22H2 for x64-based Systems"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.22621.1105"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5022303",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5022346",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows RT 8.1",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 5,
+     "fixed_builds": [
+      "6.3.9600.20778"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5022346",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5022352",
+     "products": [
+      "Windows 8.1 for 32-bit systems",
+      "Windows 8.1 for x64-based systems",
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "6.3.9600.20778"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5022352",
+     "restart": "Yes"
+    }
+   ],
+   "source": "live",
+   "note": ""
+  },
   "CVE-2024-43572": {
    "document_id": "2024-Oct",
    "document_title": "October 2024 Security Updates",
@@ -1455,12 +1806,98 @@
    "source": "live",
    "note": ""
   },
-  "CVE-2024-49138": {
-   "document_id": "2024-Dec",
-   "document_title": "December 2024 Security Updates",
+  "CVE-2025-24054": {
+   "document_id": "2025-Mar",
+   "document_title": "March 2025 Security Updates",
    "patches": [
     {
-     "kb": "KB5048652",
+     "kb": "KB5053594",
+     "products": [
+      "Windows 10 Version 1607 for 32-bit Systems",
+      "Windows 10 Version 1607 for x64-based Systems",
+      "Windows Server 2016",
+      "Windows Server 2016 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.14393.7876"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053594",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5053596",
+     "products": [
+      "Windows 10 Version 1809 for 32-bit Systems",
+      "Windows 10 Version 1809 for x64-based Systems",
+      "Windows Server 2019",
+      "Windows Server 2019 (Server Core installation)"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.17763.7009"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053596",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5053598",
+     "products": [
+      "Windows Server 2025 (Server Core installation)",
+      "Windows 11 Version 24H2 for ARM64-based Systems",
+      "Windows 11 Version 24H2 for x64-based Systems",
+      "Windows Server 2025"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.26100.3476"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053598",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5053599",
+     "products": [
+      "Windows Server 2022, 23H2 Edition (Server Core installation)"
+     ],
+     "product_count": 1,
+     "fixed_builds": [
+      "10.0.25398.1486"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053599",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5053602",
+     "products": [
+      "Windows 11 Version 22H2 for ARM64-based Systems",
+      "Windows 11 Version 22H2 for x64-based Systems",
+      "Windows 11 Version 23H2 for ARM64-based Systems",
+      "Windows 11 Version 23H2 for x64-based Systems"
+     ],
+     "product_count": 4,
+     "fixed_builds": [
+      "10.0.22621.5039",
+      "10.0.22631.5039"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053602",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5053603",
+     "products": [
+      "Windows Server 2022",
+      "Windows Server 2022 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "10.0.20348.3328"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053603",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5053606",
      "products": [
       "Windows 10 Version 21H2 for 32-bit Systems",
       "Windows 10 Version 21H2 for ARM64-based Systems",
@@ -1471,195 +1908,53 @@
      ],
      "product_count": 6,
      "fixed_builds": [
-      "10.0.19044.5247",
-      "10.0.19045.5247"
+      "10.0.19044.5608",
+      "10.0.19045.5608"
      ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048652",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053606",
      "restart": "Yes"
     },
     {
-     "kb": "KB5048653",
-     "products": [
-      "Windows Server 2022, 23H2 Edition (Server Core installation)"
-     ],
-     "product_count": 1,
-     "fixed_builds": [
-      "10.0.25398.1308"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048653",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048654",
-     "products": [
-      "Windows Server 2022",
-      "Windows Server 2022 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "10.0.20348.2966"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048654",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048661",
-     "products": [
-      "Windows 10 Version 1809 for 32-bit Systems",
-      "Windows 10 Version 1809 for x64-based Systems",
-      "Windows Server 2019",
-      "Windows Server 2019 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.17763.6659"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048661",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048667",
-     "products": [
-      "Windows Server 2025 (Server Core installation)",
-      "Windows 11 Version 24H2 for ARM64-based Systems",
-      "Windows 11 Version 24H2 for x64-based Systems",
-      "Windows Server 2025"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.26100.2605"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048667",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048671",
-     "products": [
-      "Windows 10 Version 1607 for 32-bit Systems",
-      "Windows 10 Version 1607 for x64-based Systems",
-      "Windows Server 2016",
-      "Windows Server 2016 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.14393.7606"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048671",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048676",
-     "products": [
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "6.1.7601.27467"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048676",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048685",
-     "products": [
-      "Windows 11 Version 22H2 for ARM64-based Systems",
-      "Windows 11 Version 22H2 for x64-based Systems",
-      "Windows 11 Version 23H2 for ARM64-based Systems",
-      "Windows 11 Version 23H2 for x64-based Systems"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "10.0.22621.4602",
-      "10.0.22631.4602"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048685",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048695",
-     "products": [
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
-      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "6.1.7601.27467"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048695",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048699",
-     "products": [
-      "Windows Server 2012",
-      "Windows Server 2012 (Server Core installation)"
-     ],
-     "product_count": 2,
-     "fixed_builds": [
-      "6.2.9200.25222"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048699",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048703",
+     "kb": "KB5053618",
      "products": [
       "Windows 10 for 32-bit Systems",
       "Windows 10 for x64-based Systems"
      ],
      "product_count": 2,
      "fixed_builds": [
-      "10.0.10240.20857"
+      "10.0.10240.20947"
      ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048703",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053618",
      "restart": "Yes"
     },
     {
-     "kb": "KB5048710",
+     "kb": "KB5053620",
      "products": [
-      "Windows Server 2008 for 32-bit Systems Service Pack 2",
-      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
-      "Windows Server 2008 for x64-based Systems Service Pack 2",
-      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
-     ],
-     "product_count": 4,
-     "fixed_builds": [
-      "6.0.6003.23016"
-     ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048710",
-     "restart": "Yes"
-    },
-    {
-     "kb": "KB5048735",
-     "products": [
-      "Windows Server 2012 R2",
-      "Windows Server 2012 R2 (Server Core installation)"
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
      ],
      "product_count": 2,
      "fixed_builds": [
-      "6.3.9600.22318"
+      "6.1.7601.27618"
      ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048735",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053620",
      "restart": "Yes"
     },
     {
-     "kb": "KB5048744",
+     "kb": "KB5053627",
      "products": [
-      "Windows Server 2008 for 32-bit Systems Service Pack 2",
-      "Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)",
-      "Windows Server 2008 for x64-based Systems Service Pack 2",
-      "Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)"
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1",
+      "Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)"
      ],
-     "product_count": 4,
+     "product_count": 2,
      "fixed_builds": [
-      "6.0.6003.23016"
+      "6.1.7601.27618"
      ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048744",
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053627",
      "restart": "Yes"
     },
     {
-     "kb": "KB5048794",
+     "kb": "KB5053636",
      "products": [
       "Windows Server 2025 (Server Core installation)",
       "Windows 11 Version 24H2 for ARM64-based Systems",
@@ -1668,22 +1963,48 @@
      ],
      "product_count": 4,
      "fixed_builds": [
-      "10.0.26100.2528"
+      "10.0.26100.3403"
      ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048794",
-     "restart": "No"
+     "url": "",
+     "restart": "Yes"
     },
     {
-     "kb": "KB5048800",
+     "kb": "KB5053638",
      "products": [
       "Windows Server 2022",
       "Windows Server 2022 (Server Core installation)"
      ],
      "product_count": 2,
      "fixed_builds": [
-      "10.0.20348.2908"
+      "10.0.20348.3270"
      ],
-     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5048800",
+     "url": "",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5053886",
+     "products": [
+      "Windows Server 2012",
+      "Windows Server 2012 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.2.9200.25368"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053886",
+     "restart": "Yes"
+    },
+    {
+     "kb": "KB5053887",
+     "products": [
+      "Windows Server 2012 R2",
+      "Windows Server 2012 R2 (Server Core installation)"
+     ],
+     "product_count": 2,
+     "fixed_builds": [
+      "6.3.9600.22470"
+     ],
+     "url": "https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB5053887",
      "restart": "Yes"
     }
    ],

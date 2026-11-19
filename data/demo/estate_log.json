@@ -1,45 +1,7 @@
 {
  "seed": 2604,
- "as_of": "2026-11-18",
+ "as_of": "2026-11-19",
  "days": [
-  {
-   "date": "2026-10-20",
-   "fixed": [
-    {
-     "cve": "CVE-2026-76519",
-     "host": "hl-edge-fw-005.lab.invalid",
-     "owner": "Jonah Reid"
-    },
-    {
-     "cve": "CVE-2026-102489",
-     "host": "hl-corp-ws-017.lab.invalid",
-     "owner": "Sofia Almeida"
-    },
-    {
-     "cve": "CVE-2026-102490",
-     "host": "hl-portal-cld-008.lab.invalid",
-     "owner": "Jonah Reid"
-    },
-    {
-     "cve": "CVE-2015-5477",
-     "host": "hl-edge-fw-017.lab.invalid",
-     "owner": "Jonah Reid"
-    },
-    {
-     "cve": "CVE-2026-105134",
-     "host": "hl-edge-fw-004.lab.invalid",
-     "owner": "Jonah Reid"
-    },
-    {
-     "cve": "CVE-2023-35078",
-     "host": "hl-edge-fw-023.lab.invalid",
-     "owner": "Owen Park"
-    }
-   ],
-   "new_kev": [],
-   "discovered": [],
-   "reopened": []
-  },
   {
    "date": "2026-10-21",
    "fixed": [
@@ -1434,6 +1396,94 @@
     }
    ],
    "discovered": [],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-19",
+   "fixed": [
+    {
+     "cve": "CVE-2026-19490",
+     "host": "hl-edge-rtr-006.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2026-23760",
+     "host": "hl-portal-lnx-056.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-94127",
+     "host": "hl-edge-fw-021.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2026-102895",
+     "host": "hl-portal-lnx-002.lab.invalid",
+     "owner": "Amira Haddad"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2024-10441",
+     "name": "Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
+     "vendor": "Synology",
+     "product": "DiskStation Manager (DSM)",
+     "hosts": [
+      "hl-id-lnx-050.lab.invalid",
+      "hl-pay-srv-076.lab.invalid",
+      "hl-id-cld-006.lab.invalid",
+      "hl-claims-ws-065.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-40217",
+     "name": "BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
+     "vendor": "BerriAI",
+     "product": "LiteLLM",
+     "hosts": [
+      "hl-corp-srv-032.lab.invalid",
+      "hl-edge-fw-025.lab.invalid",
+      "hl-portal-ws-003.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-90436",
+     "name": "Apache Axis Unsafe Reflection Vulnerability",
+     "vendor": "Apache",
+     "product": "Axis",
+     "hosts": [
+      "hl-id-cld-001.lab.invalid",
+      "hl-pay-lnx-046.lab.invalid",
+      "hl-portal-lnx-028.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-90817",
+     "name": "Vanderbilt University Research Electronic Data Capture (REDCap) Code Injection Vulnerability",
+     "vendor": "Vanderbilt University",
+     "product": "Research Electronic Data Capture (REDCap)",
+     "hosts": [
+      "hl-edge-fw-001.lab.invalid",
+      "hl-id-srv-081.lab.invalid",
+      "hl-corp-ws-017.lab.invalid",
+      "hl-edge-fw-035.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84348",
+     "host": "hl-pay-ws-015.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84351",
+     "host": "hl-pay-srv-047.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-15748",
+     "host": "hl-edge-fw-034.lab.invalid"
+    }
+   ],
    "reopened": []
   }
  ]
