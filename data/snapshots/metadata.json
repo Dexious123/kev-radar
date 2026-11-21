@@ -1,13 +1,13 @@
 {
- "fetched_at": "2026-11-20T16:11:05Z",
- "as_of": "2026-11-20",
- "kev_catalog_version": "2026.11.18",
- "kev_count": 1786,
- "kev_released": "2026-11-18T19:17:41.0354Z",
- "epss_date": "2026-11-20",
- "epss_count": 1817,
- "vulnrichment_count": 164,
- "pool_count": 164,
+ "fetched_at": "2026-11-21T15:24:04Z",
+ "as_of": "2026-11-21",
+ "kev_catalog_version": "2026.11.20",
+ "kev_count": 1790,
+ "kev_released": "2026-11-20T17:48:39.1516Z",
+ "epss_date": "2026-11-21",
+ "epss_count": 1821,
+ "vulnrichment_count": 168,
+ "pool_count": 168,
  "previous_snapshot": "The first previous snapshot is the catalog with entries added in the last 7 days removed, so the diff matches that window. The daily workflow copies the prior kev.json over it before each refresh.",
  "sources": {
   "kev": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
@@ -17,8 +17,8 @@
   "implementation_guidance": "https://www.cisa.gov/news-events/directives/bod-26-04-implementation-guidance-prioritizing-security-updates-based-risk",
   "msrc": "https://api.msrc.microsoft.com/cvrf/v3.0/"
  },
- "msrc_fetched_at": "2026-11-20T16:11:31Z",
+ "msrc_fetched_at": "2026-11-21T15:24:30Z",
  "msrc_cve_count": 21,
  "msrc_patch_count": 174,
- "estate_as_of": "2026-11-20"
+ "estate_as_of": "2026-11-21"
 }

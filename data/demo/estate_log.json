@@ -1,45 +1,7 @@
 {
  "seed": 2604,
- "as_of": "2026-11-20",
+ "as_of": "2026-11-21",
  "days": [
-  {
-   "date": "2026-10-22",
-   "fixed": [
-    {
-     "cve": "CVE-2026-105133",
-     "host": "hl-pay-srv-040.lab.invalid",
-     "owner": "Luis Ortega"
-    },
-    {
-     "cve": "CVE-2026-0322",
-     "host": "hl-edge-fw-004.lab.invalid",
-     "owner": "Jonah Reid"
-    },
-    {
-     "cve": "CVE-2026-75090",
-     "host": "hl-id-lnx-036.lab.invalid",
-     "owner": "Marcus Chen"
-    },
-    {
-     "cve": "CVE-2026-110936",
-     "host": "hl-portal-lnx-025.lab.invalid",
-     "owner": "Jonah Reid"
-    },
-    {
-     "cve": "CVE-2026-106931",
-     "host": "hl-id-cld-003.lab.invalid",
-     "owner": "Marcus Chen"
-    }
-   ],
-   "new_kev": [],
-   "discovered": [
-    {
-     "cve": "CVE-2026-11801",
-     "host": "hl-corp-srv-051.lab.invalid"
-    }
-   ],
-   "reopened": []
-  },
   {
    "date": "2026-10-23",
    "fixed": [
@@ -1422,6 +1384,67 @@
     {
      "cve": "CVE-2026-75089",
      "host": "hl-edge-fw-017.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-21",
+   "fixed": [],
+   "new_kev": [
+    {
+     "cve": "CVE-2025-42884",
+     "name": "SAP NetWeaver Improper Neutralization of Special Elements in Data Query Logic Vulnerability",
+     "vendor": "SAP",
+     "product": "NetWeaver",
+     "hosts": [
+      "hl-edge-fw-010.lab.invalid",
+      "hl-portal-cld-007.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-123890",
+     "name": "VMWare vCenter Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+     "vendor": "Broadcom",
+     "product": "VMware vCenter",
+     "hosts": [
+      "hl-portal-lnx-023.lab.invalid",
+      "hl-pay-lnx-007.lab.invalid",
+      "hl-portal-lnx-003.lab.invalid",
+      "hl-id-cld-005.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-129448",
+     "name": "Apache Roller Deserialization of Untrusted Data Vulnerability",
+     "vendor": "Apache",
+     "product": "Roller",
+     "hosts": [
+      "hl-id-lnx-053.lab.invalid",
+      "hl-pay-lnx-015.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-76466",
+     "name": "Cisco Expressway Series Use of Hard-coded Credentials Vulnerability",
+     "vendor": "Cisco",
+     "product": "Expressway Series",
+     "hosts": [
+      "hl-edge-fw-023.lab.invalid",
+      "hl-edge-fw-033.lab.invalid",
+      "hl-edge-fw-002.lab.invalid",
+      "hl-edge-fw-031.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84359",
+     "host": "hl-pay-ws-024.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84347",
+     "host": "hl-portal-ws-012.lab.invalid"
     }
    ],
    "reopened": []
