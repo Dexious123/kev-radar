@@ -1,39 +1,7 @@
 {
  "seed": 2604,
- "as_of": "2026-11-21",
+ "as_of": "2026-11-22",
  "days": [
-  {
-   "date": "2026-10-23",
-   "fixed": [
-    {
-     "cve": "CVE-2026-75089",
-     "host": "hl-portal-lnx-039.lab.invalid",
-     "owner": "Amira Haddad"
-    },
-    {
-     "cve": "CVE-2015-3306",
-     "host": "hl-corp-ws-014.lab.invalid",
-     "owner": "Hannah Brooks"
-    },
-    {
-     "cve": "CVE-2022-4262",
-     "host": "hl-edge-fw-032.lab.invalid",
-     "owner": "Owen Park"
-    }
-   ],
-   "new_kev": [],
-   "discovered": [
-    {
-     "cve": "CVE-2026-75627",
-     "host": "hl-edge-fw-004.lab.invalid"
-    },
-    {
-     "cve": "CVE-2026-75089",
-     "host": "hl-pay-lnx-016.lab.invalid"
-    }
-   ],
-   "reopened": []
-  },
   {
    "date": "2026-10-24",
    "fixed": [],
@@ -1448,6 +1416,27 @@
     }
    ],
    "reopened": []
+  },
+  {
+   "date": "2026-11-22",
+   "fixed": [],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84348",
+     "host": "hl-claims-ws-006.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84351",
+     "host": "hl-corp-ws-031.lab.invalid"
+    }
+   ],
+   "reopened": [
+    {
+     "cve": "CVE-2026-102489",
+     "host": "hl-portal-ws-056.lab.invalid"
+    }
+   ]
   }
  ]
 }
