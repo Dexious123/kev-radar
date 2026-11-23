@@ -1,46 +1,7 @@
 {
  "seed": 2604,
- "as_of": "2026-11-22",
+ "as_of": "2026-11-23",
  "days": [
-  {
-   "date": "2026-10-24",
-   "fixed": [],
-   "new_kev": [
-    {
-     "cve": "CVE-2026-110447",
-     "name": "Collabora Online \u2013 Built-in CODE Server OS Command Injection Vulnerability",
-     "vendor": "Collabora",
-     "product": "Collabora Online \u2013 Built-in CODE Server",
-     "hosts": [
-      "hl-edge-fw-018.lab.invalid",
-      "hl-id-cld-019.lab.invalid",
-      "hl-corp-srv-062.lab.invalid",
-      "hl-pay-lnx-051.lab.invalid"
-     ]
-    },
-    {
-     "cve": "CVE-2026-114625",
-     "name": "Arista VeloCloud Orchestrator SQL Injection Vulnerability",
-     "vendor": "Arista",
-     "product": "VeloCloud Orchestrator",
-     "hosts": [
-      "hl-edge-fw-028.lab.invalid",
-      "hl-id-cld-005.lab.invalid"
-     ]
-    }
-   ],
-   "discovered": [
-    {
-     "cve": "CVE-2026-81928",
-     "host": "hl-pay-srv-087.lab.invalid"
-    },
-    {
-     "cve": "CVE-2026-84349",
-     "host": "hl-portal-ws-060.lab.invalid"
-    }
-   ],
-   "reopened": []
-  },
   {
    "date": "2026-10-25",
    "fixed": [
@@ -1437,6 +1398,58 @@
      "host": "hl-portal-ws-056.lab.invalid"
     }
    ]
+  },
+  {
+   "date": "2026-11-23",
+   "fixed": [
+    {
+     "cve": "CVE-2024-3400",
+     "host": "hl-edge-fw-012.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2026-75627",
+     "host": "hl-edge-fw-004.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-116779",
+     "host": "hl-portal-lnx-042.lab.invalid",
+     "owner": "Amira Haddad"
+    },
+    {
+     "cve": "CVE-2026-123039",
+     "host": "hl-claims-srv-025.lab.invalid",
+     "owner": "Noah Berger"
+    },
+    {
+     "cve": "CVE-2026-87491",
+     "host": "hl-pay-srv-063.lab.invalid",
+     "owner": "Luis Ortega"
+    },
+    {
+     "cve": "CVE-2026-123158",
+     "host": "hl-id-lnx-012.lab.invalid",
+     "owner": "Elena Voss"
+    },
+    {
+     "cve": "CVE-2026-124194",
+     "host": "hl-portal-ws-001.lab.invalid",
+     "owner": "Amira Haddad"
+    }
+   ],
+   "new_kev": [],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84427",
+     "host": "hl-pay-srv-054.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84349",
+     "host": "hl-portal-ws-012.lab.invalid"
+    }
+   ],
+   "reopened": []
   }
  ]
 }

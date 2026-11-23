@@ -36,7 +36,7 @@
   "date_added": "2026-11-20",
   "cvss": 6.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-  "epss": 0.00714
+  "epss": 0.00902
  },
  {
   "cve": "CVE-2026-76466",
@@ -58,7 +58,7 @@
   "name": "Synology DiskStation Manager (DSM) Improper Encoding or Escaping of Output Vulnerability",
   "family": "any",
   "in_kev": true,
-  "ransomware": false,
+  "ransomware": true,
   "date_added": "2026-11-18",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
@@ -75,7 +75,7 @@
   "date_added": "2026-11-18",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.78004
+  "epss": 0.82799
  },
  {
   "cve": "CVE-2026-90817",
@@ -101,7 +101,7 @@
   "date_added": "2026-11-18",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.03813
+  "epss": 0.05874
  },
  {
   "cve": "CVE-2026-115731",
@@ -114,7 +114,7 @@
   "date_added": "2026-11-17",
   "cvss": 9.4,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.01231
+  "epss": 0.12839
  },
  {
   "cve": "CVE-2026-114713",
@@ -153,7 +153,7 @@
   "date_added": "2026-11-10",
   "cvss": 6.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:H/RL:O/RC:C",
-  "epss": 0.01939
+  "epss": 0.24894
  },
  {
   "cve": "CVE-2026-111793",
@@ -663,71 +663,6 @@
   "epss": 0.09813
  },
  {
-  "cve": "CVE-2015-5477",
-  "vendor": "ISC",
-  "product": "BIND",
-  "name": "ISC BIND Data Processing Errors Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-10-08",
-  "cvss": 7.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-  "epss": 0.99584
- },
- {
-  "cve": "CVE-2016-3081",
-  "vendor": "Apache",
-  "product": "Struts",
-  "name": "Apache Struts Command Injection Vulnerability",
-  "family": "linux",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-10-08",
-  "cvss": 8.1,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.96916
- },
- {
-  "cve": "CVE-2023-22894",
-  "vendor": "Strapi",
-  "product": "Strapi",
-  "name": "Strapi Cleartext Storage of Sensitive Information Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-10-08",
-  "cvss": 7.2,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.04114
- },
- {
-  "cve": "CVE-2021-3199",
-  "vendor": "ONLYOFFICE",
-  "product": "Docs",
-  "name": "ONLYOFFICE Docs Server Path Traversal Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-10-08",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.88139
- },
- {
-  "cve": "CVE-2015-3306",
-  "vendor": "ProFTPD",
-  "product": "ProFTPD",
-  "name": "ProFTPD Improper Access Control Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-10-08",
-  "cvss": 10.0,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.99497
- },
- {
   "cve": "CVE-2025-53770",
   "vendor": "Microsoft",
   "product": "SharePoint",
@@ -962,160 +897,160 @@
   "epss": 0.99934
  },
  {
-  "cve": "CVE-2024-20767",
-  "vendor": "Adobe",
-  "product": "ColdFusion",
-  "name": "Adobe ColdFusion Improper Access Control Vulnerability",
-  "family": "workstation",
+  "cve": "CVE-2021-37415",
+  "vendor": "Zoho",
+  "product": "ManageEngine ServiceDesk Plus (SDP)",
+  "name": "Zoho ManageEngine ServiceDesk Authentication Bypass Vulnerability",
+  "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2024-12-16",
-  "cvss": 7.4,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
-  "epss": 0.98514
+  "date_added": "2021-12-01",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.99825
  },
  {
-  "cve": "CVE-2024-20399",
+  "cve": "CVE-2020-17519",
+  "vendor": "Apache",
+  "product": "Flink",
+  "name": "Apache Flink Improper Access Control Vulnerability",
+  "family": "linux",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2024-05-23",
+  "cvss": 9.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
+  "epss": 0.98001
+ },
+ {
+  "cve": "CVE-2023-21823",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Graphic Component Privilege Escalation Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2023-02-14",
+  "cvss": 7.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C",
+  "epss": 0.05563
+ },
+ {
+  "cve": "CVE-2025-20352",
   "vendor": "Cisco",
-  "product": "NX-OS",
-  "name": "Cisco NX-OS Command Injection Vulnerability",
+  "product": "IOS and IOS XE",
+  "name": "Cisco IOS and IOS XE Software SNMP Denial of Service and Remote Code Execution Vulnerability",
   "family": "network",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2024-07-02",
-  "cvss": 6.0,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:N",
-  "epss": 0.04306
+  "date_added": "2025-09-29",
+  "cvss": 7.7,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
+  "epss": 0.40575
  },
  {
-  "cve": "CVE-2025-14174",
-  "vendor": "Google",
-  "product": "Chromium",
-  "name": "Google Chromium Out of Bounds Memory Access Vulnerability",
+  "cve": "CVE-2019-3010",
+  "vendor": "Oracle",
+  "product": "Solaris",
+  "name": "Oracle Solaris Privilege Escalation Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2025-12-12",
+  "date_added": "2022-05-25",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.13506
+ },
+ {
+  "cve": "CVE-2023-6448",
+  "vendor": "Unitronics",
+  "product": "Vision PLC and HMI",
+  "name": "Unitronics Vision PLC and HMI Insecure Default Password Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2023-12-11",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.02089
+ },
+ {
+  "cve": "CVE-2023-1389",
+  "vendor": "TP-Link",
+  "product": "Archer AX21",
+  "name": "TP-Link Archer AX-21 Command Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2023-05-01",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.99999
+ },
+ {
+  "cve": "CVE-2021-38003",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Memory Corruption Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2021-11-03",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.43263
+  "epss": 0.38573
  },
  {
-  "cve": "CVE-2024-7694",
-  "vendor": "TeamT5",
-  "product": "ThreatSonar Anti-Ransomware",
-  "name": "TeamT5 ThreatSonar Anti-Ransomware Unrestricted Upload of File with Dangerous Type Vulnerability",
-  "family": "any",
+  "cve": "CVE-2025-0111",
+  "vendor": "Palo Alto Networks",
+  "product": "PAN-OS",
+  "name": "Palo Alto Networks PAN-OS File Read Vulnerability",
+  "family": "network",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2026-02-17",
-  "cvss": 7.2,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.01792
+  "date_added": "2025-02-20",
+  "cvss": 7.1,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/AU:N/R:U/V:C/RE:M/U:Red",
+  "epss": 0.01957
  },
  {
-  "cve": "CVE-2023-21674",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Advanced Local Procedure Call (ALPC) Privilege Escalation Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2023-01-10",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.34206
- },
- {
-  "cve": "CVE-2022-26923",
-  "vendor": "Microsoft",
-  "product": "Active Directory",
-  "name": "Microsoft Active Directory Domain Services Privilege Escalation Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-08-18",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
-  "epss": 0.835
- },
- {
-  "cve": "CVE-2025-24054",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows NTLM Hash Disclosure Spoofing Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-04-17",
-  "cvss": 6.5,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C",
-  "epss": 0.6227
- },
- {
-  "cve": "CVE-2022-32894",
+  "cve": "CVE-2025-43300",
   "vendor": "Apple",
-  "product": "iOS and macOS",
-  "name": "Apple iOS and macOS Out-of-Bounds Write Vulnerability",
+  "product": "iOS, iPadOS, and macOS",
+  "name": "Apple iOS, iPadOS, and macOS Out-of-Bounds Write Vulnerability",
   "family": "workstation",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-08-18",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.03286
+  "date_added": "2025-08-21",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.65624
  },
  {
-  "cve": "CVE-2016-7256",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Open Type Font Remote Code Execution Vulnerability",
-  "family": "windows",
+  "cve": "CVE-2022-3723",
+  "vendor": "Google",
+  "product": "Chromium V8",
+  "name": "Google Chromium V8 Type Confusion Vulnerability",
+  "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-05-25",
+  "date_added": "2022-10-28",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.64591
+  "epss": 0.07921
  },
  {
-  "cve": "CVE-2022-40139",
-  "vendor": "Trend Micro",
-  "product": "Apex One and Apex One as a Service",
-  "name": "Trend Micro Apex One and Apex One as a Service Improper Validation Vulnerability",
+  "cve": "CVE-2020-17463",
+  "vendor": "Fuel CMS",
+  "product": "Fuel CMS",
+  "name": "Fuel CMS SQL Injection Vulnerability",
   "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-09-15",
-  "cvss": 7.2,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.03515
- },
- {
-  "cve": "CVE-2013-2423",
-  "vendor": "Oracle",
-  "product": "Java Runtime Environment (JRE)",
-  "name": "Oracle JRE Unspecified Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-05-25",
-  "cvss": 3.7,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:N",
-  "epss": 0.85215
- },
- {
-  "cve": "CVE-2015-1427",
-  "vendor": "Elastic",
-  "product": "Elasticsearch",
-  "name": "Elasticsearch Groovy Scripting Engine Remote Code Execution Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-03-25",
+  "date_added": "2021-12-10",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.99906
+  "epss": 0.89689
  },
  {
   "cve": "CVE-2026-84430",
@@ -1560,6 +1495,19 @@
   "epss": 0.08643
  },
  {
+  "cve": "CVE-2016-3081",
+  "vendor": "Apache",
+  "product": "Struts",
+  "name": "Apache Struts Command Injection Vulnerability",
+  "family": "linux",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-08",
+  "cvss": 8.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.96916
+ },
+ {
   "cve": "CVE-2026-9586",
   "vendor": "Sangoma",
   "product": "Switchvox",
@@ -1688,6 +1636,19 @@
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
   "epss": 0.43308
+ },
+ {
+  "cve": "CVE-2015-3306",
+  "vendor": "ProFTPD",
+  "product": "ProFTPD",
+  "name": "ProFTPD Improper Access Control Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-08",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.99497
  },
  {
   "cve": "CVE-2026-5430",
@@ -1831,6 +1792,19 @@
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
   "epss": 0.20409
+ },
+ {
+  "cve": "CVE-2021-3199",
+  "vendor": "ONLYOFFICE",
+  "product": "Docs",
+  "name": "ONLYOFFICE Docs Server Path Traversal Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-08",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.88139
  },
  {
   "cve": "CVE-2014-4113",
@@ -2028,6 +2002,19 @@
   "epss": 0.93983
  },
  {
+  "cve": "CVE-2015-5477",
+  "vendor": "ISC",
+  "product": "BIND",
+  "name": "ISC BIND Data Processing Errors Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-08",
+  "cvss": 7.5,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+  "epss": 0.99584
+ },
+ {
   "cve": "CVE-2026-19490",
   "vendor": "Citrix",
   "product": "NetScaler",
@@ -2052,6 +2039,19 @@
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
   "epss": 0.2655
+ },
+ {
+  "cve": "CVE-2023-22894",
+  "vendor": "Strapi",
+  "product": "Strapi",
+  "name": "Strapi Cleartext Storage of Sensitive Information Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-08",
+  "cvss": 7.2,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.04114
  },
  {
   "cve": "CVE-2026-87902",
