@@ -1,5 +1,70 @@
 [
  {
+  "cve": "CVE-2026-132224",
+  "vendor": "Optimizely",
+  "product": "Web Experimentation",
+  "name": "Optimizely Web Experimentation External Control of Critical State Data Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-24",
+  "cvss": 7.1,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:H/SI:H/SA:N",
+  "epss": 0.00411
+ },
+ {
+  "cve": "CVE-2026-131914",
+  "vendor": "Idunno",
+  "product": "AntiCsrf",
+  "name": "Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-24",
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A",
+  "epss": 0.00614
+ },
+ {
+  "cve": "CVE-2026-132165",
+  "vendor": "Drupal",
+  "product": "Core",
+  "name": "Drupal Core Remote Code Execution Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-24",
+  "cvss": null,
+  "cvss_vector": null,
+  "epss": null
+ },
+ {
+  "cve": "CVE-2026-133968",
+  "vendor": "Project MONAI",
+  "product": "MONAI Label",
+  "name": "Project MONAI MONAI Label Path Traversal Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-23",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.49795
+ },
+ {
+  "cve": "CVE-2026-134624",
+  "vendor": "N-able",
+  "product": "MailAssure",
+  "name": "N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-23",
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N",
+  "epss": 0.00617
+ },
+ {
   "cve": "CVE-2026-129448",
   "vendor": "Apache",
   "product": "Roller",
@@ -10,7 +75,7 @@
   "date_added": "2026-11-20",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.05459
+  "epss": 0.40069
  },
  {
   "cve": "CVE-2026-123890",
@@ -127,7 +192,7 @@
   "date_added": "2026-11-13",
   "cvss": 8.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
-  "epss": 0.01148
+  "epss": 0.01351
  },
  {
   "cve": "CVE-2026-123039",
@@ -413,7 +478,7 @@
   "date_added": "2026-10-27",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.99931
+  "epss": 0.99987
  },
  {
   "cve": "CVE-2026-109618",
@@ -764,7 +829,7 @@
   "date_added": "2023-08-24",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.99815
+  "epss": 0.99998
  },
  {
   "cve": "CVE-2024-27199",
@@ -946,7 +1011,7 @@
   "date_added": "2025-09-29",
   "cvss": 7.7,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
-  "epss": 0.40575
+  "epss": 0.43162
  },
  {
   "cve": "CVE-2019-3010",
@@ -959,7 +1024,7 @@
   "date_added": "2022-05-25",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.13506
+  "epss": 0.13318
  },
  {
   "cve": "CVE-2023-6448",
@@ -1050,7 +1115,7 @@
   "date_added": "2021-12-10",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.89689
+  "epss": 0.97134
  },
  {
   "cve": "CVE-2026-84430",

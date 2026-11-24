@@ -1,33 +1,7 @@
 {
  "seed": 2604,
- "as_of": "2026-11-23",
+ "as_of": "2026-11-24",
  "days": [
-  {
-   "date": "2026-10-25",
-   "fixed": [
-    {
-     "cve": "CVE-2026-105134",
-     "host": "hl-id-cld-011.lab.invalid",
-     "owner": "Marcus Chen"
-    }
-   ],
-   "new_kev": [],
-   "discovered": [
-    {
-     "cve": "CVE-2026-34884",
-     "host": "hl-portal-cld-018.lab.invalid"
-    },
-    {
-     "cve": "CVE-2026-11801",
-     "host": "hl-portal-cld-008.lab.invalid"
-    },
-    {
-     "cve": "CVE-2026-84359",
-     "host": "hl-portal-ws-027.lab.invalid"
-    }
-   ],
-   "reopened": []
-  },
   {
    "date": "2026-10-26",
    "fixed": [
@@ -1447,6 +1421,110 @@
     {
      "cve": "CVE-2026-84349",
      "host": "hl-portal-ws-012.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-24",
+   "fixed": [
+    {
+     "cve": "CVE-2026-81928",
+     "host": "hl-pay-lnx-015.lab.invalid",
+     "owner": "Luis Ortega"
+    },
+    {
+     "cve": "CVE-2024-10441",
+     "host": "hl-id-cld-006.lab.invalid",
+     "owner": "Elena Voss"
+    },
+    {
+     "cve": "CVE-2026-76466",
+     "host": "hl-edge-fw-023.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2026-76461",
+     "host": "hl-edge-fw-038.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-84347",
+     "host": "hl-portal-ws-012.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-40217",
+     "host": "hl-corp-srv-032.lab.invalid",
+     "owner": "Hannah Brooks"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-131914",
+     "name": "Idunno AntiCsrf Deserialization of Untrusted Data Vulnerability",
+     "vendor": "Idunno",
+     "product": "AntiCsrf",
+     "hosts": [
+      "hl-edge-fw-021.lab.invalid",
+      "hl-pay-lnx-007.lab.invalid",
+      "hl-portal-lnx-006.lab.invalid",
+      "hl-claims-ws-002.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-132165",
+     "name": "Drupal Core Remote Code Execution Vulnerability",
+     "vendor": "Drupal",
+     "product": "Core",
+     "hosts": [
+      "hl-edge-fw-001.lab.invalid",
+      "hl-pay-lnx-005.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-132224",
+     "name": "Optimizely Web Experimentation External Control of Critical State Data Vulnerability",
+     "vendor": "Optimizely",
+     "product": "Web Experimentation",
+     "hosts": [
+      "hl-pay-srv-087.lab.invalid",
+      "hl-id-srv-012.lab.invalid",
+      "hl-id-srv-038.lab.invalid",
+      "hl-claims-srv-004.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-133968",
+     "name": "Project MONAI MONAI Label Path Traversal Vulnerability",
+     "vendor": "Project MONAI",
+     "product": "MONAI Label",
+     "hosts": [
+      "hl-edge-fw-019.lab.invalid",
+      "hl-corp-srv-016.lab.invalid",
+      "hl-pay-srv-096.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-134624",
+     "name": "N-able MailAssure (SpamExperts) Server-Side Request Forgery (SSRF) Vulnerability",
+     "vendor": "N-able",
+     "product": "MailAssure",
+     "hosts": [
+      "hl-id-cld-014.lab.invalid",
+      "hl-corp-ws-008.lab.invalid",
+      "hl-id-srv-012.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-75627",
+     "host": "hl-corp-ws-018.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84357",
+     "host": "hl-portal-ws-060.lab.invalid"
     }
    ],
    "reopened": []
