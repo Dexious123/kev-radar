@@ -1,5 +1,18 @@
 [
  {
+  "cve": "CVE-2026-103406",
+  "vendor": "Hewlett Packard Enterprise (HPE)",
+  "product": "Juniper Session Smart Conductor and Session Smart Router",
+  "name": "Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.0086
+ },
+ {
   "cve": "CVE-2026-132224",
   "vendor": "Optimizely",
   "product": "Web Experimentation",
@@ -10,7 +23,7 @@
   "date_added": "2026-11-24",
   "cvss": 7.1,
   "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:H/SI:H/SA:N",
-  "epss": 0.00411
+  "epss": 0.00784
  },
  {
   "cve": "CVE-2026-131914",
@@ -23,7 +36,7 @@
   "date_added": "2026-11-24",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A",
-  "epss": 0.00614
+  "epss": 0.04292
  },
  {
   "cve": "CVE-2026-132165",
@@ -49,7 +62,7 @@
   "date_added": "2026-11-23",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.49795
+  "epss": 0.27157
  },
  {
   "cve": "CVE-2026-134624",
@@ -62,7 +75,7 @@
   "date_added": "2026-11-23",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N",
-  "epss": 0.00617
+  "epss": 0.01793
  },
  {
   "cve": "CVE-2026-129448",
@@ -75,7 +88,7 @@
   "date_added": "2026-11-20",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.40069
+  "epss": 0.24159
  },
  {
   "cve": "CVE-2026-123890",
@@ -88,7 +101,7 @@
   "date_added": "2026-11-20",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.03526
+  "epss": 0.05009
  },
  {
   "cve": "CVE-2025-42884",
@@ -101,7 +114,7 @@
   "date_added": "2026-11-20",
   "cvss": 6.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-  "epss": 0.00902
+  "epss": 0.01102
  },
  {
   "cve": "CVE-2026-76466",
@@ -114,7 +127,7 @@
   "date_added": "2026-11-20",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02187
+  "epss": 0.01116
  },
  {
   "cve": "CVE-2024-10441",
@@ -127,7 +140,7 @@
   "date_added": "2026-11-18",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.03129
+  "epss": 0.0276
  },
  {
   "cve": "CVE-2026-40217",
@@ -140,7 +153,7 @@
   "date_added": "2026-11-18",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.82799
+  "epss": 0.20215
  },
  {
   "cve": "CVE-2026-90817",
@@ -153,7 +166,7 @@
   "date_added": "2026-11-18",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.34335
+  "epss": 0.18881
  },
  {
   "cve": "CVE-2026-90436",
@@ -166,7 +179,7 @@
   "date_added": "2026-11-18",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.05874
+  "epss": 0.02695
  },
  {
   "cve": "CVE-2026-115731",
@@ -179,7 +192,7 @@
   "date_added": "2026-11-17",
   "cvss": 9.4,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.12839
+  "epss": 0.12579
  },
  {
   "cve": "CVE-2026-114713",
@@ -205,7 +218,7 @@
   "date_added": "2026-11-13",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.03269
+  "epss": 0.00232
  },
  {
   "cve": "CVE-2026-124194",
@@ -218,7 +231,7 @@
   "date_added": "2026-11-10",
   "cvss": 6.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N/E:H/RL:O/RC:C",
-  "epss": 0.24894
+  "epss": 0.01042
  },
  {
   "cve": "CVE-2026-111793",
@@ -231,7 +244,7 @@
   "date_added": "2026-11-10",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
-  "epss": 0.01172
+  "epss": 0.00985
  },
  {
   "cve": "CVE-2026-20320",
@@ -244,7 +257,7 @@
   "date_added": "2026-11-10",
   "cvss": 7.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.01682
+  "epss": 0.01301
  },
  {
   "cve": "CVE-2026-111560",
@@ -257,7 +270,7 @@
   "date_added": "2026-11-10",
   "cvss": 8.6,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.63769
+  "epss": 0.10795
  },
  {
   "cve": "CVE-2026-116606",
@@ -270,7 +283,7 @@
   "date_added": "2026-11-10",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.7452
+  "epss": 0.13801
  },
  {
   "cve": "CVE-2026-125350",
@@ -296,7 +309,7 @@
   "date_added": "2026-11-09",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.18787
+  "epss": 0.08546
  },
  {
   "cve": "CVE-2026-123158",
@@ -309,7 +322,7 @@
   "date_added": "2026-11-09",
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.95538
+  "epss": 0.14205
  },
  {
   "cve": "CVE-2026-116779",
@@ -322,7 +335,7 @@
   "date_added": "2026-11-09",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.44112
+  "epss": 0.43693
  },
  {
   "cve": "CVE-2026-123218",
@@ -335,7 +348,7 @@
   "date_added": "2026-11-09",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.01013
+  "epss": 0.0078
  },
  {
   "cve": "CVE-2026-19868",
@@ -348,7 +361,7 @@
   "date_added": "2026-11-06",
   "cvss": 7.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:L/A:N",
-  "epss": 0.0804
+  "epss": 0.0054
  },
  {
   "cve": "CVE-2024-27834",
@@ -361,7 +374,7 @@
   "date_added": "2026-11-04",
   "cvss": 5.5,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
-  "epss": 0.01558
+  "epss": 0.00789
  },
  {
   "cve": "CVE-2026-119977",
@@ -374,7 +387,7 @@
   "date_added": "2026-11-03",
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.08054
+  "epss": 0.02147
  },
  {
   "cve": "CVE-2026-118527",
@@ -387,7 +400,7 @@
   "date_added": "2026-10-30",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
-  "epss": 0.00991
+  "epss": 0.00835
  },
  {
   "cve": "CVE-2026-111357",
@@ -400,7 +413,7 @@
   "date_added": "2026-10-30",
   "cvss": 7.0,
   "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00803
+  "epss": 0.00559
  },
  {
   "cve": "CVE-2026-97229",
@@ -413,7 +426,7 @@
   "date_added": "2026-10-29",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.74315
+  "epss": 0.1184
  },
  {
   "cve": "CVE-2026-76418",
@@ -426,7 +439,7 @@
   "date_added": "2026-10-29",
   "cvss": 8.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H",
-  "epss": 0.08547
+  "epss": 0.00992
  },
  {
   "cve": "CVE-2026-41709",
@@ -439,7 +452,7 @@
   "date_added": "2026-10-28",
   "cvss": 2.7,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:N",
-  "epss": 0.00901
+  "epss": 0.00467
  },
  {
   "cve": "CVE-2026-46300",
@@ -452,7 +465,7 @@
   "date_added": "2026-10-28",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.17203
+  "epss": 0.02959
  },
  {
   "cve": "CVE-2026-48356",
@@ -465,7 +478,7 @@
   "date_added": "2026-10-27",
   "cvss": 9.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:N",
-  "epss": 0.81624
+  "epss": 0.07854
  },
  {
   "cve": "CVE-2026-111497",
@@ -478,7 +491,7 @@
   "date_added": "2026-10-27",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.99987
+  "epss": 0.32976
  },
  {
   "cve": "CVE-2026-109618",
@@ -491,7 +504,7 @@
   "date_added": "2026-10-26",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.99999
+  "epss": 0.45083
  },
  {
   "cve": "CVE-2026-109619",
@@ -504,7 +517,7 @@
   "date_added": "2026-10-26",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.99999
+  "epss": 0.20754
  },
  {
   "cve": "CVE-2026-114625",
@@ -517,7 +530,7 @@
   "date_added": "2026-10-23",
   "cvss": 9.9,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.07666
+  "epss": 0.00939
  },
  {
   "cve": "CVE-2026-110447",
@@ -530,7 +543,7 @@
   "date_added": "2026-10-23",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.7615
+  "epss": 0.32872
  },
  {
   "cve": "CVE-2026-106931",
@@ -543,7 +556,7 @@
   "date_added": "2026-10-20",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02528
+  "epss": 0.01612
  },
  {
   "cve": "CVE-2026-96656",
@@ -556,7 +569,7 @@
   "date_added": "2026-10-20",
   "cvss": 8.6,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.19767
+  "epss": 0.14893
  },
  {
   "cve": "CVE-2026-96655",
@@ -569,7 +582,7 @@
   "date_added": "2026-10-20",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-  "epss": 0.10724
+  "epss": 0.05451
  },
  {
   "cve": "CVE-2026-96654",
@@ -582,7 +595,7 @@
   "date_added": "2026-10-20",
   "cvss": 6.9,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.12689
+  "epss": 0.05729
  },
  {
   "cve": "CVE-2026-96652",
@@ -595,7 +608,7 @@
   "date_added": "2026-10-20",
   "cvss": 4.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-  "epss": 0.14899
+  "epss": 0.05451
  },
  {
   "cve": "CVE-2026-110936",
@@ -608,7 +621,7 @@
   "date_added": "2026-10-20",
   "cvss": 6.7,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00968
+  "epss": 0.00348
  },
  {
   "cve": "CVE-2026-102764",
@@ -621,7 +634,7 @@
   "date_added": "2026-10-16",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.57903
+  "epss": 0.03154
  },
  {
   "cve": "CVE-2025-61624",
@@ -634,7 +647,7 @@
   "date_added": "2026-10-16",
   "cvss": 5.4,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H/E:P/RL:O/RC:C",
-  "epss": 0.01395
+  "epss": 0.00826
  },
  {
   "cve": "CVE-2026-21589",
@@ -647,7 +660,7 @@
   "date_added": "2026-10-15",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:H/SI:H/SA:H",
-  "epss": 0.90952
+  "epss": 0.04275
  },
  {
   "cve": "CVE-2026-105134",
@@ -660,7 +673,7 @@
   "date_added": "2026-10-14",
   "cvss": 10.0,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H/E:A",
-  "epss": 0.81763
+  "epss": 0.54967
  },
  {
   "cve": "CVE-2026-76519",
@@ -673,7 +686,7 @@
   "date_added": "2026-10-14",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.05715
+  "epss": 0.02724
  },
  {
   "cve": "CVE-2026-105133",
@@ -686,7 +699,7 @@
   "date_added": "2026-10-14",
   "cvss": 6.9,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:A",
-  "epss": 0.84478
+  "epss": 0.09157
  },
  {
   "cve": "CVE-2026-0322",
@@ -699,7 +712,7 @@
   "date_added": "2026-10-14",
   "cvss": 8.6,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:N/R:U/V:D/RE:M/U:Red",
-  "epss": 0.02147
+  "epss": 0.01969
  },
  {
   "cve": "CVE-2026-104935",
@@ -712,7 +725,7 @@
   "date_added": "2026-10-13",
   "cvss": 8.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
-  "epss": 0.93096
+  "epss": 0.24503
  },
  {
   "cve": "CVE-2026-96951",
@@ -725,7 +738,7 @@
   "date_added": "2026-10-13",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.09813
+  "epss": 0.00976
  },
  {
   "cve": "CVE-2025-53770",
@@ -738,7 +751,7 @@
   "date_added": "2025-07-20",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:F/RL:W/RC:C",
-  "epss": 0.99999
+  "epss": 0.86527
  },
  {
   "cve": "CVE-2022-24682",
@@ -751,7 +764,7 @@
   "date_added": "2022-02-25",
   "cvss": 6.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
-  "epss": 0.30931
+  "epss": 0.08697
  },
  {
   "cve": "CVE-2023-27350",
@@ -764,7 +777,7 @@
   "date_added": "2023-04-21",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.99999
+  "epss": 0.92133
  },
  {
   "cve": "CVE-2022-21999",
@@ -777,7 +790,7 @@
   "date_added": "2022-03-25",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
-  "epss": 0.41007
+  "epss": 0.07993
  },
  {
   "cve": "CVE-2020-2021",
@@ -829,7 +842,7 @@
   "date_added": "2023-08-24",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.99998
+  "epss": 0.29005
  },
  {
   "cve": "CVE-2024-27199",
@@ -842,7 +855,7 @@
   "date_added": "2026-04-20",
   "cvss": 7.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
-  "epss": 0.99991
+  "epss": 0.46148
  },
  {
   "cve": "CVE-2025-24472",
@@ -855,7 +868,7 @@
   "date_added": "2025-03-18",
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C",
-  "epss": 0.07188
+  "epss": 0.01406
  },
  {
   "cve": "CVE-2021-34527",
@@ -881,7 +894,7 @@
   "date_added": "2026-01-26",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.96432
+  "epss": 0.23694
  },
  {
   "cve": "CVE-2023-35078",
@@ -894,7 +907,7 @@
   "date_added": "2023-07-25",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.99999
+  "epss": 0.85276
  },
  {
   "cve": "CVE-2024-3400",
@@ -907,7 +920,7 @@
   "date_added": "2024-04-12",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.99999
+  "epss": 0.93034
  },
  {
   "cve": "CVE-2018-0802",
@@ -933,7 +946,7 @@
   "date_added": "2022-04-13",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.07134
+  "epss": 0.01193
  },
  {
   "cve": "CVE-2016-0189",
@@ -946,7 +959,7 @@
   "date_added": "2022-03-28",
   "cvss": 7.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.94062
+  "epss": 0.93799
  },
  {
   "cve": "CVE-2023-34362",
@@ -959,7 +972,7 @@
   "date_added": "2023-06-02",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.99934
+  "epss": 0.80879
  },
  {
   "cve": "CVE-2021-37415",
@@ -998,7 +1011,7 @@
   "date_added": "2023-02-14",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C",
-  "epss": 0.05563
+  "epss": 0.00987
  },
  {
   "cve": "CVE-2025-20352",
@@ -1011,7 +1024,7 @@
   "date_added": "2025-09-29",
   "cvss": 7.7,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
-  "epss": 0.43162
+  "epss": 0.01494
  },
  {
   "cve": "CVE-2019-3010",
@@ -1037,7 +1050,7 @@
   "date_added": "2023-12-11",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02089
+  "epss": 0.02002
  },
  {
   "cve": "CVE-2023-1389",
@@ -1050,7 +1063,7 @@
   "date_added": "2023-05-01",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.99999
+  "epss": 0.89273
  },
  {
   "cve": "CVE-2021-38003",
@@ -1063,7 +1076,7 @@
   "date_added": "2021-11-03",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.38573
+  "epss": 0.37788
  },
  {
   "cve": "CVE-2025-0111",
@@ -1076,7 +1089,7 @@
   "date_added": "2025-02-20",
   "cvss": 7.1,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/AU:N/R:U/V:C/RE:M/U:Red",
-  "epss": 0.01957
+  "epss": 0.01197
  },
  {
   "cve": "CVE-2025-43300",
@@ -1089,7 +1102,7 @@
   "date_added": "2025-08-21",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.65624
+  "epss": 0.04113
  },
  {
   "cve": "CVE-2022-3723",
@@ -1102,7 +1115,7 @@
   "date_added": "2022-10-28",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.07921
+  "epss": 0.03003
  },
  {
   "cve": "CVE-2020-17463",
@@ -1206,7 +1219,7 @@
   "date_added": null,
   "cvss": 8.7,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.00377
+  "epss": 0.00409
  },
  {
   "cve": "CVE-2026-75627",
@@ -1258,7 +1271,7 @@
   "date_added": null,
   "cvss": 8.7,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.00449
+  "epss": 0.00504
  },
  {
   "cve": "CVE-2026-34884",
@@ -1284,7 +1297,7 @@
   "date_added": null,
   "cvss": 3.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:N/A:N",
-  "epss": 0.00196
+  "epss": 0.0023
  },
  {
   "cve": "CVE-2026-84352",
@@ -1518,7 +1531,7 @@
   "date_added": "2026-09-22",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.01384
+  "epss": 0.00895
  },
  {
   "cve": "CVE-2026-86950",
@@ -1531,7 +1544,7 @@
   "date_added": "2026-09-29",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.27372
+  "epss": 0.00953
  },
  {
   "cve": "CVE-2026-86060",
@@ -1544,7 +1557,7 @@
   "date_added": "2026-09-10",
   "cvss": 9.2,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.06392
+  "epss": 0.3552
  },
  {
   "cve": "CVE-2026-42016",
@@ -1596,7 +1609,7 @@
   "date_added": "2025-03-11",
   "cvss": 7.0,
   "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.02391
+  "epss": 0.00569
  },
  {
   "cve": "CVE-2026-82329",
@@ -1622,7 +1635,7 @@
   "date_added": "2022-07-29",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.98103
+  "epss": 0.62669
  },
  {
   "cve": "CVE-2026-48710",
@@ -1635,7 +1648,7 @@
   "date_added": "2026-09-02",
   "cvss": 6.5,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
-  "epss": 0.70288
+  "epss": 0.07056
  },
  {
   "cve": "CVE-2026-67277",
@@ -1661,7 +1674,7 @@
   "date_added": "2024-10-08",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.66695
+  "epss": 0.01571
  },
  {
   "cve": "CVE-2026-85102",
@@ -1674,7 +1687,7 @@
   "date_added": "2026-09-22",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.5414
+  "epss": 0.09726
  },
  {
   "cve": "CVE-2026-67279",
@@ -1687,7 +1700,7 @@
   "date_added": "2026-09-25",
   "cvss": 6.9,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
-  "epss": 0.02277
+  "epss": 0.06471
  },
  {
   "cve": "CVE-2016-3235",
@@ -1726,7 +1739,7 @@
   "date_added": "2026-09-24",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.7884
+  "epss": 0.06097
  },
  {
   "cve": "CVE-2026-7273",
@@ -1739,7 +1752,7 @@
   "date_added": "2026-09-21",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02836
+  "epss": 0.01286
  },
  {
   "cve": "CVE-2022-4262",
@@ -1752,7 +1765,7 @@
   "date_added": "2022-12-05",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.2351
+  "epss": 0.05894
  },
  {
   "cve": "CVE-2026-93616",
@@ -1765,7 +1778,7 @@
   "date_added": "2026-09-22",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.91605
+  "epss": 0.20905
  },
  {
   "cve": "CVE-2026-58704",
@@ -1778,7 +1791,7 @@
   "date_added": "2026-09-16",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.00625
+  "epss": 0.00308
  },
  {
   "cve": "CVE-2026-42018",
@@ -1804,7 +1817,7 @@
   "date_added": "2026-09-11",
   "cvss": 9.9,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.01173
+  "epss": 0.00924
  },
  {
   "cve": "CVE-2026-87491",
@@ -1817,7 +1830,7 @@
   "date_added": "2026-09-09",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.03507
+  "epss": 0.00974
  },
  {
   "cve": "CVE-2014-4148",
@@ -1843,7 +1856,7 @@
   "date_added": "2025-03-19",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
-  "epss": 0.74482
+  "epss": 0.06036
  },
  {
   "cve": "CVE-2026-49869",
@@ -1869,7 +1882,7 @@
   "date_added": "2026-10-08",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.88139
+  "epss": 0.88598
  },
  {
   "cve": "CVE-2014-4113",
@@ -1895,7 +1908,7 @@
   "date_added": "2026-09-08",
   "cvss": 10.0,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H",
-  "epss": 0.15385
+  "epss": 0.03906
  },
  {
   "cve": "CVE-2026-76461",
@@ -1908,7 +1921,7 @@
   "date_added": "2026-09-14",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.4016
+  "epss": 0.03285
  },
  {
   "cve": "CVE-2026-53266",
@@ -1921,7 +1934,7 @@
   "date_added": "2026-09-18",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.00934
+  "epss": 0.00518
  },
  {
   "cve": "CVE-2026-102489",
@@ -1934,7 +1947,7 @@
   "date_added": "2026-10-02",
   "cvss": 8.7,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:P/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L/E:A/AU:Y/V:C",
-  "epss": 0.49915
+  "epss": 0.14523
  },
  {
   "cve": "CVE-2021-30657",
@@ -1973,7 +1986,7 @@
   "date_added": "2026-09-08",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.07115
+  "epss": 0.00393
  },
  {
   "cve": "CVE-2026-85880",
@@ -2012,7 +2025,7 @@
   "date_added": "2026-09-11",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N",
-  "epss": 0.97355
+  "epss": 0.08686
  },
  {
   "cve": "CVE-2026-85046",
@@ -2038,7 +2051,7 @@
   "date_added": "2026-10-02",
   "cvss": 8.5,
   "cvss_vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:A/AU:Y/V:D",
-  "epss": 0.10936
+  "epss": 0.06509
  },
  {
   "cve": "CVE-2026-83548",
@@ -2064,7 +2077,7 @@
   "date_added": "2026-04-06",
   "cvss": 9.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.93983
+  "epss": 0.09294
  },
  {
   "cve": "CVE-2015-5477",
@@ -2090,7 +2103,7 @@
   "date_added": "2026-09-09",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:L/SI:L/SA:L",
-  "epss": 0.33262
+  "epss": 0.00953
  },
  {
   "cve": "CVE-2026-94127",
@@ -2103,7 +2116,7 @@
   "date_added": "2026-09-22",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.2655
+  "epss": 0.01293
  },
  {
   "cve": "CVE-2023-22894",
@@ -2116,7 +2129,7 @@
   "date_added": "2026-10-08",
   "cvss": 7.2,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.04114
+  "epss": 0.0385
  },
  {
   "cve": "CVE-2026-87902",
@@ -2129,7 +2142,7 @@
   "date_added": "2026-09-25",
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.95769
+  "epss": 0.2674
  },
  {
   "cve": "CVE-2026-76504",
@@ -2142,7 +2155,7 @@
   "date_added": "2026-09-30",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.38928
+  "epss": 0.01279
  },
  {
   "cve": "CVE-2026-84334",
@@ -2168,7 +2181,7 @@
   "date_added": "2026-09-18",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.03312
+  "epss": 0.02067
  },
  {
   "cve": "CVE-2025-39964",
@@ -2181,7 +2194,7 @@
   "date_added": "2026-09-18",
   "cvss": 7.8,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.01607
+  "epss": 0.00581
  },
  {
   "cve": "CVE-2024-53150",
@@ -2194,7 +2207,7 @@
   "date_added": "2025-04-09",
   "cvss": 7.1,
   "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H",
-  "epss": 0.01354
+  "epss": 0.00773
  },
  {
   "cve": "CVE-2026-65660",
@@ -2207,7 +2220,7 @@
   "date_added": "2026-09-25",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:U/RL:O/RC:C",
-  "epss": 0.09852
+  "epss": 0.02543
  },
  {
   "cve": "CVE-2026-75650",
@@ -2220,7 +2233,7 @@
   "date_added": "2026-09-08",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.99376
+  "epss": 0.34741
  },
  {
   "cve": "CVE-2026-20079",
@@ -2233,7 +2246,7 @@
   "date_added": "2026-09-09",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.88658
+  "epss": 0.12474
  },
  {
   "cve": "CVE-2026-59822",

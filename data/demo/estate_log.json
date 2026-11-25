@@ -1,45 +1,7 @@
 {
  "seed": 2604,
- "as_of": "2026-11-24",
+ "as_of": "2026-11-25",
  "days": [
-  {
-   "date": "2026-10-26",
-   "fixed": [
-    {
-     "cve": "CVE-2026-83548",
-     "host": "hl-edge-fw-033.lab.invalid",
-     "owner": "Jonah Reid"
-    },
-    {
-     "cve": "CVE-2026-85046",
-     "host": "hl-id-srv-045.lab.invalid",
-     "owner": "Marcus Chen"
-    },
-    {
-     "cve": "CVE-2026-23760",
-     "host": "hl-portal-cld-015.lab.invalid",
-     "owner": "Amira Haddad"
-    },
-    {
-     "cve": "CVE-2015-5477",
-     "host": "hl-claims-srv-093.lab.invalid",
-     "owner": "Hannah Brooks"
-    },
-    {
-     "cve": "CVE-2026-86950",
-     "host": "hl-claims-ws-029.lab.invalid",
-     "owner": "Noah Berger"
-    }
-   ],
-   "new_kev": [],
-   "discovered": [
-    {
-     "cve": "CVE-2026-11801",
-     "host": "hl-claims-ws-043.lab.invalid"
-    }
-   ],
-   "reopened": []
-  },
   {
    "date": "2026-10-27",
    "fixed": [
@@ -1525,6 +1487,74 @@
     {
      "cve": "CVE-2026-84357",
      "host": "hl-portal-ws-060.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-25",
+   "fixed": [
+    {
+     "cve": "CVE-2026-124194",
+     "host": "hl-corp-ws-016.lab.invalid",
+     "owner": "Hannah Brooks"
+    },
+    {
+     "cve": "CVE-2026-23760",
+     "host": "hl-pay-srv-005.lab.invalid",
+     "owner": "Luis Ortega"
+    },
+    {
+     "cve": "CVE-2026-132224",
+     "host": "hl-id-srv-038.lab.invalid",
+     "owner": "Elena Voss"
+    },
+    {
+     "cve": "CVE-2026-86218",
+     "host": "hl-id-lnx-050.lab.invalid",
+     "owner": "Marcus Chen"
+    },
+    {
+     "cve": "CVE-2025-42884",
+     "host": "hl-edge-fw-010.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2026-67277",
+     "host": "hl-edge-fw-003.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2026-90436",
+     "host": "hl-pay-lnx-046.lab.invalid",
+     "owner": "Luis Ortega"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2026-103406",
+     "name": "Hewlett Packard Enterprise (HPE) Juniper Session Smart Conductor and Session Smart Router OS Command Injection Vulnerability",
+     "vendor": "Hewlett Packard Enterprise (HPE)",
+     "product": "Juniper Session Smart Conductor and Session Smart Router",
+     "hosts": [
+      "hl-edge-rtr-010.lab.invalid",
+      "hl-edge-rtr-011.lab.invalid",
+      "hl-edge-fw-003.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84359",
+     "host": "hl-claims-ws-040.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84349",
+     "host": "hl-corp-ws-032.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84359",
+     "host": "hl-corp-ws-054.lab.invalid"
     }
    ],
    "reopened": []
