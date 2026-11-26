@@ -10,7 +10,124 @@
   "date_added": "2026-11-25",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.0086
+  "epss": 0.01535
+ },
+ {
+  "cve": "CVE-2026-133469",
+  "vendor": "Vates",
+  "product": "Xen Orchestra",
+  "name": "Vates Xen Orchestra Improper Validation of Specified Type of Input Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.31768
+ },
+ {
+  "cve": "CVE-2025-41450",
+  "vendor": "Danfoss",
+  "product": "AK-SM 800A Series",
+  "name": "Danfoss AK-SM 800A Series Improper Authentication Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 8.2,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:L/A:H",
+  "epss": 0.04271
+ },
+ {
+  "cve": "CVE-2023-25914",
+  "vendor": "Danfoss",
+  "product": "AK-SM 800A Series",
+  "name": "Danfoss AK-SM 800A Series Path Traversal Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.01845
+ },
+ {
+  "cve": "CVE-2023-25915",
+  "vendor": "Danfoss",
+  "product": "AK-SM 800A Series",
+  "name": "Danfoss AK-SM 800A Series Improper Input Validation Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 9.9,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.02485
+ },
+ {
+  "cve": "CVE-2026-133324",
+  "vendor": "Mitel",
+  "product": "MiCollab",
+  "name": "Mitel MiCollab Not Failing Securely Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 5.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+  "epss": 0.00832
+ },
+ {
+  "cve": "CVE-2026-133275",
+  "vendor": "Mitel",
+  "product": "MiCollab",
+  "name": "Mitel MiCollab Unrestricted Upload of File with Dangerous Type Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 5.3,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+  "epss": 0.00771
+ },
+ {
+  "cve": "CVE-2026-133311",
+  "vendor": "Mitel",
+  "product": "MiCollab",
+  "name": "Mitel MiCollab Weak Authentication Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 5.9,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+  "epss": 0.00985
+ },
+ {
+  "cve": "CVE-2026-133303",
+  "vendor": "Mitel",
+  "product": "MiCollab",
+  "name": "Mitel MiCollab XML Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 9.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.01326
+ },
+ {
+  "cve": "CVE-2026-133323",
+  "vendor": "Mitel",
+  "product": "MiCollab",
+  "name": "Mitel MiCollab OS Command Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-25",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
+  "epss": 0.05628
  },
  {
   "cve": "CVE-2026-132224",
@@ -23,7 +140,7 @@
   "date_added": "2026-11-24",
   "cvss": 7.1,
   "cvss_vector": "CVSS:4.0/AV:N/AC:H/AT:N/PR:L/UI:N/VC:N/VI:H/VA:N/SC:H/SI:H/SA:N",
-  "epss": 0.00784
+  "epss": 0.01055
  },
  {
   "cve": "CVE-2026-131914",
@@ -49,7 +166,7 @@
   "date_added": "2026-11-24",
   "cvss": null,
   "cvss_vector": null,
-  "epss": null
+  "epss": 0.11053
  },
  {
   "cve": "CVE-2026-133968",
@@ -205,7 +322,7 @@
   "date_added": "2026-11-13",
   "cvss": 8.6,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:N",
-  "epss": 0.01351
+  "epss": 0.10202
  },
  {
   "cve": "CVE-2026-123039",
@@ -426,7 +543,7 @@
   "date_added": "2026-10-29",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.1184
+  "epss": 0.74315
  },
  {
   "cve": "CVE-2026-76418",
@@ -2181,7 +2298,7 @@
   "date_added": "2026-09-18",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02067
+  "epss": 0.02193
  },
  {
   "cve": "CVE-2025-39964",

@@ -1,66 +1,7 @@
 {
  "seed": 2604,
- "as_of": "2026-11-25",
+ "as_of": "2026-11-26",
  "days": [
-  {
-   "date": "2026-10-27",
-   "fixed": [
-    {
-     "cve": "CVE-2026-93616",
-     "host": "hl-corp-srv-082.lab.invalid",
-     "owner": "Sofia Almeida"
-    },
-    {
-     "cve": "CVE-2026-82329",
-     "host": "hl-pay-ws-024.lab.invalid",
-     "owner": "Priya Shah"
-    },
-    {
-     "cve": "CVE-2026-105133",
-     "host": "hl-portal-ws-033.lab.invalid",
-     "owner": "Jonah Reid"
-    },
-    {
-     "cve": "CVE-2026-0322",
-     "host": "hl-edge-fw-020.lab.invalid",
-     "owner": "Jonah Reid"
-    }
-   ],
-   "new_kev": [
-    {
-     "cve": "CVE-2026-109618",
-     "name": "PHP Memory Corruption Vulnerability",
-     "vendor": "PHP Group",
-     "product": "PHP",
-     "hosts": [
-      "hl-portal-cld-010.lab.invalid",
-      "hl-pay-srv-096.lab.invalid",
-      "hl-claims-srv-037.lab.invalid"
-     ]
-    },
-    {
-     "cve": "CVE-2026-109619",
-     "name": "PHP Stale Internal Request-State Vulnerability",
-     "vendor": "PHP Group",
-     "product": "PHP",
-     "hosts": [
-      "hl-edge-fw-012.lab.invalid",
-      "hl-id-srv-091.lab.invalid"
-     ]
-    }
-   ],
-   "discovered": [
-    {
-     "cve": "CVE-2026-15585",
-     "host": "hl-corp-ws-019.lab.invalid"
-    },
-    {
-     "cve": "CVE-2026-84358",
-     "host": "hl-corp-ws-045.lab.invalid"
-    }
-   ],
-   "reopened": []
-  },
   {
    "date": "2026-10-28",
    "fixed": [
@@ -1555,6 +1496,142 @@
     {
      "cve": "CVE-2026-84359",
      "host": "hl-corp-ws-054.lab.invalid"
+    }
+   ],
+   "reopened": []
+  },
+  {
+   "date": "2026-11-26",
+   "fixed": [
+    {
+     "cve": "CVE-2026-90436",
+     "host": "hl-id-cld-001.lab.invalid",
+     "owner": "Elena Voss"
+    },
+    {
+     "cve": "CVE-2026-111560",
+     "host": "hl-edge-rtr-012.lab.invalid",
+     "owner": "Jonah Reid"
+    },
+    {
+     "cve": "CVE-2026-133968",
+     "host": "hl-edge-fw-019.lab.invalid",
+     "owner": "Owen Park"
+    },
+    {
+     "cve": "CVE-2026-90436",
+     "host": "hl-portal-lnx-028.lab.invalid",
+     "owner": "Amira Haddad"
+    }
+   ],
+   "new_kev": [
+    {
+     "cve": "CVE-2023-25914",
+     "name": "Danfoss AK-SM 800A Series Path Traversal Vulnerability",
+     "vendor": "Danfoss",
+     "product": "AK-SM 800A Series",
+     "hosts": [
+      "hl-corp-srv-032.lab.invalid",
+      "hl-corp-srv-080.lab.invalid",
+      "hl-portal-lnx-041.lab.invalid",
+      "hl-edge-fw-021.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2023-25915",
+     "name": "Danfoss AK-SM 800A Series Improper Input Validation Vulnerability",
+     "vendor": "Danfoss",
+     "product": "AK-SM 800A Series",
+     "hosts": [
+      "hl-id-srv-029.lab.invalid",
+      "hl-claims-srv-008.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2025-41450",
+     "name": "Danfoss AK-SM 800A Series Improper Authentication Vulnerability",
+     "vendor": "Danfoss",
+     "product": "AK-SM 800A Series",
+     "hosts": [
+      "hl-pay-srv-027.lab.invalid",
+      "hl-id-cld-003.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-133275",
+     "name": "Mitel MiCollab Unrestricted Upload of File with Dangerous Type Vulnerability",
+     "vendor": "Mitel",
+     "product": "MiCollab",
+     "hosts": [
+      "hl-edge-fw-019.lab.invalid",
+      "hl-id-srv-036.lab.invalid",
+      "hl-portal-ws-060.lab.invalid",
+      "hl-portal-lnx-038.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-133303",
+     "name": "Mitel MiCollab XML Injection Vulnerability",
+     "vendor": "Mitel",
+     "product": "MiCollab",
+     "hosts": [
+      "hl-edge-fw-016.lab.invalid",
+      "hl-corp-srv-090.lab.invalid",
+      "hl-portal-lnx-003.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-133311",
+     "name": "Mitel MiCollab Weak Authentication Vulnerability",
+     "vendor": "Mitel",
+     "product": "MiCollab",
+     "hosts": [
+      "hl-corp-srv-041.lab.invalid",
+      "hl-pay-lnx-043.lab.invalid",
+      "hl-pay-srv-076.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-133323",
+     "name": "Mitel MiCollab OS Command Injection Vulnerability",
+     "vendor": "Mitel",
+     "product": "MiCollab",
+     "hosts": [
+      "hl-id-cld-011.lab.invalid",
+      "hl-claims-ws-013.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-133324",
+     "name": "Mitel MiCollab Not Failing Securely Vulnerability",
+     "vendor": "Mitel",
+     "product": "MiCollab",
+     "hosts": [
+      "hl-id-lnx-047.lab.invalid",
+      "hl-pay-ws-010.lab.invalid",
+      "hl-corp-srv-090.lab.invalid",
+      "hl-claims-srv-037.lab.invalid"
+     ]
+    },
+    {
+     "cve": "CVE-2026-133469",
+     "name": "Vates Xen Orchestra Improper Validation of Specified Type of Input Vulnerability",
+     "vendor": "Vates",
+     "product": "Xen Orchestra",
+     "hosts": [
+      "hl-pay-lnx-033.lab.invalid",
+      "hl-corp-ws-039.lab.invalid"
+     ]
+    }
+   ],
+   "discovered": [
+    {
+     "cve": "CVE-2026-84357",
+     "host": "hl-portal-ws-012.lab.invalid"
+    },
+    {
+     "cve": "CVE-2026-84348",
+     "host": "hl-claims-ws-038.lab.invalid"
     }
    ],
    "reopened": []
