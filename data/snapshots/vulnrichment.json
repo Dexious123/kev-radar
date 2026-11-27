@@ -108,13 +108,13 @@
   "ssvc_version": "2.0.3"
  },
  "CVE-2026-132165": {
-  "automatable": null,
-  "technical_impact": null,
-  "exploitation": null,
-  "cvss": null,
-  "cvss_vector": null,
-  "cvss_version": null,
-  "ssvc_version": null
+  "automatable": "no",
+  "technical_impact": "total",
+  "exploitation": "active",
+  "cvss": 8.1,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "cvss_version": "3.1",
+  "ssvc_version": "2.0.3"
  },
  "CVE-2026-133968": {
   "automatable": "yes",
