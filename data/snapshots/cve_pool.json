@@ -1,5 +1,44 @@
 [
  {
+  "cve": "CVE-2026-120705",
+  "vendor": "OSGeo",
+  "product": "GeoServer",
+  "name": "OSGeo GeoServer XML Injection Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-27",
+  "cvss": null,
+  "cvss_vector": null,
+  "epss": null
+ },
+ {
+  "cve": "CVE-2026-129243",
+  "vendor": "OSGeo",
+  "product": "GeoServer",
+  "name": "OSGeo GeoServer Incorrect Authorization Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-27",
+  "cvss": null,
+  "cvss_vector": null,
+  "epss": null
+ },
+ {
+  "cve": "CVE-2026-136716",
+  "vendor": "Drupal",
+  "product": "Core",
+  "name": "Drupal Core Improper Check for Unusual or Exceptional Conditions Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-11-27",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.05461
+ },
+ {
   "cve": "CVE-2026-103406",
   "vendor": "Hewlett Packard Enterprise (HPE)",
   "product": "Juniper Session Smart Conductor and Session Smart Router",
@@ -23,7 +62,7 @@
   "date_added": "2026-11-25",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.31768
+  "epss": 0.33324
  },
  {
   "cve": "CVE-2025-41450",
@@ -36,7 +75,7 @@
   "date_added": "2026-11-25",
   "cvss": 8.2,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:L/A:H",
-  "epss": 0.04271
+  "epss": 0.05092
  },
  {
   "cve": "CVE-2023-25914",
@@ -49,7 +88,7 @@
   "date_added": "2026-11-25",
   "cvss": 8.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.01845
+  "epss": 0.02184
  },
  {
   "cve": "CVE-2023-25915",
@@ -62,7 +101,7 @@
   "date_added": "2026-11-25",
   "cvss": 9.9,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.02485
+  "epss": 0.0294
  },
  {
   "cve": "CVE-2026-133324",
@@ -75,7 +114,7 @@
   "date_added": "2026-11-25",
   "cvss": 5.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-  "epss": 0.00832
+  "epss": 0.00973
  },
  {
   "cve": "CVE-2026-133275",
@@ -88,7 +127,7 @@
   "date_added": "2026-11-25",
   "cvss": 5.3,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
-  "epss": 0.00771
+  "epss": 0.00903
  },
  {
   "cve": "CVE-2026-133311",
@@ -101,7 +140,7 @@
   "date_added": "2026-11-25",
   "cvss": 5.9,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
-  "epss": 0.00985
+  "epss": 0.01128
  },
  {
   "cve": "CVE-2026-133303",
@@ -114,7 +153,7 @@
   "date_added": "2026-11-25",
   "cvss": 9.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.01326
+  "epss": 0.01551
  },
  {
   "cve": "CVE-2026-133323",
@@ -127,7 +166,7 @@
   "date_added": "2026-11-25",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:H/A:H",
-  "epss": 0.05628
+  "epss": 0.07309
  },
  {
   "cve": "CVE-2026-132224",
@@ -166,7 +205,7 @@
   "date_added": "2026-11-24",
   "cvss": 8.1,
   "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.08381
+  "epss": 0.13979
  },
  {
   "cve": "CVE-2026-133968",
@@ -179,7 +218,7 @@
   "date_added": "2026-11-23",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.27157
+  "epss": 0.6275
  },
  {
   "cve": "CVE-2026-134624",
@@ -192,7 +231,7 @@
   "date_added": "2026-11-23",
   "cvss": 9.3,
   "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N",
-  "epss": 0.01793
+  "epss": 0.0186
  },
  {
   "cve": "CVE-2026-129448",
@@ -283,7 +322,7 @@
   "date_added": "2026-11-18",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.18881
+  "epss": 0.37584
  },
  {
   "cve": "CVE-2026-90436",
@@ -832,32 +871,6 @@
   "epss": 0.01969
  },
  {
-  "cve": "CVE-2026-104935",
-  "vendor": "Ivanti",
-  "product": "Connect Secure",
-  "name": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-10-13",
-  "cvss": 8.6,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
-  "epss": 0.24503
- },
- {
-  "cve": "CVE-2026-96951",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Command Injection Vulnerability",
-  "family": "windows",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2026-10-13",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
-  "epss": 0.00976
- },
- {
   "cve": "CVE-2025-53770",
   "vendor": "Microsoft",
   "product": "SharePoint",
@@ -1105,82 +1118,82 @@
   "epss": 0.99825
  },
  {
-  "cve": "CVE-2020-17519",
-  "vendor": "Apache",
-  "product": "Flink",
-  "name": "Apache Flink Improper Access Control Vulnerability",
-  "family": "linux",
+  "cve": "CVE-2021-36380",
+  "vendor": "Sunhillo",
+  "product": "SureLine",
+  "name": "Sunhillo SureLine OS Command Injection Vulnerablity",
+  "family": "any",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2024-05-23",
-  "cvss": 9.1,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:H",
-  "epss": 0.98001
+  "date_added": "2024-03-05",
+  "cvss": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.97832
  },
  {
-  "cve": "CVE-2023-21823",
-  "vendor": "Microsoft",
-  "product": "Windows",
-  "name": "Microsoft Windows Graphic Component Privilege Escalation Vulnerability",
-  "family": "windows",
+  "cve": "CVE-2023-23529",
+  "vendor": "Apple",
+  "product": "Multiple Products",
+  "name": "Apple Multiple Products WebKit Type Confusion Vulnerability",
+  "family": "workstation",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2023-02-14",
-  "cvss": 7.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C",
-  "epss": 0.00987
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.01468
  },
  {
-  "cve": "CVE-2025-20352",
-  "vendor": "Cisco",
-  "product": "IOS and IOS XE",
-  "name": "Cisco IOS and IOS XE Software SNMP Denial of Service and Remote Code Execution Vulnerability",
-  "family": "network",
+  "cve": "CVE-2025-32463",
+  "vendor": "Sudo",
+  "product": "Sudo",
+  "name": "Sudo Inclusion of Functionality from Untrusted Control Sphere Vulnerability",
+  "family": "linux",
   "in_kev": true,
   "ransomware": false,
   "date_added": "2025-09-29",
-  "cvss": 7.7,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:N/I:N/A:H",
-  "epss": 0.01494
+  "cvss": 9.3,
+  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+  "epss": 0.14017
  },
  {
-  "cve": "CVE-2019-3010",
-  "vendor": "Oracle",
-  "product": "Solaris",
-  "name": "Oracle Solaris Privilege Escalation Vulnerability",
-  "family": "any",
+  "cve": "CVE-2006-2492",
+  "vendor": "Microsoft",
+  "product": "Word",
+  "name": "Microsoft Word Malformed Object Pointer Vulnerability",
+  "family": "windows",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2022-05-25",
+  "date_added": "2022-06-08",
   "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.13318
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+  "epss": 0.48107
  },
  {
-  "cve": "CVE-2023-6448",
-  "vendor": "Unitronics",
-  "product": "Vision PLC and HMI",
-  "name": "Unitronics Vision PLC and HMI Insecure Default Password Vulnerability",
-  "family": "any",
+  "cve": "CVE-2023-47565",
+  "vendor": "QNAP",
+  "product": "VioStor NVR",
+  "name": "QNAP VioStor NVR OS Command Injection Vulnerability",
+  "family": "workstation",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2023-12-11",
-  "cvss": 9.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.02002
+  "date_added": "2023-12-21",
+  "cvss": 8.0,
+  "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.05417
  },
  {
-  "cve": "CVE-2023-1389",
-  "vendor": "TP-Link",
-  "product": "Archer AX21",
-  "name": "TP-Link Archer AX-21 Command Injection Vulnerability",
-  "family": "any",
+  "cve": "CVE-2017-6744",
+  "vendor": "Cisco",
+  "product": "IOS software",
+  "name": "Cisco IOS Software SNMP Remote Code Execution Vulnerability",
+  "family": "network",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2023-05-01",
+  "date_added": "2022-03-03",
   "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.89273
+  "cvss_vector": "CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "epss": 0.07292
  },
  {
   "cve": "CVE-2021-38003",
@@ -1196,56 +1209,56 @@
   "epss": 0.37788
  },
  {
-  "cve": "CVE-2025-0111",
-  "vendor": "Palo Alto Networks",
-  "product": "PAN-OS",
-  "name": "Palo Alto Networks PAN-OS File Read Vulnerability",
-  "family": "network",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2025-02-20",
-  "cvss": 7.1,
-  "cvss_vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/AU:N/R:U/V:C/RE:M/U:Red",
-  "epss": 0.01197
- },
- {
-  "cve": "CVE-2025-43300",
-  "vendor": "Apple",
-  "product": "iOS, iPadOS, and macOS",
-  "name": "Apple iOS, iPadOS, and macOS Out-of-Bounds Write Vulnerability",
+  "cve": "CVE-2017-3066",
+  "vendor": "Adobe",
+  "product": "ColdFusion",
+  "name": "Adobe ColdFusion Deserialization Vulnerability",
   "family": "workstation",
   "in_kev": true,
   "ransomware": false,
-  "date_added": "2025-08-21",
-  "cvss": 10.0,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.04113
- },
- {
-  "cve": "CVE-2022-3723",
-  "vendor": "Google",
-  "product": "Chromium V8",
-  "name": "Google Chromium V8 Type Confusion Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2022-10-28",
-  "cvss": 8.8,
-  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
-  "epss": 0.03003
- },
- {
-  "cve": "CVE-2020-17463",
-  "vendor": "Fuel CMS",
-  "product": "Fuel CMS",
-  "name": "Fuel CMS SQL Injection Vulnerability",
-  "family": "any",
-  "in_kev": true,
-  "ransomware": false,
-  "date_added": "2021-12-10",
+  "date_added": "2025-02-24",
   "cvss": 9.8,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-  "epss": 0.97134
+  "epss": 0.90597
+ },
+ {
+  "cve": "CVE-2024-8068",
+  "vendor": "Citrix",
+  "product": "Session Recording",
+  "name": "Citrix Session Recording Improper Privilege Management Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2025-08-25",
+  "cvss": 5.1,
+  "cvss_vector": "CVSS:4.0/AV:A/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N",
+  "epss": 0.01014
+ },
+ {
+  "cve": "CVE-2017-12319",
+  "vendor": "Cisco",
+  "product": "IOS XE Software",
+  "name": "Cisco IOS XE Software Ethernet Virtual Private Network Border Gateway Protocol Denial-of-Service Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2022-03-03",
+  "cvss": 5.9,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+  "epss": 0.05243
+ },
+ {
+  "cve": "CVE-2019-4716",
+  "vendor": "IBM",
+  "product": "Planning Analytics",
+  "name": "IBM Planning Analytics Remote Code Execution Vulnerability",
+  "family": "any",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2021-11-03",
+  "cvss": 10.0,
+  "cvss_vector": "CVSS:3.0/UI:N/AC:L/PR:N/I:H/S:C/AV:N/C:H/A:H/RC:C/RL:O/E:U",
+  "epss": 0.86441
  },
  {
   "cve": "CVE-2026-84430",
@@ -1638,6 +1651,32 @@
   "epss": 0.00389
  },
  {
+  "cve": "CVE-2026-104935",
+  "vendor": "Ivanti",
+  "product": "Connect Secure",
+  "name": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+  "family": "network",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-13",
+  "cvss": 8.6,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
+  "epss": 0.24503
+ },
+ {
+  "cve": "CVE-2026-96951",
+  "vendor": "Microsoft",
+  "product": "Windows",
+  "name": "Microsoft Windows Command Injection Vulnerability",
+  "family": "windows",
+  "in_kev": true,
+  "ransomware": false,
+  "date_added": "2026-10-13",
+  "cvss": 8.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:F/RL:O/RC:C",
+  "epss": 0.00976
+ },
+ {
   "cve": "CVE-2026-93952",
   "vendor": "Arista",
   "product": "VeloCloud Orchestrator",
@@ -1934,7 +1973,7 @@
   "date_added": "2026-09-11",
   "cvss": 9.9,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.00924
+  "epss": 0.01317
  },
  {
   "cve": "CVE-2026-87491",
@@ -2363,7 +2402,7 @@
   "date_added": "2026-09-09",
   "cvss": 10.0,
   "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-  "epss": 0.12474
+  "epss": 0.12975
  },
  {
   "cve": "CVE-2026-59822",
